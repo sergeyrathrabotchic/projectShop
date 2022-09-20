@@ -1,0 +1,12 @@
+@font-face{
+    font-family: "MontserratAlternates";
+    src: url("MontserratAlternates-Regular.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+
+body {
+    font-family: "MontserratAlternates";
+    background-color: #f6f0ee;
+    margin: 0px;
+}

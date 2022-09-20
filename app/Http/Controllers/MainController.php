@@ -10,8 +10,8 @@ class MainController extends Controller
 {
     public function index() 
     {
-        dd(DB::table('users')->find(1));
-        return view('main');
+        //dd(DB::table('users')->find(1));
+        return view('main.index');
     }
     
 }
