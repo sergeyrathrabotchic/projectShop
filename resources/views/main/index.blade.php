@@ -112,9 +112,9 @@
     </div>
   </div>
 
-  <div style="width: 100%;background-color: #2267a0;aspect-ratio: 2 / 1;">
+  {{-- <div style="width: 100%;background-color: #2267a0;aspect-ratio: 2 / 1;">
 
-  </div>
+  </div> --}}
 
   <div style="display: flex;margin-top: 50px;width: 100%;">
     <div style="width: 40%;">  
