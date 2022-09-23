@@ -83,17 +83,41 @@
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="{{ asset('assets/media/imegas/slaid1.jpg')}}" class="d-block w-100" alt="...">
+        <img style="border-radius: 1rem;" src="{{ asset('assets/media/imegas/slaid1.jpg')}}" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="{{ asset('assets/media/imegas/slaid2.jpg')}}" class="d-block w-100" alt="...">
+        <img style="border-radius: 1rem;" src="{{ asset('assets/media/imegas/slaid2.jpg')}}" class="d-block w-100" alt="...">
       </div>
       {{-- <div class="carousel-item">
         <img src="{{ asset('assets/media/imegas/slaid3.jpg')}}" class="d-block w-100" alt="...">
       </div> --}}
     </div>
+  </div>
+
+  <div style="display: flex;margin-top: 50px;">
+    <div style="width: 40%;">  
+      <div style="background: #e7ceb7;width: 97.5%;aspect-ratio: 2 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;"></div>
+      <div style="display: flex">
+        <div style="background: #b4bec6;width: 46.25%;aspect-ratio: 1 / 1;margin-right: 2.5%;"></div>
+        <div style="background: #e7ceb7;width: 46.25%;aspect-ratio: 1 / 1;margin-left: 2.5%;margin-right: 2.5%;"></div>
+      </div>
     </div>
+    <div style="width: 20%;">
+      <div style="background: #e7ceb7;aspect-ratio: 1 / 2.22;width: 90%;margin:5%;margin-top: 10%;">
+
+      </div>
+    </div>
+    <div style="width: 40%;">
+      <div style="display: flex">
+        <div style="background: #b4bec6;width: 46.25%;aspect-ratio: 1 / 1;margin-left: 2.5%;margin-right: 2.5%;margin-top: 5%;"></div>
+        <div style="background: #e7ceb7;width: 46.25%;aspect-ratio: 1 / 1;margin-left: 2.5%;margin-top: 5%;"></div>
+      </div>
+      <div style="background: #e7ceb7;width: 97.5%;aspect-ratio: 2 / 1;margin-left: 2.5%;margin-top: 5%;"></div>  
+    </div>
+  </div>
+
 </div>
+
   
 
 
