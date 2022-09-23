@@ -10,3 +10,31 @@ body {
     background-color: #f6f0ee;
     margin: 0px;
 }
+.computerMenu {
+    display: flex;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.phoneMenu {
+    display: none;
+}
+.content {
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 40px;
+}
+
+@media (max-width: 995px) {
+    .computerMenu {
+        display: none;
+    }
+    .phoneMenu {
+        display: block;
+    }
+    .content { 
+        margin-top: 120px;
+    }
+}
