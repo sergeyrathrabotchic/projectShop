@@ -20,6 +20,9 @@ body {
 
 .phoneMenu {
     display: none;
+    margin-left: 150px;
+    margin-right: 150px;
+    background-color: #f6f0ee !important;
 }
 .content {
     margin-left: 150px;
@@ -33,8 +36,12 @@ body {
     }
     .phoneMenu {
         display: block;
+        margin-left: 20px;
+        margin-right: 20px;
     }
     .content { 
         margin-top: 120px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }

@@ -43,10 +43,14 @@
       </div>
   </div>
 </div>
-<div class="phoneMenu">
-  <nav class="navbar bg-light fixed-top phoneMenu" style="margin-left: 150px;margin-right: 150px;background-color: #f6f0ee !important;">
+<div >
+  <nav class="navbar bg-light fixed-top phoneMenu" >
       <div class="container-fluid">
-        <div></div>
+        <div>
+          <button style="filter: opacity(0%);" class="navbar-toggler shadow-none"  style="border: none;outline: none;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
         {{-- <a class="navbar-brand" href="#">Offcanvas navbar</a> --}}
         <img src="{{ asset('assets/media/logo/logoMain.jpg')}}" alt="">
         <button class="navbar-toggler shadow-none"  style="border: none;outline: none;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -107,10 +111,9 @@
   </div>
 </div>
 
-11111111111111111
 <div style="display: flex;margin-top: 50px;width: 100%;">
   <div style="width: 40%;">  
-    <div style="background: #e7ceb7;width: 97.5%;aspect-ratio: 2 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">11111111111111111</div>
+    <div style="background: #e7ceb7;width: 97.5%;aspect-ratio: 2 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;"></div>
     <div style="display: flex">
       <div style="background: #b4bec6;width: 46.25%;aspect-ratio: 1 / 1;margin-right: 2.5%;"></div>
       <div style="background: #e7ceb7;width: 46.25%;aspect-ratio: 1 / 1;margin-left: 2.5%;margin-right: 2.5%;"></div>
