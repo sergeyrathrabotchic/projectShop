@@ -112,7 +112,7 @@
     </div>
   </div>
 
-  <div style="width: 100%;background-color: #2267a0;height: 10px;">
+  <div style="width: 100%;background-color: #2267a0;aspect-ratio: 2 / 1;">
 
   </div>
 
