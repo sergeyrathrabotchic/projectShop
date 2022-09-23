@@ -94,6 +94,7 @@
     </div>
   </div>
 
+  11111111111111111
   <div style="display: flex;margin-top: 50px;">
     <div style="width: 40%;">  
       <div style="background: #e7ceb7;width: 97.5%;aspect-ratio: 2 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;"></div>
