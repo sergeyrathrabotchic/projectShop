@@ -16,7 +16,7 @@ class CategoryController extends Controller
     public function index()
     {
         //$catigories = Category::whereIn('id',['1','5','7'])->get();
-        $catigories = Category::with('news')->paginate(10);
+        $catigories = Category::with('news')->paginate(5);
         //$catigories = Category::all();
         //dd($catigories);
         return view('admin.categories.index', [
@@ -91,7 +91,7 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $request->validate([
-            'title' => ['required', 'string', 'min:3', 'max250']
+            'title' => ['required', 'string', 'min:3', 'max:250']
         ]);
         //validashin
         //dd($category->id());
@@ -100,6 +100,7 @@ class CategoryController extends Controller
         /*$category = $category->fill(
             $request->only(['title','description'])
         )->save();*/
+        // dd($request->input('title'));
         if( $category->save() ) {
             return redirect()
             ->route('admin.categories.index')

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewController;
 use App\Http\Controllers\Admin\NewController as AdminNewController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\Admin\SlideController as AdminSlideController;
 use App\Http\Controllers\СategoryController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\RegistretionController;
@@ -30,38 +31,39 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
     Route::get('/', AdminController::class)->name('index');
     Route::resource('/categories', AdminCategoryController::class);
     Route::resource('/news',AdminNewController::class );
+    Route::resource('/slides',AdminSlideController::class );
 
 });
-Route::resource('/news444444',AdminNewController::class );
-//?categoryId={categoryId}
-Route::get('/news', [ NewController::class, 'index'])
-    ->name('news.index');
+// Route::resource('/news444444',AdminNewController::class );
+// //?categoryId={categoryId}
+// Route::get('/news', [ NewController::class, 'index'])
+//     ->name('news.index');
 
     
-Route::get('/news/{id}', [ NewController::class, 'show'])
-    ->where( 'id', '\d+')
-    ->name('news.show');
+// Route::get('/news/{id}', [ NewController::class, 'show'])
+//     ->where( 'id', '\d+')
+//     ->name('news.show');
 
-Route::get('/category', [ СategoryController::class, 'index'])
-    ->name('category.index');
+// Route::get('/category', [ СategoryController::class, 'index'])
+//     ->name('category.index');
 
 Route::get('/', [ MainController::class, 'index'])
     ->name('main');
 
-Route::resource('/feedback',  FeedbackController::class);
+// Route::resource('/feedback',  FeedbackController::class);
 
-Route::resource('/data',  DataController::class);
+// Route::resource('/data',  DataController::class);
    
-Route::get('/registretion', [ RegistretionController::class, 'index'])
-    ->name('main');
+// Route::get('/registretion', [ RegistretionController::class, 'index'])
+//     ->name('main');
 
-Route::get('/eddNews', [ EddNewsController::class, 'index'])
-    ->name('main');
+// Route::get('/eddNews', [ EddNewsController::class, 'index'])
+//     ->name('main');
 
-Route::get('collection', function () {
-    $arr = ['Sergey', 'Andrey', 'gggg', 'hdjfhgdkgdk'];
-    $collection = collect($arr);
-    dd($collection->count() );
+// Route::get('collection', function () {
+//     $arr = ['Sergey', 'Andrey', 'gggg', 'hdjfhgdkgdk'];
+//     $collection = collect($arr);
+//     // dd($collection->count() );
 
-});
+// });
 

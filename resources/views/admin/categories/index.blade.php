@@ -7,12 +7,12 @@
       <div class="btn-group me-2">
         <a href="{{route('admin.categories.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новую</a>
       </div>
-      <div class="btn-group me-2">
+      {{-- <div class="btn-group me-2">
         <a href="{{route('admin.news.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новую</a>
       </div>
       <div class="btn-group me-2">
         <a href="{{route('news444444.create')}}" class="btn btn-sm btn-outline-secondary">Проверка</a>
-      </div>
+      </div> --}}
     </div>
   </div>
 
