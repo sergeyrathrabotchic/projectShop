@@ -22,7 +22,7 @@
         <li class="nav-item">
           <a class="nav-link @if(request())->routeIs('admin.slides.*') active @endif" href="{{route('admin.slides.index')}}">
             <span data-feather="users"></span>
-            Слайд главной странице 
+            Слайд на главной странице 
           </a>
         </li>
       </ul>
