@@ -82,10 +82,10 @@ class SlideController extends Controller
         if ($mageSlaid) {
             return redirect()
             ->route('admin.slides.index')
-            ->with('success', 'Категория успешно добавлена');
+            ->with('success', 'Картинка успешно добавлена');
         }
 
-        return back()->wiht('error', 'Категория не добавилась');
+        return back()->wiht('error', 'Картинка не добавилась');
     }
 
     /**
@@ -143,11 +143,11 @@ class SlideController extends Controller
         if( $slide->save() ) {
             return redirect()
             ->route('admin.slides.index')
-            ->with('success', 'Категория успешно обновлена')
+            ->with('success', 'Картинка успешно обновлена')
             /*->with('success', 'Категория успешно обновлена')*/;
         }
 
-        return back()->wiht('error', 'Категория не обновилась');
+        return back()->wiht('error', 'Картинка не обновилась');
     }
 
     /**

@@ -23,7 +23,7 @@
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Заголовок</th>
+              <th scope="col">Картинка</th>
               <!--<th scope="col">Автор</th>-->
               <th scope="col">Дота последнего обновления</th>
               <th scope="col">Действие</th>

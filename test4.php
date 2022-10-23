@@ -4,5 +4,5 @@ izoS9tjW9H1Uv7nG
 
 /var/www/u1685020/data/www/angelisolo.ru/projectShop
 
-
+ssh u1685020@37.140.192.240
 
