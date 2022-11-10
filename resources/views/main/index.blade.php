@@ -100,11 +100,23 @@
 
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      @foreach ($slides as $slide)
+      @for ($i = 0; $i < count($slides); $i++)
+        @if ($i == 0)
+          <div class="carousel-item active">
+            <img style="border-radius: 1rem;" src="{{Storage::disk('image')->url($slides[0]->image)}}" class="d-block w-100" alt="...">
+          </div>     
+        @else
+          <div class="carousel-item ">
+            <img style="border-radius: 1rem;" src="{{Storage::disk('image')->url($slides[$i]->image)}}" class="d-block w-100" alt="...">
+          </div>   
+        @endif
+        
+      @endfor
+      {{-- @foreach ($slides as $slide)
         <div class="carousel-item active">
           <img style="border-radius: 1rem;" src="{{Storage::disk('image')->url($slide->image)}}" class="d-block w-100" alt="...">
         </div>
-      @endforeach
+      @endforeach --}}
       {{-- <div class="carousel-item active">
         <img style="border-radius: 1rem;" src="{{ asset('assets/media/imegas/slaid1.jpg')}}" class="d-block w-100" alt="...">
       </div>
