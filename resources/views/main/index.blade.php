@@ -18,7 +18,7 @@
 
 <div class="computerMenu">
   <div style="width: 20%">
-      <img src="{{ asset('assets/media/logo/logoMain.jpg')}}" alt="">
+      <img src="{{ asset('assets/media/logo/logoMain2.jpg')}}" alt="">
   </div>
   <div style="width: 60%;display: flex;justify-content: center;">
       <div style="margin-right: 2rem;margin-left: 2rem;">
