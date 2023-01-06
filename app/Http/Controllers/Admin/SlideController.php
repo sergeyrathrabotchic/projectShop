@@ -66,25 +66,25 @@ class SlideController extends Controller
         // dd($request->file());
         
         $image = ImageUploadHelper::imageUpload($request->image);
-        if ($request->image2 != 0) {
+        if ($request->image2 != null) {
             $image2 = ImageUploadHelper::imageUpload($request->image2);
             $mageSlaid2 = ImageSlaid::create([
                 "image" => $image2,
             ]);
         }
-        if ($request->image3 != 0) {
+        if ($request->image3 != null) {
             $image3 = ImageUploadHelper::imageUpload($request->image3);
             $mageSlaid3 = ImageSlaid::create([
                 "image" => $image3,
             ]);
         }
-        if ($request->image4 != 0) {
+        if ($request->image4 != null) {
             $image4 = ImageUploadHelper::imageUpload($request->image4);
             $mageSlaid4 = ImageSlaid::create([
                 "image" => $image4,
             ]);
         }
-        if ($request->image5 != 0) {
+        if ($request->image5 != null) {
             $image5 = ImageUploadHelper::imageUpload($request->image5);
             $mageSlaid5 = ImageSlaid::create([
                 "image" => $image5,
