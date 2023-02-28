@@ -18,7 +18,7 @@
 
 <div class="computerMenu">
   <div style="width: 20%">
-      <img style="100px" src="{{ asset('assets/media/logo/logoMain2.jpg')}}" alt="">
+      <img style="width: 100px" src="{{ asset('assets/media/logo/logoMain2.jpg')}}" alt="">
   </div>
   <div style="width: 60%;display: flex;justify-content: center;">
       <div style="margin-right: 2rem;margin-left: 2rem;">
@@ -52,7 +52,7 @@
           </button>
         </div>
         {{-- <a class="navbar-brand" href="#">Offcanvas navbar</a> --}}
-        <img style="100px" src="{{ asset('assets/media/logo/logoMain2.jpg')}}" alt="">
+        <img style="width: 100px" src="{{ asset('assets/media/logo/logoMain2.jpg')}}" alt="">
         <button class="navbar-toggler shadow-none"  style="border: none;outline: none;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
