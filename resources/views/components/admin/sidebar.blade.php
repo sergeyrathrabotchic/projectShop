@@ -26,9 +26,9 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link @if(request())->routeIs('admin.slides.*') active @endif" href="{{route('admin.slides.index')}}">
+          <a class="nav-link @if(request())->routeIs('admin.electroplatings.*') active @endif" href="{{route('admin.electroplatings.index')}}">
             <span data-feather="users"></span>
-            Слайд на главной странице 
+            Гальваника 
           </a>
         </li>
       </ul>
