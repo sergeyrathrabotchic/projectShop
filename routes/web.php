@@ -5,6 +5,7 @@ use App\Http\Controllers\NewController;
 use App\Http\Controllers\Admin\NewController as AdminNewController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\SlideController as AdminSlideController;
+use App\Http\Controllers\Admin\ElectroplatingControllerController as AdminElectroplatingController;
 use App\Http\Controllers\СategoryController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\RegistretionController;
@@ -27,12 +28,12 @@ use App\Http\Controllers\Admin\IndexController as AdminController;
     return view('welcome');
 });*/
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
+Route::group(['prefix' => 'admin456123', 'as' => 'admin.'], function(){
     Route::get('/', AdminController::class)->name('index');
     Route::resource('/categories', AdminCategoryController::class);
     Route::resource('/news',AdminNewController::class );
     Route::resource('/slides',AdminSlideController::class );
-
+    Route::resource('/electroplatings',AdminElectroplatingController::class );
 });
 // Route::resource('/news444444',AdminNewController::class );
 // //?categoryId={categoryId}
