@@ -22,7 +22,7 @@
             <br> --}}
             <input type="hidden" class="form-control" name="type" id="type" value="electroplating">
             <div class="form-group">
-              <label for="image">наименование товара</label>
+              <label for="image">Наименование товара</label>
               <input type="test" class="form-control" name="name" id="name">
             </div>
             <div class="form-group">
