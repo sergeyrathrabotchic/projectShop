@@ -5,7 +5,7 @@ use App\Http\Controllers\NewController;
 use App\Http\Controllers\Admin\NewController as AdminNewController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\SlideController as AdminSlideController;
-use App\Http\Controllers\Admin\ElectroplatingControllerController as AdminElectroplatingController;
+use App\Http\Controllers\Admin\ElectroplatingController as AdminElectroplatingController;
 use App\Http\Controllers\СategoryController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\RegistretionController;

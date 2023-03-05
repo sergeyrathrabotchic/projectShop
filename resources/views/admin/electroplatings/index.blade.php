@@ -5,7 +5,7 @@
     <h1 class="h2">Категории </h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group me-2">
-        <a href="{{route('admin.slides.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новую</a>
+        <a href="{{route('admin.electroplatings.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новый товар</a>
       </div>
       {{-- <div class="btn-group me-2">
         <a href="{{route('admin.news.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новую</a>
@@ -23,7 +23,8 @@
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Товар</th>
+              <th scope="col">Название</th>
+              <th scope="col">Первая картинка</th>
               <!--<th scope="col">Автор</th>-->
               <th scope="col">Дота последнего обновления</th>
               <th scope="col">Действие</th>
@@ -59,16 +60,20 @@
              @php
                  $i = $page;
              @endphp
-            @forelse ($slides as $slide)
+            @forelse ($electroplatings as $electroplating)
                   @php
                       $i = $i +1;
                   @endphp
                  <tr>
                   <td>{{$i}}</td>
-                  <td><img src="{{Storage::disk('image')->url($slide->image)}}" alt="" style="width: 80%;padding: 10px;"></td>
                   <td>
-                    @if ($slide->updated_at)
-                     {{$slide->updated_at->format('d-m-Y H:i')}}
+                    <h6>{{$electroplating->name}}</h6>
+                  </td>
+                  <td>
+                    <img src="{{Storage::disk('image')->url($electroplating->productImage->first()->image)}}" alt="" style="width: 80%;padding: 10px;"></td>
+                  <td>
+                    @if ($electroplating->updated_at)
+                     {{$electroplating->updated_at->format('d-m-Y H:i')}}
                     @else - @endif
                    </td> 
                    {{-- <td>{{$category->id}}</td>
@@ -79,7 +84,7 @@
                      @else - @endif
                     </td> --}}
                     <td>
-                      <a href="{{route('admin.slides.edit', ['slide' => $slide->id ])}}" class="btn btn-primary">Ред.</a>
+                      <a href="{{route('admin.slides.edit', ['slide' => $electroplating->id ])}}" class="btn btn-primary">Ред.</a>
                       {{-- &nbsp;|&nbsp; --}}
                       {{-- <a href="{{route('admin.slides.destroy', ['slide' => $slide->id ])}}" style="color: red">Уд.</a> --}}
           {{-- {{dd($slide->id)}} --}}
@@ -89,7 +94,7 @@
                         @method('put')
                         <button  type="submit" style="color: red">Уд.</button>
                       </form> --}}
-                      <form  action="{{ route('admin.slides.destroy' , ['slide' => $slide->id ])}}" method="POST">
+                      <form  action="{{ route('admin.slides.destroy' , ['slide' => $electroplating->id ])}}" method="POST">
                         {{ csrf_field() }}           
                         <button name="_method" type="hidden" value="DELETE" class="btn btn-danger" style="margin-top: 5px;">Удалить</button>
                     </form>
@@ -105,6 +110,6 @@
         </table>
       </div>
       <div>
-        {{ $slides->links()}}
+        {{ $electroplatings->links()}}
       </div>
 @endsection

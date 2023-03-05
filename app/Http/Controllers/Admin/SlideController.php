@@ -65,27 +65,27 @@ class SlideController extends Controller
         // if (isset())
         // dd($request->file());
         
-        $image = ImageUploadHelper::imageUpload($request->image);
+        $image = ImageUploadHelper::imageUpload($request->image, 'slaid');
         if ($request->image2 != null) {
-            $image2 = ImageUploadHelper::imageUpload($request->image2);
+            $image2 = ImageUploadHelper::imageUpload($request->image2, 'slaid');
             $mageSlaid2 = ImageSlaid::create([
                 "image" => $image2,
             ]);
         }
         if ($request->image3 != null) {
-            $image3 = ImageUploadHelper::imageUpload($request->image3);
+            $image3 = ImageUploadHelper::imageUpload($request->image3, 'slaid');
             $mageSlaid3 = ImageSlaid::create([
                 "image" => $image3,
             ]);
         }
         if ($request->image4 != null) {
-            $image4 = ImageUploadHelper::imageUpload($request->image4);
+            $image4 = ImageUploadHelper::imageUpload($request->image4, 'slaid');
             $mageSlaid4 = ImageSlaid::create([
                 "image" => $image4,
             ]);
         }
         if ($request->image5 != null) {
-            $image5 = ImageUploadHelper::imageUpload($request->image5);
+            $image5 = ImageUploadHelper::imageUpload($request->image5, 'slaid');
             $mageSlaid5 = ImageSlaid::create([
                 "image" => $image5,
             ]);
@@ -154,7 +154,7 @@ class SlideController extends Controller
         ]);
         //validashin
         //dd($category->id());
-        $image = ImageUploadHelper::imageUpload($request->image);
+        $image = ImageUploadHelper::imageUpload($request->image, 'slaid');
         // dd( $image);
         //$category->title = $request->input('title');
         $slide->image = $image;

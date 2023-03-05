@@ -1,15 +1,15 @@
 @extends('layosts.admin')
-@section('title') Добавить новую категорию - @parent @stop
+@section('title') Добавить новый товар - @parent @stop
 @section('content')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Добавить категорию </h1>
+    <h1 class="h2">Добавить товар </h1>
     <div class="btn-toolbar mb-2 mb-md-0">
     </div>
   </div>
 
       <div class="table-responsive">
         @include('inc.message')
-        <form  method="post" action="{{route('admin.slides.store')}}" enctype="multipart/form-data">
+        <form  method="post" action="{{route('admin.electroplatings.store')}}" enctype="multipart/form-data">
           @csrf 
             {{-- <div class="form-group">
                 <label for="title">Наименование</label>
@@ -20,6 +20,19 @@
               <textarea type="text" class="form-control" name="description" id="description" >{{old('description')}}</textarea>
             </div>
             <br> --}}
+            <input type="hidden" class="form-control" name="type" id="type" value="electroplating">
+            <div class="form-group">
+              <label for="image">наименование товара</label>
+              <input type="test" class="form-control" name="name" id="name">
+            </div>
+            <div class="form-group">
+              <label for="image">Цена товара</label>
+              <input type="test" class="form-control" name="price" id="price">
+            </div>
+            <div class="form-group">
+              <label for="image">Описание товара</label>
+              <textarea name="description" id="description" class="form-control" cols="30" rows="10"></textarea>
+            </div>
             <div class="form-group">
               <label for="image">Изображение</label>
               <input type="file" class="form-control" name="image" id="image">

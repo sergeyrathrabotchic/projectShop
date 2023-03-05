@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ImageSlaid;
 use App\Helpers\ImageUploadHelper;
+use App\Models\Electroplating;
+use App\Models\ProductImages;
+
 
 class ElectroplatingController extends Controller
 {
@@ -20,18 +23,19 @@ class ElectroplatingController extends Controller
         // $slideImages = ImageSlaid::with('image')->paginate(10);
 
 
-        $slides =  ImageSlaid::paginate(5);
+        $electroplatings =  Electroplating::with('productImage')->paginate(5);
         $page = $request->get('page', 1);
         if ($page > 0) {
             $page = ($page - 1) * 5;
         }
+        //dd($electroplatings);
         //$catigories = Category::all();
         //dd($catigories);
         // dd(ImageSlaid::all());
         // dd($slideImages);
         // dd(1);
-        return view('admin.slide.index', [
-            'slides' => $slides,
+        return view('admin.electroplatings.index', [
+            'electroplatings' => $electroplatings,
             'page' => $page,
         ]);
     }
@@ -43,7 +47,7 @@ class ElectroplatingController extends Controller
      */
     public function create()
     {
-        return view('admin.slide.create');
+        return view('admin.electroplatings.create');
     }
 
     /**
@@ -58,36 +62,52 @@ class ElectroplatingController extends Controller
 
         // dd($request->file());     
         $request->validate([
-            'image' => ['required', 'mimes:jpg,jpeg,png']
+            'image' => ['required', 'mimes:jpg,jpeg,png'],
+            'name' => ['required'],
+            'type' => ['required']
         ]);
 
 
         // if (isset())
         // dd($request->file());
+        $electroplating = Electroplating::create([
+            'name' => $request->name,
+            'price' => $request->price,
+            'description' => $request->description,
+        ]);
+        //dd($electroplating ->id);
         
-        $image = ImageUploadHelper::imageUpload($request->image);
+        $image = ImageUploadHelper::imageUpload($request->image, 'electroplating');
         if ($request->image2 != null) {
-            $image2 = ImageUploadHelper::imageUpload($request->image2);
-            $mageSlaid2 = ImageSlaid::create([
+            $image2 = ImageUploadHelper::imageUpload($request->image2, 'electroplating');
+            $productImage = ProductImages::create([
                 "image" => $image2,
+                'product_id' => $electroplating->id,
+                'type' => $request->type,
             ]);
         }
         if ($request->image3 != null) {
-            $image3 = ImageUploadHelper::imageUpload($request->image3);
-            $mageSlaid3 = ImageSlaid::create([
+            $image3 = ImageUploadHelper::imageUpload($request->image3, 'electroplating');
+            $productImage = ProductImages::create([
                 "image" => $image3,
+                'product_id' => $electroplating->id,
+                'type' => $request->type,
             ]);
         }
         if ($request->image4 != null) {
-            $image4 = ImageUploadHelper::imageUpload($request->image4);
-            $mageSlaid4 = ImageSlaid::create([
+            $image4 = ImageUploadHelper::imageUpload($request->image4, 'electroplating');
+            $productImage = ProductImages::create([
                 "image" => $image4,
+                'product_id' => $electroplating->id,
+                'type' => $request->type,
             ]);
         }
         if ($request->image5 != null) {
-            $image5 = ImageUploadHelper::imageUpload($request->image5);
-            $mageSlaid5 = ImageSlaid::create([
+            $image5 = ImageUploadHelper::imageUpload($request->image5, 'electroplating');
+            $productImage5 = ProductImages::create([
                 "image" => $image5,
+                'product_id' => $electroplating->id,
+                'type' => $request->type,
             ]);
         }
         // dd( $request->only(['image']));
@@ -99,19 +119,21 @@ class ElectroplatingController extends Controller
         //     ]
         // );
 
-        $mageSlaid = ImageSlaid::create([
+        $productImage = ProductImages::create([
             "image" => $image,
+            'product_id' => $electroplating->id,
+            'type' => $request->type,
         ]);
 
        
 
-        if ($mageSlaid) {
+        if ($electroplating) {
             return redirect()
-            ->route('admin.slides.index')
-            ->with('success', 'Картинка успешно добавлена');
+            ->route('admin.electroplatings.index')
+            ->with('success', 'Товар успешно добавлен');
         }
 
-        return back()->wiht('error', 'Картинка не добавилась');
+        return back()->wiht('error', 'Товар не добавлен');
     }
 
     /**
@@ -154,7 +176,7 @@ class ElectroplatingController extends Controller
         ]);
         //validashin
         //dd($category->id());
-        $image = ImageUploadHelper::imageUpload($request->image);
+        $image = ImageUploadHelper::imageUpload($request->image, 'electroplating');
         // dd( $image);
         //$category->title = $request->input('title');
         $slide->image = $image;
