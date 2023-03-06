@@ -143,6 +143,7 @@
 
 
         <div class="card-body">
+          <h5 class="card-title">{{$ceramic->name}}</h5>
           <h5 class="card-title">{{$ceramic->price}}</h5>
           <p class="card-text">{{$ceramic->description}}</p>
           <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
