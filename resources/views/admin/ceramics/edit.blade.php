@@ -12,8 +12,8 @@
   {{-- {{dd($slide)}} --}}
       <div class="table-responsive">
         @include('inc.message')
-        <form  method="post" action="{{route('admin.electroplatings.update', [
-            'electroplating' => $electroplating
+        <form  method="post" action="{{route('admin.ceramics.update', [
+            'ceramic' => $ceramic
         ])}}" enctype="multipart/form-data">
           @csrf 
           @method('put')
@@ -26,23 +26,23 @@
               <textarea type="text" class="form-control" name="description" id="description" >{{ $category->description }}</textarea>
             </div> --}}
             <div class="form-group">
-            <input type="hidden" class="form-control" name="type" id="type" value="electroplating">
-            <input type="hidden" class="form-control" name="count" id="count" value="{{$electroplating->productImage->count()}}">
+            <input type="hidden" class="form-control" name="type" id="type" value="ceramic">
+            <input type="hidden" class="form-control" name="count" id="count" value="{{$ceramic->productImage->count()}}">
             <div class="form-group">
               <label for="image">Наименование товара</label>
-              <input type="test" class="form-control" name="name" id="name" @if ($electroplating->name) value="{{$electroplating->name}}" @endif>
+              <input type="test" class="form-control" name="name" id="name" @if ($ceramic->name) value="{{$ceramic->name}}" @endif>
             </div>
             <div class="form-group">
               <label for="image">Цена товара</label>
-              <input type="test" class="form-control" name="price" id="price" @if ($electroplating->price) value="{{$electroplating->price}}" @endif>
+              <input type="test" class="form-control" name="price" id="price" @if ($ceramic->price) value="{{$ceramic->price}}" @endif>
             </div>
             <div class="form-group">
               <label for="image">Описание товара</label>
-              <textarea name="description" id="description" class="form-control" cols="30" rows="10">@if ($electroplating->description) {{$electroplating->description}} @endif</textarea>
+              <textarea name="description" id="description" class="form-control" cols="30" rows="10">@if ($ceramic->description) {{$ceramic->description}} @endif</textarea>
             </div>
               <label for="image">Изображение</label>
-              @if ($electroplating->productImage->count() > 0)
-                <img src="{{Storage::disk('image')->url($electroplating->productImage[0]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
+              @if ($ceramic->productImage->count() > 0)
+                <img src="{{Storage::disk('image')->url($ceramic->productImage[0]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
               @endif
             
               <input type="file" class="form-control" name="image" id="image">
@@ -50,32 +50,32 @@
             <br>
             <div class="form-group">
               <label for="image2">Изображение 2</label>
-              @if ($electroplating->productImage->count() > 1)
-                <img src="{{Storage::disk('image')->url($electroplating->productImage[1]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
+              @if ($ceramic->productImage->count() > 1)
+                <img src="{{Storage::disk('image')->url($ceramic->productImage[1]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
               @endif
               <input type="file" class="form-control" name="image2" id="image2">
             </div>
             <br>
             <div class="form-group">
               <label for="image3">Изображение 3</label>
-              @if ($electroplating->productImage->count() > 2)
-                <img src="{{Storage::disk('image')->url($electroplating->productImage[2]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
+              @if ($ceramic->productImage->count() > 2)
+                <img src="{{Storage::disk('image')->url($ceramic->productImage[2]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
               @endif
               <input type="file" class="form-control" name="image3" id="image3">
             </div>
             <br>
             <div class="form-group">
               <label for="image4">Изображение 4</label>
-              @if ($electroplating->productImage->count() > 3)
-                <img src="{{Storage::disk('image')->url($electroplating->productImage[3]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
+              @if ($ceramic->productImage->count() > 3)
+                <img src="{{Storage::disk('image')->url($ceramic->productImage[3]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
               @endif
               <input type="file" class="form-control" name="image4" id="image4">
             </div>
             <br>
             <div class="form-group">
               <label for="image5">Изображение 5</label>
-              @if ($electroplating->productImage->count() > 4)
-                <img src="{{Storage::disk('image')->url($electroplating->productImage[4]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
+              @if ($ceramic->productImage->count() > 4)
+                <img src="{{Storage::disk('image')->url($ceramic->productImage[4]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
               @endif
               <input type="file" class="form-control" name="image5" id="image5">
             </div>

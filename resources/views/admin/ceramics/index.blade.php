@@ -5,7 +5,7 @@
     <h1 class="h2">Категории </h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group me-2">
-        <a href="{{route('admin.electroplatings.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новый товар</a>
+        <a href="{{route('admin.ceramics.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новый товар</a>
       </div>
       {{-- <div class="btn-group me-2">
         <a href="{{route('admin.news.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новую</a>
@@ -60,20 +60,20 @@
              @php
                  $i = $page;
              @endphp
-            @forelse ($electroplatings as $electroplating)
+            @forelse ($ceramics as $ceramic)
                   @php
                       $i = $i +1;
                   @endphp
                  <tr>
                   <td>{{$i}}</td>
                   <td>
-                    <h6>{{$electroplating->name}}</h6>
+                    <h6>{{$ceramic->name}}</h6>
                   </td>
                   <td>
-                    <img src="{{Storage::disk('image')->url($electroplating->productImage->first()->image)}}" alt="" style="width: 80%;padding: 10px;"></td>
+                    <img src="{{Storage::disk('image')->url($ceramic->productImage->first()->image)}}" alt="" style="width: 80%;padding: 10px;"></td>
                   <td>
-                    @if ($electroplating->updated_at)
-                     {{$electroplating->updated_at->format('d-m-Y H:i')}}
+                    @if ($ceramic->updated_at)
+                     {{$ceramic->updated_at->format('d-m-Y H:i')}}
                     @else - @endif
                    </td> 
                    {{-- <td>{{$category->id}}</td>
@@ -84,7 +84,7 @@
                      @else - @endif
                     </td> --}}
                     <td>
-                      <a href="{{route('admin.electroplatings.edit', ['electroplating' => $electroplating->id ])}}" class="btn btn-primary">Ред.</a>
+                      <a href="{{route('admin.ceramics.edit', ['ceramic' => $ceramic->id ])}}" class="btn btn-primary">Ред.</a>
                       {{-- &nbsp;|&nbsp; --}}
                       {{-- <a href="{{route('admin.slides.destroy', ['slide' => $slide->id ])}}" style="color: red">Уд.</a> --}}
           {{-- {{dd($slide->id)}} --}}
@@ -94,7 +94,7 @@
                         @method('put')
                         <button  type="submit" style="color: red">Уд.</button>
                       </form> --}}
-                      <form  action="{{ route('admin.electroplatings.destroy' , ['electroplating' => $electroplating->id ])}}" method="POST">
+                      <form  action="{{ route('admin.ceramics.destroy' , ['ceramic' => $ceramic->id ])}}" method="POST">
                         {{ csrf_field() }}           
                         <button name="_method" type="hidden" value="DELETE" class="btn btn-danger" style="margin-top: 5px;">Удалить</button>
                     </form>
@@ -110,6 +110,6 @@
         </table>
       </div>
       <div>
-        {{ $electroplatings->links()}}
+        {{ $ceramics->links()}}
       </div>
 @endsection

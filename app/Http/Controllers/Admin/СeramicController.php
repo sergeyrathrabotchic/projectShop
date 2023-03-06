@@ -6,11 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ImageSlaid;
 use App\Helpers\ImageUploadHelper;
-use App\Models\Electroplating;
+use App\Models\Сeramics;
 use App\Models\ProductImages;
 
 
-class СeramicsController extends Controller
+class СeramicController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +23,7 @@ class СeramicsController extends Controller
         // $slideImages = ImageSlaid::with('image')->paginate(10);
 
 
-        $electroplatings =  Electroplating::with('productImage')->paginate(5);
+        $сeramics =  Сeramics::with('productImage')->paginate(5);
         $page = $request->get('page', 1);
         if ($page > 0) {
             $page = ($page - 1) * 5;
@@ -35,7 +35,7 @@ class СeramicsController extends Controller
         // dd($slideImages);
         // dd(1);
         return view('admin.ceramics.index', [
-            'ceramics' => $ceramics,
+            'ceramics' => $сeramics ,
             'page' => $page,
         ]);
     }
@@ -70,7 +70,7 @@ class СeramicsController extends Controller
 
         // if (isset())
         // dd($request->file());
-        $electroplating = Electroplating::create([
+        $ceramic = Сeramics::create([
             'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
@@ -82,7 +82,7 @@ class СeramicsController extends Controller
             $image2 = ImageUploadHelper::imageUpload($request->image2, 'electroplating');
             $productImage = ProductImages::create([
                 "image" => $image2,
-                'product_id' => $electroplating->id,
+                'product_id' => $ceramic->id,
                 'type' => $request->type,
             ]);
         }
@@ -90,7 +90,7 @@ class СeramicsController extends Controller
             $image3 = ImageUploadHelper::imageUpload($request->image3, 'electroplating');
             $productImage = ProductImages::create([
                 "image" => $image3,
-                'product_id' => $electroplating->id,
+                'product_id' => $ceramic->id,
                 'type' => $request->type,
             ]);
         }
@@ -98,7 +98,7 @@ class СeramicsController extends Controller
             $image4 = ImageUploadHelper::imageUpload($request->image4, 'electroplating');
             $productImage = ProductImages::create([
                 "image" => $image4,
-                'product_id' => $electroplating->id,
+                'product_id' => $ceramic->id,
                 'type' => $request->type,
             ]);
         }
@@ -106,7 +106,7 @@ class СeramicsController extends Controller
             $image5 = ImageUploadHelper::imageUpload($request->image5, 'electroplating');
             $productImage5 = ProductImages::create([
                 "image" => $image5,
-                'product_id' => $electroplating->id,
+                'product_id' => $ceramic->id,
                 'type' => $request->type,
             ]);
         }
@@ -121,13 +121,13 @@ class СeramicsController extends Controller
 
         $productImage = ProductImages::create([
             "image" => $image,
-            'product_id' => $electroplating->id,
+            'product_id' => $ceramic->id,
             'type' => $request->type,
         ]);
 
        
 
-        if ($electroplating) {
+        if ($ceramic) {
             return redirect()
             ->route('admin.ceramics.index')
             ->with('success', 'Товар успешно добавлен');
@@ -153,11 +153,11 @@ class СeramicsController extends Controller
      * @param  Category $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Electroplating $electroplating)
+    public function edit(Сeramics $ceramic)
     {
        //$category = Category::findOrFail($id);
        return view('admin.ceramics.edit', [
-           'electroplating' => $electroplating
+           'ceramic' => $ceramic
        ]);
     }
 
@@ -168,7 +168,7 @@ class СeramicsController extends Controller
      * @param  ImageSlaid $imageSlaid
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Electroplating $electroplating)
+    public function update(Request $request, Сeramics $ceramic)
     {
         // dd( $request->all());
         $request->validate([
@@ -176,13 +176,13 @@ class СeramicsController extends Controller
             'type' => ['required']
         ]);
 
-        $electroplatingResilt = $electroplating->update([
+        $ceramicResilt = $ceramic->update([
             'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
         ]);
         //dd($electroplating ->id);
-        $productImages = $electroplating->productImage;
+        $productImages = $ceramic->productImage;
         if ($request->image != null) {
             $image = ImageUploadHelper::imageUpload($request->image, 'electroplating');
             // $productImage = ProductImages::create([
@@ -206,7 +206,7 @@ class СeramicsController extends Controller
             } else {
                 $productImage = ProductImages::create([
                     "image" => $image2,
-                    'product_id' => $electroplating->id,
+                    'product_id' => $ceramic->id,
                     'type' => $request->type,
                 ]);
             }
@@ -221,7 +221,7 @@ class СeramicsController extends Controller
             } else {
                 $productImage = ProductImages::create([
                     "image" => $image3,
-                    'product_id' => $electroplating->id,
+                    'product_id' => $ceramic->id,
                     'type' => $request->type,
                 ]);
             }
@@ -236,7 +236,7 @@ class СeramicsController extends Controller
             } else {
                 $productImage = ProductImages::create([
                     "image" => $image4,
-                    'product_id' => $electroplating->id,
+                    'product_id' => $ceramic->id,
                     'type' => $request->type,
                 ]);
             }
@@ -251,7 +251,7 @@ class СeramicsController extends Controller
             } else {
                 $productImage = ProductImages::create([
                     "image" => $image5,
-                    'product_id' => $electroplating->id,
+                    'product_id' => $ceramic->id,
                     'type' => $request->type,
                 ]);
             }
@@ -283,7 +283,7 @@ class СeramicsController extends Controller
         // dd($imageSlaid);
         // $update = $imageSlaid->update(['images' => $image]);
 
-        if( $electroplatingResilt ) {
+        if( $ceramicResilt ) {
             return redirect()
             ->route('admin.ceramics.index')
             ->with('success', 'Товар успешно обновлен')
@@ -299,12 +299,12 @@ class СeramicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy( Electroplating $electroplating)
+    public function destroy( Сeramics $ceramic)
     {
         // dd(1);
-        $electroplating::destroy($electroplating->id);
+        $ceramic::destroy($ceramic->id);
 
-        $productImages = $electroplating->productImage;
+        $productImages = $ceramic->productImage;
         for ($i = 0; $i<count($productImages);$i++) {
             ProductImages::destroy($productImages[$i]->id);
         }

@@ -32,7 +32,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link @if(request())->routeIs('admin.ceramics.*') active @endif" href="{{route('admin.electroplatings.index')}}">
+          <a class="nav-link @if(request())->routeIs('admin.ceramics.*') active @endif" href="{{route('admin.ceramics.index')}}">
             <span data-feather="users"></span>
             Керамика 
           </a>

@@ -8,6 +8,7 @@
   <title>Document</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <link href="{{ asset('assets/pages/mainCss/main.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ asset('assets/pages/ceramic.css') }}" rel="stylesheet" type="text/css">
 </head>
 <body>
   
@@ -98,71 +99,64 @@
 
 <div class="content">
 
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      @for ($i = 0; $i < count($slides); $i++)
-        @if ($i == 0)
-          <div class="carousel-item active">
-            <img style="border-radius: 1rem;" src="{{Storage::disk('image')->url($slides[0]->image)}}" class="d-block w-100" alt="...">
-          </div>     
-        @else
-          <div class="carousel-item ">
-            <img style="border-radius: 1rem;" src="{{Storage::disk('image')->url($slides[$i]->image)}}" class="d-block w-100" alt="...">
-          </div>   
-        @endif
+  <div class="ceramic_container">
+    
+  
+  @forelse ($ceramics as $ceramic)
+ 
+  <div class="card ceramic_item" style="width: 18rem;">
         
-      @endfor
-      {{-- @foreach ($slides as $slide)
-        <div class="carousel-item active">
-          <img style="border-radius: 1rem;" src="{{Storage::disk('image')->url($slide->image)}}" class="d-block w-100" alt="...">
+
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    
+    @php 
+        $productImages = $ceramic->productImage;
+      @endphp
+      @for ($i = 0;$i < count($productImages);$i++)
+              @if($i == 0)
+              <div class="carousel-item active">
+                <img src="{{Storage::disk('image')->url($productImages[0]->image)}}" class="d-block w-100" alt="...">
+              </div>
+              @else
+              <div class="carousel-item">
+                <img src="{{Storage::disk('image')->url($productImages[$i]->image)}}" class="d-block w-100" alt="...">
+              </div>
+              @endif
+        @endfor
+    
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+            
+            
+          
+        
+        <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+
+
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
-      @endforeach --}}
-      {{-- <div class="carousel-item active">
-        <img style="border-radius: 1rem;" src="{{ asset('assets/media/imegas/slaid1.jpg')}}" class="d-block w-100" alt="...">
       </div>
-      <div class="carousel-item">
-        <img style="border-radius: 1rem;" src="{{ asset('assets/media/imegas/slaid2.jpg')}}" class="d-block w-100" alt="...">
-      </div> --}}
-      {{-- <div class="carousel-item">
-        <img src="{{ asset('assets/media/imegas/slaid3.jpg')}}" class="d-block w-100" alt="...">
-      </div> --}}
     </div>
+    
+  @empty
+  @endforelse
   </div>
 
-  {{-- <div style="width: 100%;background-color: #2267a0;aspect-ratio: 2 / 1;">
 
-  </div> --}}
-
-  <div style="display: flex;margin-top: 50px;width: 100%;">
-    <div style="width: 40%;">  
-      <a class="nav-link" href="/ceramics"><div style="display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 97.5%;aspect-ratio: 2 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
-        <div>Керамика</div>
-      </div></a>
-      <div style="display: flex">
-        <div style="background: #b4bec6;width: 46.25%;aspect-ratio: 1 / 1;margin-right: 2.5%;"></div>
-        <div style="background: #e7ceb7;width: 46.25%;aspect-ratio: 1 / 1;margin-left: 2.5%;margin-right: 2.5%;"></div>
-      </div>
-    </div>
-    <div style="width: 20%;">
-      <div style="background: #e7ceb7;aspect-ratio: 1 / 2.22;width: 90%;margin:5%;margin-top: 10%;">
-
-      </div>
-    </div>
-    <div style="width: 40%;">
-      <div style="display: flex">
-        <div style="background: #b4bec6;width: 46.25%;aspect-ratio: 1 / 1;margin-left: 2.5%;margin-right: 2.5%;margin-top: 5%;"></div>
-        <div style="background: #e7ceb7;width: 46.25%;aspect-ratio: 1 / 1;margin-left: 2.5%;margin-top: 5%;"></div>
-      </div>
-      <div style="background: #e7ceb7;width: 97.5%;aspect-ratio: 2 / 1;margin-left: 2.5%;margin-top: 5%;"></div>  
-    </div>
-  </div>
 
 </div>
-
-
-
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 

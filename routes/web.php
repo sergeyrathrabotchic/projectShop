@@ -6,13 +6,14 @@ use App\Http\Controllers\Admin\NewController as AdminNewController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\SlideController as AdminSlideController;
 use App\Http\Controllers\Admin\ElectroplatingController as AdminElectroplatingController;
-use App\Http\Controllers\Admin\CeramicsController as AdminCeramicsController;
+use App\Http\Controllers\Admin\СeramicController as AdminCeramicsController;
 use App\Http\Controllers\СategoryController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\RegistretionController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\EddNewsController;
+use App\Http\Controllers\СeramicController;
 use App\Http\Controllers\Admin\IndexController as AdminController;
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +53,8 @@ Route::group(['prefix' => 'admin456123', 'as' => 'admin.'], function(){
 
 Route::get('/', [ MainController::class, 'index'])
     ->name('main');
+Route::get('/ceramics', [ СeramicController::class, 'index'])
+    ->name('ceramics');
 
 // Route::resource('/feedback',  FeedbackController::class);
 

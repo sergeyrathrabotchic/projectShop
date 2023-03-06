@@ -9,7 +9,7 @@
 
       <div class="table-responsive">
         @include('inc.message')
-        <form  method="post" action="{{route('admin.electroplatings.store')}}" enctype="multipart/form-data">
+        <form  method="post" action="{{route('admin.ceramics.store')}}" enctype="multipart/form-data">
           @csrf 
             {{-- <div class="form-group">
                 <label for="title">Наименование</label>
@@ -20,7 +20,7 @@
               <textarea type="text" class="form-control" name="description" id="description" >{{old('description')}}</textarea>
             </div>
             <br> --}}
-            <input type="hidden" class="form-control" name="type" id="type" value="electroplating">
+            <input type="hidden" class="form-control" name="type" id="type" value="ceramic">
             <div class="form-group">
               <label for="image">Наименование товара</label>
               <input type="test" class="form-control" name="name" id="name">

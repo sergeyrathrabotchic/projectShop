@@ -14,7 +14,7 @@ class Сeramics extends Model
 
     // public $timestamps = true;
 
-    protected $table = 'сeramics';
+    protected $table = 'ceramics';
 
     protected $fillable = [
         'name',

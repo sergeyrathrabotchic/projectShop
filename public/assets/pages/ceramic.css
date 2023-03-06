@@ -1,0 +1,12 @@
+.ceramic_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ceramic_item {
+    width: 20%;
+    margin-left: 5%;
+    margin-top: 5%;
+}
