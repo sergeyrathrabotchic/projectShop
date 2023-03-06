@@ -10,7 +10,7 @@ use App\Models\Electroplating;
 use App\Models\ProductImages;
 
 
-class ElectroplatingController extends Controller
+class СeramicsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,8 +34,8 @@ class ElectroplatingController extends Controller
         // dd(ImageSlaid::all());
         // dd($slideImages);
         // dd(1);
-        return view('admin.electroplatings.index', [
-            'electroplatings' => $electroplatings,
+        return view('admin.ceramics.index', [
+            'ceramics' => $ceramics,
             'page' => $page,
         ]);
     }
@@ -47,7 +47,7 @@ class ElectroplatingController extends Controller
      */
     public function create()
     {
-        return view('admin.electroplatings.create');
+        return view('admin.ceramics.create');
     }
 
     /**
@@ -129,7 +129,7 @@ class ElectroplatingController extends Controller
 
         if ($electroplating) {
             return redirect()
-            ->route('admin.electroplatings.index')
+            ->route('admin.ceramics.index')
             ->with('success', 'Товар успешно добавлен');
         }
 
@@ -156,7 +156,7 @@ class ElectroplatingController extends Controller
     public function edit(Electroplating $electroplating)
     {
        //$category = Category::findOrFail($id);
-       return view('admin.electroplatings.edit', [
+       return view('admin.ceramics.edit', [
            'electroplating' => $electroplating
        ]);
     }
@@ -285,7 +285,7 @@ class ElectroplatingController extends Controller
 
         if( $electroplatingResilt ) {
             return redirect()
-            ->route('admin.electroplatings.index')
+            ->route('admin.ceramics.index')
             ->with('success', 'Товар успешно обновлен')
             /*->with('success', 'Категория успешно обновлена')*/;
         }
@@ -310,7 +310,7 @@ class ElectroplatingController extends Controller
         }
         
         return redirect()
-            ->route('admin.electroplatings.index')
+            ->route('admin.ceramics.index')
             ->with('success', 'Товар успешно удален');
     }
 }
