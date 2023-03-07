@@ -23,8 +23,9 @@ class СeramicController extends Controller
         // $slideImages = ImageSlaid::with('image')->paginate(10);
 
 
-        ///$ceramics =  Сeramics::with('productImage');
-        $ceramics =  Сeramics::all();
+        $ceramics =  Сeramics::with('productImage')->get();
+        //dd($ceramics);
+        //$ceramics =  Сeramics::all();
         //->paginate(5);
         $page = $request->get('page', 1);
         if ($page > 0) {

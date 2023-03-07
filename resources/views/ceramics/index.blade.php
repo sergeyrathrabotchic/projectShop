@@ -19,14 +19,16 @@
 
 <div class="computerMenu">
   <div style="width: 20%">
-      <img style="width: 100px" src="{{ asset('assets/media/logo/logoMain2.jpg')}}" alt="">
+      <img style="width: 100px" src="{{ asset('assets/media/logo/logo3.png')}}" alt="">
   </div>
   <div style="width: 60%;display: flex;justify-content: center;">
       <div style="margin-right: 2rem;margin-left: 2rem;">
-        Каталог
+        <a class="nav-link" href="/">Главная</a>
+        <!--Каталог-->
       </div>
       <div style="margin-right: 2rem;margin-left: 2rem;">
-          Доставка и оплата
+        <a class="nav-link" href="/ceramics">Керамика</a>
+        <!--Доставка и оплата-->
       </div>
       <div style="margin-right: 2rem;margin-left: 2rem;">
           Контакты
@@ -53,7 +55,7 @@
           </button>
         </div>
         {{-- <a class="navbar-brand" href="#">Offcanvas navbar</a> --}}
-        <img style="width: 100px" src="{{ asset('assets/media/logo/logoMain2.jpg')}}" alt="">
+        <img style="width: 60px" src="{{ asset('assets/media/logo/logo3.png')}}" alt="">
         <button class="navbar-toggler shadow-none"  style="border: none;outline: none;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
