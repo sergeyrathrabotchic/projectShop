@@ -42,7 +42,7 @@
             </div>
               <label for="image">Изображение</label>
               @if ($electroplating->productImage->count() > 0)
-                <img src="{{Storage::disk('image')->url($electroplating->productImage[0]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
+                <img src="{{Storage::disk('image')->url($electroplating->productImage->where('type', 'electroplating')[0]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
               @endif
             
               <input type="file" class="form-control" name="image" id="image">
