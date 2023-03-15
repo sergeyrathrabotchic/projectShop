@@ -118,7 +118,7 @@
   <div class="carousel-inner">
     
     @php 
-        $productImages = $ceramic->productImage;
+        $productImages = $ceramic->productImage->where('type', 'ceramic');
       @endphp
       @for ($i = 0;$i < count($productImages);$i++)
               @if($i == 0)
