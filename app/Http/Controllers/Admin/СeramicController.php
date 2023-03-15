@@ -157,7 +157,7 @@ class СeramicController extends Controller
     {
        //$category = Category::findOrFail($id);
        return view('admin.ceramics.edit', [
-           'ceramic' => $ceramic->where('type', 'ceramic')
+           'ceramic' => $ceramic
        ]);
     }
 
