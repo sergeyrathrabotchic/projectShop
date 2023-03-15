@@ -123,11 +123,11 @@
       @for ($i = 0;$i < count($productImages);$i++)
               @if($i == 0)
               <div class="carousel-item active">
-                <img src="{{Storage::disk('image')->url($productImages->productImage->where('type', 'ceramic')->values()[0]->image)}}" class="d-block w-100" alt="...">
+                <img src="{{Storage::disk('image')->url($productImages[0]->image)}}" class="d-block w-100" alt="...">
               </div>
               @else
               <div class="carousel-item">
-                <img src="{{Storage::disk('image')->url($productImages->productImage->where('type', 'ceramic')->values()[$i]->image)}}" class="d-block w-100" alt="...">
+                <img src="{{Storage::disk('image')->url($productImages[$i]->image)}}" class="d-block w-100" alt="...">
               </div>
               @endif
         @endfor
