@@ -25,7 +25,7 @@
               <label for="description">Описание</label>
               <textarea type="text" class="form-control" name="description" id="description" >{{ $category->description }}</textarea>
             </div> --}}
-            {{$ceramic->productImage->where('type', 'ceramic')}}
+            {{dd($ceramic->productImage->where('type', 'ceramic'))}}
             <div class="form-group">
             <input type="hidden" class="form-control" name="type" id="type" value="ceramic">
             <input type="hidden" class="form-control" name="count" id="count" value="{{$ceramic->productImage->count()}}">
