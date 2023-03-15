@@ -23,7 +23,7 @@ class СeramicController extends Controller
         // $slideImages = ImageSlaid::with('image')->paginate(10);
 
 
-        $сeramics =  Сeramics::with('productImage')->paginate(5);
+        $сeramics =  Сeramics::with('productImage')->where('type', 'ceramic')->paginate(5);
         $page = $request->get('page', 1);
         if ($page > 0) {
             $page = ($page - 1) * 5;
@@ -77,9 +77,9 @@ class СeramicController extends Controller
         ]);
         //dd($electroplating ->id);
         
-        $image = ImageUploadHelper::imageUpload($request->image, 'electroplating');
+        $image = ImageUploadHelper::imageUpload($request->image, 'ceramic');
         if ($request->image2 != null) {
-            $image2 = ImageUploadHelper::imageUpload($request->image2, 'electroplating');
+            $image2 = ImageUploadHelper::imageUpload($request->image2, 'ceramic');
             $productImage = ProductImages::create([
                 "image" => $image2,
                 'product_id' => $ceramic->id,
@@ -87,7 +87,7 @@ class СeramicController extends Controller
             ]);
         }
         if ($request->image3 != null) {
-            $image3 = ImageUploadHelper::imageUpload($request->image3, 'electroplating');
+            $image3 = ImageUploadHelper::imageUpload($request->image3, 'ceramic');
             $productImage = ProductImages::create([
                 "image" => $image3,
                 'product_id' => $ceramic->id,
@@ -95,7 +95,7 @@ class СeramicController extends Controller
             ]);
         }
         if ($request->image4 != null) {
-            $image4 = ImageUploadHelper::imageUpload($request->image4, 'electroplating');
+            $image4 = ImageUploadHelper::imageUpload($request->image4, 'ceramic');
             $productImage = ProductImages::create([
                 "image" => $image4,
                 'product_id' => $ceramic->id,
@@ -103,7 +103,7 @@ class СeramicController extends Controller
             ]);
         }
         if ($request->image5 != null) {
-            $image5 = ImageUploadHelper::imageUpload($request->image5, 'electroplating');
+            $image5 = ImageUploadHelper::imageUpload($request->image5, 'ceramic');
             $productImage5 = ProductImages::create([
                 "image" => $image5,
                 'product_id' => $ceramic->id,
@@ -157,7 +157,7 @@ class СeramicController extends Controller
     {
        //$category = Category::findOrFail($id);
        return view('admin.ceramics.edit', [
-           'ceramic' => $ceramic
+           'ceramic' => $ceramic->where('type', 'ceramic')
        ]);
     }
 
@@ -182,9 +182,9 @@ class СeramicController extends Controller
             'description' => $request->description,
         ]);
         //dd($electroplating ->id);
-        $productImages = $ceramic->productImage;
+        $productImages = $ceramic->productImage->where('type', 'ceramic');
         if ($request->image != null) {
-            $image = ImageUploadHelper::imageUpload($request->image, 'electroplating');
+            $image = ImageUploadHelper::imageUpload($request->image, 'ceramic');
             // $productImage = ProductImages::create([
             //     "image" => $image,
             //     'product_id' => $electroplating->id,
@@ -197,7 +197,7 @@ class СeramicController extends Controller
         }
         
         if ($request->image2 != null) {
-            $image2 = ImageUploadHelper::imageUpload($request->image2, 'electroplating');
+            $image2 = ImageUploadHelper::imageUpload($request->image2, 'ceramic');
             if( $request->count > 1 ) {
                 $productImage2 = $productImages[1];
                 $productImage2->update([
@@ -212,7 +212,7 @@ class СeramicController extends Controller
             }
         }
         if ($request->image3 != null) {
-            $image3 = ImageUploadHelper::imageUpload($request->image3, 'electroplating');
+            $image3 = ImageUploadHelper::imageUpload($request->image3, 'ceramic');
             if( $request->count > 2 ) {
                 $productImage3 = $productImages[2];
                 $productImage3->update([
@@ -227,7 +227,7 @@ class СeramicController extends Controller
             }
         }
         if ($request->image4 != null) {
-            $image4 = ImageUploadHelper::imageUpload($request->image4, 'electroplating');
+            $image4 = ImageUploadHelper::imageUpload($request->image4, 'ceramic');
             if( $request->count > 3 ) {
                 $productImage4 = $productImages[3];
                 $productImage4->update([
@@ -242,7 +242,7 @@ class СeramicController extends Controller
             }
         }
         if ($request->image5 != null) {
-            $image5 = ImageUploadHelper::imageUpload($request->image5, 'electroplating');
+            $image5 = ImageUploadHelper::imageUpload($request->image5, 'ceramic');
             if( $request->count > 4 ) {
                 $productImage5 = $productImages[4];
                 $productImage5->update([
@@ -304,7 +304,7 @@ class СeramicController extends Controller
         // dd(1);
         $ceramic::destroy($ceramic->id);
 
-        $productImages = $ceramic->productImage;
+        $productImages = $ceramic->productImage->where('type', 'ceramic');
         for ($i = 0; $i<count($productImages);$i++) {
             ProductImages::destroy($productImages[$i]->id);
         }
