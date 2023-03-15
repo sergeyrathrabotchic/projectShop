@@ -23,7 +23,7 @@ class СeramicController extends Controller
         // $slideImages = ImageSlaid::with('image')->paginate(10);
 
 
-        $сeramics =  Сeramics::with('productImage')->where('type', 'ceramic')->paginate(5);
+        $сeramics =  Сeramics::with('productImage')->paginate(5);
         $page = $request->get('page', 1);
         if ($page > 0) {
             $page = ($page - 1) * 5;
