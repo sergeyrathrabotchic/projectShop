@@ -103,14 +103,18 @@
 
   <div class="ceramic_container">
     
-  
+  @php
+      $k = 0;
+  @endphp
   @forelse ($ceramics as $ceramic)
- 
+  @php
+    $k = $k + 1;
+  @endphp
   <div class="card ceramic_item" style="width: 18rem;">
         
 
 
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleControls {{$k}}" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     
     @php 
@@ -119,20 +123,20 @@
       @for ($i = 0;$i < count($productImages);$i++)
               @if($i == 0)
               <div class="carousel-item active">
-                <img src="{{Storage::disk('image')->url($productImages[0]->image)}}" class="d-block w-100" alt="...">
+                <img src="{{Storage::disk('image')->url($productImages->productImage->where('type', 'ceramic')->values()[0]->image)}}" class="d-block w-100" alt="...">
               </div>
               @else
               <div class="carousel-item">
-                <img src="{{Storage::disk('image')->url($productImages[$i]->image)}}" class="d-block w-100" alt="...">
+                <img src="{{Storage::disk('image')->url($productImages->productImage->where('type', 'ceramic')->values()[$i]->image)}}" class="d-block w-100" alt="...">
               </div>
               @endif
         @endfor
     
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls {{$k}}" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls {{$k}}" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>

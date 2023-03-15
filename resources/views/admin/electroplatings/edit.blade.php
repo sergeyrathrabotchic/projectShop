@@ -51,7 +51,7 @@
             <div class="form-group">
               <label for="image2">Изображение 2</label>
               @if ($electroplating->productImage->count() > 1)
-                <img src="{{Storage::disk('image')->url($electroplating->productImage[1]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
+                <img src="{{Storage::disk('image')->url($electroplating->productImage->where('type', 'electroplating')->values()[1]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
               @endif
               <input type="file" class="form-control" name="image2" id="image2">
             </div>
@@ -59,7 +59,7 @@
             <div class="form-group">
               <label for="image3">Изображение 3</label>
               @if ($electroplating->productImage->count() > 2)
-                <img src="{{Storage::disk('image')->url($electroplating->productImage[2]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
+                <img src="{{Storage::disk('image')->url($electroplating->productImage->where('type', 'electroplating')->values()[2]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
               @endif
               <input type="file" class="form-control" name="image3" id="image3">
             </div>
@@ -67,7 +67,7 @@
             <div class="form-group">
               <label for="image4">Изображение 4</label>
               @if ($electroplating->productImage->count() > 3)
-                <img src="{{Storage::disk('image')->url($electroplating->productImage[3]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
+                <img src="{{Storage::disk('image')->url($electroplating->productImage->where('type', 'electroplating')->values()[3]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
               @endif
               <input type="file" class="form-control" name="image4" id="image4">
             </div>
@@ -75,7 +75,7 @@
             <div class="form-group">
               <label for="image5">Изображение 5</label>
               @if ($electroplating->productImage->count() > 4)
-                <img src="{{Storage::disk('image')->url($electroplating->productImage[4]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
+                <img src="{{Storage::disk('image')->url($electroplating->productImage->where('type', 'electroplating')->values()[4]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
               @endif
               <input type="file" class="form-control" name="image5" id="image5">
             </div>

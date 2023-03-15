@@ -42,7 +42,7 @@
             </div>
               <label for="image">Изображение</label>
               @if ($ceramic->productImage->count() > 0)
-                <img src="{{Storage::disk('image')->url($ceramic->productImage[0]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
+                <img src="{{Storage::disk('image')->url($ceramic->productImage->where('type', 'ceramic')->values()[0]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
               @endif
             
               <input type="file" class="form-control" name="image" id="image">
@@ -51,7 +51,7 @@
             <div class="form-group">
               <label for="image2">Изображение 2</label>
               @if ($ceramic->productImage->count() > 1)
-                <img src="{{Storage::disk('image')->url($ceramic->productImage[1]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
+                <img src="{{Storage::disk('image')->url($ceramic->productImage->where('type', 'ceramic')->values()[1]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
               @endif
               <input type="file" class="form-control" name="image2" id="image2">
             </div>
@@ -59,7 +59,7 @@
             <div class="form-group">
               <label for="image3">Изображение 3</label>
               @if ($ceramic->productImage->count() > 2)
-                <img src="{{Storage::disk('image')->url($ceramic->productImage[2]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
+                <img src="{{Storage::disk('image')->url($ceramic->productImage->where('type', 'ceramic')->values()[2]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
               @endif
               <input type="file" class="form-control" name="image3" id="image3">
             </div>
@@ -67,7 +67,7 @@
             <div class="form-group">
               <label for="image4">Изображение 4</label>
               @if ($ceramic->productImage->count() > 3)
-                <img src="{{Storage::disk('image')->url($ceramic->productImage[3]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
+                <img src="{{Storage::disk('image')->url($ceramic->productImage->where('type', 'ceramic')->values()[3]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
               @endif
               <input type="file" class="form-control" name="image4" id="image4">
             </div>
@@ -75,7 +75,7 @@
             <div class="form-group">
               <label for="image5">Изображение 5</label>
               @if ($ceramic->productImage->count() > 4)
-                <img src="{{Storage::disk('image')->url($ceramic->productImage[4]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
+                <img src="{{Storage::disk('image')->url($ceramic->productImage->where('type', 'ceramic')->values()[4]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
               @endif
               <input type="file" class="form-control" name="image5" id="image5">
             </div>
