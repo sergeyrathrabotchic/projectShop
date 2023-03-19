@@ -14,6 +14,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\EddNewsController;
 use App\Http\Controllers\СeramicController;
+use App\Http\Controllers\ElectroplatingController;
 use App\Http\Controllers\Admin\IndexController as AdminController;
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +56,8 @@ Route::get('/', [ MainController::class, 'index'])
     ->name('main');
 Route::get('/ceramics', [ СeramicController::class, 'index'])
     ->name('ceramics');
+Route::get('/electroplatings', [ ElectroplatingController::class, 'index'])
+    ->name('electroplatings');
 
 // Route::resource('/feedback',  FeedbackController::class);
 

@@ -69,6 +69,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{route('ceramics')}}">Керамика</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('electroplatings')}}">Медные украшения</a>
+              </li>
               <!--<li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown
@@ -145,7 +148,6 @@
     </div>
     <div style="width: 20%;">
       <div style="background: #e7ceb7;aspect-ratio: 1 / 2.22;width: 90%;margin:5%;margin-top: 10%;">
-
       </div>
     </div>
     <div style="width: 40%;">
@@ -153,7 +155,7 @@
         <div style="background: #b4bec6;width: 46.25%;aspect-ratio: 1 / 1;margin-left: 2.5%;margin-right: 2.5%;margin-top: 5%;"></div>
         <div style="background: #e7ceb7;width: 46.25%;aspect-ratio: 1 / 1;margin-left: 2.5%;margin-top: 5%;"></div>
       </div>
-      <div style="background: #e7ceb7;width: 97.5%;aspect-ratio: 2 / 1;margin-left: 2.5%;margin-top: 5%;"></div>  
+      <a class="nav-link" href="/electroplatings"><div style="background: #e7ceb7;width: 97.5%;aspect-ratio: 2 / 1;margin-left: 2.5%;margin-top: 5%;display: flex;align-items: center;justify-content: center;">Медные украшения</div></a>  
     </div>
   </div>
 

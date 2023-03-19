@@ -109,7 +109,7 @@
   @php
       $k = 0;
   @endphp
-  @forelse ($ceramics as $ceramic)
+  @forelse ($electroplatings as $electroplating)
   @php
     $k = $k + 1;
   @endphp
@@ -121,7 +121,7 @@
   <div class="carousel-inner">
     
     @php 
-        $productImages = $ceramic->productImage->where('type', 'ceramic');
+        $productImages = $electroplating->productImage->where('type', 'electroplating');
       @endphp
       @for ($i = 0;$i < count($productImages);$i++)
               @if($i == 0)
@@ -152,9 +152,9 @@
 
 
         <div class="card-body">
-          <h5 class="card-title">{{$ceramic->name}}</h5>
-          <h5 class="card-title">{{$ceramic->price}}</h5>
-          <p class="card-text">{{$ceramic->description}}</p>
+          <h5 class="card-title">{{$electroplating->name}}</h5>
+          <h5 class="card-title">{{$electroplating->price}}</h5>
+          <p class="card-text">{{$electroplating->description}}</p>
           <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
         </div>
       </div>

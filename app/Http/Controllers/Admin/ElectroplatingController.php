@@ -182,7 +182,7 @@ class ElectroplatingController extends Controller
             'description' => $request->description,
         ]);
         //dd($electroplating ->id);
-        $productImages = $electroplating->productImage;
+        $productImages = $electroplating->productImage->where('type', 'electroplating');
         if ($request->image != null) {
             $image = ImageUploadHelper::imageUpload($request->image, 'electroplating');
             // $productImage = ProductImages::create([
@@ -304,7 +304,7 @@ class ElectroplatingController extends Controller
         // dd(1);
         $electroplating::destroy($electroplating->id);
 
-        $productImages = $electroplating->productImage;
+        $productImages = $electroplating->productImage->where('type', 'electroplating');
         for ($i = 0; $i<count($productImages);$i++) {
             ProductImages::destroy($productImages[$i]->id);
         }

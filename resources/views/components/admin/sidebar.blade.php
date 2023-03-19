@@ -28,7 +28,7 @@
         <li class="nav-item">
           <a class="nav-link @if(request())->routeIs('admin.electroplatings.*') active @endif" href="{{route('admin.electroplatings.index')}}">
             <span data-feather="users"></span>
-            Гальваника 
+            Медыне украшения 
           </a>
         </li>
         <li class="nav-item">
