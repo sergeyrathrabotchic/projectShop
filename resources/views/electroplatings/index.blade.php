@@ -121,8 +121,7 @@
   <div class="carousel-inner">
     
     @php 
-        $productImages = $electroplating->productImage->where('type', 'electroplating');
-        dd($productImages);
+        $productImages = $electroplating->productImage->where('type', 'electroplating')->values();
       @endphp
       @for ($i = 0;$i < count($productImages);$i++)
               @if($i == 0)
