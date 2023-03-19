@@ -122,6 +122,7 @@
     
     @php 
         $productImages = $electroplating->productImage->where('type', 'electroplating');
+        dd($productImages);
       @endphp
       @for ($i = 0;$i < count($productImages);$i++)
               @if($i == 0)
