@@ -155,7 +155,7 @@
         <div style="background: #b4bec6;width: 46.25%;aspect-ratio: 1 / 1;margin-left: 2.5%;margin-right: 2.5%;margin-top: 5%;"></div>
         <div style="background: #e7ceb7;width: 46.25%;aspect-ratio: 1 / 1;margin-left: 2.5%;margin-top: 5%;"></div>
       </div>
-      <a class="nav-link" href="/electroplatings"><div style="background: #e7ceb7;width: 97.5%;aspect-ratio: 2 / 1;margin-left: 2.5%;margin-top: 5%;display: flex;align-items: center;justify-content: center;">Медные украшения</div></a>  
+      <a class="nav-link" href="/electroplatings"><div style="background: #e7ceb7;width: 97.5%;aspect-ratio: 2 / 1;margin-left: 2.5%;margin-top: 5%;display: flex;align-items: center;justify-content: center;">Медные<br>украшения</div></a>  
     </div>
   </div>
 
