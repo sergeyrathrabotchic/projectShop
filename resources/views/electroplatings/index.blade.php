@@ -159,7 +159,7 @@
         <div class="card-body">
           <h5 class="card-title">{{$electroplating->name}}</h5>
           <h5 class="card-title">
-            <div style="font-size: 27px;">{{$ceramic->price}}</div>
+            <div style="font-size: 27px;">{{$electroplating->name}}</div>
             <div  style="display: flex;justify-content: space-between;font-size: 26px;margin-top: -37px;">
               <div style="font-size: 27px;"></div><div style="display: flex;flex-direction: column;align-items: flex-end;font: 12px ProximaNova-Light,sans-serif;">
                 <!--<img id="shareLink" src="https://stok-market.ru/image/link/link.png" style="width: 30px;" alt="test">-->
