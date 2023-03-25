@@ -202,7 +202,7 @@
   
   console.log(arr0);
   console.log(url);
-  for(var i=1; i<4; i++) {
+  for(var i=3; i<6; i++) {
     arr[i].href = arr[i].href + url;
   }
   ////if (window.location.href == 'https://stok-market.ru/elektricheskij-duhovoj-shkaf-leran-eo-6474-bg') {
