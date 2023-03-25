@@ -23,7 +23,7 @@ class ElectroplatingController extends Controller
         // $slideImages = ImageSlaid::with('image')->paginate(10);
 
 
-        $electroplatings =  Electroplating::with('productImage')->get();
+        $electroplatings =  Electroplating::with('productImage')->get()->reverse();
         //dd($ceramics);
         //$ceramics =  Сeramics::all();
         //->paginate(5);
