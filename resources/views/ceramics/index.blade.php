@@ -20,7 +20,7 @@
       }
     }*/
   
-    .imgShareLink:hover {
+    .imgShareLinkStyle:hover {
       color: #e8c015!important;
     }
   </style>
@@ -173,18 +173,18 @@
             <div  style="display: flex;justify-content: space-between;font-size: 26px;margin-top: -37px;">
               <div style="font-size: 27px;"></div><div style="display: flex;flex-direction: column;align-items: flex-end;font: 12px ProximaNova-Light,sans-serif;">
                 <!--<img id="shareLink" src="https://stok-market.ru/image/link/link.png" style="width: 30px;" alt="test">-->
-                <div id="shareLink" style="color: rgb(246, 240, 238); border: 1px solid rgb(220, 177, 139);background-color: rgb(220, 177, 139);border-radius: 5px;font-family: 'Open Sans';font-weight: 400;margin-right: 0px;font-size: 15px;padding: 12px;width: 100px;text-align: center;cursor: pointer;">Купить</div>
-                <div id="shareLinkDiv" style="display: none;">
+                <div id="shareLink{{$i}}" style="color: rgb(246, 240, 238); border: 1px solid rgb(220, 177, 139);background-color: rgb(220, 177, 139);border-radius: 5px;font-family: 'Open Sans';font-weight: 400;margin-right: 0px;font-size: 15px;padding: 12px;width: 100px;text-align: center;cursor: pointer;">Купить</div>
+                <div id="shareLinkDiv{{$i}}" style="display: none;">
                 <div>Купить</div>
-                <a class="imgShareLink" href="https://vk.com/angeli_solo" target="_blank" style="text-decoration: none;color: black;display: flex;"><img src="/assets/media/staticImages/vk.jpg" style="width: 15px;margin-right: 5px;" alt=""><div>Вконтакте</div></a>
-                <a class="imgShareLink" href="https://wa.me/79631450453" target="_blank" style="text-decoration: none;color: black;margin-top: 5px;display: flex;"><img src="/assets/media/staticImages/whatsapp.jpg" style="width: 15px;margin-right: 5px;" alt=""><div >WhatsApp</div></a>
+                <a class="imgShareLinkStyle" class="imgShareLink{{$i}}" href="https://vk.com/angeli_solo" target="_blank" style="text-decoration: none;color: black;display: flex;"><img src="/assets/media/staticImages/vk.jpg" style="width: 15px;margin-right: 5px;" alt=""><div>Вконтакте</div></a>
+                <a class="imgShareLinkStyle" class="imgShareLink{{$i}}" href="https://wa.me/79631450453" target="_blank" style="text-decoration: none;color: black;margin-top: 5px;display: flex;"><img src="/assets/media/staticImages/whatsapp.jpg" style="width: 15px;margin-right: 5px;" alt=""><div >WhatsApp</div></a>
                 <br>
                 <div>Поделится ссылкой</div>
-                <a class="imgShareLink" href="https://vk.com/share.php?url=" target="_blank" style="text-decoration: none;color: black;display: flex;"><img src="/assets/media/staticImages/vk.jpg" style="width: 15px;margin-right: 5px;" alt=""><div>Вконтакте</div></a>
-                <a class="imgShareLink" href="https://connect.ok.ru/offer?url=" target="_blank" style="text-decoration: none;color: black;margin-top: 5px;display: flex;"><img src="/assets/media/staticImages/odnoclas.jpg" style="width: 15px;margin-right: 5px;" alt=""><div>Одноклассники</div></a>
-                <a class="imgShareLink" style="text-decoration: none;color: black;margin-top: 5px;display: flex;" href="https://t.me/share/url?url=" target="_blank"><img src="/assets/media/staticImages/telegram.jpg" style="width: 15px;margin-right: 5px;" alt=""><div>Telegram</div></a>
-                <a class="imgShareLink" href="https://wa.me/send/?text=" target="_blank" style="text-decoration: none;color: black;margin-top: 5px;display: flex;"><img src="/assets/media/staticImages/whatsapp.jpg" style="width: 15px;margin-right: 5px;" alt=""><div >WhatsApp</div></a>
-              <div class="imgShareLink" id="copyLink" style="color: black;margin-top: 5px;cursor: pointer;display: flex;"><img src="/assets/media/staticImages/copy.jpg" style="width: 15px;margin-right: 5px;" alt="">Копировать ссылку</div></div></div>
+                <a class="imgShareLinkStyle" class="imgShareLink{{$i}}" href="https://vk.com/share.php?url=" target="_blank" style="text-decoration: none;color: black;display: flex;"><img src="/assets/media/staticImages/vk.jpg" style="width: 15px;margin-right: 5px;" alt=""><div>Вконтакте</div></a>
+                <a class="imgShareLinkStyle" class="imgShareLink{{$i}}" href="https://connect.ok.ru/offer?url=" target="_blank" style="text-decoration: none;color: black;margin-top: 5px;display: flex;"><img src="/assets/media/staticImages/odnoclas.jpg" style="width: 15px;margin-right: 5px;" alt=""><div>Одноклассники</div></a>
+                <a class="imgShareLinkStyle" class="imgShareLink{{$i}}" style="text-decoration: none;color: black;margin-top: 5px;display: flex;" href="https://t.me/share/url?url=" target="_blank"><img src="/assets/media/staticImages/telegram.jpg" style="width: 15px;margin-right: 5px;" alt=""><div>Telegram</div></a>
+                <a class="imgShareLinkStyle" class="imgShareLink{{$i}}" href="https://wa.me/send/?text=" target="_blank" style="text-decoration: none;color: black;margin-top: 5px;display: flex;"><img src="/assets/media/staticImages/whatsapp.jpg" style="width: 15px;margin-right: 5px;" alt=""><div >WhatsApp</div></a>
+              <div class="imgShareLinkStyle" class="imgShareLink{{$i}}" id="copyLink{{$i}}" style="color: black;margin-top: 5px;cursor: pointer;display: flex;"><img src="/assets/media/staticImages/copy.jpg" style="width: 15px;margin-right: 5px;" alt="">Копировать ссылку</div></div></div>
             </div>
           </h5>
           <p class="card-text">{{$ceramic->description}}</p>
@@ -206,7 +206,9 @@
 
   let url = window.location.href;
   
-  let arr =  document.querySelectorAll('.imgShareLink');
+  for(let k = 0;k<{{count($ceramics)}};k++)
+  {
+  let arr =  document.querySelectorAll('.imgShareLink' + k);
   
   let arr0 = arr[0];
   
@@ -222,32 +224,32 @@
   //console.log(document.querySelector('.imgShareLink'));
   //https://stok-market.ru/catalog/view/theme/so-emarket/images/%D0%B2%D0%BA.png
   
-  let shareLink =  document.querySelector('#shareLink');
-  let shareLinkDiv = document.querySelector('#shareLinkDiv');
+  let shareLink =  document.querySelector('#shareLink' + k);
+  let shareLinkDiv = document.querySelector('#shareLinkDiv' + k);
   let check = 1;
   shareLink.addEventListener('click', function(e){
     //alert('правка');
-    let checkShareLink = document.querySelector('.checkShareLink');
+    let checkShareLink = document.querySelector('.checkShareLink' + k);
     //alert(checkShareLink);
     if(!checkShareLink) {
       shareLinkDiv.style = "width: 180px;display: flex;flex-direction: column;padding: 10px;border-radius: 5px;margin-top: 20px;overflow: hidden auto;box-shadow: rgba(30, 31, 33, 0.12) 0px 5px 25px;background-color: rgb(255, 255, 255);color: rgb(21, 21, 40);";
-      shareLinkDiv.classList.add("checkShareLink");
+      shareLinkDiv.classList.add("checkShareLink"  + k);
     } else {
       shareLinkDiv.style = 'display: none';
-      checkShareLink.classList.remove("checkShareLink");
+      checkShareLink.classList.remove("checkShareLink"  + k);
     }
     document.addEventListener('click', function(e){
-    let checkShareLink = document.querySelector('.checkShareLink');
-    if(e.target.id != 'shareLinkDiv' && e.target.id != 'shareLink') {
+    let checkShareLink = document.querySelector('.checkShareLink'  + k);
+    if(e.target.id != 'shareLinkDiv'  + k && e.target.id != 'shareLink'  + k) {
       if(checkShareLink) {
         shareLinkDiv.style = 'display: none';
-        checkShareLink.classList.remove("checkShareLink");
+        checkShareLink.classList.remove("checkShareLink"  + k);
       }     
     }  
     },  true);
   },  true);
   
-  let copyLink = document.querySelector('#copyLink');
+  let copyLink = document.querySelector('#copyLink'  + k);
   
   copyLink.addEventListener('click', function(){
   
@@ -260,7 +262,9 @@
     copyTextarea.select();
     document.execCommand("copy");
     copyTextarea.style = "display: none;";
-  }); 
+  });
+  
+  }
   </script>
 </body>
 
