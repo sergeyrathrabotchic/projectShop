@@ -167,7 +167,7 @@
                 <div id="shareLinkDiv" style="display: none;">
                 <div>Купить</div>
                 <a class="imgShareLink" href="https://vk.com/angeli_solo" target="_blank" style="text-decoration: none;color: black;display: flex;"><img src="/assets/media/staticImages/vk.jpg" style="width: 15px;margin-right: 5px;" alt=""><div>Вконтакте</div></a>
-                <a class="imgShareLink" href="https://wa.me/79253887267" target="_blank" style="text-decoration: none;color: black;margin-top: 5px;display: flex;"><img src="/assets/media/staticImages/whatsapp.jpg" style="width: 15px;margin-right: 5px;" alt=""><div >WhatsApp</div></a>
+                <a class="imgShareLink" href="https://wa.me/79631450453" target="_blank" style="text-decoration: none;color: black;margin-top: 5px;display: flex;"><img src="/assets/media/staticImages/whatsapp.jpg" style="width: 15px;margin-right: 5px;" alt=""><div >WhatsApp</div></a>
                 <br>
                 <div>Поделится ссылкой</div>
                 <a class="imgShareLink" href="https://vk.com/share.php?url=" target="_blank" style="text-decoration: none;color: black;display: flex;"><img src="/assets/media/staticImages/vk.jpg" style="width: 15px;margin-right: 5px;" alt=""><div>Вконтакте</div></a>
