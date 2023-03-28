@@ -44,7 +44,7 @@
               <label for="image">Изображение</label>
               @if ($ceramic->productImage->where('type', 'ceramic')->count() > 0)
                 <div style="display: flex;">
-                  <div style="width:300px;height: 300px;">
+                  <div style="width:300px;height: 300px;    margin-bottom: 40px;">
                     <img id="image0" src="{{Storage::disk('image')->url($ceramic->productImage->where('type', 'ceramic')->values()[0]->image)}}" alt="" style="width:300px;height: 300px;margin-top: 10px;margin-bottom: 10px;">
                   </div>
                   {{-- <div>
