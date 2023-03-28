@@ -25,7 +25,7 @@
             <input type="hidden" class="form-control" name="type" id="type" value="ceramic">
             <div class="form-group">
               <label for="image">Наименование товара</label>
-              <input type="test" class="form-control" name="name" id="name">
+              <input  type="test" class="form-control" onchange="showFile(this)" name="name" id="name">
             </div>
             <div class="form-group">
               <label for="image">Цена товара</label>
@@ -94,6 +94,14 @@
           // with img positioned inside.
         });
       });
+
+
+      function showFile(input) {
+        let file = input.files[0];
+
+        alert(`File name: ${file.name}`); // например, my.png
+        alert(`Last modified: ${file.lastModified}`); // например, 1552830408824
+      }
       
 
 
