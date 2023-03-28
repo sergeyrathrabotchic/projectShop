@@ -37,7 +37,7 @@
             </div>
             <div class="form-group">
               <label for="image">Изображение</label>
-              <input type="file" class="form-control" name="image" id="image">
+              <input id="test" type="file" class="form-control" name="image" id="image">
             </div>
             <br>
             <div class="form-group">
@@ -101,5 +101,18 @@
       
       
 //       c.method(args);
+
+      $uploadCrop = document.getElementById('test').croppie({
+          enableExif: true,
+          viewport: {
+              width: 200,
+              height: 200,
+              type: 'circle'
+          },
+          boundary: {
+              width: 300,
+              height: 300
+          }
+      });
       </script>
 @endsection
