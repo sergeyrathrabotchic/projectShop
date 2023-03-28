@@ -25,7 +25,7 @@
             <input type="hidden" class="form-control" name="type" id="type" value="ceramic">
             <div class="form-group">
               <label for="image">Наименование товара</label>
-              <input  type="test" class="form-control" onchange="showFile(this)" name="name" id="name">
+              <input  type="test" class="form-control"  name="name" id="name">
             </div>
             <div class="form-group">
               <label for="image">Цена товара</label>
@@ -37,7 +37,7 @@
             </div>
             <div class="form-group">
               <label for="image">Изображение</label>
-              <input id="test" type="file" class="form-control" name="image" id="image">
+              <input id="test" type="file" onchange="showFile(this)" class="form-control" name="image" id="image">
             </div>
             <br>
             <div class="form-group">
