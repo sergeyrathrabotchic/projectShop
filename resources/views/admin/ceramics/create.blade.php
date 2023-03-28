@@ -62,7 +62,7 @@
             <br>
             <button type="submit" class="btn btn-success">Сохранить</button>
         </form>
-        <div style="width: 100%">
+        <div style="width: 100%;height: 400px">
           <img id="image1" style="width: 100%" src="/storage/image/ceramic/_n641ee6b5e7073.jpg" alt="">
         </div>
       </div>
