@@ -75,25 +75,25 @@
       //   aspectRatio: 1,
       //   viewMode: 0,
       // });
-      var basic = new Croppie(document.getElementById('image1'),{
-        viewport: {
-            width: 150,
-            height: 200
-        }
-      });
-      basic.croppie('bind', {
-          url: '/storage/image/electroplating/_n64062f589e54f.jpeg',
-          points: [77,469,280,739]
-      });
-      //on button click
-      var bottintest = document.getElementById('bottintest');
+      // var basic = new Croppie(document.getElementById('image1'),{
+      //   viewport: {
+      //       width: 150,
+      //       height: 200
+      //   }
+      // });
+      // basic.croppie('bind', {
+      //     url: '/storage/image/electroplating/_n64062f589e54f.jpeg',
+      //     points: [77,469,280,739]
+      // });
+      // //on button click
+      // var bottintest = document.getElementById('bottintest');
 
-      bottintest.addEventListener('click', function(){
-        basic.croppie('result', 'html').then(function(html) {
-          // html is div (overflow hidden)
-          // with img positioned inside.
-        });
-      });
+      // bottintest.addEventListener('click', function(){
+      //   basic.croppie('result', 'html').then(function(html) {
+      //     // html is div (overflow hidden)
+      //     // with img positioned inside.
+      //   });
+      // });
 
 
       function showFile(input) {
