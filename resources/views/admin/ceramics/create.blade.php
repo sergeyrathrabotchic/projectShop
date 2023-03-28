@@ -70,10 +70,51 @@
       <script src="{{ asset('js/croppie/croppie.min.js') }}"></script>
       <script type="text/javascript">
       //let new = new test;
-      var croppie = new Croppie(document.getElementById('image1'), {
-        aspectRatio: 1,
-        viewMode: 0,
+      //var croppie = new Croppie(document.getElementById('image1'), {
+      //   aspectRatio: 1,
+      //   viewMode: 0,
+      // });
+      var basic = getElementById('image1').croppie({
+        viewport: {
+            width: 150,
+            height: 200
+        }
       });
+      basic.croppie('bind', {
+          url: 'demo/cat.jpg',
+          points: [77,469,280,739]
+      });
+      //on button click
+      basic.croppie('result', 'html').then(function(html) {
+          // html is div (overflow hidden)
+          // with img positioned inside.
+      });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
 // var c = new Croppie(document.getElementById('item'), opts);
 // // call a method
 // c.method(args);
@@ -102,17 +143,17 @@
       
 //       c.method(args);
 
-      $uploadCrop = document.getElementById('test').croppie({
-          enableExif: true,
-          viewport: {
-              width: 200,
-              height: 200,
-              type: 'circle'
-          },
-          boundary: {
-              width: 300,
-              height: 300
-          }
-      });
+      // $uploadCrop = document.getElementById('test').croppie({
+      //     enableExif: true,
+      //     viewport: {
+      //         width: 200,
+      //         height: 200,
+      //         type: 'circle'
+      //     },
+      //     boundary: {
+      //         width: 300,
+      //         height: 300
+      //     }
+      // });
       </script>
 @endsection
