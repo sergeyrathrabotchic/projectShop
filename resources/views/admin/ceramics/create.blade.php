@@ -66,6 +66,7 @@
           <img id="image1" style="width: 100%" src="/storage/image/electroplating/_n64062f589e54f.jpeg" alt="">
         </div>
       </div>
+      <button type="button" id="bottintest" class="btn btn-success">тест</button>
 
       <script src="{{ asset('js/croppie/croppie.min.js') }}"></script>
       <script type="text/javascript">
@@ -85,10 +86,15 @@
           points: [77,469,280,739]
       });
       //on button click
-      basic.croppie('result', 'html').then(function(html) {
+      var bottintest = document.getElementById('bottintest');
+
+      bottintest.addEventListener('click', function(){
+        basic.croppie('result', 'html').then(function(html) {
           // html is div (overflow hidden)
           // with img positioned inside.
+        });
       });
+      
 
 
 
