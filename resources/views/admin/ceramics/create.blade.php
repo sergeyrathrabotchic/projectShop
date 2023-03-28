@@ -74,7 +74,7 @@
       //   aspectRatio: 1,
       //   viewMode: 0,
       // });
-      var basic = getElementById('image1').croppie({
+      var basic = new Croppie(document.getElementById('image1'){
         viewport: {
             width: 150,
             height: 200
