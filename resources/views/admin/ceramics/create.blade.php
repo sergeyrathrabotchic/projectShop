@@ -8,6 +8,12 @@
     </div>
   </div>
 
+  {{-- <input type=file name=filename id=file>
+  <button type=button onclick='myFunction()'>Display</button>
+  <div style="width: 100%;height: 400px">
+    <img id="image1" style="width: 100%" src="/storage/image/electroplating/_n64060b5de8540.png" alt="">
+  </div> --}}
+  <a href="/storage/image/electroplating/_n64060b5de8540.png" download="FileName.png">тест</a>
       <div class="table-responsive">
         @include('inc.message')
         <form  method="post" action="{{route('admin.ceramics.store')}}" enctype="multipart/form-data">
@@ -62,9 +68,7 @@
             <br>
             <button type="submit" class="btn btn-success">Сохранить</button>
         </form>
-        <div style="width: 100%;height: 400px">
-          <img id="image1" style="width: 100%" src="/storage/image/electroplating/_n64062f589e54f.jpeg" alt="">
-        </div>
+
       </div>
       <button type="button" id="bottintest" class="btn btn-success">тест</button>
 
@@ -96,12 +100,12 @@
       // });
 
 
-      function showFile(input) {
-        let file = input.files[0];
+      // function showFile(input) {
+      //   let file = input.files[0];
 
-        alert(`File name: ${file.name}`); // например, my.png
-        alert(`Last modified: ${file.lastModified}`); // например, 1552830408824
-      }
+      //   alert(`File name: ${file.name}`); // например, my.png
+      //   alert(`Last modified: ${file.lastModified}`); // например, 1552830408824
+      // }
       
 
 
@@ -169,5 +173,43 @@
       //         height: 300
       //     }
       // });
+
+
+      // var croppie;
+      // var image;
+      // function myFunction() {
+
+      // var file = document.getElementById('file').files[0];
+      // var reader  = new FileReader();
+      // // it's onload event and you forgot (parameters)
+      // reader.onload = function(e)  {
+      //     //var image = document.createElement("img");
+      //     image = document.querySelector('#image1');
+      //     // the result image data
+      //     image.src = e.target.result;
+      //     //document.body.appendChild(image);
+      // }
+      // // you have to declare the file loading
+      // reader.readAsDataURL(file);
+
+      // croppie = new Croppie(image, {
+      //   // aspectRatio: 1,
+      //   // viewMode: 0,
+      //   viewport: {
+      //         width: 150,
+      //         height: 200
+      //     }
+      // });
+      // }
+
+      
+    
+      // var basic = document.getElementById('image1').croppie({
+      //     viewport: {
+      //         width: 150,
+      //         height: 200
+      //     }
+      // });
+      
       </script>
 @endsection
