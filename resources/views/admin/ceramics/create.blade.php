@@ -71,7 +71,7 @@
       <script type="text/javascript">
       //let new = new test;
       var croppie = new Croppie(document.getElementById('image1'), {
-        aspectRatio: 0,
+        aspectRatio: 1,
         viewMode: 0,
       });
 // var c = new Croppie(document.getElementById('item'), opts);
