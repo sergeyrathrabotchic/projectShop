@@ -1,6 +1,7 @@
 @extends('layosts.admin')
 @section('title') Добавить новый товар - @parent @stop
 @section('content')
+
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Добавить товар </h1>
     <div class="btn-toolbar mb-2 mb-md-0">
@@ -20,6 +21,7 @@
               <textarea type="text" class="form-control" name="description" id="description" >{{old('description')}}</textarea>
             </div>
             <br> --}}
+            
             <input type="hidden" class="form-control" name="type" id="type" value="ceramic">
             <div class="form-group">
               <label for="image">Наименование товара</label>
@@ -60,5 +62,43 @@
             <br>
             <button type="submit" class="btn btn-success">Сохранить</button>
         </form>
+        <div style="width: 100%">
+          <img id="image1" style="width: 100%" src="/storage/image/ceramic/_n641ee6b5e7073.jpg" alt="">
+        </div>
       </div>
+
+      <script src="{{ asset('js/croppie/croppie.min.js') }}"></script>
+      <script type="text/javascript">
+      //let new = new test;
+      var croppie = new Croppie(document.getElementById('image1'), {
+        aspectRatio: 0,
+      });
+// var c = new Croppie(document.getElementById('item'), opts);
+// // call a method
+// c.method(args);
+// $('.my-croppie').on('update.croppie', function(ev, cropData) {});
+// // or
+// document.getElementById('another-croppie').addEventListener('update', function(ev) { var cropData = ev.detail; });
+      
+
+
+// var el = document.getElementById('vanilla-demo');
+//       var vanilla = new Croppie(el, {
+//           viewport: { width: 100, height: 100 },
+//           boundary: { width: 300, height: 300 },
+//           showZoomer: false,
+//           enableOrientation: true
+//       });
+//       vanilla.bind({
+//           url: '/storage/image/ceramic/_n641ee6b5e7073.jpg',
+//           orientation: 4
+//       });
+//       //on button click
+//       vanilla.result('blob').then(function(blob) {
+//           // do something with cropped blob
+//       });     
+      
+      
+//       c.method(args);
+      </script>
 @endsection
