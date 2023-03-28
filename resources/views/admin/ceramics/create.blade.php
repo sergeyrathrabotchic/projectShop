@@ -74,14 +74,14 @@
       //   aspectRatio: 1,
       //   viewMode: 0,
       // });
-      var basic = new Croppie(document.getElementById('image1'){
+      var basic = getElementById('image1').croppie({
         viewport: {
             width: 150,
             height: 200
         }
       });
       basic.croppie('bind', {
-          url: 'demo/cat.jpg',
+          url: '/storage/image/electroplating/_n64062f589e54f.jpeg',
           points: [77,469,280,739]
       });
       //on button click
