@@ -97,7 +97,10 @@
 
       const image0 = document.getElementById('image0');
       const сroppie = new Croppie(image0, {
-        aspectRatio: 0,
+        viewport: {
+              width: 150,
+              height: 200
+          }
       });
 
 
