@@ -11,9 +11,9 @@
   <input type=file name=filename id=file>
   <button type=button onclick='myFunction()'>загрузка картинки</button>
   <div style="width: 100%;height: 400px" id="boxImage1">
-    {{-- <img id="image1" style="width: 100%" src="/storage/image/electroplating/_n64062f589e54f.jpeg" alt=""> --}}
+    <img id="image1" style="width: 100%" src="/storage/image/electroplating/_n64062f589e54f.jpeg" alt="">
   <div style="width: 45%;margein-left:10px;"> 
-    <img id="image1" style="width: 100%" src="" alt="">
+    {{-- <img id="image1" style="width: 100%" src="" alt=""> --}}
   </div>
   <div style="width: 45%;">
     <img id="uploade1" style="width: 100%" src="" alt="">
@@ -230,15 +230,15 @@
       }
       
       
-      // image = document.querySelector('#image1');
-      // croppie = new Croppie(image, {
-      //   // aspectRatio: 1,
-      //   // viewMode: 0,
-      //   viewport: {
-      //         width: 150,
-      //         height: 200
-      //     }
-      // });
+      image = document.querySelector('#image1');
+      croppie = new Croppie(image, {
+        // aspectRatio: 1,
+        // viewMode: 0,
+        viewport: {
+              width: 150,
+              height: 200
+          }
+      });
 
       
     
