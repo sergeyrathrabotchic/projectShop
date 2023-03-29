@@ -180,16 +180,16 @@
       var image;
 
 
-      function test() {
-        croppie2 = new Croppie(document.querySelector('#image1'), {
-          // aspectRatio: 1,
-          // viewMode: 0,
-          viewport: {
-                width: 150,
-                height: 200
-            }
-        }),
-      }
+      // function test() {
+      //   croppie2 = new Croppie(document.querySelector('#image1'), {
+      //     // aspectRatio: 1,
+      //     // viewMode: 0,
+      //     viewport: {
+      //           width: 150,
+      //           height: 200
+      //       }
+      //   }),
+      // }
       function myFunction() {
 
       var file = document.getElementById('file').files[0];
