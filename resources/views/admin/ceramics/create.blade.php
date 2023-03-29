@@ -204,7 +204,7 @@
       }
       // you have to declare the file loading
       reader.readAsDataURL(file);
-      setTimeout(test, 20000);
+      setTimeout(test, 2000);
       
       }
       
