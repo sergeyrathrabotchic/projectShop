@@ -151,7 +151,7 @@
       
 
 
-      const cropper = new Croppie(document.querySelector('#image1'), {
+      var cropper = new Croppie(document.querySelector('#image1'), {
           // viewport: {
           //       width: 150,
           //       height: 200
