@@ -114,11 +114,11 @@
         //alert(croppie.getCroppedCanvas().toDataURL("image/png"));
         var croppieImage = croppie.getCroppedCanvas().toDataURL("image/png");
 
-        alert(croppieImage);
+        //alert(croppieImage);
 
-        //let upload1 = document.querySelector('#upload1');
+        let upload1 = document.querySelector('#upload1');
 
-        //upload1.src = croppieImage;
+        upload1.src = croppieImage;
 
       });
         
