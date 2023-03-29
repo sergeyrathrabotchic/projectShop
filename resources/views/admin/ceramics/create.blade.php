@@ -8,8 +8,8 @@
     </div>
   </div>
 
-  <input type=file name=filename id=file>
-  <button type=button onclick='myFunction()'>загрузка картинки</button>
+  <input type=file name=filename id=file  class="form-control">
+  <button class="btn btn-success" type=button onclick='myFunction()'>Запуск редактирования</button>
   <div style="width: 100%;height: 400px;margin-bottom: 50px;" id="boxImage1">
     {{-- <img id="image1" style="width: 100%" src="/storage/image/electroplating/_n64062f589e54f.jpeg" alt=""> --}}
   <div style="width: 45%;margein-left:10px;height: 400px;"> 
@@ -76,7 +76,7 @@
         </form>
 
       </div>
-      <button type="button" id="bottintest" class="btn btn-success">тест</button>
+      {{-- <button type="button" id="bottintest" class="btn btn-success">тест</button> --}}
 
       <script src="{{ asset('js/croppie/croppie.min.js') }}"></script>
       <script type="text/javascript">
