@@ -161,7 +161,7 @@
 
         });
         //let getCroppedCanvas = cropper.getCroppedCanvas().toBlob();
-        alert(cropper.getCroppedCanvas().toDataURL("image/jpeg"));
+        alert(cropper.getCroppedCanvas().toDataURL());
 
       //let fixImage = document.querySelector('#fixImage');
 
