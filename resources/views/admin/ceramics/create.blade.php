@@ -14,11 +14,11 @@
      <button style="margin-right: 10px" id="fixImage" class="btn btn-success" type=button >Фиксация элемента</button>
      <a href="/storage/image/electroplating/_n64062f589e54f.jpeg" class="btn btn-success" download="FileName.png">Загрузка изображения</a>
   </div>
-  {{-- <div style="width: 100%;height: 400px;">
+  <div style="width: 100%;height: 400px;">
   <img id="image1" style="width: 100%;height: 400px;" src="/storage/image/electroplating/_n64062f589e54f.jpeg" alt="">
-</div> --}}
+</div>
   </div><div style="display: none" id="boxImage1">
-    <img id="image1" style="width: 100%" src="/storage/image/electroplating/_n64062f589e54f.jpeg" alt="">
+    {{-- <img id="image1" style="width: 100%" src="/storage/image/electroplating/_n64062f589e54f.jpeg" alt=""> --}}
   <div style="width: 45%;margein-left:10px;height: 400px;"> 
     {{-- <img id="image1" style="width: 100%" src="" alt=""> --}}
   </div>
@@ -147,7 +147,10 @@
       }
 
       
-
+      const croppie = new Сropper(document.querySelector('#image1'), {
+          aspectRatio: 0,
+          viewMode: 0
+        });
 
       // var cropper = new Croppie(document.querySelector('#image1'), {
       //     // viewport: {
