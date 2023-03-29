@@ -107,7 +107,7 @@
       fixImage.addEventListener('click', function(){
         //alert("work");
         alert(croppie.getCroppedCanvas().toDataURL("image/png"));
-        var croppieImage = croppie.getCroppedCanvas().toDataURL("image/png");
+        var croppieImage = croppie.get().toDataURL("image/png");
 
         alert(croppieImage);
 
