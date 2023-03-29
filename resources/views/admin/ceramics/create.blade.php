@@ -93,7 +93,7 @@
         // boxImage1.childNodes[1].remove()
         
         // setTimeout(test2, 2000);
-        var croppie = new Croppie(document.querySelector('#image1'), {
+        const croppie = new Croppie(document.querySelector('#image1'), {
           viewport: {
                 width: 150,
                 height: 200
