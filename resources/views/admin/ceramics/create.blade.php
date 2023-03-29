@@ -8,11 +8,11 @@
     </div>
   </div>
 
-  {{-- <input type=file name=filename id=file>
-  <button type=button onclick='myFunction()'>Display</button>
+  <input type=file name=filename id=file>
+  <button type=button onclick='myFunction()'>загрузка картинки</button>
   <div style="width: 100%;height: 400px">
     <img id="image1" style="width: 100%" src="/storage/image/electroplating/_n64060b5de8540.png" alt="">
-  </div> --}}
+  </div>
   <a href="/storage/image/electroplating/_n64060b5de8540.png" download="FileName.png">тест</a>
       <div class="table-responsive">
         @include('inc.message')
@@ -175,32 +175,32 @@
       // });
 
 
-      // var croppie;
-      // var image;
-      // function myFunction() {
+      var croppie;
+      var image;
+      function myFunction() {
 
-      // var file = document.getElementById('file').files[0];
-      // var reader  = new FileReader();
-      // // it's onload event and you forgot (parameters)
-      // reader.onload = function(e)  {
-      //     //var image = document.createElement("img");
-      //     image = document.querySelector('#image1');
-      //     // the result image data
-      //     image.src = e.target.result;
-      //     //document.body.appendChild(image);
-      // }
-      // // you have to declare the file loading
-      // reader.readAsDataURL(file);
+      var file = document.getElementById('file').files[0];
+      var reader  = new FileReader();
+      // it's onload event and you forgot (parameters)
+      reader.onload = function(e)  {
+          //var image = document.createElement("img");
+          image = document.querySelector('#image1');
+          // the result image data
+          image.src = e.target.result;
+          //document.body.appendChild(image);
+      }
+      // you have to declare the file loading
+      reader.readAsDataURL(file);
 
-      // croppie = new Croppie(image, {
-      //   // aspectRatio: 1,
-      //   // viewMode: 0,
-      //   viewport: {
-      //         width: 150,
-      //         height: 200
-      //     }
-      // });
-      // }
+      croppie = new Croppie(image, {
+        // aspectRatio: 1,
+        // viewMode: 0,
+        viewport: {
+              width: 150,
+              height: 200
+          }
+      });
+      }
 
       
     
