@@ -8,8 +8,12 @@
     </div>
   </div>
 
-  <input type=file name=filename id=file  class="form-control">
-  <button class="btn btn-success" type=button onclick='myFunction()'>Запуск редактирования</button>
+  <input type=file name=filename id=file  class="form-control" style="margin-bottom: 20px;">
+  <div style="display: flex;margin-bottom: 20px;">
+     <button style="margin-right: 10px" class="btn btn-success" type=button onclick='myFunction()'>Запуск редактирования</button>
+     <a href="/storage/image/electroplating/_n64062f589e54f.jpeg" class="btn btn-success" download="FileName.png">тест</a>
+  </div>
+ 
   <div style="width: 100%;height: 400px;margin-bottom: 50px;" id="boxImage1">
     {{-- <img id="image1" style="width: 100%" src="/storage/image/electroplating/_n64062f589e54f.jpeg" alt=""> --}}
   <div style="width: 45%;margein-left:10px;height: 400px;"> 
@@ -19,7 +23,6 @@
     <img id="uploade1" style="width: 100%" src="" alt="">
   </div>
   </div>
-  <a href="/storage/image/electroplating/_n64062f589e54f.jpeg" download="FileName.png">тест</a>
       <div class="table-responsive">
         @include('inc.message')
         <form  method="post" action="{{route('admin.ceramics.store')}}" enctype="multipart/form-data">
