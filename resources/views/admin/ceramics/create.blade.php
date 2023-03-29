@@ -160,9 +160,9 @@
           viewMode: 0
 
         });
-        alert(cropper.getCroppedCanvas().toDataURL("image/png"));
+        //alert(cropper.getCroppedCanvas().toDataURL("image/png"));
 
-      let fixImage = document.querySelector('#fixImage');
+      //let fixImage = document.querySelector('#fixImage');
 
       
       // fixImage.addEventListener('click', function(){
