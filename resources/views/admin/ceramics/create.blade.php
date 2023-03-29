@@ -130,9 +130,11 @@
       fixImage.addEventListener('click', function(){
         var croppieImage = croppie.getCroppedCanvas().toDataURL("image/png");
 
+        alert(croppieImage);
+
         let upload1 = document.querySelector('#upload1');
 
-        upload1.src = croppieImage;
+        //upload1.src = croppieImage;
 
       });
 
