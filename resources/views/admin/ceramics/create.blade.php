@@ -11,7 +11,7 @@
   <input type=file name=filename id=file  class="form-control" style="margin-bottom: 20px;">
   <div style="display: flex;margin-bottom: 20px;">
      <button style="margin-right: 10px" class="btn btn-success" type=button onclick='myFunction()'>Запуск редактирования</button>
-     <button style="margin-right: 10px" class="btn btn-success" type=button >Фиксация элемента</button>
+     <button style="margin-right: 10px" id="fixImage" class="btn btn-success" type=button >Фиксация элемента</button>
      <a href="/storage/image/electroplating/_n64062f589e54f.jpeg" class="btn btn-success" download="FileName.png">Загрузка изображения</a>
   </div>
  
@@ -21,7 +21,7 @@
     <img id="image1" style="width: 100%" src="" alt="">
   </div>
   <div style="width: 45%;height: 400px;">
-    <img id="uploade1" style="width: 100%" src="" alt="">
+    <img id="upload1" style="width: 100%" src="" alt="">
   </div>
   </div>
       <div class="table-responsive">
@@ -84,107 +84,6 @@
 
       <script src="{{ asset('js/croppie/croppie.min.js') }}"></script>
       <script type="text/javascript">
-      //let new = new test;
-      //var croppie = new Croppie(document.getElementById('image1'), {
-      //   aspectRatio: 1,
-      //   viewMode: 0,
-      // });
-      // var basic = new Croppie(document.getElementById('image1'),{
-      //   viewport: {
-      //       width: 150,
-      //       height: 200
-      //   }
-      // });
-      // basic.croppie('bind', {
-      //     url: '/storage/image/electroplating/_n64062f589e54f.jpeg',
-      //     points: [77,469,280,739]
-      // });
-      // //on button click
-      // var bottintest = document.getElementById('bottintest');
-
-      // bottintest.addEventListener('click', function(){
-      //   basic.croppie('result', 'html').then(function(html) {
-      //     // html is div (overflow hidden)
-      //     // with img positioned inside.
-      //   });
-      // });
-
-
-      // function showFile(input) {
-      //   let file = input.files[0];
-
-      //   alert(`File name: ${file.name}`); // например, my.png
-      //   alert(`Last modified: ${file.lastModified}`); // например, 1552830408824
-      // }
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-
-
-
-// var c = new Croppie(document.getElementById('item'), opts);
-// // call a method
-// c.method(args);
-// $('.my-croppie').on('update.croppie', function(ev, cropData) {});
-// // or
-// document.getElementById('another-croppie').addEventListener('update', function(ev) { var cropData = ev.detail; });
-      
-
-
-// var el = document.getElementById('vanilla-demo');
-//       var vanilla = new Croppie(el, {
-//           viewport: { width: 100, height: 100 },
-//           boundary: { width: 300, height: 300 },
-//           showZoomer: false,
-//           enableOrientation: true
-//       });
-//       vanilla.bind({
-//           url: '/storage/image/ceramic/_n641ee6b5e7073.jpg',
-//           orientation: 4
-//       });
-//       //on button click
-//       vanilla.result('blob').then(function(blob) {
-//           // do something with cropped blob
-//       });     
-      
-      
-//       c.method(args);
-
-      // $uploadCrop = document.getElementById('test').croppie({
-      //     enableExif: true,
-      //     viewport: {
-      //         width: 200,
-      //         height: 200,
-      //         type: 'circle'
-      //     },
-      //     boundary: {
-      //         width: 300,
-      //         height: 300
-      //     }
-      // });
-
-
       var croppie; 
       var croppie2;
       var image;
@@ -224,26 +123,20 @@
       setTimeout(test, 2000);
       
       }
-      
-      
-      // image = document.querySelector('#image1');
-      // croppie = new Croppie(image, {
-      //   // aspectRatio: 1,
-      //   // viewMode: 0,
-      //   viewport: {
-      //         width: 150,
-      //         height: 200
-      //     }
-      // });
+
+      let fixImage = document.querySelector('#fixImage');
 
       
-    
-      // var basic = document.getElementById('image1').croppie({
-      //     viewport: {
-      //         width: 150,
-      //         height: 200
-      //     }
-      // });
-      
+      fixImage.addEventListener('click', function(){
+        var croppieImage = croppie.getCroppedCanvas().toDataURL("image/png");
+
+        let upload1 = document.querySelector('#upload1');
+
+        upload1.src = croppieImage;
+
+      });
+
+       
+     
       </script>
 @endsection
