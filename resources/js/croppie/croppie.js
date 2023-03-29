@@ -1,26 +1,26 @@
 /*************************
  * Croppie
- * Copyright 2019
+ * Copyright 2017
  * Foliotek
- * Version: 2.6.4
+ * Version: 2.5.1
  *************************/
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define(factory);
+        define(['exports'], factory);
     } else if (typeof exports === 'object' && typeof exports.nodeName !== 'string') {
         // CommonJS
-        module.exports = factory();
+        factory(exports);
     } else {
         // Browser globals
-        root.Croppie = factory();
+        factory((root.commonJsStrict = {}));
     }
-}(typeof self !== 'undefined' ? self : this, function () {
+}(this, function (exports) {
 
     /* Polyfills */
     if (typeof Promise !== 'function') {
         /*! promise-polyfill 3.1.0 */
-        !function(a){function b(a,b){return function(){a.apply(b,arguments)}}function c(a){if("object"!==typeof this)throw new TypeError("Promises must be constructed via new");if("function"!==typeof a)throw new TypeError("not a function");this._state=null,this._value=null,this._deferreds=[],i(a,b(e,this),b(f,this))}function d(a){var b=this;return null===this._state?void this._deferreds.push(a):void k(function(){var c=b._state?a.onFulfilled:a.onRejected;if(null===c)return void(b._state?a.resolve:a.reject)(b._value);var d;try{d=c(b._value)}catch(e){return void a.reject(e)}a.resolve(d)})}function e(a){try{if(a===this)throw new TypeError("A promise cannot be resolved with itself.");if(a&&("object"===typeof a||"function"===typeof a)){var c=a.then;if("function"===typeof c)return void i(b(c,a),b(e,this),b(f,this))}this._state=!0,this._value=a,g.call(this)}catch(d){f.call(this,d)}}function f(a){this._state=!1,this._value=a,g.call(this)}function g(){for(var a=0,b=this._deferreds.length;b>a;a++)d.call(this,this._deferreds[a]);this._deferreds=null}function h(a,b,c,d){this.onFulfilled="function"===typeof a?a:null,this.onRejected="function"===typeof b?b:null,this.resolve=c,this.reject=d}function i(a,b,c){var d=!1;try{a(function(a){d||(d=!0,b(a))},function(a){d||(d=!0,c(a))})}catch(e){if(d)return;d=!0,c(e)}}var j=setTimeout,k="function"===typeof setImmediate&&setImmediate||function(a){j(a,1)},l=Array.isArray||function(a){return"[object Array]"===Object.prototype.toString.call(a)};c.prototype["catch"]=function(a){return this.then(null,a)},c.prototype.then=function(a,b){var e=this;return new c(function(c,f){d.call(e,new h(a,b,c,f))})},c.all=function(){var a=Array.prototype.slice.call(1===arguments.length&&l(arguments[0])?arguments[0]:arguments);return new c(function(b,c){function d(f,g){try{if(g&&("object"===typeof g||"function"===typeof g)){var h=g.then;if("function"===typeof h)return void h.call(g,function(a){d(f,a)},c)}a[f]=g,0===--e&&b(a)}catch(i){c(i)}}if(0===a.length)return b([]);for(var e=a.length,f=0;f<a.length;f++)d(f,a[f])})},c.resolve=function(a){return a&&"object"===typeof a&&a.constructor===c?a:new c(function(b){b(a)})},c.reject=function(a){return new c(function(b,c){c(a)})},c.race=function(a){return new c(function(b,c){for(var d=0,e=a.length;e>d;d++)a[d].then(b,c)})},c._setImmediateFn=function(a){k=a},"undefined"!==typeof module&&module.exports?module.exports=c:a.Promise||(a.Promise=c)}(this);
+        !function(a){function b(a,b){return function(){a.apply(b,arguments)}}function c(a){if("object"!=typeof this)throw new TypeError("Promises must be constructed via new");if("function"!=typeof a)throw new TypeError("not a function");this._state=null,this._value=null,this._deferreds=[],i(a,b(e,this),b(f,this))}function d(a){var b=this;return null===this._state?void this._deferreds.push(a):void k(function(){var c=b._state?a.onFulfilled:a.onRejected;if(null===c)return void(b._state?a.resolve:a.reject)(b._value);var d;try{d=c(b._value)}catch(e){return void a.reject(e)}a.resolve(d)})}function e(a){try{if(a===this)throw new TypeError("A promise cannot be resolved with itself.");if(a&&("object"==typeof a||"function"==typeof a)){var c=a.then;if("function"==typeof c)return void i(b(c,a),b(e,this),b(f,this))}this._state=!0,this._value=a,g.call(this)}catch(d){f.call(this,d)}}function f(a){this._state=!1,this._value=a,g.call(this)}function g(){for(var a=0,b=this._deferreds.length;b>a;a++)d.call(this,this._deferreds[a]);this._deferreds=null}function h(a,b,c,d){this.onFulfilled="function"==typeof a?a:null,this.onRejected="function"==typeof b?b:null,this.resolve=c,this.reject=d}function i(a,b,c){var d=!1;try{a(function(a){d||(d=!0,b(a))},function(a){d||(d=!0,c(a))})}catch(e){if(d)return;d=!0,c(e)}}var j=setTimeout,k="function"==typeof setImmediate&&setImmediate||function(a){j(a,1)},l=Array.isArray||function(a){return"[object Array]"===Object.prototype.toString.call(a)};c.prototype["catch"]=function(a){return this.then(null,a)},c.prototype.then=function(a,b){var e=this;return new c(function(c,f){d.call(e,new h(a,b,c,f))})},c.all=function(){var a=Array.prototype.slice.call(1===arguments.length&&l(arguments[0])?arguments[0]:arguments);return new c(function(b,c){function d(f,g){try{if(g&&("object"==typeof g||"function"==typeof g)){var h=g.then;if("function"==typeof h)return void h.call(g,function(a){d(f,a)},c)}a[f]=g,0===--e&&b(a)}catch(i){c(i)}}if(0===a.length)return b([]);for(var e=a.length,f=0;f<a.length;f++)d(f,a[f])})},c.resolve=function(a){return a&&"object"==typeof a&&a.constructor===c?a:new c(function(b){b(a)})},c.reject=function(a){return new c(function(b,c){c(a)})},c.race=function(a){return new c(function(b,c){for(var d=0,e=a.length;e>d;d++)a[d].then(b,c)})},c._setImmediateFn=function(a){k=a},"undefined"!=typeof module&&module.exports?module.exports=c:a.Promise||(a.Promise=c)}(this);
     }
 
     if ( typeof window.CustomEvent !== "function" ) {
@@ -55,8 +55,6 @@
 
     var cssPrefixes = ['Webkit', 'Moz', 'ms'],
         emptyStyles = document.createElement('div').style,
-        EXIF_NORM = [1,8,3,6],
-        EXIF_FLIP = [2,7,4,5],
         CSS_TRANS_ORG,
         CSS_TRANSFORM,
         CSS_USERSELECT;
@@ -81,14 +79,6 @@
     CSS_TRANS_ORG = vendorPrefix('transformOrigin');
     CSS_USERSELECT = vendorPrefix('userSelect');
 
-    function getExifOffset(ornt, rotate) {
-        var arr = EXIF_NORM.indexOf(ornt) > -1 ? EXIF_NORM : EXIF_FLIP,
-            index = arr.indexOf(ornt),
-            offset = (rotate / 90) % arr.length;// 180 = 2%4 = 2 shift exif by 2 indexes
-
-        return arr[(arr.length + index + (offset % arr.length)) % arr.length];
-    }
-
     // Credits to : Andrew Dupont - http://andrewdupont.net/2009/08/28/deep-extending-objects-in-javascript/
     function deepExtend(destination, source) {
         destination = destination || {};
@@ -101,10 +91,6 @@
             }
         }
         return destination;
-    }
-
-    function clone(object) {
-        return deepExtend({}, object);
     }
 
     function debounce(func, wait, immediate) {
@@ -175,22 +161,27 @@
     }
 
     /* Utilities */
-    function loadImage(src, doExif) {
-        var img = new Image();
-        img.style.opacity = '0';
-        return new Promise(function (resolve, reject) {
+    function loadImage(src, imageEl, doExif) {
+        var img = imageEl || new Image();
+        img.style.opacity = 0;
+
+        return new Promise(function (resolve) {
             function _resolve() {
-                img.style.opacity = '1';
-                setTimeout(function () {
+                setTimeout(function(){
                     resolve(img);
                 }, 1);
             }
 
+            if (img.src === src) {// If image source hasn't changed resolve immediately
+                _resolve();
+                return;
+            }
+
+            img.exifdata = null;
             img.removeAttribute('crossOrigin');
             if (src.match(/^https?:\/\/|^\/\//)) {
                 img.setAttribute('crossOrigin', 'anonymous');
             }
-
             img.onload = function () {
                 if (doExif) {
                     EXIF.getData(img, function () {
@@ -201,21 +192,14 @@
                     _resolve();
                 }
             };
-            img.onerror = function (ev) {
-                img.style.opacity = 1;
-                setTimeout(function () {
-                    reject(ev);
-                }, 1);
-            };
             img.src = src;
         });
     }
 
-    function naturalImageDimensions(img, ornt) {
+    function naturalImageDimensions(img) {
         var w = img.naturalWidth;
         var h = img.naturalHeight;
-        var orient = ornt || getExifOrientation(img);
-        if (orient && orient >= 5) {
+        if (img.exifdata && img.exifdata.Orientation >= 5) {
             var x= w;
             w = h;
             h = x;
@@ -290,7 +274,7 @@
     };
 
     function getExifOrientation (img) {
-        return img.exifdata && img.exifdata.Orientation ? num(img.exifdata.Orientation) : 1;
+        return img.exifdata.Orientation;
     }
 
     function drawCanvas(canvas, img, orientation) {
@@ -373,7 +357,7 @@
             self.elements.preview = self.elements.canvas;
         }
         else {
-            self.elements.preview = img;
+            self.elements.preview = self.elements.img;
         }
 
         addClass(boundary, 'cr-boundary');
@@ -586,12 +570,10 @@
 
         if (vr) {
             vr.addEventListener('mousedown', mouseDown);
-            vr.addEventListener('touchstart', mouseDown);
         }
 
         if (hr) {
             hr.addEventListener('mousedown', mouseDown);
-            hr.addEventListener('touchstart', mouseDown);
         }
 
         this.elements.boundary.appendChild(wrap);
@@ -602,7 +584,7 @@
             var z = this.elements.zoomer,
                 val = fix(v, 4);
 
-            z.value = Math.max(parseFloat(z.min), Math.min(parseFloat(z.max), val)).toString();
+            z.value = Math.max(z.min, Math.min(z.max, val));
         }
     }
 
@@ -615,7 +597,7 @@
         addClass(zoomer, 'cr-slider');
         zoomer.type = 'range';
         zoomer.step = '0.0001';
-        zoomer.value = '1';
+        zoomer.value = 1;
         zoomer.style.display = self.options.showZoomer ? '' : 'none';
         zoomer.setAttribute('aria-label', 'zoom');
 
@@ -636,9 +618,7 @@
         function scroll(ev) {
             var delta, targetZoom;
 
-            if(self.options.mouseWheelZoom === 'ctrl' && ev.ctrlKey !== true){
-              return 0; 
-            } else if (ev.wheelDelta) {
+            if (ev.wheelDelta) {
                 delta = ev.wheelDelta / 1200; //wheelDelta min: -120 max: 120 // max x 10 x 2
             } else if (ev.deltaY) {
                 delta = ev.deltaY / 1060; //deltaY min: -53 max: 53 // max x 10 x 2
@@ -753,7 +733,7 @@
         };
     }
 
-    function _updateCenterPoint(rotate) {
+    function _updateCenterPoint() {
         var self = this,
             scale = self._currentZoom,
             data = self.elements.preview.getBoundingClientRect(),
@@ -765,27 +745,14 @@
             center = {},
             adj = {};
 
-        if (rotate) {
-            var cx = pc.x;
-            var cy = pc.y;
-            var tx = transform.x;
-            var ty = transform.y;
+        center.y = top / scale;
+        center.x = left / scale;
 
-            center.y = cx;
-            center.x = cy;
-            transform.y = tx;
-            transform.x = ty;
-        }
-        else {
-            center.y = top / scale;
-            center.x = left / scale;
+        adj.y = (center.y - pc.y) * (1 - scale);
+        adj.x = (center.x - pc.x) * (1 - scale);
 
-            adj.y = (center.y - pc.y) * (1 - scale);
-            adj.x = (center.x - pc.x) * (1 - scale);
-
-            transform.x -= adj.x;
-            transform.y -= adj.y;
-        }
+        transform.x -= adj.x;
+        transform.y -= adj.y;
 
         var newCss = {};
         newCss[CSS_TRANS_ORG] = center.x + 'px ' + center.y + 'px';
@@ -833,13 +800,13 @@
                 RIGHT_ARROW = 39,
                 DOWN_ARROW  = 40;
 
-            if (ev.shiftKey && (ev.keyCode === UP_ARROW || ev.keyCode === DOWN_ARROW)) {
-                var zoom;
-                if (ev.keyCode === UP_ARROW) {
-                    zoom = parseFloat(self.elements.zoomer.value) + parseFloat(self.elements.zoomer.step)
+            if (ev.shiftKey && (ev.keyCode == UP_ARROW || ev.keyCode == DOWN_ARROW)) {
+                var zoom = 0.0;
+                if (ev.keyCode == UP_ARROW) {
+                    zoom = parseFloat(self.elements.zoomer.value, 10) + parseFloat(self.elements.zoomer.step, 10)
                 }
                 else {
-                    zoom = parseFloat(self.elements.zoomer.value) - parseFloat(self.elements.zoomer.step)
+                    zoom = parseFloat(self.elements.zoomer.value, 10) - parseFloat(self.elements.zoomer.step, 10)
                 }
                 self.setZoom(zoom);
             }
@@ -851,7 +818,7 @@
                 document.body.style[CSS_USERSELECT] = 'none';
                 vpRect = self.elements.viewport.getBoundingClientRect();
                 keyMove(movement);
-            }
+            };
 
             function parseKeyDown(key) {
                 switch (key) {
@@ -863,8 +830,8 @@
                         return [-1, 0];
                     case DOWN_ARROW:
                         return [0, -1];
-                }
-            }
+                };
+            };
         }
 
         function keyMove(movement) {
@@ -922,7 +889,7 @@
                 deltaY = pageY - originalY,
                 newCss = {};
 
-            if (ev.type === 'touchmove') {
+            if (ev.type == 'touchmove') {
                 if (ev.touches.length > 1) {
                     var touch1 = ev.touches[0];
                     var touch2 = ev.touches[1];
@@ -968,7 +935,6 @@
     }
 
     function _updateOverlay() {
-        if (!this.elements) return; // since this is debounced, it can be fired after destroy
         var self = this,
             boundRect = self.elements.boundary.getBoundingClientRect(),
             imgData = self.elements.preview.getBoundingClientRect();
@@ -984,15 +950,16 @@
 
     function _triggerUpdate() {
         var self = this,
-            data = self.get();
+            data = self.get(),
+            ev;
 
         if (!_isVisible.call(self)) {
             return;
         }
 
         self.options.update.call(self, data);
-        if (self.$ && typeof Prototype === 'undefined') {
-            self.$(self.element).trigger('update.croppie', data);
+        if (self.$ && typeof Prototype == 'undefined') {
+            self.$(self.element).trigger('update', data);
         }
         else {
             var ev;
@@ -1016,12 +983,13 @@
             initialZoom = 1,
             cssReset = {},
             img = self.elements.preview,
-            imgData,
+            imgData = self.elements.preview.getBoundingClientRect(),
             transformReset = new Transform(0, 0, initialZoom),
             originReset = new TransformOrigin(),
             isVisible = _isVisible.call(self);
 
-        if (!isVisible || self.data.bound) {// if the croppie isn't visible or it doesn't need binding
+        if (!isVisible || self.data.bound) {
+            // if the croppie isn't visible or it doesn't need binding
             return;
         }
 
@@ -1031,11 +999,8 @@
         cssReset['opacity'] = 1;
         css(img, cssReset);
 
-        imgData = self.elements.preview.getBoundingClientRect();
-
         self._originalImageWidth = imgData.width;
         self._originalImageHeight = imgData.height;
-        self.data.orientation = getExifOrientation(self.elements.img);
 
         if (self.options.enableZoom) {
             _updateZoomLimits.call(self, true);
@@ -1061,20 +1026,21 @@
 
     function _updateZoomLimits (initial) {
         var self = this,
-            minZoom = Math.max(self.options.minZoom, 0) || 0,
-            maxZoom = self.options.maxZoom || 1.5,
+            minZoom = 0,
+            maxZoom = 1.5,
             initialZoom,
             defaultInitialZoom,
             zoomer = self.elements.zoomer,
             scale = parseFloat(zoomer.value),
             boundaryData = self.elements.boundary.getBoundingClientRect(),
-            imgData = naturalImageDimensions(self.elements.img, self.data.orientation),
+            imgData = self.elements.preview.getBoundingClientRect(),
             vpData = self.elements.viewport.getBoundingClientRect(),
             minW,
             minH;
+
         if (self.options.enforceBoundary) {
-            minW = vpData.width / imgData.width;
-            minH = vpData.height / imgData.height;
+            minW = vpData.width / (initial ? imgData.width : imgData.width / scale);
+            minH = vpData.height / (initial ? imgData.height : imgData.height / scale);
             minZoom = Math.max(minW, minH);
         }
 
@@ -1084,11 +1050,8 @@
 
         zoomer.min = fix(minZoom, 4);
         zoomer.max = fix(maxZoom, 4);
-        
-        if (!initial && (scale < zoomer.min || scale > zoomer.max)) {
-            _setZoomerVal.call(self, scale < zoomer.min ? zoomer.min : zoomer.max);
-        }
-        else if (initial) {
+
+        if (initial) {
             defaultInitialZoom = Math.max((boundaryData.width / imgData.width), (boundaryData.height / imgData.height));
             initialZoom = self.data.boundZoom !== null ? self.data.boundZoom : defaultInitialZoom;
             _setZoomerVal.call(self, initialZoom);
@@ -1098,7 +1061,7 @@
     }
 
     function _bindPoints(points) {
-        if (points.length !== 4) {
+        if (points.length != 4) {
             throw "Croppie - Invalid number of points supplied: " + points;
         }
         var self = this,
@@ -1143,14 +1106,21 @@
         var self = this,
             canvas = self.elements.canvas,
             img = self.elements.img,
-            ctx = canvas.getContext('2d');
+            ctx = canvas.getContext('2d'),
+            exif = _hasExif.call(self),
+            customOrientation = self.options.enableOrientation && customOrientation;
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         canvas.width = img.width;
         canvas.height = img.height;
 
-        var orientation = self.options.enableOrientation && customOrientation || getExifOrientation(img);
-        drawCanvas(canvas, img, orientation);
+        if (exif && !customOrientation) {
+            var orientation = getExifOrientation(img);
+            drawCanvas(canvas, img, num(orientation || 0, 10));
+        }
+        else if (customOrientation) {
+            drawCanvas(canvas, img, customOrientation);
+        }
     }
 
     function _getCanvas(data) {
@@ -1165,71 +1135,62 @@
             circle = data.circle,
             canvas = document.createElement('canvas'),
             ctx = canvas.getContext('2d'),
+            outWidth = width,
+            outHeight = height,
             startX = 0,
             startY = 0,
-            canvasWidth = data.outputWidth || width,
-            canvasHeight = data.outputHeight || height;
+            canvasWidth = outWidth,
+            canvasHeight = outHeight,
+            customDimensions = (data.outputWidth && data.outputHeight),
+            outputRatio = 1;
+
+        if (customDimensions) {
+            canvasWidth = data.outputWidth;
+            canvasHeight = data.outputHeight;
+            outputRatio = canvasWidth / outWidth;
+        }
 
         canvas.width = canvasWidth;
         canvas.height = canvasHeight;
 
         if (data.backgroundColor) {
             ctx.fillStyle = data.backgroundColor;
-            ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+            ctx.fillRect(0, 0, outWidth, outHeight);
         }
 
-        // By default assume we're going to draw the entire
-        // source image onto the destination canvas.
-        var sx = left,
-            sy = top,
-            sWidth = width,
-            sHeight = height,
-            dx = 0,
-            dy = 0,
-            dWidth = canvasWidth,
-            dHeight = canvasHeight;
-
-        //
-        // Do not go outside of the original image's bounds along the x-axis.
-        // Handle translations when projecting onto the destination canvas.
-        //
-
-        // The smallest possible source x-position is 0.
-        if (left < 0) {
-            sx = 0;
-            dx = (Math.abs(left) / width) * canvasWidth;
+        // start fixing data to send to draw image for enforceBoundary: false
+        if (!self.options.enforceBoundary) {
+            if (left < 0) {
+                startX = Math.abs(left);
+                left = 0;
+            }
+            if (top < 0) {
+                startY = Math.abs(top);
+                top = 0;
+            }
+            if (right > self._originalImageWidth) {
+                width = self._originalImageWidth - left;
+                outWidth = width;
+            }
+            if (bottom > self._originalImageHeight) {
+                height = self._originalImageHeight - top;
+                outHeight = height;
+            }
         }
 
-        // The largest possible source width is the original image's width.
-        if (sWidth + sx > self._originalImageWidth) {
-            sWidth = self._originalImageWidth - sx;
-            dWidth =  (sWidth / width) * canvasWidth;
+        if (outputRatio !== 1) {
+            startX *= outputRatio;
+            startY *= outputRatio;
+            outWidth *= outputRatio;
+            outHeight *= outputRatio;
         }
 
-        //
-        // Do not go outside of the original image's bounds along the y-axis.
-        //
-
-        // The smallest possible source y-position is 0.
-        if (top < 0) {
-            sy = 0;
-            dy = (Math.abs(top) / height) * canvasHeight;
-        }
-
-        // The largest possible source height is the original image's height.
-        if (sHeight + sy > self._originalImageHeight) {
-            sHeight = self._originalImageHeight - sy;
-            dHeight = (sHeight / height) * canvasHeight;
-        }
-
-        // console.table({ left, right, top, bottom, canvasWidth, canvasHeight, width, height, startX, startY, circle, sx, sy, dx, dy, sWidth, sHeight, dWidth, dHeight });
-
-        ctx.drawImage(this.elements.preview, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
+        ctx.drawImage(this.elements.preview, left, top, Math.min(width, self._originalImageWidth), Math.min(height, self._originalImageHeight), startX, startY, outWidth, outHeight);
         if (circle) {
             ctx.fillStyle = '#fff';
             ctx.globalCompositeOperation = 'destination-in';
             ctx.beginPath();
-            ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2, 0, Math.PI * 2, true);
+            ctx.arc(outWidth / 2, outHeight / 2, outWidth / 2, 0, Math.PI * 2, true);
             ctx.closePath();
             ctx.fill();
         }
@@ -1264,20 +1225,11 @@
 
     function _getBlobResult(data) {
         var self = this;
-        return new Promise(function (resolve) {
+        return new Promise(function (resolve, reject) {
             _getCanvas.call(self, data).toBlob(function (blob) {
                 resolve(blob);
             }, data.format, data.quality);
         });
-    }
-
-    function _replaceImage(img) {
-        if (this.elements.img.parentNode) {
-            Array.prototype.forEach.call(this.elements.img.classList, function(c) { img.classList.add(c); });
-            this.elements.img.parentNode.replaceChild(img, this.elements.img);
-            this.elements.preview = img; // if the img is attached to the DOM, they're not using the canvas
-        }
-        this.elements.img = img;
     }
 
     function _bind(options, cb) {
@@ -1285,7 +1237,7 @@
             url,
             points = [],
             zoom = null,
-            hasExif = _hasExif.call(self);
+            hasExif = _hasExif.call(self);;
 
         if (typeof (options) === 'string') {
             url = options;
@@ -1294,7 +1246,7 @@
         else if (Array.isArray(options)) {
             points = options.slice();
         }
-        else if (typeof (options) === 'undefined' && self.data.url) { //refreshing
+        else if (typeof (options) == 'undefined' && self.data.url) { //refreshing
             _updatePropertiesFromImage.call(self);
             _triggerUpdate.call(self);
             return null;
@@ -1309,8 +1261,7 @@
         self.data.url = url || self.data.url;
         self.data.boundZoom = zoom;
 
-        return loadImage(url, hasExif).then(function (img) {
-            _replaceImage.call(self, img);
+        return loadImage(url, self.elements.img, hasExif).then(function (img) {
             if (!points.length) {
                 var natDim = naturalImageDimensions(img);
                 var rect = self.elements.viewport.getBoundingClientRect();
@@ -1324,13 +1275,14 @@
                 }
                 else {
                     width = natDim.width;
-                    height = natDim.height / aspectRatio;
+                    height = width / aspectRatio;
                 }
 
                 var x0 = (natDim.width - width) / 2;
                 var y0 = (natDim.height - height) / 2;
                 var x1 = x0 + width;
                 var y1 = y0 + height;
+
                 self.data.points = [x0, y0, x1, y1];
             }
             else if (self.options.relative) {
@@ -1346,7 +1298,7 @@
                 return parseFloat(p);
             });
             if (self.options.useCanvas) {
-                _transferImageToCanvas.call(self, options.orientation);
+                _transferImageToCanvas.call(self, options.orientation || 1);
             }
             _updatePropertiesFromImage.call(self);
             _triggerUpdate.call(self);
@@ -1382,8 +1334,7 @@
 
         return {
             points: [fix(x1), fix(y1), fix(x2), fix(y2)],
-            zoom: scale,
-            orientation: self.data.orientation
+            zoom: scale
         };
     }
 
@@ -1397,7 +1348,7 @@
     function _result(options) {
         var self = this,
             data = _get.call(self),
-            opts = deepExtend(clone(RESULT_DEFAULTS), clone(options)),
+            opts = deepExtend(RESULT_DEFAULTS, deepExtend({}, options)),
             resultType = (typeof (options) === 'string' ? options : (opts.type || 'base64')),
             size = opts.size || 'viewport',
             format = opts.format,
@@ -1433,7 +1384,7 @@
         data.url = self.data.url;
         data.backgroundColor = backgroundColor;
 
-        prom = new Promise(function (resolve) {
+        prom = new Promise(function (resolve, reject) {
             switch(resultType.toLowerCase())
             {
                 case 'rawcanvas':
@@ -1459,17 +1410,27 @@
     }
 
     function _rotate(deg) {
-        if (!this.options.useCanvas || !this.options.enableOrientation) {
-            throw 'Croppie: Cannot rotate without enableOrientation && EXIF.js included';
+        if (!this.options.useCanvas) {
+            throw 'Croppie: Cannot rotate without enableOrientation';
         }
 
         var self = this,
-            canvas = self.elements.canvas;
+            canvas = self.elements.canvas,
+            copy = document.createElement('canvas'),
+            ornt = 1;
 
-        self.data.orientation = getExifOffset(self.data.orientation, deg);
-        drawCanvas(canvas, self.elements.img, self.data.orientation);
-        _updateCenterPoint.call(self, true);
-        _updateZoomLimits.call(self);
+        copy.width = canvas.width;
+        copy.height = canvas.height;
+        var ctx = copy.getContext('2d');
+        ctx.drawImage(canvas, 0, 0);
+
+        if (deg === 90 || deg === -270) ornt = 6;
+        if (deg === -90 || deg === 270) ornt = 8;
+        if (deg === 180 || deg === -180) ornt = 3;
+
+        drawCanvas(canvas, copy, ornt);
+        _onZoom.call(self);
+        copy = null;
     }
 
     function _destroy() {
@@ -1528,11 +1489,8 @@
     }
 
     function Croppie(element, opts) {
-        if (element.className.indexOf('croppie-container') > -1) {
-            throw new Error("Croppie: Can't initialize croppie more than once");
-        }
         this.element = element;
-        this.options = deepExtend(clone(Croppie.defaults), opts);
+        this.options = deepExtend(deepExtend({}, Croppie.defaults), opts);
 
         if (this.element.tagName.toLowerCase() === 'img') {
             var origImage = this.element;
@@ -1621,5 +1579,10 @@
             return _destroy.call(this);
         }
     });
-    return Croppie;
+
+    exports.Croppie = window.Croppie = Croppie;
+
+    if (typeof module === 'object' && !!module.exports) {
+        module.exports = Croppie;
+    }
 }));
