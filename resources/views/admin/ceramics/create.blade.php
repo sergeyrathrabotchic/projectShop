@@ -192,11 +192,14 @@
       function test() {
         // let boxImage1 = document.querySelector('#boxImage1');
         // boxImage1.childNodes[1].remove()
-        croppie.destroy();
+        
         setTimeout(test2, 2000);
         
       }
       function myFunction() {
+
+        croppie.destroy();
+        croppie = 0;
 
       var file = document.getElementById('file').files[0];
       var reader  = new FileReader();
