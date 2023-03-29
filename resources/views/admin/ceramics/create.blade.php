@@ -100,7 +100,7 @@
         // boxImage1.childNodes[1].remove()
         
         // setTimeout(test2, 2000);
-        const croppie = new Сropper(document.querySelector('#image1'), {
+        const croppie = new Cropper(document.querySelector('#image1'), {
           aspectRatio: 0,
           viewMode: 0
         });
@@ -147,10 +147,10 @@
       }
 
       
-      const croppie = new Сropper(document.querySelector('#image1'), {
-          aspectRatio: 0,
-          viewMode: 0
-        });
+      // const croppie = new Cropper(document.querySelector('#image1'), {
+      //     aspectRatio: 0,
+      //     viewMode: 0
+      //   });
 
       // var cropper = new Croppie(document.querySelector('#image1'), {
       //     // viewport: {
