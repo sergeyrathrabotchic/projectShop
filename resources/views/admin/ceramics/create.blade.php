@@ -84,7 +84,7 @@
 
       <script src="{{ asset('js/croppie/croppie.min.js') }}"></script>
       <script type="text/javascript">
-      var croppie; 
+      //var croppie; 
       var croppie2;
       var image;
 
@@ -93,7 +93,7 @@
         // boxImage1.childNodes[1].remove()
         
         // setTimeout(test2, 2000);
-        croppie = new Croppie(document.querySelector('#image1'), {
+        var croppie = new Croppie(document.querySelector('#image1'), {
           viewport: {
                 width: 150,
                 height: 200
