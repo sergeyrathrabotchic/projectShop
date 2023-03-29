@@ -11,9 +11,9 @@
   <input type=file name=filename id=file>
   <button type=button onclick='myFunction()'>загрузка картинки</button>
   <div style="width: 100%;height: 400px">
-    <img id="image1" style="width: 100%" src="/storage/image/electroplating/_n64060b5de8540.png" alt="">
+    <img id="image1" style="width: 100%" src="/storage/image/electroplating/_n64062f589e54f.jpeg" alt="">
   </div>
-  <a href="/storage/image/electroplating/_n64060b5de8540.png" download="FileName.png">тест</a>
+  <a href="/storage/image/electroplating/_n64062f589e54f.jpeg" download="FileName.png">тест</a>
       <div class="table-responsive">
         @include('inc.message')
         <form  method="post" action="{{route('admin.ceramics.store')}}" enctype="multipart/form-data">
