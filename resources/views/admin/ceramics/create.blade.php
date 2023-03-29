@@ -202,6 +202,16 @@
       });
       }
 
+      image = document.querySelector('#image1');
+      croppie = new Croppie(image, {
+        // aspectRatio: 1,
+        // viewMode: 0,
+        viewport: {
+              width: 150,
+              height: 200
+          }
+      });
+
       
     
       // var basic = document.getElementById('image1').croppie({
