@@ -10,12 +10,12 @@
 
   <input type=file name=filename id=file>
   <button type=button onclick='myFunction()'>загрузка картинки</button>
-  <div style="width: 100%;height: 400px" id="boxImage1">
+  <div style="width: 100%;height: 400px;margin-bottom: 50px;" id="boxImage1">
     {{-- <img id="image1" style="width: 100%" src="/storage/image/electroplating/_n64062f589e54f.jpeg" alt=""> --}}
-  <div style="width: 45%;margein-left:10px;height: 400px"> 
+  <div style="width: 45%;margein-left:10px;height: 400px;"> 
     <img id="image1" style="width: 100%" src="" alt="">
   </div>
-  <div style="width: 45%;height: 400px">
+  <div style="width: 45%;height: 400px;">
     <img id="uploade1" style="width: 100%" src="" alt="">
   </div>
   </div>
