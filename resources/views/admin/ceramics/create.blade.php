@@ -179,11 +179,7 @@
       var croppie2;
       var image;
 
-
-      function test() {
-        // let boxImage1 = document.querySelector('#boxImage1');
-        // boxImage1.childNodes[1].remove()
-        croppie.destroy();
+      function test2() {
         croppie = new Croppie(document.querySelector('#image1'), {
           // aspectRatio: 1,
           // viewMode: 0,
@@ -192,6 +188,13 @@
                 height: 200
             }
         });
+      }
+      function test() {
+        // let boxImage1 = document.querySelector('#boxImage1');
+        // boxImage1.childNodes[1].remove()
+        croppie.destroy();
+        setTimeout(test2, 2000);
+        
       }
       function myFunction() {
 
