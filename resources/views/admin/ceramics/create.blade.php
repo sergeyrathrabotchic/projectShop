@@ -161,24 +161,24 @@
 
         });
         //let getCroppedCanvas = cropper.getCroppedCanvas().toBlob();
-        alert(cropper.getCroppedCanvas().toBlob)
-        alert(cropper.getCroppedCanvas().toDataURL());
+        //alert(cropper.getCroppedCanvas().toBlob)
+        //alert(cropper.getCroppedCanvas().toDataURL("image/png"));
 
       //let fixImage = document.querySelector('#fixImage');
 
       
-      // fixImage.addEventListener('click', function(){
-      //   alert("work");
-      //   //alert(croppie.getCroppedCanvas().toDataURL("image/png"));
-      //   var croppieImage = cropper.getCroppedCanvas().toDataURL("image/png");
+      document.querySelector('#fixImage').addEventListener('click', function(){
+        alert("work");
+        //alert(croppie.getCroppedCanvas().toDataURL("image/png"));
+        var croppieImage = cropper.getCroppedCanvas().toDataURL("image/*");
 
-      //   alert(croppieImage);
+        alert(croppieImage);
 
-      //   //let upload1 = document.querySelector('#upload1');
+        //let upload1 = document.querySelector('#upload1');
 
-      //   //upload1.src = croppieImage;
+        //upload1.src = croppieImage;
 
-      // });
+      });
 
        
      
