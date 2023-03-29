@@ -192,7 +192,8 @@
       // you have to declare the file loading
       reader.readAsDataURL(file);
       setTimeout( 
-        croppie = new Croppie(image, {
+        image = document.querySelector('#image1');
+        croppie2 = new Croppie(image, {
           // aspectRatio: 1,
           // viewMode: 0,
           viewport: {
