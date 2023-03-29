@@ -204,7 +204,7 @@
       }
       // you have to declare the file loading
       reader.readAsDataURL(file);
-      setTimeout(test,10000);
+      setTimeout(() => alert('Привет'), 10000);
       
       }
       
