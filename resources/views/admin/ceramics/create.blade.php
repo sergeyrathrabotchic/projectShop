@@ -84,7 +84,7 @@
       </div>
       {{-- <button type="button" id="bottintest" class="btn btn-success">тест</button> --}}
 
-      <script src="{{ asset('js/Croppie-2.6.4/croppie.min.js') }}"></script>
+      <script src="{{ asset('js/croppie/croppie.min.js') }}"></script>
       <script type="text/javascript">
       //var croppie; 
 
@@ -170,10 +170,10 @@
       document.querySelector('#fixImage').addEventListener('click', function(){
         alert("work");
         //alert(croppie.getCroppedCanvas().toDataURL("image/png"));
-         var croppieImage = cropper.getCroppedCanvas().toDataURL("image/png");
+        // var croppieImage = cropper.getCroppedCanvas().toDataURL("image/png");
         //croppie.croppie('result', 'html');
 
-         alert(cropper)
+        // alert(cropper)
 
         // alert(croppieImage);
 
