@@ -11,10 +11,11 @@
   <input type=file name=filename id=file  class="form-control" style="margin-bottom: 20px;">
   <div style="display: flex;margin-bottom: 20px;">
      <button style="margin-right: 10px" class="btn btn-success" type=button onclick='myFunction()'>Запуск редактирования</button>
-     <a href="/storage/image/electroplating/_n64062f589e54f.jpeg" class="btn btn-success" download="FileName.png">тест</a>
+     <button style="margin-right: 10px" class="btn btn-success" type=button >Фиксация элемента</button>
+     <a href="/storage/image/electroplating/_n64062f589e54f.jpeg" class="btn btn-success" download="FileName.png">Загрузка изображения</a>
   </div>
  
-  <div style="width: 100%;height: 400px;margin-bottom: 50px;" id="boxImage1">
+  <div style="display: none" id="boxImage1">
     {{-- <img id="image1" style="width: 100%" src="/storage/image/electroplating/_n64062f589e54f.jpeg" alt=""> --}}
   <div style="width: 45%;margein-left:10px;height: 400px;"> 
     <img id="image1" style="width: 100%" src="" alt="">
@@ -188,16 +189,6 @@
       var croppie2;
       var image;
 
-      function test2() {
-        croppie = new Croppie(document.querySelector('#image1'), {
-          // aspectRatio: 1,
-          // viewMode: 0,
-          viewport: {
-                width: 150,
-                height: 200
-            }
-        });
-      }
       function test() {
         // let boxImage1 = document.querySelector('#boxImage1');
         // boxImage1.childNodes[1].remove()
@@ -215,7 +206,9 @@
 
         // croppie.destroy();
         // croppie = 0;
-
+      
+      let boxImage1 = document.querySelector('#boxImage1');
+      boxImage1.style = "width: 100%;height: 400px;margin-bottom: 50px;";
       var file = document.getElementById('file').files[0];
       var reader  = new FileReader();
       // it's onload event and you forgot (parameters)
