@@ -182,7 +182,7 @@
 
       function test() {
         let boxImage1 = document.querySelector('#boxImage1');
-        boxImage1.childNodes[0].remove()
+        boxImage1.childNodes[1].remove()
         croppie2 = new Croppie(document.querySelector('#image1'), {
           // aspectRatio: 1,
           // viewMode: 0,
