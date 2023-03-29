@@ -11,7 +11,13 @@
   <input type=file name=filename id=file>
   <button type=button onclick='myFunction()'>загрузка картинки</button>
   <div style="width: 100%;height: 400px" id="boxImage1">
-    <img id="image1" style="width: 100%" src="/storage/image/electroplating/_n64062f589e54f.jpeg" alt="">
+    {{-- <img id="image1" style="width: 100%" src="/storage/image/electroplating/_n64062f589e54f.jpeg" alt=""> --}}
+  <div style="width: 45%;margein-left:10px;"> 
+    <img id="image1" style="width: 100%" src="" alt="">
+  </div>
+  <div style="width: 45%;">
+    <img id="uploade1" style="width: 100%" src="" alt="">
+  </div>
   </div>
   <a href="/storage/image/electroplating/_n64062f589e54f.jpeg" download="FileName.png">тест</a>
       <div class="table-responsive">
@@ -193,13 +199,19 @@
         // let boxImage1 = document.querySelector('#boxImage1');
         // boxImage1.childNodes[1].remove()
         
-        setTimeout(test2, 2000);
+        // setTimeout(test2, 2000);
+        croppie = new Croppie(document.querySelector('#image1'), {
+          viewport: {
+                width: 150,
+                height: 200
+            }
+        });
         
       }
       function myFunction() {
 
-        croppie.destroy();
-        croppie = 0;
+        // croppie.destroy();
+        // croppie = 0;
 
       var file = document.getElementById('file').files[0];
       var reader  = new FileReader();
@@ -218,15 +230,15 @@
       }
       
       
-      image = document.querySelector('#image1');
-      croppie = new Croppie(image, {
-        // aspectRatio: 1,
-        // viewMode: 0,
-        viewport: {
-              width: 150,
-              height: 200
-          }
-      });
+      // image = document.querySelector('#image1');
+      // croppie = new Croppie(image, {
+      //   // aspectRatio: 1,
+      //   // viewMode: 0,
+      //   viewport: {
+      //         width: 150,
+      //         height: 200
+      //     }
+      // });
 
       
     
