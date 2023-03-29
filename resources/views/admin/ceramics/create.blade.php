@@ -175,7 +175,8 @@
       // });
 
 
-      var croppie;
+      var croppie; 
+      var croppie2;
       var image;
       function myFunction() {
 
@@ -193,7 +194,7 @@
       reader.readAsDataURL(file);
       setTimeout(
          
-        croppie = new Croppie(image, {
+        croppie2 = new Croppie(image, {
           // aspectRatio: 1,
           // viewMode: 0,
           viewport: {
