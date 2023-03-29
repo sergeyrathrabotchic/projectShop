@@ -152,10 +152,13 @@
 
 
       const cropper = new Croppie(document.querySelector('#image1'), {
-          viewport: {
-                width: 150,
-                height: 200
-            }
+          // viewport: {
+          //       width: 150,
+          //       height: 200
+          //   },
+          aspectRatio: 0,
+          viewMode: 0
+
         });
 
 
