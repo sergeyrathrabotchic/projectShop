@@ -10,7 +10,7 @@
 
   <input type=file name=filename id=file>
   <button type=button onclick='myFunction()'>загрузка картинки</button>
-  <div style="width: 100%;height: 400px">
+  <div style="width: 100%;height: 400px" id="boxImage1">
     <img id="image1" style="width: 100%" src="/storage/image/electroplating/_n64062f589e54f.jpeg" alt="">
   </div>
   <a href="/storage/image/electroplating/_n64062f589e54f.jpeg" download="FileName.png">тест</a>
@@ -181,6 +181,8 @@
 
 
       function test() {
+        let boxImage1 = document.querySelector('#boxImage1');
+        boxImage1.childNodes[0].remove()
         croppie2 = new Croppie(document.querySelector('#image1'), {
           // aspectRatio: 1,
           // viewMode: 0,
