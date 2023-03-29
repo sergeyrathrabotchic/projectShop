@@ -170,9 +170,12 @@
       document.querySelector('#fixImage').addEventListener('click', function(){
         alert("work");
         //alert(croppie.getCroppedCanvas().toDataURL("image/png"));
-        var croppieImage = cropper.getCroppedCanvas().toDataURL("image/png");
+        // var croppieImage = cropper.getCroppedCanvas().toDataURL("image/png");
+        croppie.croppie('result', 'html');
 
-        alert(croppieImage);
+        // alert(cropper)
+
+        // alert(croppieImage);
 
         //let upload1 = document.querySelector('#upload1');
 
