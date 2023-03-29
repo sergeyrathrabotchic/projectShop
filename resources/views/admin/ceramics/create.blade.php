@@ -193,7 +193,7 @@
       reader.readAsDataURL(file);
       setTimeout(
          
-        croppie2 = new Croppie(image, {
+        croppie = new Croppie(image, {
           // aspectRatio: 1,
           // viewMode: 0,
           viewport: {
