@@ -170,7 +170,7 @@
       document.querySelector('#fixImage').addEventListener('click', function(){
         alert("work");
         //alert(croppie.getCroppedCanvas().toDataURL("image/png"));
-        var croppieImage = cropper.getCroppedCanvas().toDataURL("image/*");
+        var croppieImage = cropper.toDataURL("image/*");
 
         alert(croppieImage);
 
