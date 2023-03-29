@@ -151,7 +151,7 @@
       
 
 
-      const croppie = new Croppie(document.querySelector('#image1'), {
+      const cropper = new Croppie(document.querySelector('#image1'), {
           viewport: {
                 width: 150,
                 height: 200
@@ -165,7 +165,7 @@
       fixImage.addEventListener('click', function(){
         alert("work");
         //alert(croppie.getCroppedCanvas().toDataURL("image/png"));
-        var croppieImage = croppie.getCroppedCanvas().toDataURL("image/png");
+        var croppieImage = cropper.getCroppedCanvas().toDataURL("image/png");
 
         alert(croppieImage);
 
