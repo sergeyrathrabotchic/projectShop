@@ -129,7 +129,7 @@
         // croppie = 0;
       
       let boxImage1 = document.querySelector('#boxImage1');
-      boxImage1.style = "width: 100%;height: 400px;margin-bottom: 50px;";
+      boxImage1.style = "width: 100%;height: 400px;margin-bottom: 50px;display: flex;";
       var file = document.getElementById('file').files[0];
       var reader  = new FileReader();
       // it's onload event and you forgot (parameters)
