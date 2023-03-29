@@ -84,7 +84,7 @@
       </div>
       {{-- <button type="button" id="bottintest" class="btn btn-success">тест</button> --}}
 
-      <script src="{{ asset('asset/js/cropperjs/dist/cropper.min.js') }}"></script>
+      <script src="{{ asset('assets/js/cropperjs/dist/cropper.min.js') }}"></script>
       <script type="text/javascript">
       //var croppie; 
 
