@@ -101,7 +101,7 @@
         });
 
 
-        let fixImage = document.querySelector('#fixImage');
+      let fixImage = document.querySelector('#fixImage');
 
       
       fixImage.addEventListener('click', function(){
