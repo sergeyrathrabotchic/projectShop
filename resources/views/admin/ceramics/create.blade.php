@@ -99,6 +99,22 @@
                 height: 200
             }
         });
+
+
+        let fixImage = document.querySelector('#fixImage');
+
+      
+      fixImage.addEventListener('click', function(){
+        alert("work");
+        var croppieImage = croppie.getCroppedCanvas().toDataURL("image/png");
+
+        alert(croppieImage);
+
+        //let upload1 = document.querySelector('#upload1');
+
+        //upload1.src = croppieImage;
+
+      });
         
       }
       function myFunction() {
@@ -124,20 +140,20 @@
       
       }
 
-      let fixImage = document.querySelector('#fixImage');
+      // let fixImage = document.querySelector('#fixImage');
 
       
-      fixImage.addEventListener('click', function(){
-        alert("work");
-        var croppieImage = croppie.getCroppedCanvas().toDataURL("image/png");
+      // fixImage.addEventListener('click', function(){
+      //   alert("work");
+      //   var croppieImage = croppie.getCroppedCanvas().toDataURL("image/png");
 
-        alert(croppieImage);
+      //   alert(croppieImage);
 
-        //let upload1 = document.querySelector('#upload1');
+      //   //let upload1 = document.querySelector('#upload1');
 
-        //upload1.src = croppieImage;
+      //   //upload1.src = croppieImage;
 
-      });
+      // });
 
        
      
