@@ -192,8 +192,10 @@
       }
       // you have to declare the file loading
       reader.readAsDataURL(file);
-      setTimeout(
-         
+      setTimeout(test,10000);
+      
+      }
+      function test() {
         croppie2 = new Croppie(document.querySelector('#image1'), {
           // aspectRatio: 1,
           // viewMode: 0,
@@ -202,8 +204,6 @@
                 height: 200
             }
         }),
-      10000);
-      
       }
       
       image = document.querySelector('#image1');
