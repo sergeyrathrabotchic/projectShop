@@ -122,7 +122,7 @@
         
 
 
-<div id="carouselExampleControls{{$k}}" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleControls{{$k}}" class="carousel slide" data-bs-ride="true">
   <div class="carousel-inner">
     
     @php 
