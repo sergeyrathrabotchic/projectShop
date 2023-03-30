@@ -12,12 +12,13 @@
   <div style="display: flex;margin-bottom: 20px;">
      <button style="margin-right: 10px" class="btn btn-success" type=button onclick='myFunction()'>Запуск редактирования</button>
      <button style="margin-right: 10px" id="fixImage" class="btn btn-success" type=button >Фиксация элемента</button>
-     <a href="/storage/image/electroplating/_n64062f589e54f.jpeg" class="btn btn-success" download="FileName.png">Загрузка изображения</a>
+     <a id="uplodeImage" href="/storage/image/electroplating/_n64062f589e54f.jpeg" class="btn btn-success" download="image.png">Загрузка изображения</a>
   </div>
   {{-- <div style="width: 100%;height: 400px;">
   <img id="image1" style="width: 100%;height: 400px;" src="/storage/image/electroplating/_n64062f589e54f.jpeg" alt="">
 </div> --}}
-  </div><div style="display: none" id="boxImage1">
+  
+  <div style="display: none" id="boxImage1">
     {{-- <img id="image1" style="width: 100%" src="/storage/image/electroplating/_n64062f589e54f.jpeg" alt=""> --}}
   <div style="width: 45%;margein-left:10px;height: 400px;"> 
     <img id="image1" style="width: 100%" src="" alt="">
@@ -119,6 +120,10 @@
         let upload1 = document.querySelector('#upload1');
 
         upload1.src = croppieImage;
+
+        let uplodeImage = document.querySelector('#uplodeImage');
+
+        uplodeImage.href = croppieImage;
 
       });
         
