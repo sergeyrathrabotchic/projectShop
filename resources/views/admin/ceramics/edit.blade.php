@@ -42,17 +42,17 @@
               <textarea name="description" id="description" class="form-control" cols="30" rows="10">@if ($ceramic->description) {{$ceramic->description}} @endif</textarea>
             </div>
               <label for="image">Изображение</label>
-              @if ($ceramic->productImage->where('type', 'ceramic')->count() > 0)
+              {{-- @if ($ceramic->productImage->where('type', 'ceramic')->count() > 0)
                 <div style="display: flex;">
                   <div style="width:300px;height: 300px;    margin-bottom: 40px;">
                     <img id="image0" src="{{Storage::disk('image')->url($ceramic->productImage->where('type', 'ceramic')->values()[0]->image)}}" alt="" style="width:300px;height: 300px;margin-top: 10px;margin-bottom: 10px;">
                   </div>
-                  {{-- <div>
+                  <div>
                       <img src="" alt="" id="output0" style="width: 200px;height: 200px;margin-top: 10px;margin-bottom: 10px;">
-                  </div> --}}
+                  </div> 
                 </div>
                 <button style="margin-top:40px" type="button" id="editImage0" class="btn btn-success">Изменить первую картинку</button>
-              @endif
+              @endif --}}
             
               <input type="file" class="form-control" name="image" id="image">
             </div>
@@ -92,16 +92,16 @@
             <button type="submit" class="btn btn-success">Сохранить</button>
         </form>
       </div>
-      <script src="{{ asset('js/croppie/croppie.min.js') }}"></script>
+      {{-- <script src="{{ asset('js/croppie/croppie.min.js') }}"></script> --}}
       <script type="text/javascript">
 
-      const image0 = document.getElementById('image0');
-      const сroppie = new Croppie(image0, {
-        viewport: {
-              width: 150,
-              height: 200
-          }
-      });
+      // const image0 = document.getElementById('image0');
+      // const сroppie = new Croppie(image0, {
+      //   viewport: {
+      //         width: 150,
+      //         height: 200
+      //     }
+      // });
 
 
       //if(image0) {
