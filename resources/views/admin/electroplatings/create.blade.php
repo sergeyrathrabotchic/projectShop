@@ -16,7 +16,7 @@
 
   <div style="display: none" id="boxImage1">
     {{-- <img id="image1" style="width: 100%" src="/storage/image/electroplating/_n64062f589e54f.jpeg" alt=""> --}}
-  <div style="width: 45%;margein-left:10px;height: 400px;"> 
+  <div style="width: 45%;margin-right: 10px;margein-\r:10px;height: 400px;min-width: 200px;"> 
     <img id="image1" style="width: 100%" src="" alt="">
   </div>
   <div style="width: 45%;height: 400px;">
