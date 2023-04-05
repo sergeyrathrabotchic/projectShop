@@ -183,6 +183,19 @@
     <a class="nav-link" href="/electroplatings"><div style="display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
       <div>Медные украшения</div>
     </div></a>
+    <a class="nav-link" href="/electroplatings"><div style="display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
+      <div>Домовые, Обереги и Куклы</div>
+    </div></a>
+    <a class="nav-link" href="/electroplatings"><div style="display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
+      <div>Волшебство из полимеров</div>
+    </div></a>
+    <a class="nav-link" href="/electroplatings"><div style="display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
+      <div>Магия Камней и Бисера</div>
+    </div></a>
+    <a class="nav-link" href="/electroplatings"><div style="display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
+      <div>Уютный Декор</div>
+    </div></a>
+    
   
   </div>
 

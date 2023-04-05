@@ -2,39 +2,63 @@
     <div class="position-sticky pt-3">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link @if(request())->routeIs('admin.categories.*') active @endif" aria-current="page" href="{{ route('admin.index')}}">
+          <a class="nav-link @if(request()->routeIs('admin.categories.*')) active @endif" aria-current="page" href="{{ route('admin.index')}}">
             <span data-feather="home"></span>
             Админка
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link @if(request())->routeIs('admin.categories.*') active @endif" href="{{route('admin.categories.index')}}">
+          <a class="nav-link @if(request()->routeIs('admin.categories.*')) active @endif" href="{{route('admin.categories.index')}}">
             <span data-feather="shopping-cart"></span>
             Категории
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link @if(request())->routeIs('admin.news.*') active @endif" href="{{route('admin.news.index')}}">
+          <a class="nav-link @if(request()->routeIs('admin.news.*')) active @endif" href="{{route('admin.news.index')}}">
             <span data-feather="users"></span>
             Новости
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link @if(request())->routeIs('admin.slides.*') active @endif" href="{{route('admin.slides.index')}}">
+          <a class="nav-link @if(request()->routeIs('admin.slides.*')) active @endif" href="{{route('admin.slides.index')}}">
             <span data-feather="users"></span>
             Слайд на главной странице 
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link @if(request())->routeIs('admin.electroplatings.*') active @endif" href="{{route('admin.electroplatings.index')}}">
+          <a class="nav-link @if(request()->routeIs('admin.electroplatings.*')) active @endif" href="{{route('admin.electroplatings.index')}}">
             <span data-feather="users"></span>
             Медыне украшения 
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link @if(request())->routeIs('admin.ceramics.*') active @endif" href="{{route('admin.ceramics.index')}}">
+          <a class="nav-link @if(request()->routeIs('admin.ceramics.*')) active @endif" href="{{route('admin.ceramics.index')}}">
             <span data-feather="users"></span>
             Керамика 
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link @if(request()->routeIs('admin.ceramics.*')) active @endif" href="{{route('admin.ceramics.index')}}">
+            <span data-feather="users"></span>
+            Домовые, Обереги и Куклы
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link @if(request()->routeIs('admin.ceramics.*')) active @endif" href="{{route('admin.ceramics.index')}}">
+            <span data-feather="users"></span>
+            Волшебство из полимеров 
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link @if(request()->routeIs('admin.ceramics.*')) active @endif" href="{{route('admin.ceramics.index')}}">
+            <span data-feather="users"></span>
+            Магия Камней и Бисера 
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link @if(request()->routeIs('admin.ceramics.*')) active @endif" href="{{route('admin.ceramics.index')}}">
+            <span data-feather="users"></span>
+            Уютный Декор 
           </a>
         </li>
       </ul>
