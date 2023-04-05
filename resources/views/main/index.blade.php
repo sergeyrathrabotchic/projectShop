@@ -8,8 +8,25 @@
   <title>Document</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <link href="{{ asset('assets/pages/mainCss/main.css') }}" rel="stylesheet" type="text/css">
+
+  <style>
+    
+
+    @media (max-width: 600px) { 
+      .desktop {
+        display: none !important;
+      }
+    }
+    @media (min-width: 600px) { 
+      .mobil {
+        display: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
+
+
   
 
 
@@ -136,7 +153,7 @@
 
   </div> --}}
 
-  <div style="display: flex;margin-top: 50px;width: 100%;">
+  <div class="desktop" style="display: flex;margin-top: 50px;width: 100%;">
     <div style="width: 40%;">  
       <a class="nav-link" href="/ceramics"><div style="display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 97.5%;aspect-ratio: 2 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
         <div>Керамика</div>
@@ -159,7 +176,19 @@
     </div>
   </div>
 
+  <div class="mobil" style="width: 100%;">
+    <a class="nav-link" href="/ceramics"><div style="display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
+      <div>Керамика</div>
+    </div></a>
+    <a class="nav-link" href="/electroplatings"><div style="display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
+      <div>Медные украшения</div>
+    </div></a>
+  
+  </div>
+
 </div>
+
+
 
 
 
