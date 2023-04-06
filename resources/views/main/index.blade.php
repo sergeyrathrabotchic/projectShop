@@ -122,11 +122,11 @@
     <div class="carousel-inner">
       @for ($i = 0; $i < count($slides); $i++)
         @if ($i == 0)
-          <div class="carousel-item active" style="min-height:10rem;;max-height:10rem;">
+          <div class="carousel-item active" style="min-height:20rem;;max-height:20rem;">
             <img  style="border-radius: 1rem;" src="{{Storage::disk('image')->url($slides[0]->image)}}" class="d-block w-100" alt="...">
           </div>     
         @else
-          <div class="carousel-item " style="min-height:10rem;;max-height:10rem;">
+          <div class="carousel-item " style="min-height:20rem;;max-height:20rem;">
             <img  src="{{Storage::disk('image')->url($slides[$i]->image)}}" class="d-block w-100" alt="...">
           </div>   
         @endif
