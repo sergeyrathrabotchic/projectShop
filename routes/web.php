@@ -14,6 +14,10 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\EddNewsController;
 use App\Http\Controllers\СeramicController;
+use App\Http\Controllers\AmuletController;
+use App\Http\Controllers\CozyDecorController;
+use App\Http\Controllers\MagicOfPolymerController;
+use App\Http\Controllers\MagicOfStonesAndBeadController;
 use App\Http\Controllers\ElectroplatingController;
 use App\Http\Controllers\Admin\IndexController as AdminController;
 /*
@@ -56,6 +60,14 @@ Route::get('/', [ MainController::class, 'index'])
     ->name('main');
 Route::get('/ceramics', [ СeramicController::class, 'index'])
     ->name('ceramics');
+Route::get('/amulet', [ AmuletController::class, 'index'])
+    ->name('amulet');
+Route::get('/cozyDecor', [ CozyDecorController::class, 'index'])
+    ->name('cozyDecor');
+Route::get('/magicOfPolymer', [ MagicOfPolymerController::class, 'index'])
+    ->name('magicOfPolymer');
+Route::get('/magicOfStonesAndBead', [ MagicOfStonesAndBeadController::class, 'index'])
+    ->name('magicOfStonesAndBead');
 Route::get('/electroplatings', [ ElectroplatingController::class, 'index'])
     ->name('electroplatings');
 

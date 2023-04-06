@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\ProductImages;
 
 
-class MagicOfPolymers extends Model
+class Amulet extends Model
 {
     use HasFactory;
 
     // public $timestamps = true;
 
-    protected $table = 'magic_of_polymers';
+    protected $table = 'amulets';
 
     protected $fillable = [
         'name',

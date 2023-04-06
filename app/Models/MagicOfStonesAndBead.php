@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\ProductImages;
 
 
-class Amulets extends Model
+class MagicOfStonesAndBead extends Model
 {
     use HasFactory;
 
     // public $timestamps = true;
 
-    protected $table = 'amulets';
+    protected $table = 'magic_of_stones_and_beads';
 
     protected $fillable = [
         'name',
