@@ -41,24 +41,13 @@
         <a class="nav-link" href="/">Главная</a>
         <!--Каталог-->
       </div>
-      <div style="margin-right: 2rem;margin-left: 2rem;">
-        <a class="nav-link" href="/ceramics">Керамика</a>
-        <!--Доставка и оплата-->
-      </div>
-      <div style="margin-right: 2rem;margin-left: 2rem;">
-          Контакты
-      </div>
+      
   </div>
   <div style="width: 20%;display: flex;justify-content: center;">
-      <div>
-          <img style="width: 33px;height: 33px;margin-right: 5px;" alt="Logo" src="/assets/media/svg/phone.svg" >
-      </div>
-      <div>
-          <img style="width: 35px;height: 35px;margin-right: 5px;" alt="Logo" src="/assets/media/svg/telegram.svg" >
-      </div>
-      <div>
-          <img style="width: 35px;height: 35px;margin-right: 5px;" alt="Logo" src="/assets/media/svg/whatsapp.svg" >
-      </div>
+    <a   href="https://wa.me/79631450453" target="_blank" style="text-decoration: none;color: black;display: flex;">
+      <img style="width: 35px;height: 35px;margin-right: 5px;" alt="Logo" src="/assets/media/svg/whatsapp.svg" >
+    </a>
+    </div>
   </div>
 </div>
 <div >
