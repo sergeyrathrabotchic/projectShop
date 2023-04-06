@@ -27,7 +27,8 @@
       }
 
       .slaid {
-        style="min-height:15rem;;max-height:15rem;"
+        min-height:15rem;
+        max-height:15rem;
       }
     }
   </style>
