@@ -118,7 +118,7 @@
 
 <div class="content">
 
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div id="carouselExampleSlidesOnly" style="50vh" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       @for ($i = 0; $i < count($slides); $i++)
         @if ($i == 0)
