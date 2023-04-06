@@ -304,7 +304,7 @@ class ElectroplatingController extends Controller
         // dd(1);
         $electroplating::destroy($electroplating->id);
 
-        $productImages = $electroplating->productImage->where('type', 'electroplating');
+        $productImages = $electroplating->productImage->where('type', 'electroplating')->values();
         for ($i = 0; $i<count($productImages);$i++) {
             ProductImages::destroy($productImages[$i]->id);
         }

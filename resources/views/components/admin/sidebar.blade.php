@@ -38,27 +38,27 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link @if(request()->routeIs('admin.ceramics.*')) active @endif" href="{{route('admin.ceramics.index')}}">
+          <a class="nav-link @if(request()->routeIs('admin.ceramics.*')) active @endif" href="{{route('admin.amulets.index')}}">
             <span data-feather="users"></span>
             Домовые, Обереги и Куклы
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link @if(request()->routeIs('admin.ceramics.*')) active @endif" href="{{route('admin.ceramics.index')}}">
+          <a class="nav-link @if(request()->routeIs('admin.ceramics.*')) active @endif" href="{{route('admin.magicOfPolymers.index')}}">
             <span data-feather="users"></span>
             Волшебство из полимеров 
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link @if(request()->routeIs('admin.ceramics.*')) active @endif" href="{{route('admin.ceramics.index')}}">
+          <a class="nav-link @if(request()->routeIs('admin.ceramics.*')) active @endif" href="{{route('admin.magicOfStonesAndBeads.index')}}">
             <span data-feather="users"></span>
             Магия Камней и Бисера 
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link @if(request()->routeIs('admin.ceramics.*')) active @endif" href="{{route('admin.ceramics.index')}}">
+          <a class="nav-link @if(request()->routeIs('admin.ceramics.*')) active @endif" href="{{route('admin.cozyDecors.index')}}">
             <span data-feather="users"></span>
-            Уютный Декор 
+            Уютный Декор 
           </a>
         </li>
       </ul>

@@ -7,10 +7,11 @@ use Illuminate\Http\Request;
 use App\Models\ImageSlaid;
 use App\Helpers\ImageUploadHelper;
 use App\Models\Сeramics;
+use App\Models\Amulet;
 use App\Models\ProductImages;
 
 
-class СeramicController extends Controller
+class AmuletController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +24,7 @@ class СeramicController extends Controller
         // $slideImages = ImageSlaid::with('image')->paginate(10);
 
 
-        $сeramics =  Сeramics::with('productImage')->paginate(5);
+        $сeramics =  Amulet::with('productImage')->paginate(5);
         $page = $request->get('page', 1);
         if ($page > 0) {
             $page = ($page - 1) * 5;
@@ -34,7 +35,7 @@ class СeramicController extends Controller
         // dd(ImageSlaid::all());
         // dd($slideImages);
         // dd(1);
-        return view('admin.ceramics.index', [
+        return view('admin.amulets.index', [
             'ceramics' => $сeramics ,
             'page' => $page,
         ]);
@@ -47,7 +48,7 @@ class СeramicController extends Controller
      */
     public function create()
     {
-        return view('admin.ceramics.create');
+        return view('admin.amulets.create');
     }
 
     /**
@@ -70,7 +71,7 @@ class СeramicController extends Controller
 
         // if (isset())
         // dd($request->file());
-        $ceramic = Сeramics::create([
+        $ceramic = Amulet::create([
             'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
@@ -129,7 +130,7 @@ class СeramicController extends Controller
 
         if ($ceramic) {
             return redirect()
-            ->route('admin.ceramics.index')
+            ->route('admin.amulets.index')
             ->with('success', 'Товар успешно добавлен');
         }
 
@@ -299,18 +300,21 @@ class СeramicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy( Сeramics $ceramic)
+    public function destroy( amulet $amulet)
     {
         // dd(1);
-        $ceramic::destroy($ceramic->id);
+        
+        $amulet::destroy($amulet->id);
 
-        $productImages = $ceramic->productImage->where('type', 'ceramic')->values();
+        $productImages = $amulet->productImage->where('type', 'amulet')->values();
+        //dd($productImages);
         for ($i = 0; $i<count($productImages);$i++) {
             ProductImages::destroy($productImages[$i]->id);
         }
         
+        
         return redirect()
-            ->route('admin.ceramics.index')
+            ->route('admin.amulets.index')
             ->with('success', 'Товар успешно удален');
     }
 }

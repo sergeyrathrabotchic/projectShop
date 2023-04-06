@@ -7,10 +7,11 @@ use Illuminate\Http\Request;
 use App\Models\ImageSlaid;
 use App\Helpers\ImageUploadHelper;
 use App\Models\Сeramics;
+use App\Models\CozyDecor;
 use App\Models\ProductImages;
 
 
-class СeramicController extends Controller
+class CozyDecorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +24,7 @@ class СeramicController extends Controller
         // $slideImages = ImageSlaid::with('image')->paginate(10);
 
 
-        $сeramics =  Сeramics::with('productImage')->paginate(5);
+        $сeramics =  CozyDecor::with('productImage')->paginate(5);
         $page = $request->get('page', 1);
         if ($page > 0) {
             $page = ($page - 1) * 5;
@@ -34,7 +35,7 @@ class СeramicController extends Controller
         // dd(ImageSlaid::all());
         // dd($slideImages);
         // dd(1);
-        return view('admin.ceramics.index', [
+        return view('admin.cozyDecors.index', [
             'ceramics' => $сeramics ,
             'page' => $page,
         ]);
@@ -47,7 +48,7 @@ class СeramicController extends Controller
      */
     public function create()
     {
-        return view('admin.ceramics.create');
+        return view('admin.cozyDecors.create');
     }
 
     /**
@@ -70,7 +71,7 @@ class СeramicController extends Controller
 
         // if (isset())
         // dd($request->file());
-        $ceramic = Сeramics::create([
+        $ceramic = CozyDecor::create([
             'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
@@ -129,7 +130,7 @@ class СeramicController extends Controller
 
         if ($ceramic) {
             return redirect()
-            ->route('admin.ceramics.index')
+            ->route('admin.cozyDecors.index')
             ->with('success', 'Товар успешно добавлен');
         }
 
@@ -299,18 +300,18 @@ class СeramicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy( Сeramics $ceramic)
+    public function destroy( CozyDecor $cozyDecor)
     {
         // dd(1);
-        $ceramic::destroy($ceramic->id);
+        $cozyDecor::destroy($cozyDecor->id);
 
-        $productImages = $ceramic->productImage->where('type', 'ceramic')->values();
+        $productImages = $cozyDecor->productImage->where('type', 'cozyDecor')->values();
         for ($i = 0; $i<count($productImages);$i++) {
             ProductImages::destroy($productImages[$i]->id);
         }
         
         return redirect()
-            ->route('admin.ceramics.index')
+            ->route('admin.cozyDecors.index')
             ->with('success', 'Товар успешно удален');
     }
 }
