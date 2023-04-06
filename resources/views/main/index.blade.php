@@ -171,7 +171,7 @@
       <div style="display: flex">
         {{-- <a  href="/ceramics" style=""> --}}
           <div href="/ceramics" onclick="AmuletController()" style="cursor: pointer;text-align: center;display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 46.25%;aspect-ratio: 1 / 1;margin-right: 2.5%;">
-            <div>Домовые, Обереги и Куклы</div>
+            <div>Домовые, Обереги<br>  и Куклы</div>
           </div>
         {{-- </a> --}}
         <div onclick="MagicOfPolymerController()" style="cursor: pointer;text-align: center;display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 46.25%;aspect-ratio: 1 / 1;margin-left: 2.5%;margin-right: 2.5%;">
@@ -186,10 +186,10 @@
     <div style="width: 40%;">
       <div style="display: flex">
         <div onclick="MagicOfStonesAndBeadController()" style="cursor: pointer;text-align: center;display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 46.25%;aspect-ratio: 1 / 1;margin-left: 2.5%;margin-right: 2.5%;margin-top: 5%;">
-          <div>Магия Камней и Бисера</div>
+          <div>Магия Камней<br>  и Бисера</div>
         </div>
         <div onclick="CozyDecorController()" style="cursor: pointer;text-align: center;display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 46.25%;aspect-ratio: 1 / 1;margin-left: 2.5%;margin-top: 5%;">
-          <div>Уютный Декор</div>
+          <div>Уютный<br> Декор</div>
         </div>
       </div>
       <a class="nav-link" href="/electroplatings"><div style="background: #e7ceb7;width: 97.5%;aspect-ratio: 2 / 1;margin-left: 2.5%;margin-top: 5%;display: flex;align-items: center;justify-content: center;"><div style="text-align: center">Медные<br>украшения</div></div></a>  
@@ -204,16 +204,16 @@
       <div>Медные украшения</div>
     </div></a>
     <a class="nav-link" href="/amulet"><div style="display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
-      <div>Домовые, Обереги<br> и Куклы</div>
+      <div>Домовые, Обереги и Куклы</div>
     </div></a>
     <a class="nav-link" href="/magicOfPolymer"><div style="display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
       <div>Волшебство из полимеров</div>
     </div></a>
     <a class="nav-link" href="/magicOfStonesAndBead"><div style="display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
-      <div>Магия Камней<br> и Бисера</div>
+      <div>Магия Камней и Бисера</div>
     </div></a>
     <a class="nav-link" href="/cozyDecor"><div style="display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
-      <div>Уютный<br> Декор</div>
+      <div>УютныйДекор</div>
     </div></a>
     
   
