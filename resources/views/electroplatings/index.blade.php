@@ -130,11 +130,11 @@
       @endphp
       @for ($i = 0;$i < count($productImages);$i++)
               @if($i == 0)
-              <div class="carousel-item active" style="min-height: 250px;max-height: 250px;" data-bs-interval="40000">
+              <div class="carousel-item active" style="min-height: 24rem;max-height: 24rem;" data-bs-interval="40000">
                 <img src="{{Storage::disk('image')->url($productImages[0]->image)}}" class="d-block w-100" alt="...">
               </div>
               @else
-              <div class="carousel-item" style="min-height: 250px;max-height: 250px;" data-bs-interval="40000">
+              <div class="carousel-item" style="min-height: 24rem;max-height: 24rem;" data-bs-interval="40000">
                 <img src="{{Storage::disk('image')->url($productImages[$i]->image)}}" class="d-block w-100" alt="...">
               </div>
               @endif

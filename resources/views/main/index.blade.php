@@ -159,7 +159,11 @@
         <div>Керамика</div>
       </div></a>
       <div style="display: flex">
-        <div style="background: #b4bec6;width: 46.25%;aspect-ratio: 1 / 1;margin-right: 2.5%;"></div>
+        {{-- <a  href="/ceramics" style=""> --}}
+          <div href="/ceramics" style="text-align: center;display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 46.25%;aspect-ratio: 1 / 1;margin-right: 2.5%;">
+            <div>Домовые, Обереги и Куклы</div>
+          </div>
+        {{-- </a> --}}
         <div style="background: #e7ceb7;width: 46.25%;aspect-ratio: 1 / 1;margin-left: 2.5%;margin-right: 2.5%;"></div>
       </div>
     </div>
