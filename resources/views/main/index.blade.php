@@ -122,12 +122,12 @@
     <div class="carousel-inner">
       @for ($i = 0; $i < count($slides); $i++)
         @if ($i == 0)
-          <div class="carousel-item active">
-            <img  style="border-radius: 1rem;" src="{{Storage::disk('image')->url($slides[0]->image)}}" class="d-block w-100" alt="...">
+          <div style="height: 100%;" class="carousel-item active">
+            <img style="height: 100%;" style="border-radius: 1rem;" src="{{Storage::disk('image')->url($slides[0]->image)}}" class="d-block w-100" alt="...">
           </div>     
         @else
-          <div class="carousel-item ">
-            <img  style="border-radius: 1rem;" src="{{Storage::disk('image')->url($slides[$i]->image)}}" class="d-block w-100" alt="...">
+          <div style="height: 100%;" class="carousel-item ">
+            <img style="height: 100%;" style="border-radius: 1rem;" src="{{Storage::disk('image')->url($slides[$i]->image)}}" class="d-block w-100" alt="...">
           </div>   
         @endif
         
