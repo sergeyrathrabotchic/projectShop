@@ -119,7 +119,7 @@
 <div class="content" >
   <div style="display: flex;justify-content: center;">
   <div id="carouselExampleSlidesOnly" style="max-height:50vh;" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
+    <div class="carousel-inner" style="height: 100%;">
       @for ($i = 0; $i < count($slides); $i++)
         @if ($i == 0)
           <div style="height: 100%;" class="carousel-item active">
