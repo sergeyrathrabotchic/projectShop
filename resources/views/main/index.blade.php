@@ -18,7 +18,7 @@
       }
 
       .slaid {
-        style="min-height:25rem;;max-height:25rem;"
+        min-height:15rem;;max-height:15rem;
       }
     }
     @media (min-width: 600px) { 
@@ -27,8 +27,8 @@
       }
 
       .slaid {
-        min-height:15rem;
-        max-height:15rem;
+        min-height:25rem;
+        max-height:25rem;
       }
     }
   </style>
