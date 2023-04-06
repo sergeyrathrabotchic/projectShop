@@ -116,9 +116,9 @@
 
 
 
-<div class="content">
-  <div style="text-align: center">
-  <div id="carouselExampleSlidesOnly" style="max-width:50vh;" class="carousel slide" data-bs-ride="carousel">
+<div class="content" >
+  <div style="display: flex;justify-content: center;">
+  <div id="carouselExampleSlidesOnly" style="max-height:50vh;" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       @for ($i = 0; $i < count($slides); $i++)
         @if ($i == 0)
