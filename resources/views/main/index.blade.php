@@ -117,7 +117,7 @@
 
 
 <div class="content">
-
+  <div style="text-align: center">
   <div id="carouselExampleSlidesOnly" style="max-width:50vh;" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       @for ($i = 0; $i < count($slides); $i++)
@@ -147,6 +147,7 @@
         <img src="{{ asset('assets/media/imegas/slaid3.jpg')}}" class="d-block w-100" alt="...">
       </div> --}}
     </div>
+  </div>
   </div>
 
   {{-- <div style="width: 100%;background-color: #2267a0;aspect-ratio: 2 / 1;">
