@@ -45,7 +45,10 @@
   </div>
   <div style="width: 20%;display: flex;justify-content: center;">
     <a   href="https://wa.me/79631450453" target="_blank" style="text-decoration: none;color: black;display: flex;">
-      <img style="width: 35px;height: 35px;margin-right: 5px;" alt="Logo" src="/assets/media/svg/whatsapp.svg" >
+      <img style="width: 35px;height: 35px;margin-right: 5px;" alt="Logo" src="/assets/media/staticImages/whatsapp2.png" >
+    </a>
+    <a   href="https://wa.me/79631450453" target="_blank" style="text-decoration: none;color: black;display: flex;">
+      <img style="width: 35px;height: 35px;margin-right: 5px;" alt="Logo" src="/assets/media/staticImages/vk.png" >
     </a>
   </div>
 </div>
@@ -53,9 +56,17 @@
   <nav class="navbar bg-light fixed-top phoneMenu" >
       <div class="container-fluid">
         <div>
-          <button style="filter: opacity(0%);" class="navbar-toggler shadow-none"  style="border: none;outline: none;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          {{-- <button style="filter: opacity(0%);" class="navbar-toggler shadow-none"  style="border: none;outline: none;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
-          </button>
+          </button> --}}
+          <div style="display: flex;justify-content: center;">
+            <a   href="https://wa.me/79631450453" target="_blank" style="text-decoration: none;color: black;display: flex;">
+              <img style="width: 35px;height: 35px;margin-right: 5px;" alt="Logo" src="/assets/media/staticImages/whatsapp2.png" >
+            </a>
+            <a   href="https://wa.me/79631450453" target="_blank" style="text-decoration: none;color: black;display: flex;">
+              <img style="width: 35px;height: 35px;margin-right: 5px;" alt="Logo" src="/assets/media/staticImages/vk.png" >
+            </a>
+          </div>
         </div>
         {{-- <a class="navbar-brand" href="#">Offcanvas navbar</a> --}}
         <img style="width: 60px" src="{{ asset('assets/media/logo/logo3.png')}}" alt="">
@@ -72,12 +83,12 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{route('main')}}">Главная</a>
               </li>
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a class="nav-link" href="{{route('ceramics')}}">Керамика</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{route('electroplatings')}}">Медные украшения</a>
-              </li>
+              </li> --}}
               <!--<li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown
