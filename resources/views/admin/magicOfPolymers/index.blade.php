@@ -84,7 +84,7 @@
                      @else - @endif
                     </td> --}}
                     <td>
-                      <a href="{{route('admin.ceramics.edit', ['ceramic' => $ceramic->id ])}}" class="btn btn-primary">Ред.</a>
+                      <a href="{{route('admin.magicOfPolymers.edit', ['magicOfPolymer' => $ceramic->id ])}}" class="btn btn-primary">Ред.</a>
                       {{-- &nbsp;|&nbsp; --}}
                       {{-- <a href="{{route('admin.slides.destroy', ['slide' => $slide->id ])}}" style="color: red">Уд.</a> --}}
           {{-- {{dd($slide->id)}} --}}

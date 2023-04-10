@@ -154,11 +154,11 @@ class AmuletController extends Controller
      * @param  Category $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Сeramics $ceramic)
+    public function edit(amulet $amulet)
     {
        //$category = Category::findOrFail($id);
-       return view('admin.ceramics.edit', [
-           'ceramic' => $ceramic
+       return view('admin.amulets.edit', [
+           'amulet' => $amulet
        ]);
     }
 
@@ -169,23 +169,25 @@ class AmuletController extends Controller
      * @param  ImageSlaid $imageSlaid
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Сeramics $ceramic)
+    public function update(Request $request, amulet $amulet)
     {
         // dd( $request->all());
         $request->validate([
             'name' => ['required'],
             'type' => ['required']
         ]);
-
-        $ceramicResilt = $ceramic->update([
+        //dd($amulet);
+        $ceramicResilt = $amulet->update([
             'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
         ]);
         //dd($electroplating ->id);
-        $productImages = $ceramic->productImage->where('type', 'ceramic');
+        $productImages = $amulet->productImage->where('type', 'amulet')->values();
+        //dd($ceramic);
+        //dd($productImages);
         if ($request->image != null) {
-            $image = ImageUploadHelper::imageUpload($request->image, 'ceramic');
+            $image = ImageUploadHelper::imageUpload($request->image, 'amulet');
             // $productImage = ProductImages::create([
             //     "image" => $image,
             //     'product_id' => $electroplating->id,
@@ -198,7 +200,7 @@ class AmuletController extends Controller
         }
         
         if ($request->image2 != null) {
-            $image2 = ImageUploadHelper::imageUpload($request->image2, 'ceramic');
+            $image2 = ImageUploadHelper::imageUpload($request->image2, 'amulet');
             if( $request->count > 1 ) {
                 $productImage2 = $productImages[1];
                 $productImage2->update([
@@ -207,13 +209,13 @@ class AmuletController extends Controller
             } else {
                 $productImage = ProductImages::create([
                     "image" => $image2,
-                    'product_id' => $ceramic->id,
+                    'product_id' => $amulet->id,
                     'type' => $request->type,
                 ]);
             }
         }
         if ($request->image3 != null) {
-            $image3 = ImageUploadHelper::imageUpload($request->image3, 'ceramic');
+            $image3 = ImageUploadHelper::imageUpload($request->image3, 'amulet');
             if( $request->count > 2 ) {
                 $productImage3 = $productImages[2];
                 $productImage3->update([
@@ -222,13 +224,13 @@ class AmuletController extends Controller
             } else {
                 $productImage = ProductImages::create([
                     "image" => $image3,
-                    'product_id' => $ceramic->id,
+                    'product_id' => $amulet->id,
                     'type' => $request->type,
                 ]);
             }
         }
         if ($request->image4 != null) {
-            $image4 = ImageUploadHelper::imageUpload($request->image4, 'ceramic');
+            $image4 = ImageUploadHelper::imageUpload($request->image4, 'amulet');
             if( $request->count > 3 ) {
                 $productImage4 = $productImages[3];
                 $productImage4->update([
@@ -237,13 +239,13 @@ class AmuletController extends Controller
             } else {
                 $productImage = ProductImages::create([
                     "image" => $image4,
-                    'product_id' => $ceramic->id,
+                    'product_id' => $amulet->id,
                     'type' => $request->type,
                 ]);
             }
         }
         if ($request->image5 != null) {
-            $image5 = ImageUploadHelper::imageUpload($request->image5, 'ceramic');
+            $image5 = ImageUploadHelper::imageUpload($request->image5, 'amulet');
             if( $request->count > 4 ) {
                 $productImage5 = $productImages[4];
                 $productImage5->update([
@@ -252,7 +254,7 @@ class AmuletController extends Controller
             } else {
                 $productImage = ProductImages::create([
                     "image" => $image5,
-                    'product_id' => $ceramic->id,
+                    'product_id' => $amulet->id,
                     'type' => $request->type,
                 ]);
             }
@@ -286,7 +288,7 @@ class AmuletController extends Controller
 
         if( $ceramicResilt ) {
             return redirect()
-            ->route('admin.ceramics.index')
+            ->route('admin.amulets.index')
             ->with('success', 'Товар успешно обновлен')
             /*->with('success', 'Категория успешно обновлена')*/;
         }

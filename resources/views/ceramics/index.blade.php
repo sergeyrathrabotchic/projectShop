@@ -87,6 +87,18 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{route('electroplatings')}}">Медные украшения</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('magicOfPolymer')}}">Волшебство из полимеров </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('magicOfStonesAndBead')}}">Магия Камней и Бисера</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('amulet')}}">Домовые, Обереги и Куклы</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('cozyDecor')}}">Уютный Декор</a>
+              </li>
               <!--<li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown

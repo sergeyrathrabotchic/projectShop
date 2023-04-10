@@ -85,7 +85,10 @@
                      @else - @endif
                     </td> --}}
                     <td>
-                      <a href="{{route('admin.ceramics.edit', ['ceramic' => $ceramic->id ])}}" class="btn btn-primary">Ред.</a>
+                      @php
+                          $amulet = $ceramic;
+                      @endphp
+                      <a href="{{route('admin.amulets.edit', ['amulet' => $amulet->id ])}}" class="btn btn-primary">Ред.</a>
                       {{-- &nbsp;|&nbsp; --}}
                       {{-- <a href="{{route('admin.slides.destroy', ['slide' => $slide->id ])}}" style="color: red">Уд.</a> --}}
           {{-- {{dd($slide->id)}} --}}
@@ -95,9 +98,7 @@
                         @method('put')
                         <button  type="submit" style="color: red">Уд.</button>
                       </form> --}}
-                      @php
-                          $amulet = $ceramic;
-                      @endphp
+                      
                       <form  action="{{ route('admin.amulets.destroy' , ['amulet' => $amulet->id ])}}" method="POST">
                         {{ csrf_field() }}           
                         <button name="_method" type="hidden" value="DELETE" class="btn btn-danger" style="margin-top: 5px;">Удалить</button>

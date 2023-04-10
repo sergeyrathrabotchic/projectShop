@@ -86,6 +86,21 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{route('main')}}">Главная</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('ceramics')}}">Керамика</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('magicOfPolymer')}}">Волшебство из полимеров </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('magicOfStonesAndBead')}}">Магия Камней и Бисера</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('amulet')}}">Домовые, Обереги и Куклы</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('cozyDecor')}}">Уютный Декор</a>
+              </li>
               {{-- <li class="nav-item">
                 <a class="nav-link" href="{{route('ceramics')}}">Керамика</a>
               </li>

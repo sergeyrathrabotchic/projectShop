@@ -12,8 +12,9 @@
   {{-- {{dd($slide)}} --}}
       <div class="table-responsive">
         @include('inc.message')
-        <form  method="post" action="{{route('admin.ceramics.update', [
-            'ceramic' => $ceramic
+        <form  method="post" action="{{route('admin.magicOfPolymers.update', [
+            'magicOfPolymer' => $magicOfPolymer 
+            // $magicOfPolymer->id
         ])}}" enctype="multipart/form-data">
           @csrf 
           @method('put')
@@ -27,64 +28,65 @@
             </div> --}}
 
             <div class="form-group">
-            <input type="hidden" class="form-control" name="type" id="type" value="ceramic">
-            <input type="hidden" class="form-control" name="count" id="count" value="{{$ceramic->productImage->count()}}">
+            <input type="hidden" class="form-control" name="type" id="type" value="magicOfPolymer">
+            <input type="hidden" class="form-control" name="count" id="count" value="{{$magicOfPolymer->productImage->count()}}">
             <div class="form-group">
               <label for="image">Наименование товара</label>
-              <input type="test" class="form-control" name="name" id="name" @if ($ceramic->name) value="{{$ceramic->name}}" @endif>
+              <input type="test" class="form-control" name="name" id="name" @if ($magicOfPolymer->name) value="{{$magicOfPolymer->name}}" @endif>
             </div>
             <div class="form-group">
               <label for="image">Цена товара</label>
-              <input type="test" class="form-control" name="price" id="price" @if ($ceramic->price) value="{{$ceramic->price}}" @endif>
+              <input type="test" class="form-control" name="price" id="price" @if ($magicOfPolymer->price) value="{{$magicOfPolymer->price}}" @endif>
             </div>
             <div class="form-group">
               <label for="image">Описание товара</label>
-              <textarea name="description" id="description" class="form-control" cols="30" rows="10">@if ($ceramic->description) {{$ceramic->description}} @endif</textarea>
+              <textarea name="description" id="description" class="form-control" cols="30" rows="10">@if ($magicOfPolymer->description) {{$magicOfPolymer->description}} @endif</textarea>
             </div>
               <label for="image">Изображение</label>
-              {{-- @if ($ceramic->productImage->where('type', 'ceramic')->count() > 0)
-                <div style="display: flex;">
+              @if ($magicOfPolymer->productImage->where('type', 'magicOfPolymer')->count() > 0)
+                {{-- <div style="display: flex;"> --}}
                   <div style="width:300px;height: 300px;    margin-bottom: 40px;">
-                    <img id="image0" src="{{Storage::disk('image')->url($ceramic->productImage->where('type', 'ceramic')->values()[0]->image)}}" alt="" style="width:300px;height: 300px;margin-top: 10px;margin-bottom: 10px;">
+                    <img id="image0" src="{{Storage::disk('image')->url($magicOfPolymer->productImage->where('type', 'magicOfPolymer')->values()[0]->image)}}" alt="" style="width:300px;height: 300px;margin-top: 10px;margin-bottom: 10px;">
                   </div>
-                  <div>
+                  {{-- <div>
                       <img src="" alt="" id="output0" style="width: 200px;height: 200px;margin-top: 10px;margin-bottom: 10px;">
                   </div> 
                 </div>
-                <button style="margin-top:40px" type="button" id="editImage0" class="btn btn-success">Изменить первую картинку</button>
-              @endif --}}
+                <button style="margin-top:40px" type="button" id="editImage0" class="btn btn-success">Изменить первую картинку</button> --}}
+              @endif
+              
             
               <input type="file" class="form-control" name="image" id="image">
             </div>
             <br>
             <div class="form-group">
               <label for="image2">Изображение 2</label>
-              @if ($ceramic->productImage->where('type', 'ceramic')->count() > 1)
-                <img src="{{Storage::disk('image')->url($ceramic->productImage->where('type', 'ceramic')->values()[1]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
+              @if ($magicOfPolymer->productImage->where('type', 'magicOfPolymer')->count() > 1)
+                <img src="{{Storage::disk('image')->url($magicOfPolymer->productImage->where('type', 'magicOfPolymer')->values()[1]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
               @endif
               <input type="file" class="form-control" name="image2" id="image2">
             </div>
             <br>
             <div class="form-group">
               <label for="image3">Изображение 3</label>
-              @if ($ceramic->productImage->where('type', 'ceramic')->count() > 2)
-                <img src="{{Storage::disk('image')->url($ceramic->productImage->where('type', 'ceramic')->values()[2]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
+              @if ($magicOfPolymer->productImage->where('type', 'magicOfPolymer')->count() > 2)
+                <img src="{{Storage::disk('image')->url($magicOfPolymer->productImage->where('type', 'magicOfPolymer')->values()[2]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
               @endif
               <input type="file" class="form-control" name="image3" id="image3">
             </div>
             <br>
             <div class="form-group">
               <label for="image4">Изображение 4</label>
-              @if ($ceramic->productImage->where('type', 'ceramic')->count() > 3)
-                <img src="{{Storage::disk('image')->url($ceramic->productImage->where('type', 'ceramic')->values()[3]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
+              @if ($magicOfPolymer->productImage->where('type', 'magicOfPolymer')->count() > 3)
+                <img src="{{Storage::disk('image')->url($magicOfPolymer->productImage->where('type', 'magicOfPolymer')->values()[3]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
               @endif
               <input type="file" class="form-control" name="image4" id="image4">
             </div>
             <br>
             <div class="form-group">
               <label for="image5">Изображение 5</label>
-              @if ($ceramic->productImage->where('type', 'ceramic')->count() > 4)
-                <img src="{{Storage::disk('image')->url($ceramic->productImage->where('type', 'ceramic')->values()[4]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
+              @if ($magicOfPolymer->productImage->where('type', 'magicOfPolymer')->count() > 4)
+                <img src="{{Storage::disk('image')->url($magicOfPolymer->productImage->where('type', 'magicOfPolymer')->values()[4]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
               @endif
               <input type="file" class="form-control" name="image5" id="image5">
             </div>

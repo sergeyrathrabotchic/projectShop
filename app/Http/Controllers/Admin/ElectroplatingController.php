@@ -182,7 +182,7 @@ class ElectroplatingController extends Controller
             'description' => $request->description,
         ]);
         //dd($electroplating ->id);
-        $productImages = $electroplating->productImage->where('type', 'electroplating');
+        $productImages = $electroplating->productImage->where('type', 'electroplating')->values();
         if ($request->image != null) {
             $image = ImageUploadHelper::imageUpload($request->image, 'electroplating');
             // $productImage = ProductImages::create([

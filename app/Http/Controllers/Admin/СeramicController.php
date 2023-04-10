@@ -182,7 +182,7 @@ class СeramicController extends Controller
             'description' => $request->description,
         ]);
         //dd($electroplating ->id);
-        $productImages = $ceramic->productImage->where('type', 'ceramic');
+        $productImages = $ceramic->productImage->where('type', 'ceramic')->values();
         if ($request->image != null) {
             $image = ImageUploadHelper::imageUpload($request->image, 'ceramic');
             // $productImage = ProductImages::create([
