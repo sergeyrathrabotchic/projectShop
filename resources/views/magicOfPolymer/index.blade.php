@@ -144,7 +144,7 @@
   <div class="carousel-inner">
     
     @php 
-        $productImages = $ceramic->productImage->where('type', 'magicOfPolymer')->values()->reverse();
+        $productImages = $ceramic->productImage->where('type', 'magicOfPolymer')->values();
       @endphp
       @for ($i = 0;$i < count($productImages);$i++)
               @if($i == 0)
