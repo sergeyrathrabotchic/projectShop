@@ -199,7 +199,7 @@ class MagicOfPolymerController extends Controller
         
         if ($request->image2 != null) {
             $image2 = ImageUploadHelper::imageUpload($request->image2, 'magicOfPolymer');
-            if( $request->count > 1 ) {
+            if( $productImages->count > 1 ) {
                 $productImage2 = $productImages[1];
                 $productImage2->update([
                 "image" => $image2,
@@ -214,7 +214,7 @@ class MagicOfPolymerController extends Controller
         }
         if ($request->image3 != null) {
             $image3 = ImageUploadHelper::imageUpload($request->image3, 'magicOfPolymer');
-            if( $request->count > 2 ) {
+            if( $productImages->count > 2 ) {
                 $productImage3 = $productImages[2];
                 $productImage3->update([
                 "image" => $image3,
@@ -229,7 +229,7 @@ class MagicOfPolymerController extends Controller
         }
         if ($request->image4 != null) {
             $image4 = ImageUploadHelper::imageUpload($request->image4, 'magicOfPolymer');
-            if( $request->count > 3 ) {
+            if( $productImages->count > 3 ) {
                 $productImage4 = $productImages[3];
                 $productImage4->update([
                 "image" => $image4,
@@ -244,7 +244,7 @@ class MagicOfPolymerController extends Controller
         }
         if ($request->image5 != null) {
             $image5 = ImageUploadHelper::imageUpload($request->image5, 'magicOfPolymer');
-            if( $request->count > 4 ) {
+            if( $productImages->count > 4 ) {
                 $productImage5 = $productImages[4];
                 $productImage5->update([
                 "image" => $image5,
