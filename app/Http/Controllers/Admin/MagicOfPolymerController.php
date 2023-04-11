@@ -199,7 +199,7 @@ class MagicOfPolymerController extends Controller
         
         if ($request->image2 != null) {
             $image2 = ImageUploadHelper::imageUpload($request->image2, 'magicOfPolymer');
-            if( $productImages->count > 1 ) {
+            if( count($productImages) > 1 ) {
                 $productImage2 = $productImages[1];
                 $productImage2->update([
                 "image" => $image2,
