@@ -198,7 +198,7 @@ class СeramicController extends Controller
         
         if ($request->image2 != null) {
             $image2 = ImageUploadHelper::imageUpload($request->image2, 'ceramic');
-            if( $request->count > 1 ) {
+            if( count($productImages) > 1 ) {
                 $productImage2 = $productImages[1];
                 $productImage2->update([
                 "image" => $image2,
@@ -213,7 +213,7 @@ class СeramicController extends Controller
         }
         if ($request->image3 != null) {
             $image3 = ImageUploadHelper::imageUpload($request->image3, 'ceramic');
-            if( $request->count > 2 ) {
+            if( count($productImages) > 2 ) {
                 $productImage3 = $productImages[2];
                 $productImage3->update([
                 "image" => $image3,
@@ -228,7 +228,7 @@ class СeramicController extends Controller
         }
         if ($request->image4 != null) {
             $image4 = ImageUploadHelper::imageUpload($request->image4, 'ceramic');
-            if( $request->count > 3 ) {
+            if( count($productImages) > 3 ) {
                 $productImage4 = $productImages[3];
                 $productImage4->update([
                 "image" => $image4,
@@ -243,7 +243,7 @@ class СeramicController extends Controller
         }
         if ($request->image5 != null) {
             $image5 = ImageUploadHelper::imageUpload($request->image5, 'ceramic');
-            if( $request->count > 4 ) {
+            if( count($productImages) > 4 ) {
                 $productImage5 = $productImages[4];
                 $productImage5->update([
                 "image" => $image5,
