@@ -134,7 +134,7 @@
   <div class="carousel-inner">
     
     @php 
-        $productImages = $electroplating->productImage->where('type', 'electroplating')->values();
+        $productImages = $electroplating->productImage->where('type', 'electroplating')->values()->reverse();
       @endphp
       @for ($i = 0;$i < count($productImages);$i++)
               @if($i == 0)

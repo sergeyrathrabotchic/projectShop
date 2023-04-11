@@ -70,7 +70,7 @@
                     <h6>{{$ceramic->name}}</h6>
                   </td>
                   <td>
-                    <img src="{{Storage::disk('image')->url($ceramic->productImage->where('type', 'magicOfStonesAndBead')->values()[0]->image)}}" alt="" style="width: 80%;padding: 10px;"></td>
+                    <img src="{{Storage::disk('image')->url($ceramic->productImage->where('type', 'magicOfStonesAndBead')->values()->reverse()[0]->image)}}" alt="" style="width: 80%;padding: 10px;"></td>
                   <td>
                     @if ($ceramic->updated_at)
                      {{$ceramic->updated_at->format('d-m-Y H:i')}}

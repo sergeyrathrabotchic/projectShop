@@ -70,7 +70,7 @@
                     <h6>{{$electroplating->name}}</h6>
                   </td>
                   <td>
-                    <img src="{{Storage::disk('image')->url($electroplating->productImage->where('type', 'electroplating')->values()[0]->image)}}" alt="" style="width: 80%;padding: 10px;"></td>
+                    <img src="{{Storage::disk('image')->url($electroplating->productImage->where('type', 'electroplating')->values()->reverse()[0]->image)}}" alt="" style="width: 80%;padding: 10px;"></td>
                   <td>
                     @if ($electroplating->updated_at)
                      {{$electroplating->updated_at->format('d-m-Y H:i')}}
