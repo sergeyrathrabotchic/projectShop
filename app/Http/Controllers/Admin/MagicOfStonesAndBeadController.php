@@ -79,6 +79,11 @@ class MagicOfStonesAndBeadController extends Controller
         //dd($electroplating ->id);
         
         $image = ImageUploadHelper::imageUpload($request->image, 'ceramic');
+        $productImage = ProductImages::create([
+            "image" => $image,
+            'product_id' => $ceramic->id,
+            'type' => $request->type,
+        ]);
         if ($request->image2 != null) {
             $image2 = ImageUploadHelper::imageUpload($request->image2, 'ceramic');
             $productImage = ProductImages::create([
@@ -120,11 +125,7 @@ class MagicOfStonesAndBeadController extends Controller
         //     ]
         // );
 
-        $productImage = ProductImages::create([
-            "image" => $image,
-            'product_id' => $ceramic->id,
-            'type' => $request->type,
-        ]);
+        
 
        
 

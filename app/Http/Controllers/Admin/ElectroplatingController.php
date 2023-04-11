@@ -78,6 +78,12 @@ class ElectroplatingController extends Controller
         //dd($electroplating ->id);
         
         $image = ImageUploadHelper::imageUpload($request->image, 'electroplating');
+
+        $productImage = ProductImages::create([
+            "image" => $image,
+            'product_id' => $electroplating->id,
+            'type' => $request->type,
+        ]);
         if ($request->image2 != null) {
             $image2 = ImageUploadHelper::imageUpload($request->image2, 'electroplating');
             $productImage = ProductImages::create([
@@ -119,11 +125,7 @@ class ElectroplatingController extends Controller
         //     ]
         // );
 
-        $productImage = ProductImages::create([
-            "image" => $image,
-            'product_id' => $electroplating->id,
-            'type' => $request->type,
-        ]);
+        
 
        
 
