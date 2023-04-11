@@ -144,8 +144,8 @@
   <div class="carousel-inner">
     
     @php 
-        $productImages = $ceramic->productImage->where('type', 'magicOfPolymer')->values()->reverse();
-        dd( $productImages);
+        $productImages = $ceramic->productImage->where('type', 'magicOfPolymer')->values()->sort();
+        //dd( $productImages);
       @endphp
       @for ($i = 0;$i < count($productImages);$i++)
               @if($i == 0)
