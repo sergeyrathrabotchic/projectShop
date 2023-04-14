@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ImageSlaid;
 use App\Helpers\ImageUploadHelper;
-use App\Models\information;
+use App\Models\Information;
 use App\Models\ProductImages;
 
 
