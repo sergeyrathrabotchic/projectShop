@@ -56,6 +56,9 @@
   <nav class="navbar bg-light fixed-top phoneMenu" >
       <div class="container-fluid">
         <div>
+          {{-- <button style="filter: opacity(0%);" class="navbar-toggler shadow-none"  style="border: none;outline: none;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button> --}}
           <div style="display: flex;justify-content: center;">
             <a   href="https://wa.me/79631450453" target="_blank" style="text-decoration: none;color: black;display: flex;">
               <img style="width: 35px;height: 35px;margin-right: 5px;" alt="Logo" src="/assets/media/staticImages/whatsapp2.png" >
@@ -101,7 +104,12 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{route('informations')}}">Инфо</a>
               </li>
-             
+              {{-- <li class="nav-item">
+                <a class="nav-link" href="{{route('ceramics')}}">Керамика</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('electroplatings')}}">Медные украшения</a>
+              </li> --}}
               <!--<li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown
@@ -148,7 +156,8 @@
   <div class="carousel-inner">
     
     @php 
-        $productImages = $ceramic->productImage->where('type', 'amulet')->values()->reverse();
+        $productImages = $ceramic->productImage->where('type', 'information')->values()->reverse();
+        //dd($productImages);
       @endphp
       @for ($i = 0;$i < count($productImages);$i++)
               @if($i == 0)
@@ -181,7 +190,7 @@
         <div class="card-body">
           <h5 class="card-title">{{$ceramic->name}}</h5>
           <h5 class="card-title">
-            <div style="font-size: 27px;">{{$ceramic->price}}</div>
+            {{-- <div style="font-size: 27px;">{{$ceramic->price}}</div> --}}
             <div  style="display: flex;justify-content: space-between;font-size: 26px;margin-top: -37px;">
               <div style="font-size: 27px;"></div><div style="display: flex;flex-direction: column;align-items: flex-end;font: 12px ProximaNova-Light,sans-serif;">
                 <!--<img id="shareLink" src="https://stok-market.ru/image/link/link.png" style="width: 30px;" alt="test">-->

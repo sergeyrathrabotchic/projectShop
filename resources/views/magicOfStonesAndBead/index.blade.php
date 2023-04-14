@@ -101,6 +101,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{route('cozyDecor')}}">Уютный Декор</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('informations')}}">Инфо</a>
+              </li>
               {{-- <li class="nav-item">
                 <a class="nav-link" href="{{route('ceramics')}}">Керамика</a>
               </li>

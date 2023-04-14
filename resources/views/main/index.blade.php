@@ -112,6 +112,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{route('cozyDecor')}}">Уютный Декор</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('informations')}}">Инфо</a>
+              </li>
               <!--<li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown
@@ -194,7 +197,8 @@
       </div>
     </div>
     <div style="width: 20%;">
-      <div style="background: #e7ceb7;aspect-ratio: 1 / 2.22;width: 90%;margin:5%;margin-top: 10%;">
+      <div onclick="Informations()" style="cursor: pointer;display: flex;justify-content: center;align-items: center;background: #e7ceb7;aspect-ratio: 1 / 2.22;width: 90%;margin:5%;margin-top: 10%;">
+        <div>Инфо</div>
       </div>
     </div>
     <div style="width: 40%;">
@@ -229,6 +233,12 @@
     <a class="nav-link" href="/cozyDecor"><div style="display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
       <div>УютныйДекор</div>
     </div></a>
+    <a class="nav-link" href="/informations"><div style="display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
+      <div>Инфо</div>
+    </div></a>
+
+
+
     
   
   </div>
@@ -257,6 +267,9 @@ function MagicOfPolymerController(){
 }
 function MagicOfStonesAndBeadController(){
   window.location.href = "/magicOfStonesAndBead";
+}
+function Informations(){
+  window.location.href = "/informations";
 }
 
 

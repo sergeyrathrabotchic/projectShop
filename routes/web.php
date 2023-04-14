@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\AmuletController as AdminAmuletControllerControll
 use App\Http\Controllers\Admin\CozyDecorController as AdminCozyDecorController;
 use App\Http\Controllers\Admin\MagicOfPolymerController as AdminMagicOfPolymerController;
 use App\Http\Controllers\Admin\MagicOfStonesAndBeadController as AdminMagicOfStonesAndBeadController;
+use App\Http\Controllers\Admin\InformationController as AdminInformationController;
 use App\Http\Controllers\СategoryController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\RegistretionController;
@@ -23,6 +24,7 @@ use App\Http\Controllers\CozyDecorController;
 use App\Http\Controllers\MagicOfPolymerController;
 use App\Http\Controllers\MagicOfStonesAndBeadController;
 use App\Http\Controllers\ElectroplatingController;
+use App\Http\Controllers\InformationController;
 use App\Http\Controllers\Admin\IndexController as AdminController;
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +52,7 @@ Route::group(['prefix' => 'admin456123', 'as' => 'admin.'], function(){
     Route::resource('/cozyDecors',AdminCozyDecorController::class );
     Route::resource('/magicOfPolymers',AdminMagicOfPolymerController::class );
     Route::resource('/magicOfStonesAndBeads',AdminMagicOfStonesAndBeadController::class );
+    Route::resource('/informations', AdminInformationController::class );
 });
 // Route::resource('/news444444',AdminNewController::class );
 // //?categoryId={categoryId}
@@ -78,6 +81,8 @@ Route::get('/magicOfStonesAndBead', [ MagicOfStonesAndBeadController::class, 'in
     ->name('magicOfStonesAndBead');
 Route::get('/electroplatings', [ ElectroplatingController::class, 'index'])
     ->name('electroplatings');
+    Route::get('/informations', [ InformationController::class, 'index'])
+    ->name('informations');
 
 // Route::resource('/feedback',  FeedbackController::class);
 
