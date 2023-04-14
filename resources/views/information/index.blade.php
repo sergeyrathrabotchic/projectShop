@@ -189,6 +189,7 @@
 
         <div class="card-body">
           <h5 class="card-title">{{$ceramic->name}}</h5>
+          <br><br>
           <h5 class="card-title">
             {{-- <div style="font-size: 27px;">{{$ceramic->price}}</div> --}}
             <div  style="display: flex;justify-content: space-between;font-size: 26px;margin-top: -37px;">
