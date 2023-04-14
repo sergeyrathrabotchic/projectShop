@@ -5,6 +5,7 @@ use App\Http\Controllers\NewController;
 use App\Http\Controllers\Admin\NewController as AdminNewController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\SlideController as AdminSlideController;
+use App\Http\Controllers\Admin\SlideMobilController as AdminSlideMobilController;
 use App\Http\Controllers\Admin\ElectroplatingController as AdminElectroplatingController;
 use App\Http\Controllers\Admin\СeramicController as AdminCeramicsController;
 use App\Http\Controllers\Admin\AmuletController as AdminAmuletControllerController;
@@ -46,6 +47,7 @@ Route::group(['prefix' => 'admin456123', 'as' => 'admin.'], function(){
     Route::resource('/categories', AdminCategoryController::class);
     Route::resource('/news',AdminNewController::class );
     Route::resource('/slides',AdminSlideController::class );
+    Route::resource('/slideMobils',AdminSlideMobilController::class );
     Route::resource('/electroplatings',AdminElectroplatingController::class );
     Route::resource('/ceramics',AdminCeramicsController::class );
     Route::resource('/amulets',AdminAmuletControllerController::class );

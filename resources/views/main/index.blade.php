@@ -142,7 +142,7 @@
 
 
 
-<div class="content" >
+<div class="content" id="slideDesktop">
   <div style="display: flex;justify-content: center;">
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -174,6 +174,42 @@
       </div> --}}
     </div>
   </div>
+  </div>
+</div>
+
+  <div class="content" id="slideMobil" style="display: none;">
+    <div style="display: flex;justify-content: center;">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        @for ($i = 0; $i < count($slideMobils); $i++)
+          @if ($i == 0)
+            <div class="carousel-item active slaid">
+              <img  style="border-radius: 1rem;" src="{{Storage::disk('image')->url($slideMobils[0]->image)}}" class="d-block w-100" alt="...">
+            </div>     
+          @else
+            <div class="carousel-item slaid">
+              <img  src="{{Storage::disk('image')->url($slideMobils[$i]->image)}}" class="d-block w-100" alt="...">
+            </div>   
+          @endif
+          
+        @endfor
+        {{-- @foreach ($slides as $slide)
+          <div class="carousel-item active">
+            <img style="border-radius: 1rem;" src="{{Storage::disk('image')->url($slide->image)}}" class="d-block w-100" alt="...">
+          </div>
+        @endforeach --}}
+        {{-- <div class="carousel-item active">
+          <img style="border-radius: 1rem;" src="{{ asset('assets/media/imegas/slaid1.jpg')}}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img style="border-radius: 1rem;" src="{{ asset('assets/media/imegas/slaid2.jpg')}}" class="d-block w-100" alt="...">
+        </div> --}}
+        {{-- <div class="carousel-item">
+          <img src="{{ asset('assets/media/imegas/slaid3.jpg')}}" class="d-block w-100" alt="...">
+        </div> --}}
+      </div>
+    </div>
+    </div>
   </div>
 
   {{-- <div style="width: 100%;background-color: #2267a0;aspect-ratio: 2 / 1;">
@@ -273,6 +309,19 @@ function Informations(){
 }
 
 
+//alert(window.screen.width > 600)
+
+
+var slideMobil = document.querySelector("#slideMobil");
+var slideDesktop = document.querySelector("#slideDesktop");
+
+if (window.screen.width > 600) {
+  slideMobil.style = "display: none;";
+  slideDesktop.style = "";
+} else {
+  slideMobil.style = "";
+  slideDesktop.style = "display: none;";
+}
 
 
 </script>

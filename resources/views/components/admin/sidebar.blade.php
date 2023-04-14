@@ -26,6 +26,12 @@
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link @if(request()->routeIs('admin.slideMobils.*')) active @endif" href="{{route('admin.slideMobils.index')}}">
+            <span data-feather="users"></span>
+            Слайд мобильный на главной странице 
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link @if(request()->routeIs('admin.electroplatings.*')) active @endif" href="{{route('admin.electroplatings.index')}}">
             <span data-feather="users"></span>
             Медыне украшения 
