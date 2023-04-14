@@ -194,7 +194,7 @@
             <div  style="display: flex;justify-content: space-between;font-size: 26px;margin-top: -37px;">
               <div style="font-size: 27px;"></div><div style="display: flex;flex-direction: column;align-items: flex-end;font: 12px ProximaNova-Light,sans-serif;">
                 <!--<img id="shareLink" src="https://stok-market.ru/image/link/link.png" style="width: 30px;" alt="test">-->
-                <div id="shareLink{{$k}}" style="color: rgb(246, 240, 238); border: 1px solid rgb(220, 177, 139);background-color: rgb(220, 177, 139);border-radius: 5px;font-family: 'Open Sans';font-weight: 400;margin-right: 0px;font-size: 15px;padding: 12px;width: 100px;text-align: center;cursor: pointer;">Купить</div>
+                <div id="shareLink{{$k}}" style="color: rgb(246, 240, 238); border: 1px solid rgb(220, 177, 139);background-color: rgb(220, 177, 139);border-radius: 5px;font-family: 'Open Sans';font-weight: 400;margin-right: 0px;font-size: 15px;padding: 12px;width: 100px;text-align: center;cursor: pointer;">Подробние</div>
                 <div id="shareLinkDiv{{$k}}" style="display: none;">
                 <div>Купить</div>
                 <a class="imgShareLinkStyle imgShareLink{{$k}}"  href="https://vk.com/angeli_solo" target="_blank" style="text-decoration: none;color: black;display: flex;"><img src="/assets/media/staticImages/vk.jpg" style="width: 15px;margin-right: 5px;" alt=""><div>Вконтакте</div></a>
