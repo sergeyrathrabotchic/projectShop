@@ -215,65 +215,65 @@
   {{-- <div style="width: 100%;background-color: #2267a0;aspect-ratio: 2 / 1;">
 
   </div> --}}
-
+  <div class="content">
   <div class="desktop" style="display: flex;margin-top: 50px;width: 100%;">
     <div style="width: 40%;">  
-      <a class="nav-link" href="/ceramics"><div style="display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 97.5%;aspect-ratio: 2 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
+      <a class="nav-link" href="/ceramics"><div style="border-radius: 20px;display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 97.5%;aspect-ratio: 2 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
         <div>Керамика</div>
       </div></a>
       <div style="display: flex">
         {{-- <a  href="/ceramics" style=""> --}}
-          <div href="/ceramics" onclick="AmuletController()" style="cursor: pointer;text-align: center;display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 46.25%;aspect-ratio: 1 / 1;margin-right: 2.5%;">
+          <div href="/ceramics" onclick="AmuletController()" style="border-radius: 20px;cursor: pointer;text-align: center;display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 46.25%;aspect-ratio: 1 / 1;margin-right: 2.5%;">
             <div>Домовые, Обереги<br>  и Куклы</div>
           </div>
         {{-- </a> --}}
-        <div onclick="MagicOfPolymerController()" style="cursor: pointer;text-align: center;display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 46.25%;aspect-ratio: 1 / 1;margin-left: 2.5%;margin-right: 2.5%;">
+        <div onclick="MagicOfPolymerController()" style="border-radius: 20px;cursor: pointer;text-align: center;display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 46.25%;aspect-ratio: 1 / 1;margin-left: 2.5%;margin-right: 2.5%;">
           <div>Волшебство из полимеров</div>
         </div>
       </div>
     </div>
     <div style="width: 20%;">
-      <div onclick="Informations()" style="cursor: pointer;display: flex;justify-content: center;align-items: center;background: #e7ceb7;aspect-ratio: 1 / 2.22;width: 90%;margin:5%;margin-top: 10%;">
+      <div onclick="Informations()" style="border-radius: 20px;cursor: pointer;display: flex;justify-content: center;align-items: center;background: #e7ceb7;aspect-ratio: 1 / 2.22;width: 90%;margin:5%;margin-top: 10%;">
         <div>Инфо</div>
       </div>
     </div>
     <div style="width: 40%;">
       <div style="display: flex">
-        <div onclick="MagicOfStonesAndBeadController()" style="cursor: pointer;text-align: center;display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 46.25%;aspect-ratio: 1 / 1;margin-left: 2.5%;margin-right: 2.5%;margin-top: 5%;">
+        <div onclick="MagicOfStonesAndBeadController()" style="border-radius: 20px;cursor: pointer;text-align: center;display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 46.25%;aspect-ratio: 1 / 1;margin-left: 2.5%;margin-right: 2.5%;margin-top: 5%;">
           <div>Магия Камней<br>  и Бисера</div>
         </div>
-        <div onclick="CozyDecorController()" style="cursor: pointer;text-align: center;display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 46.25%;aspect-ratio: 1 / 1;margin-left: 2.5%;margin-top: 5%;">
+        <div onclick="CozyDecorController()" style="border-radius: 20px;cursor: pointer;text-align: center;display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 46.25%;aspect-ratio: 1 / 1;margin-left: 2.5%;margin-top: 5%;">
           <div>Уютный<br> Декор</div>
         </div>
       </div>
-      <a class="nav-link" href="/electroplatings"><div style="background: #e7ceb7;width: 97.5%;aspect-ratio: 2 / 1;margin-left: 2.5%;margin-top: 5%;display: flex;align-items: center;justify-content: center;"><div style="text-align: center">Медные<br>украшения</div></div></a>  
+      <a class="nav-link" href="/electroplatings"><div style="border-radius: 20px;background: #e7ceb7;width: 97.5%;aspect-ratio: 2 / 1;margin-left: 2.5%;margin-top: 5%;display: flex;align-items: center;justify-content: center;"><div style="text-align: center">Медные<br>украшения</div></div></a>  
     </div>
   </div>
 
   <div class="mobil" style="width: 100%;">
-    <a class="nav-link" href="/ceramics"><div style="display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
+    <a class="nav-link" href="/ceramics"><div style="border-radius: 20px;display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
       <div>Керамика</div>
     </div></a>
-    <a class="nav-link" href="/electroplatings"><div style="display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
+    <a class="nav-link" href="/electroplatings"><div style="border-radius: 20px;display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
       <div>Медные украшения</div>
     </div></a>
-    <a class="nav-link" href="/amulet"><div style="display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
+    <a class="nav-link" href="/amulet"><div style="border-radius: 20px;display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
       <div>Домовые, Обереги и Куклы</div>
     </div></a>
-    <a class="nav-link" href="/magicOfPolymer"><div style="display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
+    <a class="nav-link" href="/magicOfPolymer"><div style="border-radius: 20px;display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
       <div>Волшебство из полимеров</div>
     </div></a>
-    <a class="nav-link" href="/magicOfStonesAndBead"><div style="display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
+    <a class="nav-link" href="/magicOfStonesAndBead"><div style="border-radius: 20px;display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
       <div>Магия Камней и Бисера</div>
     </div></a>
-    <a class="nav-link" href="/cozyDecor"><div style="display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
+    <a class="nav-link" href="/cozyDecor"><div style="border-radius: 20px;display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
       <div>УютныйДекор</div>
     </div></a>
-    <a class="nav-link" href="/informations"><div style="display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
+    <a class="nav-link" href="/informations"><div style="border-radius: 20px;display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
       <div>Инфо</div>
     </div></a>
 
-
+  </div>
 
     
   
