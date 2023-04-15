@@ -143,7 +143,7 @@
 
 
 
-<div class="content" id="slideDesktop">
+<div class="content" id="slideDesktop" style="margin-top: 70px;">
   <div style="display: flex;justify-content: center;">
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -178,7 +178,7 @@
   </div>
 </div>
 
-  <div class="content" id="slideMobil" style="display: none;">
+  <div class="content" id="slideMobil" style="display: none;margin-top: 70px;">
     <div style="display: flex;justify-content: center;">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
@@ -317,11 +317,11 @@ var slideMobil = document.querySelector("#slideMobil");
 var slideDesktop = document.querySelector("#slideDesktop");
 
 if (window.screen.width > 600) {
-  slideMobil.style = "display: none;";
+  slideMobil.style = "display: none;margin-top: 70px;";
   slideDesktop.style = "";
 } else {
   slideMobil.style = "";
-  slideDesktop.style = "display: none;";
+  slideDesktop.style = "display: none;margin-top: 70px;";
 }
 
 
