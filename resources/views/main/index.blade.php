@@ -318,9 +318,9 @@ var slideDesktop = document.querySelector("#slideDesktop");
 
 if (window.screen.width > 600) {
   slideMobil.style = "display: none;margin-top: 70px;";
-  slideDesktop.style = "";
+  slideDesktop.style = "margin-top: 70px;";
 } else {
-  slideMobil.style = "";
+  slideMobil.style = "margin-top: 70px;";
   slideDesktop.style = "display: none;margin-top: 70px;";
 }
 
