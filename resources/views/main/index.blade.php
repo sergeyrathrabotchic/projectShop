@@ -146,7 +146,7 @@
 <div class="content" id="slideDesktop" style="margin-top: 70px;">
   <div style="display: flex;justify-content: center;">
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
+    <div class="carousel-inner" style="border-radius: 20px;">
       @for ($i = 0; $i < count($slides); $i++)
         @if ($i == 0)
           <div class="carousel-item active slaid">
