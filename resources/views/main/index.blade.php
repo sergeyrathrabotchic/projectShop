@@ -247,7 +247,7 @@
           <div>Уютный<br> Декор</div>
         </div>
       </div>
-      <a class="nav-link" href="/electroplatings"><div style="border-radius: 20px;background: #e7ceb7;width: 97.5%;aspect-ratio: 2 / 1;margin-left: 2.5%;margin-top: 5%;display: flex;align-items: center;justify-content: center;"><div style="text-align: center">Медные<br>украшения</div></div></a>  
+      <a class="nav-link" href="/electroplatings"><div style="border-radius: 20px;background: #e7ceb7;width: 97.5%;aspect-ratio: 2 / 1;margin-left: 2.5%;margin-top: 5%;display: flex;align-items: center;justify-content: center;"><div style="text-align: center">Украшения из Меди и<br> Смолыдные украшения</div></div></a>  
     </div>
   </div>
 
