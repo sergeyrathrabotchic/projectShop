@@ -34,7 +34,7 @@
         <li class="nav-item">
           <a class="nav-link @if(request()->routeIs('admin.electroplatings.*')) active @endif" href="{{route('admin.electroplatings.index')}}">
             <span data-feather="users"></span>
-            Медыне украшения 
+            Украшения из Меди и Смолыдные украшения 
           </a>
         </li>
         <li class="nav-item">

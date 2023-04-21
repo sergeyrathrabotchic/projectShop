@@ -99,7 +99,7 @@
                 <a class="nav-link" href="{{route('ceramics')}}">Керамика</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{route('electroplatings')}}">Медные украшения</a>
+                <a class="nav-link" href="{{route('electroplatings')}}">Украшения из Меди и<br> Смолыдные украшения</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{route('magicOfPolymer')}}">Волшебство из полимеров </a>
@@ -256,7 +256,7 @@
       <div>Керамика</div>
     </div></a>
     <a class="nav-link" href="/electroplatings"><div style="border-radius: 20px;display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
-      <div>Медные украшения</div>
+      <div>Украшения из Меди и<br> Смолыдные украшения</div>
     </div></a>
     <a class="nav-link" href="/amulet"><div style="border-radius: 20px;display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
       <div>Домовые, Обереги и Куклы</div>
