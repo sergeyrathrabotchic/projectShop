@@ -99,7 +99,7 @@
                 <a class="nav-link" href="{{route('ceramics')}}">Керамика</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{route('electroplatings')}}">Украшения из Меди и<br> Смолыдные украшения</a>
+                <a class="nav-link" href="{{route('electroplatings')}}">Украшения из Меди и<br> Смолы</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{route('magicOfPolymer')}}">Волшебство из полимеров </a>
@@ -247,7 +247,7 @@
           <div>Уютный<br> Декор</div>
         </div>
       </div>
-      <a class="nav-link" href="/electroplatings"><div style="border-radius: 20px;background: #e7ceb7;width: 97.5%;aspect-ratio: 2 / 1;margin-left: 2.5%;margin-top: 5%;display: flex;align-items: center;justify-content: center;"><div style="text-align: center">Украшения из Меди и<br> Смолыдные украшения</div></div></a>  
+      <a class="nav-link" href="/electroplatings"><div style="border-radius: 20px;background: #e7ceb7;width: 97.5%;aspect-ratio: 2 / 1;margin-left: 2.5%;margin-top: 5%;display: flex;align-items: center;justify-content: center;"><div style="text-align: center">Украшения из Меди и<br> Смолы</div></div></a>  
     </div>
   </div>
 
@@ -256,7 +256,7 @@
       <div>Керамика</div>
     </div></a>
     <a class="nav-link" href="/electroplatings"><div style="border-radius: 20px;display: flex;align-items: center;justify-content: center;background: #b4bec6;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
-      <div>Украшения из Меди и<br> Смолыдные украшения</div>
+      <div>Украшения из Меди и<br> Смолы</div>
     </div></a>
     <a class="nav-link" href="/amulet"><div style="border-radius: 20px;display: flex;align-items: center;justify-content: center;background: #e7ceb7;width: 100%;aspect-ratio: 3 / 1;margin: 5%;;margin-left: 0px;margin-right: 2.5%;">
       <div>Домовые, Обереги и Куклы</div>

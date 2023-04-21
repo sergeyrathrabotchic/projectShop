@@ -74,7 +74,7 @@
                 <a class="nav-link" href="{{route('ceramics')}}">Керамика</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{route('electroplatings')}}">Украшения из Меди и<br> Смолыдные украшения</a>
+                <a class="nav-link" href="{{route('electroplatings')}}">Украшения из Меди и<br> Смолы</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{route('magicOfPolymer')}}">Волшебство из полимеров </a>
