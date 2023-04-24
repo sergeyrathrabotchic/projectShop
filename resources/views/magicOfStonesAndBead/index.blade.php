@@ -64,10 +64,10 @@
         <div>
           <div style="display: flex;justify-content: center;">
             <a   href="https://wa.me/79631450453" target="_blank" style="text-decoration: none;color: black;display: flex;">
-              <img style="width: 35px;height: 35px;margin-right: 5px;" alt="Logo" src="/assets/media/staticImages/whatsapp2.png" >
+              <img style="width: 35px;height: 35px;margin-right: 5px;padding: 5px" alt="Logo" src="/assets/media/staticImages/whatsapp2.png" >
             </a>
             <a   href="https://wa.me/79631450453" target="_blank" style="text-decoration: none;color: black;display: flex;">
-              <img style="width: 35px;height: 35px;margin-right: 5px;" alt="Logo" src="/assets/media/staticImages/vk.png" >
+              <img style="width: 35px;height: 35px;margin-right: 5px;padding: 6px;" alt="Logo" src="/assets/media/staticImages/vk.png" >
             </a>
           </div>
         </div>
