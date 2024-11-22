@@ -10,7 +10,7 @@ use App\Models\Сeramics;
 use App\Models\ProductImages;
 
 
-class СeramicController extends Controller
+class CeramicController extends Controller
 {
     /**
      * Display a listing of the resource.

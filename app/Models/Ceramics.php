@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\ProductImages;
 
 
-class Сeramics extends Model
+class Ceramics extends Model
 {
     use HasFactory;
 

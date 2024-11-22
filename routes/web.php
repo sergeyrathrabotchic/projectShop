@@ -7,7 +7,7 @@ use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\SlideController as AdminSlideController;
 use App\Http\Controllers\Admin\SlideMobilController as AdminSlideMobilController;
 use App\Http\Controllers\Admin\ElectroplatingController as AdminElectroplatingController;
-use App\Http\Controllers\Admin\СeramicController as AdminCeramicsController;
+use App\Http\Controllers\Admin\CeramicController as AdminCeramicController;
 use App\Http\Controllers\Admin\AmuletController as AdminAmuletControllerController;
 use App\Http\Controllers\Admin\CozyDecorController as AdminCozyDecorController;
 use App\Http\Controllers\Admin\MagicOfPolymerController as AdminMagicOfPolymerController;
@@ -19,7 +19,7 @@ use App\Http\Controllers\RegistretionController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\EddNewsController;
-use App\Http\Controllers\СeramicController;
+use App\Http\Controllers\CeramicController;
 use App\Http\Controllers\AmuletController;
 use App\Http\Controllers\CozyDecorController;
 use App\Http\Controllers\MagicOfPolymerController;
@@ -49,7 +49,7 @@ Route::group(['prefix' => 'admin456123', 'as' => 'admin.'], function(){
     Route::resource('/slides',AdminSlideController::class );
     Route::resource('/slideMobils',AdminSlideMobilController::class );
     Route::resource('/electroplatings',AdminElectroplatingController::class );
-    Route::resource('/ceramics',AdminCeramicsController::class );
+    Route::resource('/ceramics',AdminCeramicController::class );
     Route::resource('/amulets',AdminAmuletControllerController::class );
     Route::resource('/cozyDecors',AdminCozyDecorController::class );
     Route::resource('/magicOfPolymers',AdminMagicOfPolymerController::class );
@@ -71,7 +71,7 @@ Route::group(['prefix' => 'admin456123', 'as' => 'admin.'], function(){
 
 Route::get('/', [ MainController::class, 'index'])
     ->name('main');
-Route::get('/ceramics', [ СeramicController::class, 'index'])
+Route::get('/ceramics', [ CeramicController::class, 'index'])
     ->name('ceramics');
 Route::get('/amulet', [ AmuletController::class, 'index'])
     ->name('amulet');
