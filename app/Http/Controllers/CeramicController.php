@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ImageSlaid;
 use App\Helpers\ImageUploadHelper;
-use App\Models\Сeramics;
+use App\Models\Ceramics;
 use App\Models\ProductImages;
 
 
@@ -23,7 +23,7 @@ class CeramicController extends Controller
         // $slideImages = ImageSlaid::with('image')->paginate(10);
 
 
-        $ceramics =  Сeramics::with('productImage')->get()->reverse();
+        $ceramics =  Ceramics::with('productImage')->get()->reverse();
         //dd($ceramics);
         //$ceramics =  Сeramics::all();
         //->paginate(5);

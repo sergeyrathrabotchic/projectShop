@@ -70,7 +70,7 @@ class CeramicController extends Controller
 
         // if (isset())
         // dd($request->file());
-        $ceramic = Сeramics::create([
+        $ceramic = Ceramics::create([
             'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
@@ -169,7 +169,7 @@ class CeramicController extends Controller
      * @param  ImageSlaid $imageSlaid
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Сeramics $ceramic)
+    public function update(Request $request, Ceramics $ceramic)
     {
         // dd( $request->all());
         $request->validate([
@@ -300,7 +300,7 @@ class CeramicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy( Сeramics $ceramic)
+    public function destroy( Ceramics $ceramic)
     {
         // dd(1);
         $ceramic::destroy($ceramic->id);
