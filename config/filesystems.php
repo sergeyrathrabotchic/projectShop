@@ -45,7 +45,7 @@ return [
         'image' => [
             'driver' => 'local',
             'root' => storage_path('app/public/image'),
-            'url' => env('APP_URL').'/storage/image',
+            'url' => env('APP_URL').'/storage/app/public/image',
             'visibility' => 'public',
         ],
 
