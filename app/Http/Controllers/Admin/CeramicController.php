@@ -23,7 +23,7 @@ class CeramicController extends Controller
         // $slideImages = ImageSlaid::with('image')->paginate(10);
 
 
-        $сeramics =  Сeramics::with('productImage')->paginate(5);
+        $сeramics =  Ceramics::with('productImage')->paginate(5);
         $page = $request->get('page', 1);
         if ($page > 0) {
             $page = ($page - 1) * 5;
@@ -154,7 +154,7 @@ class CeramicController extends Controller
      * @param  Category $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Сeramics $ceramic)
+    public function edit(Ceramics $ceramic)
     {
        //$category = Category::findOrFail($id);
        return view('admin.ceramics.edit', [
