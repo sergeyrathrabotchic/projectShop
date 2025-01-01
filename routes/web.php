@@ -42,6 +42,7 @@ use App\Http\Controllers\Admin\IndexController as AdminController;
     return view('welcome');
 });*/
 
+
 Route::group(['prefix' => 'admin456123', 'as' => 'admin.'], function(){
     Route::get('/', AdminController::class)->name('index');
     Route::resource('/categories', AdminCategoryController::class);
@@ -102,6 +103,12 @@ Route::get('/electroplatings', [ ElectroplatingController::class, 'index'])
 //     // dd($collection->count() );
 
 // });
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('session', function () {
     
     // if(session()->has('sumesession')) {
@@ -118,8 +125,3 @@ Route::get('session', function () {
     // dd(session()->all());
 
 });
-
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
