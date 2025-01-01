@@ -102,6 +102,10 @@ Route::get('/electroplatings', [ ElectroplatingController::class, 'index'])
 //     // dd($collection->count() );
 
 // });
+Route::get('session', function () {
+    dd(session()->all());
+
+});
 
 
 Auth::routes();
