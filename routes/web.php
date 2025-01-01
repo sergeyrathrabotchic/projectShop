@@ -120,8 +120,6 @@ Route::get('session', function () {
         dd(session()->get('sumesession')); 
     }
     session()->put('sumesession', 'some test');
-    // dd(session()->has('sumesession'));
-    // session()->put('sumesession', 'some test');
-    // dd(session()->all());
+    dd(session()->all());
 
 });
