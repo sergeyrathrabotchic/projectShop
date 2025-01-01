@@ -104,14 +104,15 @@ Route::get('/electroplatings', [ ElectroplatingController::class, 'index'])
 // });
 Route::get('session', function () {
     
-    if(session()->has('sumesession')) {
-        dd(1);
-        dd(session()->get('sumesession'));
-    }
-    session()->put('sumesession', 'some test');   
-    dd(session()->has('sumesession'));
+    // if(session()->has('sumesession')) {
+    //     dd(1);
+    //     dd(session()->get('sumesession'));
+    // }
     session()->put('sumesession', 'some test');
-    dd(session()->all());
+    dd(session()->get('sumesession'));   
+    // dd(session()->has('sumesession'));
+    // session()->put('sumesession', 'some test');
+    // dd(session()->all());
 
 });
 
