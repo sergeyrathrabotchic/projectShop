@@ -109,7 +109,10 @@ Route::get('session', function () {
     //     dd(session()->get('sumesession'));
     // }
     session()->put('sumesession', 'some test');
-    dd(session()->get('sumesession'));   
+    if(session()->has('sumesession')) {
+        dd(session()->get('sumesession')); 
+    }
+      
     // dd(session()->has('sumesession'));
     // session()->put('sumesession', 'some test');
     // dd(session()->all());
