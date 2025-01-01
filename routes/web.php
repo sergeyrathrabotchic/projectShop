@@ -103,6 +103,11 @@ Route::get('/electroplatings', [ ElectroplatingController::class, 'index'])
 
 // });
 Route::get('session', function () {
+    
+    if(session()->has('sumesession')) {
+        dd(session()->get('sumesession'));
+    }
+    session()->put('sumesession', 'some test');
     dd(session()->all());
 
 });
