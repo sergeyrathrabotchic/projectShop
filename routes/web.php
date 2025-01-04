@@ -42,23 +42,23 @@ use App\Http\Controllers\Account\IndexController as AccountController;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
-// Route::group(['as' => 'account.'], function() {
+Route::group(['middleware' => 'auth'], function() {
     Route::get('/account', AccountController::class)->name('account');
-// });
 
-Route::group(['prefix' => 'admin456123', 'as' => 'admin.'], function(){
-    Route::get('/', AdminController::class)->name('index');
-    Route::resource('/categories', AdminCategoryController::class);
-    Route::resource('/news',AdminNewController::class );
-    Route::resource('/slides',AdminSlideController::class );
-    Route::resource('/slideMobils',AdminSlideMobilController::class );
-    Route::resource('/electroplatings',AdminElectroplatingController::class );
-    Route::resource('/ceramics',AdminCeramicController::class );
-    Route::resource('/amulets',AdminAmuletControllerController::class );
-    Route::resource('/cozyDecors',AdminCozyDecorController::class );
-    Route::resource('/magicOfPolymers',AdminMagicOfPolymerController::class );
-    Route::resource('/magicOfStonesAndBeads',AdminMagicOfStonesAndBeadController::class );
-    Route::resource('/informations', AdminInformationController::class );
+    Route::group(['prefix' => 'admin456123', 'as' => 'admin.'], function(){
+        Route::get('/', AdminController::class)->name('index');
+        Route::resource('/categories', AdminCategoryController::class);
+        Route::resource('/news',AdminNewController::class );
+        Route::resource('/slides',AdminSlideController::class );
+        Route::resource('/slideMobils',AdminSlideMobilController::class );
+        Route::resource('/electroplatings',AdminElectroplatingController::class );
+        Route::resource('/ceramics',AdminCeramicController::class );
+        Route::resource('/amulets',AdminAmuletControllerController::class );
+        Route::resource('/cozyDecors',AdminCozyDecorController::class );
+        Route::resource('/magicOfPolymers',AdminMagicOfPolymerController::class );
+        Route::resource('/magicOfStonesAndBeads',AdminMagicOfStonesAndBeadController::class );
+        Route::resource('/informations', AdminInformationController::class );
+    });
 });
 // Route::resource('/news444444',AdminNewController::class );
 // //?categoryId={categoryId}
