@@ -27,6 +27,7 @@ use App\Http\Controllers\MagicOfStonesAndBeadController;
 use App\Http\Controllers\ElectroplatingController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\Admin\IndexController as AdminController;
+use App\Http\Controllers\Account\IndexController as AccountController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,7 +42,9 @@ use App\Http\Controllers\Admin\IndexController as AdminController;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
-
+// Route::group(['as' => 'account.'], function() {
+    Route::get('/account', AccountController::class)->name('account');
+// });
 
 Route::group(['prefix' => 'admin456123', 'as' => 'admin.'], function(){
     Route::get('/', AdminController::class)->name('index');
