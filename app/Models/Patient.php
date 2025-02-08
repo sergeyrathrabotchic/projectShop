@@ -24,7 +24,7 @@ class Patient extends Model
     protected function casts(): array
     {
         return [
-            'birthdate' => 'datetime:d-m-Y',
+            'birthdate' => 'date:d-m-Y',
         ];
     }
 }
