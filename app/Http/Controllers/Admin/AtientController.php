@@ -49,7 +49,7 @@ class AtientController extends Controller
         ]);
         $date = Carbon::now();
         $interval = $date->diff($request->birthdate);
-        dd(type($interval->y));
+        dd(gettype($interval->y));
         dd($interval->y);
         dd($interval);
 
