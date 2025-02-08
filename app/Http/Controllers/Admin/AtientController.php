@@ -47,6 +47,7 @@ class AtientController extends Controller
         ]);
         $date = Carbon::now();
         $interval = $date->diff($request->birthdate);
+        dd($interval->y);
         dd($interval);
 
         $patient = Patient::create([
