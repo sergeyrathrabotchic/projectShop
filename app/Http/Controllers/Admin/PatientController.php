@@ -47,7 +47,7 @@ class PatientController extends Controller
         $request->validate([
             'first_name' => ['required'],
             'last_name' => ['required'],
-            'birthdate' => ['required']
+            'birthdate' => ['required', 'date_format:Y-m-d H:i:s']
         ]);
         $date = Carbon::now();
         $interval = $date->diff($request->birthdate);
@@ -68,7 +68,7 @@ class PatientController extends Controller
         $patient = Patient::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
-            'birthdate' => $request->birthdate,
+            'birthdate' => Carbon::parse($request->birthdate)->timestamp,
             'age' => $age,
             'age_type' => $age_type,
         ]);
