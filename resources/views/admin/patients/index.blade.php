@@ -41,7 +41,7 @@
                         {{ $patient->updated_at->format('d-m-Y')}}
                     </td> --}}
                     <td>
-                        {{ $patient->age}} . " " . {{$patient->age_type}}
+                        {{ $patient->age . " " . $patient->age_type}}
                     </td>
                     {{-- <td>
                       <a href="{{route('admin.categories.edit', ['category' => $category->id ])}}">Ред.</a>&nbsp;|&nbsp;<a href="javascript:;" style="color: red">Уд.</a>
