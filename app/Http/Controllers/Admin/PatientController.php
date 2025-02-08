@@ -70,7 +70,13 @@ class PatientController extends Controller
             'age' => $age,
             'age_type' => $age_type,
         ]);
+        if ($patient) {
+            return redirect()
+            ->route('admin.patients.index')
+            ->with('success', 'Пациент успешно добавлен');
+        }
 
+        return back()->wiht('error', 'Пациаент не добавлен');
     }
 
     /**

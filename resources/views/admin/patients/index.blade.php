@@ -31,7 +31,7 @@
           <tbody>
              @forelse ($patients as $patient)
                  <tr>
-                    <td>{{$patient->first_name + " "+ $patient->last_name}}</td>
+                    <td>{{$patient->first_name . " " . $patient->last_name}}</td>
                     <td>
                       {{ $patient->birthdate->format('d-m-Y')}}
                     </td>
