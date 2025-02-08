@@ -19,6 +19,7 @@ class PatientController extends Controller
     public function index()
     {
         $patients = Patient::paginate(5);
+        dd(gettype($patients[0]->created_at));
         dd(gettype($patients[0]->birthdate));
         return view('admin.patients.index', [
             'patients' => $patients
