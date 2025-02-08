@@ -15,3 +15,4 @@
         <input type="date" class="form-control" name="birthdate" id="birthdate" required>
       </div>  
   </form>
+@endsection
