@@ -9,7 +9,7 @@ Use \Carbon\Carbon;
 
 use function PHPSTORM_META\type;
 
-class AtientController extends Controller
+class PatientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -51,7 +51,7 @@ class AtientController extends Controller
         $interval = $date->diff($request->birthdate);
         // dd(gettype($interval->y));
         // dd($interval->y);
-        dd($interval);
+        // dd($interval);
         if ($interval->y > 0) {
             $age = $interval->y;
             $age_type = "год";

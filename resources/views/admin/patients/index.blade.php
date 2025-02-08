@@ -31,19 +31,19 @@
           <tbody>
              @forelse ($patients as $patient)
                  <tr>
-                    <td>{{$patient->first_name + $patient->last_name}}</td>
+                    <td>{{$patient->first_name + " "+ $patient->last_name}}</td>
                     <td>
-                      {{$category->birthdate->format('d-m-Y')}}
+                      {{ $patient->birthdate->format('d-m-Y')}}
                     </td>
                     <td>
-                        {{$category->updated_at->format('d-m-Y')}}
+                        {{ $patient->updated_at->format('d-m-Y')}}
                     </td>
                     <td>
-                        {{$category->age}} {{$category->age_type}}
+                        {{ $patient->age}} {{$category->age_type}}
                     </td>
-                    <td>
+                    {{-- <td>
                       <a href="{{route('admin.categories.edit', ['category' => $category->id ])}}">Ред.</a>&nbsp;|&nbsp;<a href="javascript:;" style="color: red">Уд.</a>
-                    </td>
+                    </td> --}}
                  </tr>
              @empty
                  <tr>
