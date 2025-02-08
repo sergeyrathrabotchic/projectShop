@@ -69,6 +69,7 @@ class PatientController extends Controller
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'birthdate' => Carbon::parse($request->birthdate)->timestamp,
+            'birthdate' => $request->birthdate,
             'age' => $age,
             'age_type' => $age_type,
         ]);
