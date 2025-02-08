@@ -23,9 +23,7 @@
           <thead>
             <tr>
               <th scope="col">№</th>
-              <th scope="col">Имя пациента</th>
-              <!--<th scope="col">Автор</th>-->
-              <th scope="col">Фамилия пациента</th>
+              <th scope="col">Имя пациента и фамилия пациента</th>
               <th scope="col">Дата рождения</th>
               <th scope="col">Возраст</th>
             </tr>
@@ -33,8 +31,7 @@
           <tbody>
              @forelse ($patients as $patient)
                  <tr>
-                    <td>{{$patient->first_name}}</td>
-                    <td>{{$patient->last_name}}</td>
+                    <td>{{$patient->first_name + $patient->last_name}}</td>
                     <td>
                       {{$category->birthdate->format('d-m-Y')}}
                     </td>

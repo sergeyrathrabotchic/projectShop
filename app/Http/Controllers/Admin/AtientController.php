@@ -53,13 +53,22 @@ class AtientController extends Controller
         // dd($interval->y);
         dd($interval);
         if ($interval->y > 0) {
+            $age = $interval->y;
             $age_type = "год";
+        } else if ($interval->m > 0) {
+            $age = $interval->m;
+            $age_type = "месяц";
+        } else {
+            $age = $interval->d;
+            $age_type = "день";
         }
 
         $patient = Patient::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'birthdate' => $request->birthdate,
+            'age' => $age,
+            'age_type' => $age_type,
         ]);
 
     }
