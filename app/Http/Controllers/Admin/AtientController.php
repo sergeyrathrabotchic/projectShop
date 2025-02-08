@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Patient;
 
 class AtientController extends Controller
 {
@@ -14,7 +15,10 @@ class AtientController extends Controller
      */
     public function index()
     {
-        //
+        $patients = Patient::all();
+        return view('admin.patients.index', [
+            'patients' => $patients
+        ]);
     }
 
     /**
