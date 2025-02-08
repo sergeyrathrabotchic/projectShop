@@ -68,8 +68,8 @@ class PatientController extends Controller
         $patient = Patient::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
-            'birthdate' => Carbon::parse($request->birthdate)->format('d/m/Y'),
-            // 'birthdate' => $request->birthdate,
+            // 'birthdate' => Carbon::parse($request->birthdate)->format('d/m/Y'),
+            'birthdate' => $request->birthdate,
             'age' => $age,
             'age_type' => $age_type,
         ]);
