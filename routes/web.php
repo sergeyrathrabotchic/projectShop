@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewController;
 use App\Http\Controllers\Admin\NewController as AdminNewController;
+use App\Http\Controllers\Admin\AtientController as AdminAtientController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\SlideController as AdminSlideController;
 use App\Http\Controllers\Admin\SlideMobilController as AdminSlideMobilController;
@@ -47,6 +48,7 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::group(['prefix' => 'admin456123', 'as' => 'admin.'], function(){
         Route::get('/', AdminController::class)->name('index');
+        Route::resource('/atients', AdminAtientController::class);
         Route::resource('/categories', AdminCategoryController::class);
         Route::resource('/news',AdminNewController::class );
         Route::resource('/slides',AdminSlideController::class );
