@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Patient;
+Use \Carbon\Carbon;
 
 class AtientController extends Controller
 {
@@ -28,7 +29,7 @@ class AtientController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.patients.create');
     }
 
     /**
@@ -39,7 +40,21 @@ class AtientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'first_name' => ['required'],
+            'last_name' => ['required'],
+            'birthdate' => ['required']
+        ]);
+        $date = Carbon::now();
+        $interval = $date->diff($request->birthdate);
+        dd($interval);
+
+        $patient = Patient::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'birthdate' => $request->birthdate,
+        ]);
+
     }
 
     /**
