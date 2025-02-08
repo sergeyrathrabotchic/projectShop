@@ -48,7 +48,7 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::group(['prefix' => 'admin456123', 'as' => 'admin.'], function(){
         Route::get('/', AdminController::class)->name('index');
-        Route::resource('/atients', AdminAtientController::class);
+        Route::resource('/patients', AdminAtientController::class);
         Route::resource('/categories', AdminCategoryController::class);
         Route::resource('/news',AdminNewController::class );
         Route::resource('/slides',AdminSlideController::class );
