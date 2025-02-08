@@ -19,6 +19,7 @@ class PatientController extends Controller
     public function index()
     {
         $patients = Patient::paginate(5);
+        dd($patients);
         return view('admin.patients.index', [
             'patients' => $patients
         ]);
