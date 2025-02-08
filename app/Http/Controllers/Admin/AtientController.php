@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Patient;
 Use \Carbon\Carbon;
 
+use function PHPSTORM_META\type;
+
 class AtientController extends Controller
 {
     /**
@@ -47,6 +49,7 @@ class AtientController extends Controller
         ]);
         $date = Carbon::now();
         $interval = $date->diff($request->birthdate);
+        dd(type($interval->y));
         dd($interval->y);
         dd($interval);
 
