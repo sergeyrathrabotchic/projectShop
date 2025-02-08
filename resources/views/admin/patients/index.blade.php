@@ -31,13 +31,14 @@
           <tbody>
              @forelse ($patients as $patient)
                  <tr>
+                    <td>{{$patient->id}}</td>
                     <td>{{$patient->first_name . " " . $patient->last_name}}</td>
                     <td>
-                      {{ $patient->birthdate->format('d-m-Y')}}
+                      {{$patient->birthdate->format('d/m/Y')}}
                     </td>
-                    <td>
+                    {{-- <td>
                         {{ $patient->updated_at->format('d-m-Y')}}
-                    </td>
+                    </td> --}}
                     <td>
                         {{ $patient->age}} {{$category->age_type}}
                     </td>
