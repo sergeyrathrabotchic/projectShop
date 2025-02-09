@@ -80,7 +80,7 @@ class PatientController extends Controller
                 'age' => $age,
                 'age_type' => $age_type,
             ]; 
-            $patientsCache = Cache::put('patientsCache',$patientsCache, now()->addMinutes(30));
+            $patientsCache = Cache::put('patientsCache',$patientsCache, now()->addMinutes(5));
         } else { 
             $patientsCache = Cache::put('patientsCache', [[
                 'first_name' => $request->first_name,
@@ -94,7 +94,7 @@ class PatientController extends Controller
         $patient = $patientsCache[count($patientsCache)-1];
         $patient['id'] = count($patientsCache)-1;
 
-        dispatch((new PatientJob($patient))->delay(Carbon::now()->addSecond(5)));
+        dispatch((new PatientJob($patient))->delay(Carbon::now()->addSecond(30)));
 
         if ($patientsCache) {
             return redirect()
