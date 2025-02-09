@@ -24,7 +24,7 @@ class PatientController extends Controller
         // dd(gettype($patients[0]->birthdate));
         // $value = Cache::store('file')->all;
         Cache::put('value', [['value22' => 11,'value266' => 22],['value23']], now()->addMinutes(4));
-        $value = collect(Cache::get('value'));
+        $value = Cache::get('value');
         $value = $value[0];
         // dd($patients[0]);
         dd( $value['value22']);
