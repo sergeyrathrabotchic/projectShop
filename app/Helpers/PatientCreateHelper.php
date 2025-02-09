@@ -18,7 +18,7 @@ class PatientCreateHelper
         ]);
         if (Cache::has('patientsCache')){
             $patientsCache = Cache::get('patientsCache');
-            $patientsCache = array_splice($arr, $patient['id'], 1);
+            $patientsCache = array_splice($patientsCache, $patient['id'], 1);
             Cache::put('patientsCache', $patientsCache, now()->addMinutes(5));
         }
 
