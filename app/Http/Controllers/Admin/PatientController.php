@@ -80,7 +80,7 @@ class PatientController extends Controller
                 'age' => $age,
                 'age_type' => $age_type,
             ]; 
-            $patientsCache = Cache::put('patientsCache',$patientsCache, now()->addMinutes(5));
+            $patientsCache = Cache::put('patientsCache',$patientsCache, now()->addMinutes(30));
         } else { 
             $patientsCache = Cache::put('patientsCache', [[
                 'first_name' => $request->first_name,
