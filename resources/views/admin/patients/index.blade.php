@@ -22,7 +22,6 @@
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th scope="col">№</th>
               <th scope="col">Имя пациента и фамилия пациента</th>
               <th scope="col">Дата рождения</th>
               <th scope="col">Возраст</th>
@@ -51,7 +50,6 @@
               @if ($patientsCache)
                 @foreach ($patientsCache as $patient)
                 <tr>
-                  <td>{{$patient['id']}}</td>
                   <td>{{$patient['first_name'] . " " . $patient['last_name']}}</td>
                   <td>
                     {{$patient['birthdate']}}
@@ -64,7 +62,7 @@
               @endif
              @if (empty($patientsCache) && $patients->isEmpty())
                 <tr>
-                  <td colspan="4">Таких записей нет</td>
+                  <td colspan="3">Таких записей нет</td>
                 </tr>
              @endif
              
