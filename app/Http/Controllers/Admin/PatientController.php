@@ -103,7 +103,7 @@ class PatientController extends Controller
             ]], now()->addMinutes(5));
         }
         $patientsCache = Cache::get('patientsCache');
-        $patient = $patientsCache->get()->last();
+        $patient = $patientsCache[count($patientsCache)-1];
         dispatch(new PatientJob($patient));
 
         if ($patientsCache) {
