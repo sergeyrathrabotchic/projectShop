@@ -26,7 +26,7 @@
                  <tr>
                     <td>{{$patient->first_name . " " . $patient->last_name}}</td>
                     <td>
-                      {{$patient->birthdate}}
+                      {{\Carbon\Carbon::parse($patient->birthdate)->format('d-m-Y')}}
                     </td>
                     <td>
                         {{ $patient->age . " " . $patient->age_type}}
