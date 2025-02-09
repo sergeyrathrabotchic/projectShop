@@ -76,7 +76,7 @@ class PatientController extends Controller
             $patientsCache[] = [
                 'first_name' => $request->first_name,
                 'last_name' => $request->last_name,
-                'birthdate' => date('d-m-Y', $request->birthdate),
+                'birthdate' => Carbon::parse( $request->birthdate)->format('d-m-Y'),
                 'age' => $age,
                 'age_type' => $age_type,
             ]; 
@@ -85,7 +85,7 @@ class PatientController extends Controller
             $patientsCache = Cache::put('patientsCache', [[
                 'first_name' => $request->first_name,
                 'last_name' => $request->last_name,
-                'birthdate' => date('d-m-Y', $request->birthdate),
+                'birthdate' =>Carbon::parse( $request->birthdate)->format('d-m-Y'),
                 'age' => $age,
                 'age_type' => $age_type,
             ]], now()->addMinutes(5));
