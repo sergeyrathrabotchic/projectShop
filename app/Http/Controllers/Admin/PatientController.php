@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Patient;
-Use \Carbon\Carbon;
+use \Carbon\Carbon;
+use Illuminate\Support\Facades\Cache;
 
 use function PHPSTORM_META\type;
 
@@ -21,6 +22,8 @@ class PatientController extends Controller
         $patients = Patient::paginate(5);
         // dd(gettype($patients[0]->created_at));
         // dd(gettype($patients[0]->birthdate));
+        $value = Cache::store('file')->all;
+        dd($value);
         return view('admin.patients.index', [
             'patients' => $patients
         ]);
@@ -45,8 +48,8 @@ class PatientController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'first_name' => ['required'],
-            'last_name' => ['required'],
+            'first_name' => ['required','max:191'],
+            'last_name' => ['required','max:191'],
             'birthdate' => ['required','date']
         ]);
         $date = Carbon::now();
