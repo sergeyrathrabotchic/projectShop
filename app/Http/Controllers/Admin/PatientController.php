@@ -23,13 +23,16 @@ class PatientController extends Controller
         // dd(gettype($patients[0]->created_at));
         // dd(gettype($patients[0]->birthdate));
         // $value = Cache::store('file')->all;
-        Cache::put('value', [['value22' => 11,'value266' => 22],['value23']], now()->addMinutes(4));
-        $value = Cache::get('value');
-        $value = $value[0];
+        // Cache::put('patientsCache', [['value22' => 11,'value266' => 22],['value23']], now()->addMinutes(4));
+        if (Cache::has('patientsCache')) {
+            $patientsCache = Cache::get('patientsCache');
+        }
+        // $value = $value[0];
         // dd($patients[0]);
-        dd( $value['value22']);
+        // dd( $value['value22']);
         return view('admin.patients.index', [
-            'patients' => $patients
+            'patients' => $patients,
+            'patientsCache' => $patientsCache
         ]);
     }
 
