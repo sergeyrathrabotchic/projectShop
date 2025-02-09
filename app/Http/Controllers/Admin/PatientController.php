@@ -104,7 +104,8 @@ class PatientController extends Controller
         }
         $patientsCache = Cache::get('patientsCache');
         $patient = $patientsCache[count($patientsCache)-1];
-        dispatch(new PatientJob($patient));
+        $job = 
+        dispatch((new PatientJob($patient))->delay(Carbon::now()->addSecond(1)));
 
         if ($patientsCache) {
             return redirect()
