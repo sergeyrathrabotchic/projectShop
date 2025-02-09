@@ -21,7 +21,7 @@ class PatientJob implements ShouldQueue
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($patient)
     {
         $this->patient = $patient; 
     }
@@ -33,7 +33,7 @@ class PatientJob implements ShouldQueue
      */
     public function handle(PatientCreateHelper $patientCreate)
     {
-        $patientCreate->patientCreate($patient);
+        $patientCreate->patientCreate($this->patient);
         // $patientCreate->patientCreate($patient, $age, $age_type)->start();
     }
 }
