@@ -24,7 +24,8 @@ class PatientController extends Controller
         // dd(gettype($patients[0]->birthdate));
         // $value = Cache::store('file')->all;
         $value = Cache::put('value', [['value22' => 11,'value266' => 22],['value23']], now()->addMinutes(4));
-        dd( collect(Cache::get('value')));
+        $value = collect(Cache::get('value'));
+        dd( $value[0]);
         return view('admin.patients.index', [
             'patients' => $patients
         ]);
