@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Patient;
 use \Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
+use App\Jobs\PatientJob;
 
 use function PHPSTORM_META\type;
 
@@ -101,6 +102,10 @@ class PatientController extends Controller
                 'age_type' => $age_type,
             ]], now()->addMinutes(5));
         }
+        $patientsCache = Cache::get('patientsCache');
+        $patient = $patientsCache->get()->last();
+        dispatch(new PatientJob($patient));
+
         if ($patientsCache) {
             return redirect()
             ->route('admin.patients.index')

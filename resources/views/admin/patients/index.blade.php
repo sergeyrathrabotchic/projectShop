@@ -7,12 +7,6 @@
       <div class="btn-group me-2">
         <a href="{{route('admin.patients.create')}}" class="btn btn-sm btn-outline-secondary">Добавить нового поциента</a>
       </div>
-      {{-- <div class="btn-group me-2">
-        <a href="{{route('admin.news.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новую</a>
-      </div>
-      <div class="btn-group me-2">
-        <a href="{{route('news444444.create')}}" class="btn btn-sm btn-outline-secondary">Проверка</a>
-      </div> --}}
     </div>
   </div>
 
@@ -33,18 +27,11 @@
                     <td>{{$patient->id}}</td>
                     <td>{{$patient->first_name . " " . $patient->last_name}}</td>
                     <td>
-                      {{-- {{\Carbon\Carbon::parse($patient->birthdate)->format('d/m/Y')}} --}}
                       {{$patient->birthdate}}
                     </td>
-                    {{-- <td>
-                        {{ $patient->updated_at->format('d-m-Y')}}
-                    </td> --}}
                     <td>
                         {{ $patient->age . " " . $patient->age_type}}
                     </td>
-                    {{-- <td>
-                      <a href="{{route('admin.categories.edit', ['category' => $category->id ])}}">Ред.</a>&nbsp;|&nbsp;<a href="javascript:;" style="color: red">Уд.</a>
-                    </td> --}}
                  </tr>
               @endforeach
               @if ($patientsCache)
