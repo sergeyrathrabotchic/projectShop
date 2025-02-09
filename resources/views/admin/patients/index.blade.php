@@ -48,18 +48,20 @@
                     </td> --}}
                  </tr>
               @endforeach
-             @foreach ($patientsCache as $patient)
-              <tr>
-                <td>{{$patient['id']}}</td>
-                <td>{{$patient['first_name'] . " " . $patient['last_name']}}</td>
-                <td>
-                  {{$patient['birthdate']}}
-                </td>
-                <td>
-                    {{ $patient['age'] . " " . $patient['age_type']}}
-                </td>
-              </tr>
-             @endforeach
+              @if ($patientsCache)
+                @foreach ($patientsCache as $patient)
+                <tr>
+                  <td>{{$patient['id']}}</td>
+                  <td>{{$patient['first_name'] . " " . $patient['last_name']}}</td>
+                  <td>
+                    {{$patient['birthdate']}}
+                  </td>
+                  <td>
+                      {{ $patient['age'] . " " . $patient['age_type']}}
+                  </td>
+                </tr>
+              @endforeach
+              @endif
              @if (empty($patientsCache) && empty($patients))
                 <tr>
                   <td colspan="4">Таких записей нет</td>
