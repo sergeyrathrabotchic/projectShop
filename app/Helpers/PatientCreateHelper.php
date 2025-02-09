@@ -4,6 +4,7 @@ namespace App\Helpers;
 
 use App\Models\Patient;
 use Illuminate\Support\Facades\Cache;
+use \Carbon\Carbon;
 
 class PatientCreateHelper
 {
@@ -12,7 +13,7 @@ class PatientCreateHelper
         $patient = Patient::create([
             'first_name' => $patient['first_name'],
             'last_name' => $patient['last_name'],
-            'birthdate' => $patient['birthdate'],
+            'birthdate' => Carbon::parse($patient['birthdate'])->format("Y-m-d"),
             'age' => $patient['age'],
             'age_type' => $patient['age_type'],
         ]);

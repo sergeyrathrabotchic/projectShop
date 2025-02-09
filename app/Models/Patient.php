@@ -21,10 +21,4 @@ class Patient extends Model
         'updated_at',
     ];
 
-    protected function casts(): array
-    {
-        return [
-            'birthdate' => 'datetime:Y-m-d',
-        ];
-    }
 }
