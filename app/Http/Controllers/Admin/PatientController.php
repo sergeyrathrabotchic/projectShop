@@ -26,6 +26,8 @@ class PatientController extends Controller
         // Cache::put('patientsCache', [['value22' => 11,'value266' => 22],['value23']], now()->addMinutes(4));
         if (Cache::has('patientsCache')) {
             $patientsCache = Cache::get('patientsCache');
+        } else {
+            $patientsCache = null;
         }
         // $value = $value[0];
         // dd($patients[0]);
