@@ -8,6 +8,7 @@ use App\Models\Patient;
 use \Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
 use App\Jobs\PatientJob;
+use App\Helpers\PatientCreateHelper;
 
 use function PHPSTORM_META\type;
 
@@ -104,8 +105,8 @@ class PatientController extends Controller
         }
         $patientsCache = Cache::get('patientsCache');
         $patient = $patientsCache[count($patientsCache)-1];
-        $job = 
-        dispatch((new PatientJob($patient))->delay(Carbon::now()->addSecond(1)));
+        PatientCreateHelper::patientCreate($patient);
+        // dispatch((new PatientJob($patient))->delay(Carbon::now()->addSecond(1)));
 
         if ($patientsCache) {
             return redirect()
