@@ -29,7 +29,7 @@
             </tr>
           </thead>
           <tbody>
-              @for ($patients as $patient)
+              @foreach ($patients as $patient)
                  <tr>
                     <td>{{$patient->id}}</td>
                     <td>{{$patient->first_name . " " . $patient->last_name}}</td>
@@ -47,8 +47,8 @@
                       <a href="{{route('admin.categories.edit', ['category' => $category->id ])}}">Ред.</a>&nbsp;|&nbsp;<a href="javascript:;" style="color: red">Уд.</a>
                     </td> --}}
                  </tr>
-              @endfor
-             @for ($patientsCache as $patient)
+              @endforeach
+             @foreach ($patientsCache as $patient)
               <tr>
                 <td>{{$patient['id']}}</td>
                 <td>{{$patient['first_name'] . " " . $patient['last_name']}}</td>
@@ -59,7 +59,7 @@
                     {{ $patient['age'] . " " . $patient['age_type']}}
                 </td>
               </tr>
-             @endfor
+             @endforeach
              @if (empty($patientsCache) && empty($patients))
                 <tr>
                   <td colspan="4">Таких записей нет</td>
