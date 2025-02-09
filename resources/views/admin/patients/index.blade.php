@@ -24,7 +24,6 @@
           <tbody>
               @foreach ($patients as $patient)
                  <tr>
-                    <td>{{$patient->id}}</td>
                     <td>{{$patient->first_name . " " . $patient->last_name}}</td>
                     <td>
                       {{$patient->birthdate}}
