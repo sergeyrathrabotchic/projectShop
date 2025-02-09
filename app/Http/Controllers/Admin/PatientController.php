@@ -29,9 +29,6 @@ class PatientController extends Controller
         } else {
             $patientsCache = null;
         }
-        // $value = $value[0];
-        // dd($patients[0]);
-        // dd( $value['value22']);
         return view('admin.patients.index', [
             'patients' => $patients,
             'patientsCache' => $patientsCache
@@ -77,15 +74,34 @@ class PatientController extends Controller
             $age_type = "день";
         }
 
-        $patient = Patient::create([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            // 'birthdate' => Carbon::parse($request->birthdate)->format('d/m/Y'),
-            'birthdate' => $request->birthdate,
-            'age' => $age,
-            'age_type' => $age_type,
-        ]);
-        if ($patient) {
+        // $patient = Patient::create([
+        //     'first_name' => $request->first_name,
+        //     'last_name' => $request->last_name,
+        //     // 'birthdate' => Carbon::parse($request->birthdate)->format('d/m/Y'),
+        //     'birthdate' => $request->birthdate,
+        //     'age' => $age,
+        //     'age_type' => $age_type,
+        // ]);
+        if (Cache::has('patientsCache')) {
+            $patientsCache = Cache::get('patientsCache');
+            $patientsCache[] = [
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'birthdate' => $request->birthdate,
+                'age' => $age,
+                'age_type' => $age_type,
+            ]; 
+            $patientsCache = Cache::put('patientsCache',$patientsCache, now()->addMinutes(5));
+        } else { 
+            $patientsCache = Cache::put('patientsCache', [[
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'birthdate' => $request->birthdate,
+                'age' => $age,
+                'age_type' => $age_type,
+            ]], now()->addMinutes(5));
+        }
+        if ($patientsCache) {
             return redirect()
             ->route('admin.patients.index')
             ->with('success', 'Пациент успешно добавлен');
