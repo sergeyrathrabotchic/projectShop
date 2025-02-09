@@ -22,10 +22,6 @@ class PatientController extends Controller
     public function index()
     {
         $patients = Patient::paginate(5);
-        // dd(gettype($patients[0]->created_at));
-        // dd(gettype($patients[0]->birthdate));
-        // $value = Cache::store('file')->all;
-        // Cache::put('patientsCache', [['value22' => 11,'value266' => 22],['value23']], now()->addMinutes(4));
         if (Cache::has('patientsCache')) {
             $patientsCache = Cache::get('patientsCache');
         } else {
@@ -62,9 +58,7 @@ class PatientController extends Controller
         ]);
         $date = Carbon::now();
         $interval = $date->diff($request->birthdate);
-        // dd(gettype($interval->y));
-        // dd($interval->y);
-        // dd($interval);
+
         if ($interval->y > 0) {
             $age = $interval->y;
             $age_type = "год";
@@ -76,20 +70,13 @@ class PatientController extends Controller
             $age_type = "день";
         }
 
-        // $patient = Patient::create([
-        //     'first_name' => $request->first_name,
-        //     'last_name' => $request->last_name,
-        //     // 'birthdate' => Carbon::parse($request->birthdate)->format('d/m/Y'),
-        //     'birthdate' => $request->birthdate,
-        //     'age' => $age,
-        //     'age_type' => $age_type,
-        // ]);
+
         if (Cache::has('patientsCache')) {
             $patientsCache = Cache::get('patientsCache');
             $patientsCache[] = [
                 'first_name' => $request->first_name,
                 'last_name' => $request->last_name,
-                'birthdate' => $request->birthdate,
+                'birthdate' => date('d-m-Y', $request->birthdate),
                 'age' => $age,
                 'age_type' => $age_type,
             ]; 
@@ -98,7 +85,7 @@ class PatientController extends Controller
             $patientsCache = Cache::put('patientsCache', [[
                 'first_name' => $request->first_name,
                 'last_name' => $request->last_name,
-                'birthdate' => $request->birthdate,
+                'birthdate' => date('d-m-Y', $request->birthdate),
                 'age' => $age,
                 'age_type' => $age_type,
             ]], now()->addMinutes(5));
@@ -106,8 +93,8 @@ class PatientController extends Controller
         $patientsCache = Cache::get('patientsCache');
         $patient = $patientsCache[count($patientsCache)-1];
         $patient['id'] = count($patientsCache)-1;
-        // PatientCreateHelper::patientCreate($patient);
-        dispatch((new PatientJob($patient))->delay(Carbon::now()->addSecond(1)));
+
+        dispatch((new PatientJob($patient))->delay(Carbon::now()->addSecond(5)));
 
         if ($patientsCache) {
             return redirect()
