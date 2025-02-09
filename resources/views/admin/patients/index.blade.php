@@ -62,7 +62,7 @@
                 </tr>
               @endforeach
               @endif
-             @if (empty($patientsCache) && empty($patients))
+             @if (empty($patientsCache) && $patients->isEmpty())
                 <tr>
                   <td colspan="4">Таких записей нет</td>
                 </tr>
