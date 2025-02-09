@@ -105,6 +105,7 @@ class PatientController extends Controller
         }
         $patientsCache = Cache::get('patientsCache');
         $patient = $patientsCache[count($patientsCache)-1];
+        $patient['id'] = count($patientsCache)-1;
         // PatientCreateHelper::patientCreate($patient);
         dispatch((new PatientJob($patient))->delay(Carbon::now()->addSecond(1)));
 

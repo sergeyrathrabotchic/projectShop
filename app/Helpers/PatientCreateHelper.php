@@ -3,6 +3,7 @@
 namespace App\Helpers;
 
 use App\Models\Patient;
+use Illuminate\Support\Facades\Cache;
 
 class PatientCreateHelper
 {
@@ -15,6 +16,11 @@ class PatientCreateHelper
             'age' => $patient['age'],
             'age_type' => $patient['age_type'],
         ]);
+        if (Cache::has('patientsCache')){
+            $patientsCache = Cache::get('patientsCache');
+            $patientsCache = array_splice($arr, $patient['id'], 1);
+            Cache::put('patientsCache', $patientsCache, now()->addMinutes(5));
+        }
 
         // return $patient;
     }
