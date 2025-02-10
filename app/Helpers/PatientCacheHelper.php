@@ -2,7 +2,6 @@
 
 namespace App\Helpers;
 
-use App\Models\Patient;
 use Illuminate\Support\Facades\Cache;
 use \Carbon\Carbon;
 
