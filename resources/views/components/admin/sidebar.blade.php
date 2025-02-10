@@ -73,6 +73,12 @@
             Информация
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link @if(request()->routeIs('admin.patients.*')) active @endif" href="{{route('admin.patients.index')}}">
+            <span data-feather="users"></span>
+            Пациенты
+          </a>
+        </li>
       </ul>
 
       <!--<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
