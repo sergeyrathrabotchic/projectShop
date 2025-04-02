@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\CozyDecorController as AdminCozyDecorController;
 use App\Http\Controllers\Admin\MagicOfPolymerController as AdminMagicOfPolymerController;
 use App\Http\Controllers\Admin\MagicOfStonesAndBeadController as AdminMagicOfStonesAndBeadController;
 use App\Http\Controllers\Admin\InformationController as AdminInformationController;
+use App\Http\Controllers\Admin\AddressController as AdminAddressController;
 use App\Http\Controllers\СategoryController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\RegistretionController;
@@ -60,6 +61,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::resource('/magicOfPolymers',AdminMagicOfPolymerController::class );
         Route::resource('/magicOfStonesAndBeads',AdminMagicOfStonesAndBeadController::class );
         Route::resource('/informations', AdminInformationController::class );
+        Route::resource('/addresses', AdminAddressController::class );
     });
 });
 // Route::resource('/news444444',AdminNewController::class );

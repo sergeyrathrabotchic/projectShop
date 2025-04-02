@@ -67,6 +67,12 @@
             Уютный Декор 
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link @if(request()->routeIs('admin.addresses.*')) active @endif" href="{{route('admin.addresses.index')}}">
+            <span data-feather="users"></span>
+            Адреса 
+          </a>
+        </li>
          <li class="nav-item">
           <a class="nav-link @if(request()->routeIs('admin.information.*')) active @endif" href="{{route('admin.informations.index')}}">
             <span data-feather="users"></span>
