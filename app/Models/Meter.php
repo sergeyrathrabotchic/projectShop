@@ -11,6 +11,8 @@ class Meter extends Model
 {
     use HasFactory;
 
+    protected $table = 'meters';
+
     protected $fillable = [
         'm_date', 
         'amount', 

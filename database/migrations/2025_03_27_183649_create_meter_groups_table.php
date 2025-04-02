@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTarifTable extends Migration
+class CreateMeterGroupTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateTarifTable extends Migration
      */
     public function up()
     {
-        Schema::create('tarif', function (Blueprint $table) {
+        Schema::create('meter_groups', function (Blueprint $table) {
             $table->id();
-            $table->date('in_date');
-            $table->string('title', 50);
-            $table->float('price', 6, 2);
+            $table->string('title', 5);
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateTarifTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tarif');
+        Schema::dropIfExists('meter_group');
     }
 }

@@ -12,6 +12,8 @@ class MeterGroup extends Model
 {
     use HasFactory;
 
+    protected $table = 'meterGroups';
+
     protected $fillable = [
         'title', 
     ];

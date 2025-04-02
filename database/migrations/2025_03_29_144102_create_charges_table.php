@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAddressTable extends Migration
+class CreateChargeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,16 @@ class CreateAddressTable extends Migration
      */
     public function up()
     {
-        Schema::create('address', function (Blueprint $table) {
+        Schema::create('charges', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_group')
-            ->constrained('meter_group','id')
+            $table->foreignId('id_account')
+            ->constrained('account','id')
             ->onDelete('cascade');
-            $table->string('street', 50);
-            $table->string('house', 7);
+            $table->foreignId('id_tarif')
+            ->constrained('tarif','id')
+            ->onDelete('cascade');
+            $table->date('c_date');
+            $table->float('meter', 6, 2);
             $table->timestamps();
         });
     }
@@ -31,6 +34,6 @@ class CreateAddressTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('address');
+        Schema::dropIfExists('charge');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMeterTable extends Migration
+class CreateOrgTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateMeterTable extends Migration
      */
     public function up()
     {
-        Schema::create('meter', function (Blueprint $table) {
+        Schema::create('orgs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_group')
-            ->constrained('meter_group','id')
+            $table->foreignId('id_account')
+            ->constrained('account','id')
             ->onDelete('cascade');
-            $table->date('m_date');
-            $table->float('amount', 6, 2);
+            $table->string('title', 120);
+            $table->string('office', 7);
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateMeterTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('meter');
+        Schema::dropIfExists('org');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMeterGroupTable extends Migration
+class CreatePersonalTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateMeterGroupTable extends Migration
      */
     public function up()
     {
-        Schema::create('meter_group', function (Blueprint $table) {
+        Schema::create('personals', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 5);
+            $table->foreignId('id_account')
+            ->constrained('account','id')
+            ->onDelete('cascade');
+            $table->string('FIO', 60);
+            $table->string('sub_addr', 5);
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ class CreateMeterGroupTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('meter_group');
+        Schema::dropIfExists('personal');
     }
 }
