@@ -28,7 +28,7 @@ class AddressController extends Controller
         // dd(ImageSlaid::all());
         // dd($slideImages);
         // dd(1);
-        return view('admin.cozyDecors.index', [
+        return view('admin.addresses.index', [
             'addresses' => $addresses ,
             'page' => $page,
         ]);
