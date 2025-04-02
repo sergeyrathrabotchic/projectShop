@@ -16,7 +16,7 @@ class CreateAddressesTable extends Migration
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_group')
-            ->constrained('meter_group','id')
+            ->constrained('meter_groups','id')
             ->onDelete('cascade');
             $table->string('street', 50);
             $table->string('house', 7);

@@ -16,7 +16,7 @@ class CreatePaymentsTable extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_account')
-            ->constrained('account','id')
+            ->constrained('accounts','id')
             ->onDelete('cascade');
             $table->date('p_date');
             $table->float('meter', 6, 2);

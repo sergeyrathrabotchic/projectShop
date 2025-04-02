@@ -16,7 +16,7 @@ class CreateChargesTable extends Migration
         Schema::create('charges', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_account')
-            ->constrained('account','id')
+            ->constrained('accounts','id')
             ->onDelete('cascade');
             $table->foreignId('id_tarif')
             ->constrained('tarif','id')

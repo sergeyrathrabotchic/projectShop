@@ -16,7 +16,7 @@ class CreateOrgsTable extends Migration
         Schema::create('orgs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_account')
-            ->constrained('account','id')
+            ->constrained('accounts','id')
             ->onDelete('cascade');
             $table->string('title', 120);
             $table->string('office', 7);

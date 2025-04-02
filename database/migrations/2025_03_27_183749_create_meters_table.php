@@ -16,7 +16,7 @@ class CreateMetersTable extends Migration
         Schema::create('meters', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_group')
-            ->constrained('meter_group','id')
+            ->constrained('meter_groups','id')
             ->onDelete('cascade');
             $table->date('m_date');
             $table->float('amount', 6, 2);

@@ -16,7 +16,7 @@ class CreatePersonalsTable extends Migration
         Schema::create('personals', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_account')
-            ->constrained('account','id')
+            ->constrained('accounts','id')
             ->onDelete('cascade');
             $table->string('FIO', 60);
             $table->string('sub_addr', 5);
