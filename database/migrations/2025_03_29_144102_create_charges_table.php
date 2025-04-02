@@ -19,7 +19,7 @@ class CreateChargesTable extends Migration
             ->constrained('accounts','id')
             ->onDelete('cascade');
             $table->foreignId('id_tarif')
-            ->constrained('tarif','id')
+            ->constrained('tarifs','id')
             ->onDelete('cascade');
             $table->date('c_date');
             $table->float('meter', 6, 2);
