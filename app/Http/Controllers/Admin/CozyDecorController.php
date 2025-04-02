@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ImageSlaid;
 use App\Helpers\ImageUploadHelper;
-use App\Models\Сeramics;
 use App\Models\CozyDecor;
 use App\Models\ProductImages;
 
@@ -24,7 +23,7 @@ class CozyDecorController extends Controller
         // $slideImages = ImageSlaid::with('image')->paginate(10);
 
 
-        $сeramics =  CozyDecor::with('productImage')->paginate(5);
+        $сeramics =  CozyDecor::with('meterGroup.meter')->paginate(5);
         $page = $request->get('page', 1);
         if ($page > 0) {
             $page = ($page - 1) * 5;
