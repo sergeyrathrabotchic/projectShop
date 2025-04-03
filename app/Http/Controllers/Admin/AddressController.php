@@ -24,6 +24,7 @@ class AddressController extends Controller
         if ($page > 0) {
             $page = ($page - 1) * 5;
         }
+        dd($addresses);
         //dd($electroplatings);
         //$catigories = Category::all();
         //dd($catigories);
