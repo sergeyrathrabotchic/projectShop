@@ -2,7 +2,7 @@
 @section('title') Список адресов - @parent @stop
 @section('content')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Категории </h1>
+    <h1 class="h2">Адреса </h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group me-2">
         <a href="{{route('admin.addresses.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новый адресс</a>
@@ -25,6 +25,8 @@
               <th scope="col">#</th>
               <th scope="col">Улица</th>
               <th scope="col">Дом</th>
+              <th scope="col">Описание</th>
+              <th scope="col">кв метров</th>
               <!--<th scope="col">Автор</th>-->
               <th scope="col">Дота последнего обновления</th>
               <th scope="col">Действие</th>
@@ -73,6 +75,12 @@
                   <td>
                     {{-- <img src="{{Storage::disk('image')->url($ceramic->productImage->where('type', 'cozyDecor')->values()->reverse()[0]->image)}}" alt="" style="width: 80%;padding: 10px;"></td> --}}
                     <h6>{{$address->house}}</h6>
+                  <td>
+                  <td>
+                    <h6>{{$address->title}}</h6>
+                  <td>
+                  <td>
+                    <h6>{{$address->amount}}</h6>
                   <td>
                     @if ($address->updated_at)
                      {{$address->updated_at->format('d-m-Y H:i')}}
