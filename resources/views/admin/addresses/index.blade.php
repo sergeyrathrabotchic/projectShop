@@ -80,8 +80,8 @@
                     <h6>{{$address->meterGroup->title}}</h6>
                   <td>
                   <td>
-                    {{dd($address->meterGroup->meter)}}
-                    {{-- <h6>{{$address->meterGroup->meter->amount}}</h6> --}}
+                    {{-- {{dd($address->meterGroup->meter[0]->)}} --}}
+                    <h6>{{$address->meterGroup->meter[0]->amount}}</h6>
                   <td>
                     @if ($address->updated_at)
                      {{$address->updated_at->format('d-m-Y H:i')}}
