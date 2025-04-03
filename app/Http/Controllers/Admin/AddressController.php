@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Address;
 use App\Models\MeterGroup;
 use App\Models\Meter;
+use App\Http\Requests\CreateAddressRequest;
 
 class AddressController extends Controller
 {
@@ -50,9 +51,26 @@ class AddressController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateAddressRequest $request)
     {
-        //
+        $meterGroup = MeterGroup::create([
+            'title' => $request->title,
+        ]);
+        $Meter = Address::create([
+            'amount' => $request->amount,
+        ]);
+        $address = Address::create([
+            'street' => $request->street,
+            'house' => $request->house,
+        ]);
+
+        if ($meterGroup && $Meter && $address) {
+            return redirect()
+            ->route('admin.addresses.index')
+            ->with('success', 'Товар успешно добавлен');
+        }
+
+        return back()->wiht('error', 'Товар не добавлен');
     }
 
     /**

@@ -27,7 +27,7 @@
   </div> --}}
       <div class="table-responsive">
         @include('inc.message')
-        <form  method="post" action="{{route('admin.cozyDecors.store')}}" enctype="multipart/form-data">
+        <form  method="post" action="{{route('admin.addresses.store')}}" enctype="multipart/form-data">
           @csrf 
             {{-- <div class="form-group">
                 <label for="title">Наименование</label>
