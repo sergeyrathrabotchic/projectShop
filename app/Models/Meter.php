@@ -21,6 +21,6 @@ class Meter extends Model
 
     public function meterGroup(): BelongsTo
     {
-        return $this->belongsTo(MeterGroup::class, 'meter_group_id', 'id');
+        return $this->belongsTo(MeterGroup::class, 'id_group', 'id');
     }
 }
