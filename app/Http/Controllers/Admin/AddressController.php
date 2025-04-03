@@ -60,6 +60,7 @@ class AddressController extends Controller
             'amount' => $request->amount,
         ]);
         $address = Address::create([
+            'id_group' => $meterGroup->id,
             'street' => $request->street,
             'house' => $request->house,
         ]);
