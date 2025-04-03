@@ -14,6 +14,7 @@ class Meter extends Model
     protected $table = 'meters';
 
     protected $fillable = [
+        'id_group',
         'm_date', 
         'amount', 
     ];

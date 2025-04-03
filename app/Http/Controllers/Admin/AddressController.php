@@ -8,6 +8,7 @@ use App\Models\Address;
 use App\Models\MeterGroup;
 use App\Models\Meter;
 use App\Http\Requests\CreateAddressRequest;
+use \Carbon\Carbon;
 
 class AddressController extends Controller
 {
@@ -56,8 +57,10 @@ class AddressController extends Controller
         $meterGroup = MeterGroup::create([
             'title' => $request->title,
         ]);
-        $Meter = Address::create([
+        $Meter = Meter::create([
+            'id_group' => $meterGroup->id,
             'amount' => $request->amount,
+            'm_date' => Carbon::now()->format('d-m-Y')
         ]);
         $address = Address::create([
             'id_group' => $meterGroup->id,
