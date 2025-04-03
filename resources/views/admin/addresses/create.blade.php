@@ -1,32 +1,30 @@
 @extends('layosts.admin')
-@section('title') Добавить новый товар - @parent @stop
+@section('title') Добавить новый адресс - @parent @stop
 @section('content')
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Добавить товар </h1>
+    <h1 class="h2">Добавить адресс </h1>
     <div class="btn-toolbar mb-2 mb-md-0">
     </div>
   </div>
 
-  <input type=file name=filename id=file  class="form-control" style="margin-bottom: 20px;">
+  {{-- <input type=file name=filename id=file  class="form-control" style="margin-bottom: 20px;">
   <div style="display: flex;margin-bottom: 20px;">
      <button style="margin-right: 10px" class="btn btn-success" type=button onclick='myFunction()'>Запуск редактирования</button>
      <button style="margin-right: 10px" id="fixImage" class="btn btn-success" type=button >Фиксация элемента</button>
      <a id="uplodeImage" href="/storage/image/electroplating/_n64062f589e54f.jpeg" class="btn btn-success" download="image.png">Загрузка изображения</a>
   </div>
-  {{-- <div style="width: 100%;height: 400px;">
-  <img id="image1" style="width: 100%;height: 400px;" src="/storage/image/electroplating/_n64062f589e54f.jpeg" alt="">
-</div> --}}
+  
   
   <div style="display: none" id="boxImage1">
-    {{-- <img id="image1" style="width: 100%" src="/storage/image/electroplating/_n64062f589e54f.jpeg" alt=""> --}}
+    
   <div style="width: 45%;margin-right: 10px;height: 400px;min-width: 200px;"> 
     <img id="image1" style="width: 100%" src="" alt="">
   </div>
   <div style="width: 45%;height: 400px;">
     <img id="upload1" style="width: 100%" src="" alt="">
   </div>
-  </div>
+  </div> --}}
       <div class="table-responsive">
         @include('inc.message')
         <form  method="post" action="{{route('admin.cozyDecors.store')}}" enctype="multipart/form-data">
@@ -43,18 +41,30 @@
             
             <input type="hidden" class="form-control" name="type" id="type" value="cozyDecor">
             <div class="form-group">
-              <label for="image">Наименование товара</label>
-              <input  type="test" class="form-control"  name="name" id="name">
+              <label for="image">Наименование улицы</label>
+              <input  type="test" style="margin: 4px;width:98%;" class="form-control"  name="street" id="street" required>
             </div>
             <div class="form-group">
-              <label for="image">Цена товара</label>
-              <input type="test" class="form-control" name="price" id="price">
+              <label for="image">Дом</label>
+              <input type="test" style="margin: 4px;width:98%;" class="form-control" name="house" id="house" required>
             </div>
             <div class="form-group">
+              <label for="image">Дом</label>
+              <input type="test" style="margin: 4px;width:98%;" class="form-control" name="house" id="house" required>
+            </div>
+            <div class="form-group">
+              <label for="image">Описание группы адрессов по площади</label>
+              <input type="test" style="margin: 4px;width:98%;" class="form-control" name="title" id="title" required>
+            </div>
+            <div class="form-group">
+              <label for="image">Площадь</label>
+              <input type="number" step="0.01" style="margin: 4px;width:98%;" class="form-control" name="amount" id="amount" required>
+            </div>
+            {{-- <div class="form-group">
               <label for="image">Описание товара</label>
               <textarea name="description" id="description" class="form-control" cols="30" rows="10"></textarea>
-            </div>
-            <div class="form-group">
+            </div> --}}
+            {{-- <div class="form-group">
               <label for="image">Изображение</label>
               <input id="test" type="file" onchange="showFile(this)" class="form-control" name="image" id="image">
             </div>
@@ -77,7 +87,7 @@
             <div class="form-group">
               <label for="image5">Изображение 5</label>
               <input type="file" class="form-control" name="image5" id="image5">
-            </div>
+            </div> --}}
             <br>
             <button type="submit" class="btn btn-success">Сохранить</button>
         </form>
