@@ -41,7 +41,7 @@ class AddressController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.addresses.create');
     }
 
     /**
