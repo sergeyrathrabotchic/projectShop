@@ -19,7 +19,7 @@ class AddressController extends Controller
      */
     public function index(Request $request)
     {
-        $addresses =  Address::with('address.meterGroup.meter')->paginate(5);
+        $addresses =  Address::with('meterGroup.meter')->paginate(5);
         $page = $request->get('page', 1);
         if ($page > 0) {
             $page = ($page - 1) * 5;
