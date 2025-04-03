@@ -60,7 +60,7 @@ class AddressController extends Controller
         $Meter = Meter::create([
             'id_group' => $meterGroup->id,
             'amount' => $request->amount,
-            'm_date' => Carbon::now()->format('d-m-Y')
+            'm_date' => Carbon::now()->format('Y-m-d')
         ]);
         $address = Address::create([
             'id_group' => $meterGroup->id,
