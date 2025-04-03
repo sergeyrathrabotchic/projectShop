@@ -77,10 +77,10 @@
                     <h6>{{$address->house}}</h6>
                   <td>
                   <td>
-                    <h6>{{$address->title}}</h6>
+                    <h6>{{$address->meterGroup->title}}</h6>
                   <td>
                   <td>
-                    <h6>{{$address->amount}}</h6>
+                    <h6>{{$address->meter->amount}}</h6>
                   <td>
                     @if ($address->updated_at)
                      {{$address->updated_at->format('d-m-Y H:i')}}
