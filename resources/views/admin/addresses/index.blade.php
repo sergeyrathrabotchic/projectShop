@@ -75,13 +75,14 @@
                   <td>
                     {{-- <img src="{{Storage::disk('image')->url($ceramic->productImage->where('type', 'cozyDecor')->values()->reverse()[0]->image)}}" alt="" style="width: 80%;padding: 10px;"></td> --}}
                     <h6>{{$address->house}}</h6>
-                  <td>
+                  </td>
                   <td>
                     <h6>{{$address->meterGroup->title}}</h6>
-                  <td>
+                  </td>
                   <td>
                     {{-- {{dd($address->meterGroup->meter[0]->)}} --}}
                     <h6>{{$address->meterGroup->meter[0]->amount}}</h6>
+                  </td>
                   <td>
                     @if ($address->updated_at)
                      {{$address->updated_at->format('d-m-Y H:i')}}

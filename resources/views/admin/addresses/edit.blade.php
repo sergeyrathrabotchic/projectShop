@@ -12,8 +12,8 @@
   {{-- {{dd($slide)}} --}}
       <div class="table-responsive">
         @include('inc.message')
-        <form  method="post" action="{{route('admin.cozyDecors.update', [
-            'cozyDecor' => $cozyDecor
+        <form  method="post" action="{{route('admin.addresses.update', [
+            'address' => $address
         ])}}" enctype="multipart/form-data">
           @csrf 
           @method('put')
@@ -27,67 +27,25 @@
             </div> --}}
 
             <div class="form-group">
-            <input type="hidden" class="form-control" name="type" id="type" value="cozyDecor">
-            <input type="hidden" class="form-control" name="count" id="count" value="{{$cozyDecor->productImage->count()}}">
+            {{-- <input type="hidden" class="form-control" name="type" id="type" value="cozyDecor"> --}}
+            {{-- <input type="hidden" class="form-control" name="count" id="count" value="{{$cozyDecor->productImage->count()}}"> --}}
             <div class="form-group">
-              <label for="image">Наименование товара</label>
-              <input type="test" class="form-control" name="name" id="name" @if ($cozyDecor->name) value="{{$cozyDecor->name}}" @endif>
-            </div>
-            <div class="form-group">
-              <label for="image">Цена товара</label>
-              <input type="test" class="form-control" name="price" id="price" @if ($cozyDecor->price) value="{{$cozyDecor->price}}" @endif>
+              <label for="image">Наименование улицы</label>
+              <input type="test" style="margin: 4px;width:98%;" class="form-control" name="street" id="street" @if ($address->street) value="{{$address->street}}" @endif>
             </div>
             <div class="form-group">
-              <label for="image">Описание товара</label>
-              <textarea name="description" id="description" class="form-control" cols="30" rows="10">@if ($cozyDecor->description) {{$cozyDecor->description}} @endif</textarea>
+              <label for="image">Дом</label>
+              <input type="test" style="margin: 4px;width:98%;" class="form-control" name="house" id="house" @if ($address->house) value="{{$address->house}}" @endif>
             </div>
-              <label for="image">Изображение</label>
-              @if ($cozyDecor->productImage->where('type', 'cozyDecor')->count() > 0)
-                {{-- <div style="display: flex;"> --}}
-                  <div style="width:300px;height: 300px;    margin-bottom: 40px;">
-                    <img id="image0" src="{{Storage::disk('image')->url($cozyDecor->productImage->where('type', 'cozyDecor')->values()[0]->image)}}" alt="" style="width:300px;height: 300px;margin-top: 10px;margin-bottom: 10px;">
-                  </div>
-                  {{-- <div>
-                      <img src="" alt="" id="output0" style="width: 200px;height: 200px;margin-top: 10px;margin-bottom: 10px;">
-                  </div> 
-                </div>
-                <button style="margin-top:40px" type="button" id="editImage0" class="btn btn-success">Изменить первую картинку</button> --}}
-              @endif
-              
-              <input type="file" class="form-control" name="image" id="image">
-            </div>
-            <br>
             <div class="form-group">
-              <label for="image2">Изображение 2</label>
-              @if ($cozyDecor->productImage->where('type', 'cozyDecor')->count() > 1)
-                <img src="{{Storage::disk('image')->url($cozyDecor->productImage->where('type', 'cozyDecor')->values()[1]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
-              @endif
-              <input type="file" class="form-control" name="image2" id="image2">
+              <label for="image">Описание группы адрессов по площади</label>
+              <input type="test" style="margin: 4px;width:98%;" class="form-control" name="title" id="title" @if ($$address->meterGroup->title) value="{{$$address->meterGroup->title}}" @endif>
             </div>
-            <br>
             <div class="form-group">
-              <label for="image3">Изображение 3</label>
-              @if ($cozyDecor->productImage->where('type', 'cozyDecor')->count() > 2)
-                <img src="{{Storage::disk('image')->url($cozyDecor->productImage->where('type', 'cozyDecor')->values()[2]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
-              @endif
-              <input type="file" class="form-control" name="image3" id="image3">
+              <label for="image">Площадь</label>
+              <input type="test" style="margin: 4px;width:98%;"  class="form-control" name="amount" id="amount" @if ($address->meterGroup->meter[0]->amount) value="{{$address->meterGroup->meter[0]->amount}}" @endif>
             </div>
-            <br>
-            <div class="form-group">
-              <label for="image4">Изображение 4</label>
-              @if ($cozyDecor->productImage->where('type', 'cozyDecor')->count() > 3)
-                <img src="{{Storage::disk('image')->url($cozyDecor->productImage->where('type', 'cozyDecor')->values()[3]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
-              @endif
-              <input type="file" class="form-control" name="image4" id="image4">
-            </div>
-            <br>
-            <div class="form-group">
-              <label for="image5">Изображение 5</label>
-              @if ($cozyDecor->productImage->where('type', 'cozyDecor')->count() > 4)
-                <img src="{{Storage::disk('image')->url($cozyDecor->productImage->where('type', 'cozyDecor')->values()[4]->image)}}" alt="" style="width: 100px;height: 100px;margin-top: 10px;margin-bottom: 10px;">
-              @endif
-              <input type="file" class="form-control" name="image5" id="image5">
-            </div>
+           
             <br>
             <button type="submit" class="btn btn-success">Сохранить</button>
         </form>

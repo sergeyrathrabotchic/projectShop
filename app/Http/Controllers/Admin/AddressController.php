@@ -72,10 +72,10 @@ class AddressController extends Controller
         if ($meterGroup && $Meter && $address) {
             return redirect()
             ->route('admin.addresses.index')
-            ->with('success', 'Товар успешно добавлен');
+            ->with('success', 'Адресс успешно добавлен');
         }
 
-        return back()->wiht('error', 'Товар не добавлен');
+        return back()->wiht('error', 'Адресс не добавлен');
     }
 
     /**
@@ -95,9 +95,11 @@ class AddressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Address $address)
     {
-        //
+        return view('admin.addresses.edit', [
+            'address' => $address
+        ]);
     }
 
     /**
@@ -107,9 +109,33 @@ class AddressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateAddressRequest $request, Address $address)
     {
-        //
+        $addressResult = $address->update([
+            'street' => $request->street,
+            'house' => $request->house,
+        ]);
+        $meterGroup = MeterGroup::where('id','=', $address->id_group);
+        $meterGroup = $meterGroup->update([
+            'title' => $request->title,
+        ]);
+        $meter = MeterGroup::where('id_group','=', $meterGroup->id);
+        $meter = $meter->update([
+            'amount' => $request->amount,
+            'm_date' => Carbon::now()->format('Y-m-d')
+        ]);
+
+
+        if( $addressResult && $meterGroup && $meter) {
+            return redirect()
+            ->route('admin.cozyDecors.index')
+            ->with('success', 'Адресс успешно обновлен')
+            /*->with('success', 'Категория успешно обновлена')*/;
+        }
+
+        return back()->wiht('error', 'Адресс не обновилсяы');
+
+        
     }
 
     /**
