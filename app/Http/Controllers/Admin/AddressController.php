@@ -153,8 +153,10 @@ class AddressController extends Controller
         $address::destroy($address->id);
         $meterGroup = MeterGroup::where('id', '=',  $address->id_group)->get()[0];
         $meter = Meter::where('id_group', '=',  $meterGroup->id)->get()[0];
-        $meterGroup = $meterGroup::where('id', '=',  $meterGroup->id)->destroy();
-        $meter = $meter::where('id', '=',  $meter->id)->destroy();
+        MeterGroup::destroy($meterGroup->id);
+        Meter::destroy($meter->id);
+        // $meterGroup = $meterGroup::where('id', '=',  $meterGroup->id)->destroy();
+        // $meter = $meter::where('id', '=',  $meter->id)->destroy();
 
         return redirect()
         ->route('admin.addresses.index')
