@@ -97,6 +97,7 @@ class AddressController extends Controller
      */
     public function edit(Address $address)
     {
+        $address = $address::with('meterGroup.meter')->get();
         return view('admin.addresses.edit', [
             'address' => $address
         ]);
