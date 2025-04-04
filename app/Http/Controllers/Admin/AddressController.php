@@ -122,7 +122,7 @@ class AddressController extends Controller
         $meterGroup = $meterGroup->update([
             'title' => $request->title,
         ]);
-        $meter = MeterGroup::where('id_group','=', $meterGroup->id);
+        $meter = Meter::where('id_group','=', $meterGroup->id);
         $meter = $meter->update([
             'amount' => $request->amount,
             'm_date' => Carbon::now()->format('Y-m-d')
