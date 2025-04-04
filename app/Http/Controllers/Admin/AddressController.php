@@ -122,6 +122,7 @@ class AddressController extends Controller
         $meterGroupResult = $meterGroup->update([
             'title' => $request->title,
         ]);
+        $meterGroup = $meterGroup->get()[0];
         $meter = Meter::where('id_group','=', $meterGroup->id);
         $meterResult = $meter->update([
             'amount' => $request->amount,
