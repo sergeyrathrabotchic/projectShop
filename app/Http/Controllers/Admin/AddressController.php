@@ -148,8 +148,16 @@ class AddressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Address $address)
     {
-        //
+        $address::destroy($address->id);
+        $meterGroup = MeterGroup::where('id', '=',  $address->id_group)->get()[0];
+        $meter = Meter::where('id_group', '=',  $meterGroup->id)->get()[0];
+        $meterGroup = $meterGroup::where('id', '=',  $meterGroup->id)->destroy();
+        $meter = $meter::where('id', '=',  $meter->id)->destroy();
+
+        return redirect()
+        ->route('admin.addresses.index')
+        ->with('success', 'Адресс успешно удален');
     }
 }
