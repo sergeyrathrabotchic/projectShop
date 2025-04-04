@@ -1,8 +1,8 @@
 @extends('layosts.admin')
-@section('title') Редактировать категорию - @parent @stop
+@section('title') Редактировать адресс - @parent @stop
 @section('content')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Редактировать категорию </h1>
+    <h1 class="h2">Редактировать адресс </h1>
     <div class="btn-toolbar mb-2 mb-md-0">
     </div>
   </div>
@@ -14,7 +14,7 @@
         @include('inc.message')
         <form  method="post" action="{{route('admin.addresses.update', [
             'address' => $address
-        ])}}" enctype="multipart/form-data">
+        ])}}" >
           @csrf 
           @method('put')
             {{-- <div class="form-group">
