@@ -39,11 +39,11 @@
             </div>
             <div class="form-group">
               <label for="image">Описание группы адрессов по площади</label>
-              <input type="test" style="margin: 4px;width:98%;" class="form-control" name="title" id="title" @if ($meterGroup->title) value="{{$meterGroup->title}}" @endif>
+              <input type="test" style="margin: 4px;width:98%;" class="form-control" name="title" id="title" @if ($meterGroup[0]->title) value="{{$meterGroup[0]->title}}" @endif>
             </div>
             <div class="form-group">
               <label for="image">Площадь</label>
-              <input type="test" style="margin: 4px;width:98%;"  class="form-control" name="amount" id="amount" @if ($meterGroup->meter[0]->amount) value="{{$meterGroup->meter[0]->amount}}" @endif>
+              <input type="test" style="margin: 4px;width:98%;"  class="form-control" name="amount" id="amount" @if ($meterGroup[0]->meter[0]->amount) value="{{$meterGroup[0]->meter[0]->amount}}" @endif>
             </div>
            
             <br>
