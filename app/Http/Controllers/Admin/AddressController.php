@@ -119,17 +119,17 @@ class AddressController extends Controller
             'house' => $request->house,
         ]);
         $meterGroup = MeterGroup::where('id','=', $address->id_group);
-        $meterGroup = $meterGroup->update([
+        $meterGroupResult = $meterGroup->update([
             'title' => $request->title,
         ]);
         $meter = Meter::where('id_group','=', $meterGroup->id);
-        $meter = $meter->update([
+        $meterResult = $meter->update([
             'amount' => $request->amount,
             'm_date' => Carbon::now()->format('Y-m-d')
         ]);
 
 
-        if( $addressResult && $meterGroup && $meter) {
+        if( $addressResult && $meterGroupResult && $meterResult) {
             return redirect()
             ->route('admin.cozyDecors.index')
             ->with('success', 'Адресс успешно обновлен')
