@@ -132,7 +132,7 @@ class AddressController extends Controller
 
         if( $addressResult && $meterGroupResult && $meterResult) {
             return redirect()
-            ->route('admin.cozyDecors.index')
+            ->route('admin.addresses.index')
             ->with('success', 'Адресс успешно обновлен')
             /*->with('success', 'Категория успешно обновлена')*/;
         }
