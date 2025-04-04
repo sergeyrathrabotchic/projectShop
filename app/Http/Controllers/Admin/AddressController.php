@@ -99,6 +99,7 @@ class AddressController extends Controller
     {
         // $address = $address::with('meterGroup.meter');
         $meterGroup = MeterGroup::where('id', '=', $address->id_group)->with('meter')->get();
+        dd($meterGroup);
         return view('admin.addresses.edit', [
             'address' => $address,
             'meterGroup' => $meterGroup,
