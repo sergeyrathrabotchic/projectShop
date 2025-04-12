@@ -7,7 +7,7 @@
             Админка
           </a>
         </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
           <a class="nav-link @if(request()->routeIs('admin.categories.*')) active @endif" href="{{route('admin.categories.index')}}">
             <span data-feather="shopping-cart"></span>
             Категории
@@ -66,14 +66,20 @@
             <span data-feather="users"></span>
             Уютный Декор 
           </a>
-        </li>
+        </li> --}}
         <li class="nav-item">
           <a class="nav-link @if(request()->routeIs('admin.addresses.*')) active @endif" href="{{route('admin.addresses.index')}}">
             <span data-feather="users"></span>
             Адреса 
           </a>
         </li>
-         <li class="nav-item">
+        <li class="nav-item">
+          <a class="nav-link @if(request()->routeIs('admin.addresses.*')) active @endif" href="{{route('admin.addresses.index')}}">
+            <span data-feather="users"></span>
+            Тарифы 
+          </a>
+        </li>
+        {{-- <li class="nav-item">
           <a class="nav-link @if(request()->routeIs('admin.information.*')) active @endif" href="{{route('admin.informations.index')}}">
             <span data-feather="users"></span>
             Информация
@@ -85,7 +91,7 @@
             Пациенты
           </a>
         </li>
-      </ul>
+      </ul> --}}
 
       <!--<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
         <span>Saved reports</span>
