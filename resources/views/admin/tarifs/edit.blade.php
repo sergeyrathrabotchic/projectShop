@@ -34,7 +34,7 @@
               <input type="test" style="margin: 4px;width:98%;" class="form-control" name="title" id="title" @if ($tarif->title) value="{{$tarif->title}}" @endif>
             <div class="form-group">
               <label for="image">Цена</label>
-              <input type="test" style="margin: 4px;width:98%;" class="form-control" name="price" id="price" @if ($tarif->pricee) value="{{$tarif->price}}" @endif>
+              <input type="test" style="margin: 4px;width:98%;" class="form-control" name="price" id="price" @if ($tarif->price) value="{{$tarif->price}}" @endif>
             </div>
            
             <br>
