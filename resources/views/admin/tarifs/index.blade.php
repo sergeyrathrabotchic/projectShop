@@ -5,7 +5,7 @@
     <h1 class="h2">Тарифы </h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group me-2">
-        <a href="{{route('admin.tarisfs.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новый тариф</a>
+        <a href="{{route('admin.tarifs.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новый тариф</a>
       </div>
       {{-- <div class="btn-group me-2">
         <a href="{{route('admin.news.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новую</a>
