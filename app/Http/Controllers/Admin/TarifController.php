@@ -17,7 +17,7 @@ class TarifController extends Controller
      */
     public function index(Request $request)
     {
-        $tarifs = Tarif::all()->paginate(5);
+        $tarifs = Tarif::paginate(5);
         $page = $request->get('page', 1);
         if ($page > 0) {
             $page = ($page - 1) * 5;
