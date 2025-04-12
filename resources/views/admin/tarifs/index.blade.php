@@ -93,7 +93,7 @@
                       @php
                           // $amulet = $ceramic;
                       @endphp
-                      <a href="{{route('admin.tarifs.edit', ['tarifs' => $tarif->id ])}}" class="btn btn-primary">Ред.</a>
+                      <a href="{{route('admin.tarifs.edit', ['tarif' => $tarif->id ])}}" class="btn btn-primary">Ред.</a>
                       {{-- &nbsp;|&nbsp; --}}
                       {{-- <a href="{{route('admin.slides.destroy', ['slide' => $slide->id ])}}" style="color: red">Уд.</a> --}}
           {{-- {{dd($slide->id)}} --}}
