@@ -81,7 +81,7 @@ class TarifController extends Controller
     public function edit(Tarif $tarif)
     {
         return view('admin.tarifs.edit', [
-            'address' => $tarif,
+            'tarif' => $tarif,
         ]);
     }
 
