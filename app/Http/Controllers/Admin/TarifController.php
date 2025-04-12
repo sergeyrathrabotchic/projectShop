@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Tarif;
+use App\Http\Requests\CreateTarifRequest;
+use \Carbon\Carbon;
 
 class TarifController extends Controller
 {
@@ -34,7 +36,7 @@ class TarifController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tarisfs.create');
     }
 
     /**
@@ -43,9 +45,20 @@ class TarifController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateTarifRequest $request)
     {
-        //
+        $tarifs = Tarif::create([
+            'in_date' => Carbon::now()->format('Y-m-d'),
+            'title' => $request->title,
+            'price' => $request->price,
+        ]);
+        if ($tarifs) {
+            return redirect()
+            ->route('admin.tarifs.index')
+            ->with('success', 'Тариф успешно добавлен');
+        }
+
+        return back()->wiht('error', 'Адресс не добавлен');
     }
 
     /**

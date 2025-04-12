@@ -1,9 +1,9 @@
 @extends('layosts.admin')
-@section('title') Добавить новый адресс - @parent @stop
+@section('title') Добавить новый тариф - @parent @stop
 @section('content')
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Добавить адресс </h1>
+    <h1 class="h2">Добавить тариф </h1>
     <div class="btn-toolbar mb-2 mb-md-0">
     </div>
   </div>
@@ -27,7 +27,7 @@
   </div> --}}
       <div class="table-responsive">
         @include('inc.message')
-        <form  method="post" action="{{route('admin.addresses.store')}}" enctype="multipart/form-data">
+        <form  method="post" action="{{route('admin.tarisf.store')}}" enctype="multipart/form-data">
           @csrf 
             {{-- <div class="form-group">
                 <label for="title">Наименование</label>
@@ -41,20 +41,12 @@
             
             <input type="hidden" class="form-control" name="type" id="type" value="cozyDecor">
             <div class="form-group">
-              <label for="image">Наименование улицы</label>
-              <input  type="test" style="margin: 4px;width:98%;" class="form-control"  name="street" id="street" required>
+              <label for="image">Описание</label>
+              <input  type="test" style="margin: 4px;width:98%;" class="form-control"  name="title" id="title" required>
             </div>
             <div class="form-group">
-              <label for="image">Дом</label>
-              <input type="test" style="margin: 4px;width:98%;" class="form-control" name="house" id="house" required>
-            </div>
-            <div class="form-group">
-              <label for="image">Описание группы адрессов по площади</label>
-              <input type="test" style="margin: 4px;width:98%;" class="form-control" name="title" id="title" required>
-            </div>
-            <div class="form-group">
-              <label for="image">Площадь</label>
-              <input type="number" step="0.01" style="margin: 4px;width:98%;" class="form-control" name="amount" id="amount" required>
+              <label for="image">Цена</label>
+              <input type="test" style="margin: 4px;width:98%;" class="form-control" name="price" id="price" required>
             </div>
             {{-- <div class="form-group">
               <label for="image">Описание товара</label>
