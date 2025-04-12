@@ -104,7 +104,7 @@
                         <button  type="submit" style="color: red">Уд.</button>
                       </form> --}}
                       
-                      <form  action="{{ route('admin.tarifs.destroy' , ['address' => $tarifs->id ])}}" method="POST">
+                      <form  action="{{ route('admin.tarifs.destroy' , ['tarif' => $tarif->id ])}}" method="POST">
                         {{ csrf_field() }}           
                         <button name="_method" type="hidden" value="DELETE" class="btn btn-danger" style="margin-top: 5px;">Удалить</button>
                     </form>
