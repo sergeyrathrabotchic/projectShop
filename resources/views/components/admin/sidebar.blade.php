@@ -74,7 +74,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link @if(request()->routeIs('admin.tarisfs.*')) active @endif" href="{{route('admin.addresses.index')}}">
+          <a class="nav-link @if(request()->routeIs('admin.tarisfs.*')) active @endif" href="{{route('admin.tarisfs.index')}}">
             <span data-feather="users"></span>
             Тарифы 
           </a>

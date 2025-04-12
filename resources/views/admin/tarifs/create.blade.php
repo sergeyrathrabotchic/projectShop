@@ -8,23 +8,6 @@
     </div>
   </div>
 
-  {{-- <input type=file name=filename id=file  class="form-control" style="margin-bottom: 20px;">
-  <div style="display: flex;margin-bottom: 20px;">
-     <button style="margin-right: 10px" class="btn btn-success" type=button onclick='myFunction()'>Запуск редактирования</button>
-     <button style="margin-right: 10px" id="fixImage" class="btn btn-success" type=button >Фиксация элемента</button>
-     <a id="uplodeImage" href="/storage/image/electroplating/_n64062f589e54f.jpeg" class="btn btn-success" download="image.png">Загрузка изображения</a>
-  </div>
-  
-  
-  <div style="display: none" id="boxImage1">
-    
-  <div style="width: 45%;margin-right: 10px;height: 400px;min-width: 200px;"> 
-    <img id="image1" style="width: 100%" src="" alt="">
-  </div>
-  <div style="width: 45%;height: 400px;">
-    <img id="upload1" style="width: 100%" src="" alt="">
-  </div>
-  </div> --}}
       <div class="table-responsive">
         @include('inc.message')
         <form  method="post" action="{{route('admin.tarisf.store')}}" enctype="multipart/form-data">
