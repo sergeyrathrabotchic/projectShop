@@ -120,6 +120,6 @@
         </table>
       </div>
       <div>
-        {{ $addresses->links()}}
+        {{ $tarifs->links()}}
       </div>
 @endsection
