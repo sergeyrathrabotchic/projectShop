@@ -1,8 +1,8 @@
 @extends('layosts.admin')
-@section('title') Редактировать адресс - @parent @stop
+@section('title') Редактировать тариф - @parent @stop
 @section('content')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Редактировать адресс </h1>
+    <h1 class="h2">Редактировать тариф </h1>
     <div class="btn-toolbar mb-2 mb-md-0">
     </div>
   </div>
@@ -12,8 +12,8 @@
   {{-- {{dd($slide)}} --}}
       <div class="table-responsive">
         @include('inc.message')
-        <form  method="post" action="{{route('admin.addresses.update', [
-            'address' => $address
+        <form  method="post" action="{{route('admin.tarifs.update', [
+            'tarif' => $tarif
         ])}}" >
           @csrf 
           @method('put')
@@ -30,20 +30,11 @@
             {{-- <input type="hidden" class="form-control" name="type" id="type" value="cozyDecor"> --}}
             {{-- <input type="hidden" class="form-control" name="count" id="count" value="{{$cozyDecor->productImage->count()}}"> --}}
             <div class="form-group">
-              <label for="image">Наименование улицы</label>
-              <input type="test" style="margin: 4px;width:98%;" class="form-control" name="street" id="street" @if ($address->street) value="{{$address->street}}" @endif>
-            </div>
+              <label for="image">Описание</label>
+              <input type="test" style="margin: 4px;width:98%;" class="form-control" name="title" id="title" @if ($tarif->title) value="{{$tarif->title}}" @endif>
             <div class="form-group">
-              <label for="image">Дом</label>
-              <input type="test" style="margin: 4px;width:98%;" class="form-control" name="house" id="house" @if ($address->house) value="{{$address->house}}" @endif>
-            </div>
-            <div class="form-group">
-              <label for="image">Описание группы адрессов по площади</label>
-              <input type="test" style="margin: 4px;width:98%;" class="form-control" name="title" id="title" @if ($meterGroup[0]->title) value="{{$meterGroup[0]->title}}" @endif>
-            </div>
-            <div class="form-group">
-              <label for="image">Площадь</label>
-              <input type="test" style="margin: 4px;width:98%;"  class="form-control" name="amount" id="amount" @if ($meterGroup[0]->meter[0]->amount) value="{{$meterGroup[0]->meter[0]->amount}}" @endif>
+              <label for="image">Цена</label>
+              <input type="test" style="margin: 4px;width:98%;" class="form-control" name="price" id="price" @if ($tarif->pricee) value="{{$tarif->price}}" @endif>
             </div>
            
             <br>

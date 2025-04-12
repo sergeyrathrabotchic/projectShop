@@ -78,9 +78,11 @@ class TarifController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Tarif $tarif)
     {
-        //
+        return view('admin.tarifs.edit', [
+            'address' => $tarif,
+        ]);
     }
 
     /**
@@ -90,9 +92,24 @@ class TarifController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateTarifRequest $request, Tarif $tarif)
     {
-        //
+        $tarifResult = $tarif->update([
+            'in_date' => Carbon::now()->format('Y-m-d'),
+            'title' => $request->title,
+            'price' => $request->price,
+        ]);
+        
+
+
+        if( $tarifResult) {
+            return redirect()
+            ->route('admin.tarifs.index')
+            ->with('success', 'Тариф успешно обновлен')
+            /*->with('success', 'Категория успешно обновлена')*/;
+        }
+
+        return back()->wiht('error', 'Тариф не обновилсяы');
     }
 
     /**
@@ -101,8 +118,13 @@ class TarifController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Tarif $tarif)
     {
-        //
+        $tarif::destroy($tarif->id);
+       
+
+        return redirect()
+        ->route('admin.tarifs.index')
+        ->with('success', 'Адресс успешно тариф');
     }
 }
