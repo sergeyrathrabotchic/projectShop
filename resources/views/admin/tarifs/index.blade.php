@@ -62,7 +62,7 @@
              @php
                  $i = $page;
              @endphp
-            @forelse ($tarisfs as $tarisf)
+            @forelse ($tarifs as $tarif)
                   @php
                       $i = $i +1;
                   @endphp
@@ -71,15 +71,15 @@
                   
                   {{-- {{dd($ceramic)}} --}}
                   <td>
-                    <h6>{{$tarisf->title}}</h6>
+                    <h6>{{$tarif->title}}</h6>
                   </td>
                   <td>
                     {{-- {{dd($address->meterGroup->meter[0]->)}} --}}
-                    <h6>{{$tarisf->price}}</h6>
+                    <h6>{{$tarif->price}}</h6>
                   </td>
                   <td>
-                    @if ($address->updated_at)
-                     {{$address->updated_at->format('d-m-Y H:i')}}
+                    @if ($tarif->updated_at)
+                     {{$tarif->updated_at->format('d-m-Y H:i')}}
                     @else - @endif
                    </td> 
                    {{-- <td>{{$category->id}}</td>
@@ -93,7 +93,7 @@
                       @php
                           // $amulet = $ceramic;
                       @endphp
-                      <a href="{{route('admin.tarisfs.edit', ['tarisf' => $tarisf->id ])}}" class="btn btn-primary">Ред.</a>
+                      <a href="{{route('admin.tarifs.edit', ['tarifs' => $tarif->id ])}}" class="btn btn-primary">Ред.</a>
                       {{-- &nbsp;|&nbsp; --}}
                       {{-- <a href="{{route('admin.slides.destroy', ['slide' => $slide->id ])}}" style="color: red">Уд.</a> --}}
           {{-- {{dd($slide->id)}} --}}
@@ -104,7 +104,7 @@
                         <button  type="submit" style="color: red">Уд.</button>
                       </form> --}}
                       
-                      <form  action="{{ route('admin.tarisf.destroy' , ['address' => $tarisf->id ])}}" method="POST">
+                      <form  action="{{ route('admin.tarifs.destroy' , ['address' => $tarifs->id ])}}" method="POST">
                         {{ csrf_field() }}           
                         <button name="_method" type="hidden" value="DELETE" class="btn btn-danger" style="margin-top: 5px;">Удалить</button>
                     </form>

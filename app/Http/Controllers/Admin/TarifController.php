@@ -17,14 +17,14 @@ class TarifController extends Controller
      */
     public function index(Request $request)
     {
-        $tarisfs = Tarif::all()->paginate(5);
+        $tarifs = Tarif::all()->paginate(5);
         $page = $request->get('page', 1);
         if ($page > 0) {
             $page = ($page - 1) * 5;
         }
 
-        return view('admin.tarisfs.index', [
-            'tarisfs' => $tarisfs,
+        return view('admin.tarifs.index', [
+            'tarifs' => $tarifs,
             'page' => $page,
         ]);
     }
@@ -36,7 +36,7 @@ class TarifController extends Controller
      */
     public function create()
     {
-        return view('admin.tarisfs.create');
+        return view('admin.tarifs.create');
     }
 
     /**
