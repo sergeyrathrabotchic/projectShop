@@ -29,7 +29,7 @@
             </div>
             <div class="form-group">
               <label for="image">Цена</label>
-              <input type="test" style="margin: 4px;width:98%;" class="form-control" name="price" id="price" required>
+              <input type="number" step="0.01" style="margin: 4px;width:98%;" class="form-control" name="price" id="price" required>
             </div>
             {{-- <div class="form-group">
               <label for="image">Описание товара</label>

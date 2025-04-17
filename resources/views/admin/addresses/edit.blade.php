@@ -43,7 +43,7 @@
             </div>
             <div class="form-group">
               <label for="image">Площадь</label>
-              <input type="test" style="margin: 4px;width:98%;"  class="form-control" name="amount" id="amount" @if ($meterGroup[0]->meter[0]->amount) value="{{$meterGroup[0]->meter[0]->amount}}" @endif>
+              <input type="number" step="0.01" style="margin: 4px;width:98%;"  class="form-control" name="amount" id="amount" @if ($meterGroup[0]->meter[0]->amount) value="{{$meterGroup[0]->meter[0]->amount}}" @endif>
             </div>
            
             <br>
