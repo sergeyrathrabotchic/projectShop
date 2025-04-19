@@ -16,7 +16,7 @@ use App\Http\Controllers\Admin\MagicOfStonesAndBeadController as AdminMagicOfSto
 use App\Http\Controllers\Admin\InformationController as AdminInformationController;
 use App\Http\Controllers\Admin\AddressController as AdminAddressController;
 use App\Http\Controllers\Admin\TarifController as AdminTarifController;
-use App\Http\Controllers\Admin\WaterWithdrawalControlle as AdminWaterWithdrawalControlle;
+use App\Http\Controllers\Admin\WaterWithdrawalController as AdminWaterWithdrawalController;
 use App\Http\Controllers\СategoryController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\RegistretionController;
@@ -65,7 +65,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::resource('/informations', AdminInformationController::class );
         Route::resource('/addresses', AdminAddressController::class );
         Route::resource('/tarifs', AdminTarifController::class );
-        Route::resource('/waterWithdrawals', AdminWaterWithdrawalControlle::class );
+        Route::resource('/waterWithdrawals', AdminWaterWithdrawalController::class );
     });
 });
 // Route::resource('/news444444',AdminNewController::class );
