@@ -79,6 +79,12 @@
             Тарифы 
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link @if(request()->routeIs('admin.waterWithdrawals.*')) active @endif" href="{{route('admin.waterWithdrawals.index')}}">
+            <span data-feather="users"></span>
+            Водозабор 
+          </a>
+        </li>
         {{-- <li class="nav-item">
           <a class="nav-link @if(request()->routeIs('admin.information.*')) active @endif" href="{{route('admin.informations.index')}}">
             <span data-feather="users"></span>

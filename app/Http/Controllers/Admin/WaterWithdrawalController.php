@@ -27,7 +27,7 @@ class WaterWithdrawalController extends Controller
         // dd(ImageSlaid::all());
         // dd($slideImages);
         // dd(1);
-        return view('admin.addresses.index', [
+        return view('admin.waterWithdrawals.index', [
             'addresses' => $addresses ,
             'page' => $page,
         ]);

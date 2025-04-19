@@ -2,7 +2,7 @@
 @section('title') Водозабор - @parent @stop
 @section('content')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Водозабор </h1>
+    <h1 class="h2">Водозабор</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group me-2">
         <a href="{{route('admin.addresses.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новый адресс</a>
@@ -24,7 +24,7 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col"></th>
-              <th scope="col"></th>
+              <th scope="col-2"></th>
               {{-- <th scope="col">Описание</th>
               <th scope="col">кв метров</th> --}}
               <!--<th scope="col">Автор</th>-->
@@ -70,10 +70,12 @@
                   <td>{{$i}}</td>
                   <td>
                     {{-- <h6>{{$address->street}}</h6> --}}
+                    дынные 
                   </td>
                   <td>
                   </td>
                   <td>
+                    график
                     {{-- <h6>{{$address->meterGroup->title}}</h6> --}}
                   </td>
                   {{-- <td>
