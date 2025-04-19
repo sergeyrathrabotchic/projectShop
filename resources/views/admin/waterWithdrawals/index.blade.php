@@ -22,9 +22,9 @@
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col"></th>
-              <th scope="col-2"></th>
+              <th class=".row-cols-1">#</th>
+              <th class=".row-cols-2"></th>
+              <th class=".row-cols-3"></th>
               {{-- <th scope="col">Описание</th>
               <th scope="col">кв метров</th> --}}
               <!--<th scope="col">Автор</th>-->
