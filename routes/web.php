@@ -65,7 +65,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::resource('/informations', AdminInformationController::class );
         Route::resource('/addresses', AdminAddressController::class );
         Route::resource('/tarifs', AdminTarifController::class );
-        Route::resource('/waterWithdrawal', AdminWaterWithdrawalControlle::class );
+        Route::resource('/waterWithdrawals', AdminWaterWithdrawalControlle::class );
     });
 });
 // Route::resource('/news444444',AdminNewController::class );
