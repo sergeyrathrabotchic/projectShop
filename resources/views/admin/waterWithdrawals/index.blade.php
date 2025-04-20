@@ -82,7 +82,20 @@
                         <label for="image">Водозабор (емк. 1)</label>
                         <input type="number" id="waterWithdrawals_1_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
                       </div>
-                    </div> 
+                    </div>
+                    <div class="form-group" style="display: flex;flex-direction: column;">
+                      <div style="display: flex;">
+                        <label for="image">Насос №1 (емк. 2)</label>
+                        <div style="display: flex;">
+                          <input type="number" id="pump_2_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
+                          <button name="_method" id="pump_2" type="hidden" value="DELETE" class="btn btn-danger" style="margin: 4px;">Остановить</button>
+                        </div>
+                      </div>
+                      <div style="display: flex;">
+                        <label for="image">Водозабор (емк. 2)</label>
+                        <input type="number" id="waterWithdrawals_2_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
+                      </div>
+                    </div>  
                   </td>
 
                   <td>
@@ -150,6 +163,15 @@
           } else { 
             var pump_1_condition = 0;
           }
+
+          var pump_2 = document.getElementById("pump_2");
+          var waterWithdrawals_2_value = document.querySelector('#waterWithdrawals_2_value');
+          var pump_2_value = document.getElementById("pump_2_value");
+          if (pump_2.innerHTML == "Остановить") {
+            var pump_2_condition = 1;
+          } else { 
+            var pump_2_condition = 0;
+          }
            
           pump_1.addEventListener('click', function (){
             if (pump_1.innerHTML == "Остановить") {
@@ -162,6 +184,20 @@
             pump_1_condition = 1;
             pump_1.classList.remove('costumeChange', 'btn-success');
             pump_1.classList.add('btn-danger')
+          }
+          });
+          
+          pump_2.addEventListener('click', function (){
+            if (pump_2.innerHTML == "Остановить") {
+            pump_2.innerHTML = "Запустить" 
+            pump_2_condition = 0;
+            pump_2.classList.remove('costumeChange', 'btn-danger');
+            pump_2.classList.add('btn-success')
+          } else {
+            pump_2.innerHTML = "Остановить" 
+            pump_2_condition = 1;
+            pump_2.classList.remove('costumeChange', 'btn-success');
+            pump_2.classList.add('btn-danger')
           }
           });
           setInterval(() => {
@@ -179,10 +215,24 @@
             } else {
               waterWithdrawals_1_value_get = waterWithdrawals_1_value.value;
             } 
+            if (pump_2_condition) {
+                if (pump_2_value.value == '') {
+                  value_2 = 0;
+                } else {
+                  value_2 = pump_2_value.value;
+                } 
+            } else {
+                value_2 = 0;
+            }
+            if (waterWithdrawals_2_value.value == '') {
+              waterWithdrawals_2_value_get = 0;
+            } else {
+              waterWithdrawals_2_value_get = waterWithdrawals_2_value.value;
+            }
             
             // console.log(parseInt(waterWithdrawals_1_value));
             // console.log(parseInt(barChart.data.datasets[0].data[0]) - parseInt(waterWithdrawals_1_value) + parseInt(value_1));
-            barChart.data.datasets[0].data = [ parseInt(barChart.data.datasets[0].data[0]) - parseInt(waterWithdrawals_1_value_get) + parseInt(value_1), barChart.data.datasets[0].data[1] -1];
+            barChart.data.datasets[0].data = [ parseInt(barChart.data.datasets[0].data[0]) - parseInt(waterWithdrawals_1_value_get) + parseInt(value_1), parseInt(barChart.data.datasets[0].data[1]) - parseInt(waterWithdrawals_2_value_get) + parseInt(value_2)];
             //barChart.data.datasets[0].data = [ barChart.data.datasets[0].data[0]-2, barChart.data.datasets[0].data[1] -1];
             barChart.update();
           },2000)
