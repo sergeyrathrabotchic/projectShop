@@ -169,7 +169,7 @@
             } else {
                 value_1 = 0;
             }
-            if (waterWithdrawals_1_value == '') {
+            if (waterWithdrawals_1_value.value == '') {
               waterWithdrawals_1_value = 0;
             } else {
               waterWithdrawals_1_value = waterWithdrawals_1_value.value;
