@@ -72,9 +72,11 @@
                     {{-- <h6>{{$address->street}}</h6> --}}
                     <div class="form-group" style="display: flex;flex-direction: column;">
                       <div style="display: flex;">
-                        <label for="image">Первый насос (емк. 1)</label>
-                        <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
-                        <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger" style="margin-top: 5px;">Остановить</button>
+                        <label for="image">Насос №1 (емк. 1)</label>
+                        <div style="display: flex;">
+                          <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
+                          <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger" style="margin-top: 5px;">Остановить</button>
+                        </div>
                       </div>
                       <div style="display: flex;">
                         <label for="image">Водозабор (емк. 1)</label>
@@ -141,7 +143,7 @@
           });
           
           var pump_1 = document.getElementById("pump_1");
-          var waterWithdrawals_1_value = document.getElementById("waterWithdrawals_1_value");
+          var waterWithdrawals_1_value = document.querySelector('#waterWithdrawals_1_value');
           var pump_1_value = document.getElementById("pump_1_value");
           if (pump_1.innerHTML == "Остановить") {
             var pump_1_condition = 1;
