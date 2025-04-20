@@ -111,7 +111,7 @@
       <div>
         {{ $addresses->links()}}
       </div>
-      <script src="{{ asset('js/chartjs/chart.js/dist/chart.umd.js')}}"></script>
+      <script src="{{asset('js/chartjs/chart.js/dist/chart.umd.js')}}"></script>
       <script>
           var popCanvas = document.getElementById("popChart").getContext("2d");
           var barChart = new Chart(popCanvas, {
