@@ -71,9 +71,11 @@
                   <td>
                     {{-- <h6>{{$address->street}}</h6> --}}
                     <div class="form-group" style="display: flex">
-                      <label for="image">Первый насос</label>
+                      <label for="image">Первый насос (емк. 1)</label>
                       <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
                       <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger" style="margin-top: 5px;">Остановить</button>
+                      <label for="image">Водозабор (емк. 1)</label>
+                      <input type="number" id="waterWithdrawals_1_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
                     </div> 
                   </td>
 
@@ -135,6 +137,7 @@
           });
           
           var pump_1 = document.getElementById("pump_1");
+          var waterWithdrawals_1_value = document.getElementById("waterWithdrawals_1_value");
           var pump_1_value = document.getElementById("pump_1_value");
           if (pump_1.innerHTML == "Остановить") {
             var pump_1_condition = 1;
@@ -147,11 +150,11 @@
             pump_1.innerHTML = "Запустить" 
             pump_1_condition = 0;
             pump_1.classList.remove('costumeChange', 'btn-danger');
-            pump_1.classList.add('btn-sm')
+            pump_1.classList.add('btn-success')
           } else {
             pump_1.innerHTML = "Остановить" 
             pump_1_condition = 1;
-            pump_1.classList.remove('costumeChange', 'btn-sm');
+            pump_1.classList.remove('costumeChange', 'btn-success');
             pump_1.classList.add('btn-danger')
           }
           });
@@ -165,10 +168,15 @@
             } else {
                 value_1 = 0;
             }
+            if (waterWithdrawals_1_value == '') {
+              waterWithdrawals_1_value = 0;
+            } else {
+              waterWithdrawals_1_value = waterWithdrawals_1_value.value;
+            } 
             
             console.log(value_1);
             console.log(parseInt(barChart.data.datasets[0].data[0]) -5 + parseInt(value_1));
-            barChart.data.datasets[0].data = [ parseInt(barChart.data.datasets[0].data[0]) - 5 + parseInt(value_1), barChart.data.datasets[0].data[1] -1];
+            barChart.data.datasets[0].data = [ parseInt(barChart.data.datasets[0].data[0]) - parseInt(waterWithdrawals_1_value) + parseInt(value_1), barChart.data.datasets[0].data[1] -1];
             //barChart.data.datasets[0].data = [ barChart.data.datasets[0].data[0]-2, barChart.data.datasets[0].data[1] -1];
             barChart.update();
           },2000)
