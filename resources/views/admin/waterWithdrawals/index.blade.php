@@ -75,7 +75,7 @@
                         <label for="image">Насос №1 (емк. 1)</label>
                         <div style="display: flex;">
                           <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
-                          <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger" style="margin-top: 5px;">Остановить</button>
+                          <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger" style="margin: 4px;">Остановить</button>
                         </div>
                       </div>
                       <div style="display: flex;">
@@ -144,6 +144,7 @@
           
           var pump_1 = document.getElementById("pump_1");
           var waterWithdrawals_1_value = document.querySelector('#waterWithdrawals_1_value');
+          console.log(waterWithdrawals_1_value.value);
           var pump_1_value = document.getElementById("pump_1_value");
           if (pump_1.innerHTML == "Остановить") {
             var pump_1_condition = 1;
