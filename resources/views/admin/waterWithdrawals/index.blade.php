@@ -157,7 +157,9 @@
             } else {
                 value_1 = 0;
             }
+            
             console.log(value_1);
+            console.log(barChart.data.datasets[0].data[0] -5 + value_1);
             barChart.data.datasets[0].data = [ barChart.data.datasets[0].data[0] -5 + value_1, barChart.data.datasets[0].data[1] -1];
             //barChart.data.datasets[0].data = [ barChart.data.datasets[0].data[0]-2, barChart.data.datasets[0].data[1] -1];
             barChart.update();
