@@ -153,8 +153,12 @@
           });
           setInterval(() => {
             if (pump_1.innerHTML == "Остановить") {
-              barChart.data.datasets[0].data = [ barChart.data.datasets[0].data[0]-5 + pump_1_value.value, barChart.data.datasets[0].data[1] -1];
+                value_1 = pump_1_value.value;
+            } else {
+                value_1 = 0;
             }
+            console.log(value_1);
+            barChart.data.datasets[0].data = [ barChart.data.datasets[0].data[0] -5 + value_1, barChart.data.datasets[0].data[1] -1];
             //barChart.data.datasets[0].data = [ barChart.data.datasets[0].data[0]-2, barChart.data.datasets[0].data[1] -1];
             barChart.update();
           },2000)
