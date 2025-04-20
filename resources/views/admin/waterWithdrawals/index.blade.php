@@ -4,9 +4,9 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Водозабор</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
-      <div class="btn-group me-2">
+      {{-- <div class="btn-group me-2">
         <a href="{{route('admin.addresses.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новый адресс</a>
-      </div>
+      </div> --}}
       {{-- <div class="btn-group me-2">
         <a href="{{route('admin.news.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новую</a>
       </div>
@@ -22,9 +22,9 @@
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th class=".row-cols-1">#</th>
-              <th class=".row-cols-2"></th>
-              <th class=".row-cols-3"></th>
+              <th scope="col">#</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
               {{-- <th scope="col">Описание</th>
               <th scope="col">кв метров</th> --}}
               <!--<th scope="col">Автор</th>-->
@@ -72,10 +72,11 @@
                     {{-- <h6>{{$address->street}}</h6> --}}
                     дынные 
                   </td>
+
                   <td>
-                  </td>
-                  <td>
-                    график
+                    <div style="width: 200px;height: 300px;">
+                      <canvas id="popChart" width="200" height="300"></canvas>
+                    </div>
                     {{-- <h6>{{$address->meterGroup->title}}</h6> --}}
                   </td>
                   {{-- <td>
@@ -110,4 +111,27 @@
       <div>
         {{ $addresses->links()}}
       </div>
+      <script src="../../js/chartjs/chart.js/dist/chart.umd.js"></script>
+      <script>
+          var popCanvas = document.getElementById("popChart").getContext("2d");
+          var barChart = new Chart(popCanvas, {
+            type: 'bar',
+            data: {
+              labels: ["1", "2"],
+              datasets: [{
+                label: 'Population',
+                data: [1000, 500],
+                backgroundColor: [
+                  'rgba(54, 162, 235, 0.6)',
+                  'rgba(54, 162, 235, 0.6)',
+                ],
+              }],
+              options: { responsive: false, maintainAspectRatio: false, width: 200, height: 300 },
+            }
+          });
+          setInterval(() => {
+            barChart.data.datasets[0].data = [ barChart.data.datasets[0].data[0]-2, barChart.data.datasets[0].data[1] -1];
+            barChart.update();
+          },2000)
+      </script>
 @endsection
