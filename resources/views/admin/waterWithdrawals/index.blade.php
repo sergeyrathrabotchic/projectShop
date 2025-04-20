@@ -72,7 +72,7 @@
                     {{-- <h6>{{$address->street}}</h6> --}}
                     <div class="form-group" style="display: flex">
                       <label for="image">Первый насос</label>
-                      <input type="number" style="margin: 4px;width:98%;" class="form-control" name="title" id="title" @if ($meterGroup[0]->title) value="{{$meterGroup[0]->title}}" @endif>
+                      <input type="number" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
                     </div> 
                   </td>
 
