@@ -146,13 +146,17 @@
             if (pump_1.innerHTML == "Остановить") {
             pump_1.innerHTML = "Запустить" 
             pump_1_condition = 0;
+            pump_1.classList.remove('costumeChange', 'btn-danger');
+            pump_1.classList.add('btn-sm')
           } else {
             pump_1.innerHTML = "Остановить" 
             pump_1_condition = 1;
+            pump_1.classList.remove('costumeChange', 'btn-sm');
+            pump_1.classList.add('btn-danger')
           }
           });
           setInterval(() => {
-            if (pump_1.innerHTML == "Остановить") {
+            if (pump_1_condition) {
                 if (pump_1_value.value == '') {
                   value_1 = 0;
                 } else {
