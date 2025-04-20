@@ -144,7 +144,6 @@
           
           var pump_1 = document.getElementById("pump_1");
           var waterWithdrawals_1_value = document.querySelector('#waterWithdrawals_1_value');
-          console.log(waterWithdrawals_1_value.value);
           var pump_1_value = document.getElementById("pump_1_value");
           if (pump_1.innerHTML == "Остановить") {
             var pump_1_condition = 1;
@@ -176,14 +175,14 @@
                 value_1 = 0;
             }
             if (waterWithdrawals_1_value.value == '') {
-              waterWithdrawals_1_value = 0;
+              waterWithdrawals_1_value_get = 0;
             } else {
-              waterWithdrawals_1_value = waterWithdrawals_1_value.value;
+              waterWithdrawals_1_value_get = waterWithdrawals_1_value.value;
             } 
             
-            console.log(parseInt(waterWithdrawals_1_value));
-            console.log(parseInt(barChart.data.datasets[0].data[0]) - parseInt(waterWithdrawals_1_value) + parseInt(value_1));
-            barChart.data.datasets[0].data = [ parseInt(barChart.data.datasets[0].data[0]) - parseInt(waterWithdrawals_1_value) + parseInt(value_1), barChart.data.datasets[0].data[1] -1];
+            // console.log(parseInt(waterWithdrawals_1_value));
+            // console.log(parseInt(barChart.data.datasets[0].data[0]) - parseInt(waterWithdrawals_1_value) + parseInt(value_1));
+            barChart.data.datasets[0].data = [ parseInt(barChart.data.datasets[0].data[0]) - parseInt(waterWithdrawals_1_value_get) + parseInt(value_1), barChart.data.datasets[0].data[1] -1];
             //barChart.data.datasets[0].data = [ barChart.data.datasets[0].data[0]-2, barChart.data.datasets[0].data[1] -1];
             barChart.update();
           },2000)
