@@ -70,13 +70,16 @@
                   <td>{{$i}}</td>
                   <td>
                     {{-- <h6>{{$address->street}}</h6> --}}
-                    <div class="form-group" style="display: flex">
-                      <label for="image">Первый насос (емк. 1)</label>
-                      <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
-                      <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger" style="margin-top: 5px;">Остановить</button>
-                      <br>
-                      <label for="image">Водозабор (емк. 1)</label>
-                      <input type="number" id="waterWithdrawals_1_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
+                    <div class="form-group" style="display: flex;flex-direction: column;">
+                      <div style="display: flex;">
+                        <label for="image">Первый насос (емк. 1)</label>
+                        <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
+                        <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger" style="margin-top: 5px;">Остановить</button>
+                      </div>
+                      <div style="display: flex;">
+                        <label for="image">Водозабор (емк. 1)</label>
+                        <input type="number" id="waterWithdrawals_1_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
+                      </div>
                     </div> 
                   </td>
 
@@ -175,7 +178,7 @@
               waterWithdrawals_1_value = waterWithdrawals_1_value.value;
             } 
             
-            console.log(value_1);
+            console.log(parseInt(waterWithdrawals_1_value));
             console.log(parseInt(barChart.data.datasets[0].data[0]) - parseInt(waterWithdrawals_1_value) + parseInt(value_1));
             barChart.data.datasets[0].data = [ parseInt(barChart.data.datasets[0].data[0]) - parseInt(waterWithdrawals_1_value) + parseInt(value_1), barChart.data.datasets[0].data[1] -1];
             //barChart.data.datasets[0].data = [ barChart.data.datasets[0].data[0]-2, barChart.data.datasets[0].data[1] -1];
