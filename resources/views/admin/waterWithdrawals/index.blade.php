@@ -153,7 +153,11 @@
           });
           setInterval(() => {
             if (pump_1.innerHTML == "Остановить") {
-                value_1 = pump_1_value.value;
+                if (pump_1_value.value == '') {
+                  value_1 = 0;
+                } else {
+                  value_1 = pump_1_value.value;
+                } 
             } else {
                 value_1 = 0;
             }
