@@ -72,7 +72,7 @@
                     {{-- <h6>{{$address->street}}</h6> --}}
                     <div class="form-group" style="display: flex">
                       <label for="image">Первый насос</label>
-                      <input type="number" id="pump_1-value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
+                      <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
                       <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger" style="margin-top: 5px;">Остановить</button>
                     </div> 
                   </td>
