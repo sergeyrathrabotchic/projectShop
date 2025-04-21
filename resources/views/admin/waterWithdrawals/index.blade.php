@@ -88,8 +88,8 @@
                       <div style="display: flex;">
                         <label for="image">Насос №1 (емк. 2)</label>
                         <div style="display: flex;">
-                          <input type="number" id="pump_2_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
-                          <button name="_method" id="pump_2" type="hidden" value="DELETE" class="btn btn-danger" style="margin: 4px;">Остановить</button>
+                          <input type="number" class="pump_2_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
+                          <button name="_method" class="pump_2" type="hidden" value="DELETE" class="btn btn-danger" style="margin: 4px;">Остановить</button>
                         </div>
                       </div>
                       <div style="display: flex;">
@@ -156,25 +156,22 @@
               options: { responsive: false, maintainAspectRatio: false, width: 200, height: 300 },
             }
           });
-          
-          var pump_1 = document.getElementById("pump_1");
-          var waterWithdrawals_1_value = document.querySelector('#waterWithdrawals_1_value');
-          var pump_1_value = document.getElementById("pump_1_value");
-          if (pump_1.innerHTML == "Остановить") {
-            var pump_1_condition = 1;
-          } else { 
-            var pump_1_condition = 0;
-          }
 
-          var pump_2 = document.getElementById("pump_2");
-          var waterWithdrawals_2_value = document.querySelector('#waterWithdrawals_2_value');
-          var pump_2_value = document.getElementById("pump_2_value");
-          if (pump_2.innerHTML == "Остановить") {
-            var pump_2_condition = 1;
-          } else { 
-            var pump_2_condition = 0;
+          var waterWithdrawals_1_value = document.querySelector('#waterWithdrawals_1_value');
+
+
+          var pump_1 = document.querySelector(".pump_1");
+          var pump_1_value = document.querySelector(".pump_1_value");
+          var pump_1_condition = []
+          for(i=0;i<pump_1.lenght;i++){
+            if (pump_1[i].innerHTML == "Остановить") {
+              pump_1_condition[] = 1;
+            } else { 
+              pump_1_condition[] = 0;
+            }
           }
-           
+          console.log(pump_1_condition);
+
           pump_1.addEventListener('click', function (){
             if (pump_1.innerHTML == "Остановить") {
             pump_1.innerHTML = "Запустить" 
@@ -188,6 +185,36 @@
             pump_1.classList.add('btn-danger')
           }
           });
+          // var pump_1 = document.getElementById("pump_1");
+          // var waterWithdrawals_1_value = document.querySelector('#waterWithdrawals_1_value');
+          // var pump_1_value = document.getElementById("pump_1_value");
+          // if (pump_1.innerHTML == "Остановить") {
+          //   var pump_1_condition = 1;
+          // } else { 
+          //   var pump_1_condition = 0;
+          // }
+          // pump_1.addEventListener('click', function (){
+          //   if (pump_1.innerHTML == "Остановить") {
+          //   pump_1.innerHTML = "Запустить" 
+          //   pump_1_condition = 0;
+          //   pump_1.classList.remove('costumeChange', 'btn-danger');
+          //   pump_1.classList.add('btn-success')
+          // } else {
+          //   pump_1.innerHTML = "Остановить" 
+          //   pump_1_condition = 1;
+          //   pump_1.classList.remove('costumeChange', 'btn-success');
+          //   pump_1.classList.add('btn-danger')
+          // }
+          // });
+
+          var pump_2 = document.getElementById("pump_2");
+          var waterWithdrawals_2_value = document.querySelector('#waterWithdrawals_2_value');
+          var pump_2_value = document.getElementById("pump_2_value");
+          if (pump_2.innerHTML == "Остановить") {
+            var pump_2_condition = 1;
+          } else { 
+            var pump_2_condition = 0;
+          }
           
           pump_2.addEventListener('click', function (){
             if (pump_2.innerHTML == "Остановить") {
@@ -212,6 +239,8 @@
             } else {
                 value_1 = 0;
             }
+
+
             if (waterWithdrawals_1_value.value == '') {
               waterWithdrawals_1_value_get = 0;
             } else {
