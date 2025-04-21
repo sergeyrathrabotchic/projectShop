@@ -172,17 +172,17 @@
           }
           var pump_1_condition = []
           for(i=0;i<pump_1.length;i++){
-            pump_1[i].addEventListener('click', function (){
-              if (pump_1[i].innerHTML == "Остановить") {
-                pump_1[i].innerHTML = "Запустить" 
+            pump_1[i].addEventListener('click', function (pump_1 = pump_1[i]){
+              if (pump_1.innerHTML == "Остановить") {
+                pump_1.innerHTML = "Запустить" 
                 pump_1_condition.push(0);
-                pump_1[i].classList.remove('costumeChange', 'btn-danger');
-                pump_1[i].classList.add('btn-success')
+                pump_1.classList.remove('costumeChange', 'btn-danger');
+                pump_1.classList.add('btn-success')
               } else {
-                pump_1[i].innerHTML = "Остановить" 
+                pump_1.innerHTML = "Остановить" 
                 pump_1_condition.push(1);
-                pump_1[i].classList.remove('costumeChange', 'btn-success');
-                pump_1[i].classList.add('btn-danger')
+                pump_1.classList.remove('costumeChange', 'btn-success');
+                pump_1.classList.add('btn-danger')
               }
             });
           }
