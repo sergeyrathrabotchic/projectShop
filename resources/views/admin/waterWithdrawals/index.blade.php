@@ -66,6 +66,7 @@
                   @php
                       $i = $i +1;
                   @endphp
+                  @if ($address->id == 0)
                  <tr>
                   <td>{{$i}}</td>
                   <td>
@@ -124,6 +125,7 @@
                     </form>
                     </td>
                  </tr>
+                 @endif
              @empty
                  <tr>
                     <td colspan="4">Таких записей нет</td>
