@@ -75,8 +75,8 @@
                       <div style="display: flex;">
                         <label for="image">Насос №1 (емк. 1)</label>
                         <div style="display: flex;">
-                          <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
-                          <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger" style="margin: 4px;">Остановить</button>
+                          <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control pump_1_value" name="title" id="title">
+                          <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger pump_1" style="margin: 4px;">Остановить</button>
                         </div>
                       </div>
                       <div style="display: flex;">
@@ -88,8 +88,8 @@
                       <div style="display: flex;">
                         <label for="image">Насос №1 (емк. 2)</label>
                         <div style="display: flex;">
-                          <input type="number" class="pump_2_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
-                          <button name="_method" class="pump_2" type="hidden" value="DELETE" class="btn btn-danger" style="margin: 4px;">Остановить</button>
+                          <input type="number" id="pump_2_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
+                          <button name="_method" id="pump_2" type="hidden" value="DELETE" class="btn btn-danger" style="margin: 4px;">Остановить</button>
                         </div>
                       </div>
                       <div style="display: flex;">
@@ -163,7 +163,7 @@
           var pump_1 = document.querySelectorAll(".pump_1");
           var pump_1_value = document.querySelectorAll(".pump_1_value");
           var pump_1_condition = [];
-          // console.log(pump_1[0].innerHTML);
+          console.log(pump_1[0].innerHTML);
           var pump_1_innerHTML;
           pump_1_innerHTML = pump_1[0];
           console.log(pump_1_innerHTML.innerHTML);
