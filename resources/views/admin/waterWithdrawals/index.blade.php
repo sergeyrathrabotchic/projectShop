@@ -171,21 +171,21 @@
             }
           }
           var pump_1_condition = []
-          function pump_1_addEventListener(pump_1,pump_1_condition){
+          function pump_1_addEventListener(pump_1){
             if (pump_1.innerHTML == "Остановить") {
                 pump_1.innerHTML = "Запустить" 
-                pump_1_condition.push(0);
+                // pump_1_condition.push(0);
                 pump_1.classList.remove('costumeChange', 'btn-danger');
                 pump_1.classList.add('btn-success')
               } else {
                 pump_1.innerHTML = "Остановить" 
-                pump_1_condition.push(1);
+                // pump_1_condition.push(1);
                 pump_1.classList.remove('costumeChange', 'btn-success');
                 pump_1.classList.add('btn-danger')
               }
           }
           for(i=0;i<pump_1.length;i++){
-            pump_1[i].addEventListener('click', pump_1_addEventListener, pump_1[i]);
+            pump_1[i].addEventListener('click', {handleEvent: pump_1_addEventListener, pump_1: pump_1[i]});
           }
           // var pump_1 = document.getElementById("pump_1");
           // var waterWithdrawals_1_value = document.querySelector('#waterWithdrawals_1_value');
