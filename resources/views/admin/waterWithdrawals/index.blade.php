@@ -163,34 +163,29 @@
           var pump_1 = document.querySelectorAll(".pump_1");
           var pump_1_value = document.querySelectorAll(".pump_1_value");
           var pump_1_condition = [];
-          console.log(pump_1[0].innerHTML);
-          var pump_1_innerHTML;
-          pump_1_innerHTML = pump_1[0];
-          console.log(pump_1_innerHTML.innerHTML);
-          console.log(pump_1.lenght);
           for(i=0;i<pump_1.length;i++){
-            console.log(pump_1[i].innerHTML == "Остановить");
             if (pump_1[i].innerHTML == "Остановить") {
               pump_1_condition.push(1);
             } else { 
               pump_1_condition.push(0);
             }
           }
-          console.log(pump_1_condition);
-
-          pump_1.addEventListener('click', function (){
-            if (pump_1.innerHTML == "Остановить") {
-            pump_1.innerHTML = "Запустить" 
-            pump_1_condition = 0;
-            pump_1.classList.remove('costumeChange', 'btn-danger');
-            pump_1.classList.add('btn-success')
-          } else {
-            pump_1.innerHTML = "Остановить" 
-            pump_1_condition = 1;
-            pump_1.classList.remove('costumeChange', 'btn-success');
-            pump_1.classList.add('btn-danger')
+          var pump_1_condition = []
+          for(i=0;i<pump_1.length;i++){
+            pump_1[i].addEventListener('click', function (){
+              if (pump_1[i].innerHTML == "Остановить") {
+                pump_1[i].innerHTML = "Запустить" 
+                pump_1_condition.push(0);
+                pump_1[i].classList.remove('costumeChange', 'btn-danger');
+                pump_1[i].classList.add('btn-success')
+              } else {
+                pump_1[i].innerHTML = "Остановить" 
+                pump_1_condition.push(1);
+                pump_1[i].classList.remove('costumeChange', 'btn-success');
+                pump_1[i].classList.add('btn-danger')
+              }
+            });
           }
-          });
           // var pump_1 = document.getElementById("pump_1");
           // var waterWithdrawals_1_value = document.querySelector('#waterWithdrawals_1_value');
           // var pump_1_value = document.getElementById("pump_1_value");
