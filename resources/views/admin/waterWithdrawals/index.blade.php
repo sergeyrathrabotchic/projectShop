@@ -163,6 +163,7 @@
           var pump_1 = document.querySelectorAll(".pump_1");
           var pump_1_value = document.querySelectorAll(".pump_1_value");
           var pump_1_condition = [];
+          console.log(pump_1[0].innerHTML);
           for(i=0;i<pump_1.lenght;i++){
             if (pump_1[i].innerHTML == "Остановить") {
               pump_1_condition.push(1);
