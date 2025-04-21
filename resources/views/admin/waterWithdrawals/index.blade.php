@@ -162,12 +162,12 @@
 
           var pump_1 = document.querySelector(".pump_1");
           var pump_1_value = document.querySelector(".pump_1_value");
-          var pump_1_condition = []
+          var pump_1_condition = [];
           for(i=0;i<pump_1.lenght;i++){
             if (pump_1[i].innerHTML == "Остановить") {
-              pump_1_condition[] = 1;
+              pump_1_condition.push(1);
             } else { 
-              pump_1_condition[] = 0;
+              pump_1_condition.push(0);
             }
           }
           console.log(pump_1_condition);
