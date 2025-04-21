@@ -66,7 +66,7 @@
                   @php
                       $i = $i +1;
                   @endphp
-                  @if ($address->id == 0)
+                  @if ($i == 1)
                  <tr>
                   <td>{{$i}}</td>
                   <td>
