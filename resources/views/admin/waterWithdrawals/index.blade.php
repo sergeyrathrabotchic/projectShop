@@ -160,8 +160,8 @@
           var waterWithdrawals_1_value = document.querySelector('#waterWithdrawals_1_value');
 
 
-          var pump_1 = document.querySelector(".pump_1");
-          var pump_1_value = document.querySelector(".pump_1_value");
+          var pump_1 = document.querySelectorAll(".pump_1");
+          var pump_1_value = document.querySelectorAll(".pump_1_value");
           var pump_1_condition = [];
           for(i=0;i<pump_1.lenght;i++){
             if (pump_1[i].innerHTML == "Остановить") {
