@@ -168,7 +168,7 @@
           pump_1_innerHTML = pump_1[0];
           console.log(pump_1_innerHTML.innerHTML);
           console.log(pump_1.lenght);
-          for(i=0;i<pump_1.lenght;i++){
+          for(i=0;i<pump_1.length;i++){
             console.log(pump_1[i].innerHTML == "Остановить");
             if (pump_1[i].innerHTML == "Остановить") {
               pump_1_condition.push(1);
