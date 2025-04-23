@@ -88,8 +88,8 @@
                       <div style="display: flex;">
                         <label for="image">Насос №1 (емк. 2)</label>
                         <div style="display: flex;">
-                          <input type="number" id="pump_2_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
-                          <button name="_method" id="pump_2" type="hidden" value="DELETE" class="btn btn-danger" style="margin: 4px;">Остановить</button>
+                          <input type="number" id="pump_2_value" style="margin: 4px;width:98%;" class="form-control pump_2_value" name="title" id="title">
+                          <button name="_method" id="pump_2" type="hidden" value="DELETE" class="btn btn-danger pump_1" style="margin: 4px;">Остановить</button>
                         </div>
                       </div>
                       <div style="display: flex;">
@@ -210,29 +210,55 @@
           //   pump_1.classList.add('btn-danger')
           // }
           // });
-
-          var pump_2 = document.getElementById("pump_2");
           var waterWithdrawals_2_value = document.querySelector('#waterWithdrawals_2_value');
-          var pump_2_value = document.getElementById("pump_2_value");
-          if (pump_2.innerHTML == "Остановить") {
-            var pump_2_condition = 1;
-          } else { 
-            var pump_2_condition = 0;
+
+          // var pump_2 = document.getElementById("pump_2");
+          // var pump_2_value = document.getElementById("pump_2_value");
+          var pump_2 = document.querySelectorAll(".pump_2");
+          var pump_2_value = document.querySelectorAll(".pump_2_value");
+          var pump_2_condition = [];
+          for(i=0;i<pump_2.length;i++){
+            if (pump_2[i].innerHTML == "Остановить") {
+              pump_2_condition.push(1);
+            } else { 
+              pump_2_condition.push(0);
+            }
           }
-          
-          pump_2.addEventListener('click', function (){
-            if (pump_2.innerHTML == "Остановить") {
-            pump_2.innerHTML = "Запустить" 
-            pump_2_condition = 0;
-            pump_2.classList.remove('costumeChange', 'btn-danger');
-            pump_2.classList.add('btn-success')
-          } else {
-            pump_2.innerHTML = "Остановить" 
-            pump_2_condition = 1;
-            pump_2.classList.remove('costumeChange', 'btn-success');
-            pump_2.classList.add('btn-danger')
+          // if (pump_2.innerHTML == "Остановить") {
+          //   var pump_2_condition = 1;
+          // } else { 
+          //   var pump_2_condition = 0;
+          // }
+          var pump_2_i;
+          for(i=0;i<pump_2.length;i++){
+            pump_2_i = pump_2[i];
+            pump_2_i.addEventListener('click', function (){
+              if (pump_2_i.innerHTML == "Остановить") {
+                pump_2_i.innerHTML = "Запустить" 
+                pump_2_condition.push(0);
+                pump_2_i.classList.remove('costumeChange', 'btn-danger');
+                pump_2_i.classList.add('btn-success')
+              } else {
+                pump_2_i.innerHTML = "Остановить" 
+                pump_2_condition.push(1);
+                pump_2_i.classList.remove('costumeChange', 'btn-success');
+                pump_2_i.classList.add('btn-danger')
+              }
+            });
           }
-          });
+          // pump_2.addEventListener('click', function (){
+          //   if (pump_2.innerHTML == "Остановить") {
+          //   pump_2.innerHTML = "Запустить" 
+          //   pump_2_condition = 0;
+          //   pump_2.classList.remove('costumeChange', 'btn-danger');
+          //   pump_2.classList.add('btn-success')
+          // } else {
+          //   pump_2.innerHTML = "Остановить" 
+          //   pump_2_condition = 1;
+          //   pump_2.classList.remove('costumeChange', 'btn-success');
+          //   pump_2.classList.add('btn-danger')
+          // }
+          // });
           setInterval(() => {
             // var pump_1_value_i;
             value_1_arr = [];
@@ -251,7 +277,7 @@
             for(let i = 0; i < value_1_arr.length; i++) {
               value_1 = value_1 + parseInt(value_1_arr[i]);
             }
-            console.log(value_1);
+            // console.log(value_1);
             // if (pump_1_condition) {
             //     if (pump_1_value.value == '') {
             //       value_1 = 0;
@@ -263,19 +289,34 @@
             // }
 
 
-            if (waterWithdrawals_1_value.value == '') {
-              waterWithdrawals_1_value_get = 0;
-            } else {
-              waterWithdrawals_1_value_get = waterWithdrawals_1_value.value;
-            } 
-            if (pump_2_condition) {
-                if (pump_2_value.value == '') {
-                  value_2 = 0;
+            // if (waterWithdrawals_1_value.value == '') {
+            //   waterWithdrawals_1_value_get = 0;
+            // } else {
+            //   waterWithdrawals_1_value_get = waterWithdrawals_1_value.value;
+            // } 
+            // if (pump_2_condition) {
+            //     if (pump_2_value.value == '') {
+            //       value_2 = 0;
+            //     } else {
+            //       value_2 = pump_2_value.value;
+            //     } 
+            // } else {
+            //     value_2 = 0;
+            // }
+            for (let i = 0; i < pump_2_value.length; i++) {
+              if (pump_2_condition[i]) {
+                if (pump_2_value[i].value == '') {
+                  value_2_arr.push(0);
                 } else {
-                  value_2 = pump_2_value.value;
+                  value_2_arr.push(pump_2_value[i].value);
                 } 
-            } else {
-                value_2 = 0;
+              } else {
+                value_2_arr.push(0);
+              }        
+            }
+            let value_2 = 0;
+            for(let i = 0; i < value_2_arr.length; i++) {
+              value_2 = value_2 + parseInt(value_2_arr[i]);
             }
             if (waterWithdrawals_2_value.value == '') {
               waterWithdrawals_2_value_get = 0;
