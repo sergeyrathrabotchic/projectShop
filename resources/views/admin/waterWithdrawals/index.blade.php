@@ -289,11 +289,11 @@
             // }
 
 
-            // if (waterWithdrawals_1_value.value == '') {
-            //   waterWithdrawals_1_value_get = 0;
-            // } else {
-            //   waterWithdrawals_1_value_get = waterWithdrawals_1_value.value;
-            // } 
+            if (waterWithdrawals_1_value.value == '') {
+              waterWithdrawals_1_value_get = 0;
+            } else {
+              waterWithdrawals_1_value_get = waterWithdrawals_1_value.value;
+            } 
             // if (pump_2_condition) {
             //     if (pump_2_value.value == '') {
             //       value_2 = 0;
