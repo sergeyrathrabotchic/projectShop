@@ -251,7 +251,7 @@
             for(let i = 0; i < value_1_arr.length; i++) {
               value_1 = value_1 + parseInt(value_1_arr[i]);
             }
-            // console.log(value_1)
+            console.log(value_1);
             // if (pump_1_condition) {
             //     if (pump_1_value.value == '') {
             //       value_1 = 0;
