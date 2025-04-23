@@ -78,30 +78,23 @@
                           <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control pump_1_value" name="title" id="title">
                           <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger pump_1" style="margin: 4px;">Остановить</button>
                         </div>
+                      </div>
+                      <div style="display: flex;">
+                        <label for="image">Насос №2 (емк. 1)</label>
                         <div style="display: flex;">
                           <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control pump_1_value" name="title" id="title">
                           <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger pump_1" style="margin: 4px;">Остановить</button>
                         </div>
+                      </div>
+                      <div style="display: flex;">
+                        <label for="image">Насос №3 (емк. 1)</label>
                         <div style="display: flex;">
                           <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control pump_1_value" name="title" id="title">
                           <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger pump_1" style="margin: 4px;">Остановить</button>
                         </div>
-                        <div style="display: flex;">
-                          <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control pump_1_value" name="title" id="title">
-                          <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger pump_1" style="margin: 4px;">Остановить</button>
-                        </div>
-                        <div style="display: flex;">
-                          <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control pump_1_value" name="title" id="title">
-                          <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger pump_1" style="margin: 4px;">Остановить</button>
-                        </div>
-                        <div style="display: flex;">
-                          <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control pump_1_value" name="title" id="title">
-                          <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger pump_1" style="margin: 4px;">Остановить</button>
-                        </div>
-                        <div style="display: flex;">
-                          <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control pump_1_value" name="title" id="title">
-                          <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger pump_1" style="margin: 4px;">Остановить</button>
-                        </div>
+                      </div>
+                      <div style="display: flex;">
+                        <label for="image">Насос №4 (емк. 1)</label>
                         <div style="display: flex;">
                           <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control pump_1_value" name="title" id="title">
                           <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger pump_1" style="margin: 4px;">Остановить</button>
@@ -119,14 +112,41 @@
                           <input type="number" id="pump_2_value" style="margin: 4px;width:98%;" class="form-control pump_2_value" name="title" id="title">
                           <button name="_method" id="pump_2" type="hidden" value="DELETE" class="btn btn-danger pump_2" style="margin: 4px;">Остановить</button>
                         </div>
+                      </div>
+                      <div style="display: flex;">
+                        <label for="image">Насос №2 (емк. 2)</label>
                         <div style="display: flex;">
                           <input type="number" id="pump_2_value" style="margin: 4px;width:98%;" class="form-control pump_2_value" name="title" id="title">
                           <button name="_method" id="pump_2" type="hidden" value="DELETE" class="btn btn-danger pump_2" style="margin: 4px;">Остановить</button>
                         </div>
+                      </div>                      <div style="display: flex;">
+                        <label for="image">Насос №3 (емк. 2)</label>
                         <div style="display: flex;">
                           <input type="number" id="pump_2_value" style="margin: 4px;width:98%;" class="form-control pump_2_value" name="title" id="title">
                           <button name="_method" id="pump_2" type="hidden" value="DELETE" class="btn btn-danger pump_2" style="margin: 4px;">Остановить</button>
                         </div>
+                      </div>                      <div style="display: flex;">
+                        <label for="image">Насос №4 (емк. 2)</label>
+                        <div style="display: flex;">
+                          <input type="number" id="pump_2_value" style="margin: 4px;width:98%;" class="form-control pump_2_value" name="title" id="title">
+                          <button name="_method" id="pump_2" type="hidden" value="DELETE" class="btn btn-danger pump_2" style="margin: 4px;">Остановить</button>
+                        </div>
+                      </div>                      <div style="display: flex;">
+                        <label for="image">Насос №5 (емк. 2)</label>
+                        <div style="display: flex;">
+                          <input type="number" id="pump_2_value" style="margin: 4px;width:98%;" class="form-control pump_2_value" name="title" id="title">
+                          <button name="_method" id="pump_2" type="hidden" value="DELETE" class="btn btn-danger pump_2" style="margin: 4px;">Остановить</button>
+                        </div>
+                      </div>
+                      <div style="display: flex;">
+                        <label for="image">Насос №6 (емк. 2)</label>
+                        <div style="display: flex;">
+                          <input type="number" id="pump_2_value" style="margin: 4px;width:98%;" class="form-control pump_2_value" name="title" id="title">
+                          <button name="_method" id="pump_2" type="hidden" value="DELETE" class="btn btn-danger pump_2" style="margin: 4px;">Остановить</button>
+                        </div>
+                      </div>
+                      <div style="display: flex;">
+                        <label for="image">Насос №7 (емк. 2)</label>
                         <div style="display: flex;">
                           <input type="number" id="pump_2_value" style="margin: 4px;width:98%;" class="form-control pump_2_value" name="title" id="title">
                           <button name="_method" id="pump_2" type="hidden" value="DELETE" class="btn btn-danger pump_2" style="margin: 4px;">Остановить</button>
