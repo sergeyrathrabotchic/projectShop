@@ -18,8 +18,8 @@ class CreatePumpsTable extends Migration
             $table->foreignId('id_reservoir')
             ->constrained('reservoirs','id')
             ->onDelete('cascade');
-            $table->number('pumping_volume');
-            $table->number('condition');
+            $table->integer('pumping_volume');
+            $table->integer('condition');
             $table->timestamps();
         });
     }

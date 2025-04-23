@@ -15,10 +15,10 @@ class CreateReservoirsTable extends Migration
     {
         Schema::create('reservoirs', function (Blueprint $table) {
             $table->id();
-            $table->number('time_filling');
-            $table->number('time_leakage');
-            $table->number('max_volume');
-            $table->number('current_volume');
+            $table->integer('time_filling');
+            $table->integer('time_leakage');
+            $table->integer('max_volume');
+            $table->integer('current_volume');
             $table->timestamps();
         });
     }
