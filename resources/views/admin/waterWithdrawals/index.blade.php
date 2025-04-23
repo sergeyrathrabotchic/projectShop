@@ -170,7 +170,7 @@
               pump_1_condition.push(0);
             }
           }
-          var pump_1_condition = []
+          // var pump_1_condition = []
           
           var pump_1_i;
           for(i=0;i<pump_1.length;i++){
