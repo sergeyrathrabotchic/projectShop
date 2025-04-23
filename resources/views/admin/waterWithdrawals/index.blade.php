@@ -303,6 +303,7 @@
             // } else {
             //     value_2 = 0;
             // }
+            value_2_arr = [];
             for (let i = 0; i < pump_2_value.length; i++) {
               if (pump_2_condition[i]) {
                 if (pump_2_value[i].value == '') {
