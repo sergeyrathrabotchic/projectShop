@@ -234,15 +234,32 @@
           }
           });
           setInterval(() => {
-            if (pump_1_condition) {
-                if (pump_1_value.value == '') {
-                  value_1 = 0;
+            // var pump_1_value_i;
+            value_1_arr = [];
+            for (let i = 0; i < pump_1_value.length; i++) {
+              if (pump_1_condition[i]) {
+                if (pump_1_value[i].value == '') {
+                  value_1_arr.push(0);
                 } else {
-                  value_1 = pump_1_value.value;
+                  value_1_arr.push(pump_1_value[i].value);
                 } 
-            } else {
-                value_1 = 0;
+              } else {
+                value_1_arr.push(0);
+              }        
             }
+            let value_1 = 0;
+            for(let i = 0; i < value_1_arr; i++) {
+              value_1 = value_1 + parseInt(value_1_arr[i]);
+            }
+            // if (pump_1_condition) {
+            //     if (pump_1_value.value == '') {
+            //       value_1 = 0;
+            //     } else {
+            //       value_1 = pump_1_value.value;
+            //     } 
+            // } else {
+            //     value_1 = 0;
+            // }
 
 
             if (waterWithdrawals_1_value.value == '') {
