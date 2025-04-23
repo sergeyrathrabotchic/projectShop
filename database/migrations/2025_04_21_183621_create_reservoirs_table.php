@@ -30,6 +30,6 @@ class CreateReservoirTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reservoir');
+        Schema::dropIfExists('reservoirs');
     }
 }
