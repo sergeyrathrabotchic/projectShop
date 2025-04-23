@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReservoirTable extends Migration
+class CreateReservoirsTable extends Migration
 {
     /**
      * Run the migrations.
