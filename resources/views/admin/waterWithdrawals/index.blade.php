@@ -42,7 +42,7 @@
                   @php
                       $i = $i +1;
                   @endphp
-                  @if ($i == 0)
+                  @if ($i == 1)
                  <tr>
                   <td>{{$i}}</td>
                   <td>
