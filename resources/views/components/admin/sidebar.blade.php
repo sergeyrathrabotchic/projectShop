@@ -80,6 +80,12 @@
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link @if(request()->routeIs('admin.pumps.*')) active @endif" href="{{route('admin.pumps.index')}}">
+            <span data-feather="users"></span>
+            Cкважена с насосом
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link @if(request()->routeIs('admin.waterWithdrawals.*')) active @endif" href="{{route('admin.waterWithdrawals.index')}}">
             <span data-feather="users"></span>
             Водозабор 
