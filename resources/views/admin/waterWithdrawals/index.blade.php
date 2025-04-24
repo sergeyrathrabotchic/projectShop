@@ -241,7 +241,7 @@
           for(var i=0;i<pump_1.length;i++){
  
             pump_1_i = pump_1[i];
-            pump_1_i.addEventListener('click', function (event){
+            pump_1_i.addEventListener('click', event => {
               if (pump_1_i.innerHTML == "Остановить") {
                 event.innerHTML = "Запустить" 
                 pump_1_condition.push(0);
