@@ -48,7 +48,7 @@
                   <td>
                     {{-- <h6>{{$address->street}}</h6> --}}
                     <div class="form-group" style="display: flex;flex-direction: column;">
-                     @forelse ($reservoirs->pump as $pump)
+                     @forelse ($pumps as $pump)
                          @if ($pump->id_reservoir == 0)
                           @php
                               $k = $k +1;
@@ -90,7 +90,7 @@
                       </div>
                     </div>
                     <div class="form-group" style="display: flex;flex-direction: column;">
-                      @forelse ($reservoirs->pump as $pump)
+                      @forelse ($pumps as $pump)
                         @if ($pump->id_reservoir == 1)
                           @php
                               $j = $j +1;

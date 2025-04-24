@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 // use App\Models\Address;
 use App\Models\Reservoir;
+use App\Models\Pump;
 
 
 class WaterWithdrawalController extends Controller
@@ -19,6 +20,7 @@ class WaterWithdrawalController extends Controller
     {
         // $addresses =  Address::with('meterGroup.meter')->paginate(5);
         $reservoirs =  Reservoir::with('pump')->paginate(2);
+        $pumps =  Pump::with('pump')->paginate(2);
 
         $page = $request->get('page', 1);
         if ($page > 0) {
@@ -27,6 +29,7 @@ class WaterWithdrawalController extends Controller
 
         return view('admin.waterWithdrawals.index', [
             'reservoirs' => $reservoirs ,
+            'pumps' => $pumps ,
             'page' => $page,
         ]);
     }
