@@ -20,7 +20,7 @@ class WaterWithdrawalController extends Controller
     {
         // $addresses =  Address::with('meterGroup.meter')->paginate(5);
         $reservoirs =  Reservoir::with('pump')->paginate(2);
-        $pumps =  Pump::with('pump')->paginate(2);
+        $pumps =  Pump::all();
 
         $page = $request->get('page', 1);
         if ($page > 0) {
