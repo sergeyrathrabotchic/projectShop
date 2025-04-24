@@ -83,7 +83,8 @@ class PumpController extends Controller
     public function edit(Pump $pump)
     {
        // $address = $address::with('meterGroup.meter');
-       $pump = Pump::where('id', '=', $pump->id_group)->get();
+       $pump = Pump::where('id', '=', $pump->id)->get();
+
        return view('admin.pumps.edit', [
            'pump' => $pump,
        ]);
