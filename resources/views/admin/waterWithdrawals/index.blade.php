@@ -64,6 +64,7 @@
              @endphp
              {{-- {{dd($reservoirs)}} --}}
             @forelse ($reservoirs as $reservoir)
+                  @if ($reservoir->id == 0)
                   @php
                       $i = $i +1;
                   @endphp
@@ -73,8 +74,8 @@
                   <td>
                     {{-- <h6>{{$address->street}}</h6> --}}
                     <div class="form-group" style="display: flex;flex-direction: column;">
-                      @forelse ($reservoirs->pump as $pump)
-                        {{-- @if ($pump->id_reservoir == 0)
+                     {{-- @forelse ($reservoirs->pump as $pump)
+                         @if ($pump->id_reservoir == 0)
                           @php
                               $k = $k +1;
                           @endphp
