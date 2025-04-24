@@ -241,17 +241,17 @@
           for(var i=0;i<pump_1.length;i++){
  
             pump_1_i = pump_1[i];
-            pump_1_i.addEventListener('click', event => {
-              if (pump_1_i.innerHTML == "Остановить") {
-                event.innerHTML = "Запустить" 
+            pump_1_i.addEventListener('click', function (){
+              if (this.innerHTML == "Остановить") {
+                this.innerHTML = "Запустить" 
                 pump_1_condition.push(0);
-                event.classList.remove('costumeChange', 'btn-danger');
-                event.classList.add('btn-success')
+                this.classList.remove('costumeChange', 'btn-danger');
+                this.classList.add('btn-success');
               } else {
-                event.innerHTML = "Остановить" 
+                this.innerHTML = "Остановить" 
                 pump_1_condition.push(1);
-                event.classList.remove('costumeChange', 'btn-success');
-                event.classList.add('btn-danger')
+                this.classList.remove('costumeChange', 'btn-success');
+                this.classList.add('btn-danger')
               }
             });
           }
