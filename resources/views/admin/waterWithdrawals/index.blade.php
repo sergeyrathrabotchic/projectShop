@@ -62,6 +62,7 @@
              @php
                  $i = $page;
              @endphp
+             {{dd($reservoirs)}}
             @forelse ($reservoirs as $reservoir)
                   @php
                       $i = $i +1;
