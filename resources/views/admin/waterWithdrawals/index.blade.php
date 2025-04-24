@@ -60,7 +60,7 @@
                           <label for="image">Насос №{{$k}} (емк. 1)</label>
                           <div style="display: flex;">
                             <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control pump_1_value" name="title" id="title">
-                            <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger pump_1" style="margin: 4px;">Остановить</button>
+                            <button name="_method" id="pump_1" type="hidden" value="DELETE" @if ($pump->condition == 1) class="btn btn-danger pump_1" style="margin: 4px;">Остановить @else class="btn btn-danger pump_1" style="margin: 4px;">Запустить @endif</button>
                           </div>
                         </div>
                         @endif
@@ -104,8 +104,8 @@
                         <div style="display: flex;">
                           <label for="image">Насос №{{$j}} (емк. 2)</label>
                           <div style="display: flex;">
-                            <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control pump_1_value" name="title" id="title">
-                            <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger pump_1" style="margin: 4px;">Остановить</button>
+                            <input type="number" id="pump_1_value" style="margin: 4px;width:98%;"  class="form-control pump_1_value" name="title" id="title">
+                            <button name="_method" id="pump_1" type="hidden" value="DELETE"  @if ($pump->condition == 1) class="btn btn-danger pump_1" style="margin: 4px;">Остановить @else class="btn btn-danger pump_1" style="margin: 4px;">Запустить @endif </button>
                           </div>
                         </div>
                         @endif
