@@ -48,6 +48,9 @@
                   <td>
                     {{-- <h6>{{$address->street}}</h6> --}}
                     <div class="form-group" style="display: flex;flex-direction: column;">
+                      @php
+                      $k = 0;
+                      @endphp
                      @forelse ($pumps as $pump)
                          @if ($pump->id_reservoir == 0)
                           @php
@@ -90,6 +93,9 @@
                       </div>
                     </div>
                     <div class="form-group" style="display: flex;flex-direction: column;">
+                      @php
+                      $j = 0;
+                      @endphp
                       @forelse ($pumps as $pump)
                         @if ($pump->id_reservoir == 1)
                           @php
