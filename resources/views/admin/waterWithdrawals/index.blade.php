@@ -300,15 +300,15 @@
             pump_2_i = pump_2[i];
             pump_2_i.addEventListener('click', function (){
               if (pump_2_i.innerHTML == "Остановить") {
-                pump_2_i.innerHTML = "Запустить" 
+                this.innerHTML = "Запустить" 
                 pump_2_condition.push(0);
-                pump_2_i.classList.remove('costumeChange', 'btn-danger');
-                pump_2_i.classList.add('btn-success')
+                this.classList.remove('costumeChange', 'btn-danger');
+                this.classList.add('btn-success')
               } else {
-                pump_2_i.innerHTML = "Остановить" 
+                this.innerHTML = "Остановить" 
                 pump_2_condition.push(1);
-                pump_2_i.classList.remove('costumeChange', 'btn-success');
-                pump_2_i.classList.add('btn-danger')
+                this.classList.remove('costumeChange', 'btn-success');
+                this.classList.add('btn-danger')
               }
             });
           }
