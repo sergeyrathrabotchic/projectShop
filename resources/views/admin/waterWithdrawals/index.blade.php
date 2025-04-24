@@ -62,7 +62,7 @@
              @php
                  $i = $page;
              @endphp
-             {{dd($reservoirs)}}
+             {{-- {{dd($reservoirs)}} --}}
             @forelse ($reservoirs as $reservoir)
                   @php
                       $i = $i +1;
@@ -74,7 +74,7 @@
                     {{-- <h6>{{$address->street}}</h6> --}}
                     <div class="form-group" style="display: flex;flex-direction: column;">
                       @forelse ($reservoirs->pump as $pump)
-                        @if ($pump->id_reservoir == 0)
+                        {{-- @if ($pump->id_reservoir == 0)
                           @php
                               $k = $k +1;
                           @endphp
@@ -87,7 +87,7 @@
                         </div>
                         @endif
                       @empty
-                      @endforelse
+                      @endforelse --}}
                       <div style="display: flex;">
                         <label for="image">Насос №2 (емк. 1)</label>
                         <div style="display: flex;">
@@ -115,7 +115,7 @@
                       </div>
                     </div>
                     <div class="form-group" style="display: flex;flex-direction: column;">
-                      @forelse ($reservoirs->pump as $pump)
+                      {{-- @forelse ($reservoirs->pump as $pump)
                         @if ($pump->id_reservoir == 1)
                           @php
                               $j = $j +1;
@@ -129,7 +129,7 @@
                         </div>
                         @endif
                       @empty
-                      @endforelse
+                      @endforelse --}}
                       <div style="display: flex;">
                         <label for="image">Насос №1 (емк. 2)</label>
                         <div style="display: flex;">
