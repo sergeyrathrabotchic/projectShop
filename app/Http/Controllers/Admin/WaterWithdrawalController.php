@@ -18,7 +18,7 @@ class WaterWithdrawalController extends Controller
     public function index(Request $request)
     {
         // $addresses =  Address::with('meterGroup.meter')->paginate(5);
-        $reservoirs =  Reservoir::with('pump')->paginate(2);
+        $reservoirs =  Reservoir::with('pump')->paginate(5);
         $page = $request->get('page', 1);
         if ($page > 0) {
             $page = ($page - 1) * 5;
