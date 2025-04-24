@@ -45,8 +45,8 @@
             <div class="form-group">
               <label for="image">Выбирете включен/выключен носос</label>
               <select  class="form-control" name="condition" id="city-select" required>
-                <option  class="form-control" value="1" @if ($pump->condition && $pump->condition == 1) selected{{"selected"}} @endif>Да</option>
-                <option  class="form-control" value="0" @if ($pump->condition && $pump->condition == 0) selected{{}} @endif>Нет</option>
+                <option  class="form-control" value="1" @if ($pump->condition && ($pump->condition == 1)) {{"selected"}} @endif>Да</option>
+                <option  class="form-control" value="0" @if ($pump->condition && ($pump->condition == 0)) selected{{}} @endif>Нет</option>
               </select>
               {{-- <label for="image">Площадь</label>
               <input type="number" step="0.01" style="margin: 4px;width:98%;" class="form-control" name="amount" id="amount" required> --}}
