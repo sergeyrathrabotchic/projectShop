@@ -60,13 +60,37 @@
                           <label for="image">Насос №{{$k}} (емк. 1)</label>
                           <div style="display: flex;">
                             <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control pump_1_value" name="title" id="title">
-                            <button name="_method" id="{{$k}}" type="hidden" value="DELETE" @if ($pump->condition == 1) class="btn btn-danger pump_1" style="margin: 4px;">Остановить @else class="btn btn-success pump_1" style="margin: 4px;">Запустить @endif</button>
+                            <button name="_method" id="pump_1" type="hidden" value="DELETE" @if ($pump->condition == 1) class="btn btn-danger pump_1" style="margin: 4px;">Остановить @else class="btn btn-success pump_1" style="margin: 4px;">Запустить @endif</button>
                           </div>
                         </div>
                         @endif
                       @empty
                       @endforelse
-                      
+                      <div style="display: flex;">
+                        <label for="image">Насос №2 (емк. 1)</label>
+                        <div style="display: flex;">
+                          <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control pump_1_value" name="title" id="title">
+                          <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger pump_1" style="margin: 4px;">Остановить</button>
+                        </div>
+                      </div>
+                      <div style="display: flex;">
+                        <label for="image">Насос №3 (емк. 1)</label>
+                        <div style="display: flex;">
+                          <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control pump_1_value" name="title" id="title">
+                          <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger pump_1" style="margin: 4px;">Остановить</button>
+                        </div>
+                      </div>
+                      <div style="display: flex;">
+                        <label for="image">Насос №4 (емк. 1)</label>
+                        <div style="display: flex;">
+                          <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control pump_1_value" name="title" id="title">
+                          <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger pump_1" style="margin: 4px;">Остановить</button>
+                        </div>
+                      </div>
+                      <div style="display: flex;">
+                        <label for="image">Водозабор (емк. 1)</label>
+                        <input type="number" id="waterWithdrawals_1_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
+                      </div>
                     </div>
                     <div class="form-group" style="display: flex;flex-direction: column;">
                       @php
@@ -81,13 +105,62 @@
                           <label for="image">Насос №{{$j}} (емк. 2)</label>
                           <div style="display: flex;">
                             <input type="number" id="pump_1_value" style="margin: 4px;width:98%;"  class="form-control pump_1_value" name="title" id="title">
-                            <button name="_method" id="{{$j}}" type="hidden" value="DELETE"  @if ($pump->condition == 1) class="btn btn-danger pump_1" style="margin: 4px;">Остановить @else class="btn btn-success pump_1" style="margin: 4px;">Запустить @endif </button>
+                            <button name="_method" id="pump_1" type="hidden" value="DELETE"  @if ($pump->condition == 1) class="btn btn-danger pump_1" style="margin: 4px;">Остановить @else class="btn btn-success pump_1" style="margin: 4px;">Запустить @endif </button>
                           </div>
                         </div>
                         @endif
                       @empty
                       @endforelse
-                      
+                      <div style="display: flex;">
+                        <label for="image">Насос №1 (емк. 2)</label>
+                        <div style="display: flex;">
+                          <input type="number" id="pump_2_value" style="margin: 4px;width:98%;" class="form-control pump_2_value" name="title" id="title">
+                          <button name="_method" id="pump_2" type="hidden" value="DELETE" class="btn btn-danger pump_2" style="margin: 4px;">Остановить</button>
+                        </div>
+                      </div>
+                      <div style="display: flex;">
+                        <label for="image">Насос №2 (емк. 2)</label>
+                        <div style="display: flex;">
+                          <input type="number" id="pump_2_value" style="margin: 4px;width:98%;" class="form-control pump_2_value" name="title" id="title">
+                          <button name="_method" id="pump_2" type="hidden" value="DELETE" class="btn btn-danger pump_2" style="margin: 4px;">Остановить</button>
+                        </div>
+                      </div>                      <div style="display: flex;">
+                        <label for="image">Насос №3 (емк. 2)</label>
+                        <div style="display: flex;">
+                          <input type="number" id="pump_2_value" style="margin: 4px;width:98%;" class="form-control pump_2_value" name="title" id="title">
+                          <button name="_method" id="pump_2" type="hidden" value="DELETE" class="btn btn-danger pump_2" style="margin: 4px;">Остановить</button>
+                        </div>
+                      </div>                      <div style="display: flex;">
+                        <label for="image">Насос №4 (емк. 2)</label>
+                        <div style="display: flex;">
+                          <input type="number" id="pump_2_value" style="margin: 4px;width:98%;" class="form-control pump_2_value" name="title" id="title">
+                          <button name="_method" id="pump_2" type="hidden" value="DELETE" class="btn btn-danger pump_2" style="margin: 4px;">Остановить</button>
+                        </div>
+                      </div>                      <div style="display: flex;">
+                        <label for="image">Насос №5 (емк. 2)</label>
+                        <div style="display: flex;">
+                          <input type="number" id="pump_2_value" style="margin: 4px;width:98%;" class="form-control pump_2_value" name="title" id="title">
+                          <button name="_method" id="pump_2" type="hidden" value="DELETE" class="btn btn-danger pump_2" style="margin: 4px;">Остановить</button>
+                        </div>
+                      </div>
+                      <div style="display: flex;">
+                        <label for="image">Насос №6 (емк. 2)</label>
+                        <div style="display: flex;">
+                          <input type="number" id="pump_2_value" style="margin: 4px;width:98%;" class="form-control pump_2_value" name="title" id="title">
+                          <button name="_method" id="pump_2" type="hidden" value="DELETE" class="btn btn-danger pump_2" style="margin: 4px;">Остановить</button>
+                        </div>
+                      </div>
+                      <div style="display: flex;">
+                        <label for="image">Насос №7 (емк. 2)</label>
+                        <div style="display: flex;">
+                          <input type="number" id="pump_2_value" style="margin: 4px;width:98%;" class="form-control pump_2_value" name="title" id="title">
+                          <button name="_method" id="pump_2" type="hidden" value="DELETE" class="btn btn-danger pump_2" style="margin: 4px;">Остановить</button>
+                        </div>
+                      </div>
+                      <div style="display: flex;">
+                        <label for="image">Водозабор (емк. 2)</label>
+                        <input type="number" id="waterWithdrawals_2_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
+                      </div>
                     </div>  
                   </td>
 
