@@ -62,23 +62,31 @@
              @php
                  $i = $page;
              @endphp
-            @forelse ($addresses as $address)
+            @forelse ($reservoirs as $reservoir)
                   @php
                       $i = $i +1;
                   @endphp
-                  @if ($i == 1)
+                  @if ($i == 0)
                  <tr>
                   <td>{{$i}}</td>
                   <td>
                     {{-- <h6>{{$address->street}}</h6> --}}
                     <div class="form-group" style="display: flex;flex-direction: column;">
-                      <div style="display: flex;">
-                        <label for="image">Насос №1 (емк. 1)</label>
+                      @forelse ($reservoirs->pump as $pump)
+                        @if ($pump->id_reservoir == 0)
+                          @php
+                              $k = $k +1;
+                          @endphp
                         <div style="display: flex;">
-                          <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control pump_1_value" name="title" id="title">
-                          <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger pump_1" style="margin: 4px;">Остановить</button>
+                          <label for="image">Насос №{{$k}} (емк. 1)</label>
+                          <div style="display: flex;">
+                            <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control pump_1_value" name="title" id="title">
+                            <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger pump_1" style="margin: 4px;">Остановить</button>
+                          </div>
                         </div>
-                      </div>
+                        @endif
+                      @empty
+                      @endforelse
                       <div style="display: flex;">
                         <label for="image">Насос №2 (емк. 1)</label>
                         <div style="display: flex;">
@@ -106,6 +114,21 @@
                       </div>
                     </div>
                     <div class="form-group" style="display: flex;flex-direction: column;">
+                      @forelse ($reservoirs->pump as $pump)
+                        @if ($pump->id_reservoir == 1)
+                          @php
+                              $j = $j +1;
+                          @endphp
+                        <div style="display: flex;">
+                          <label for="image">Насос №{{$j}} (емк. 2)</label>
+                          <div style="display: flex;">
+                            <input type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control pump_1_value" name="title" id="title">
+                            <button name="_method" id="pump_1" type="hidden" value="DELETE" class="btn btn-danger pump_1" style="margin: 4px;">Остановить</button>
+                          </div>
+                        </div>
+                        @endif
+                      @empty
+                      @endforelse
                       <div style="display: flex;">
                         <label for="image">Насос №1 (емк. 2)</label>
                         <div style="display: flex;">

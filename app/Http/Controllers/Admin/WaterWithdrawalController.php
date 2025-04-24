@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use App\Models\Address;
+// use App\Models\Address;
+use App\Models\Reservoir;
+
 
 class WaterWithdrawalController extends Controller
 {
@@ -15,20 +17,15 @@ class WaterWithdrawalController extends Controller
      */
     public function index(Request $request)
     {
-        $addresses =  Address::with('meterGroup.meter')->paginate(5);
+        // $addresses =  Address::with('meterGroup.meter')->paginate(5);
+        $reservoirs =  Reservoir::with('pump')->paginate(2);
         $page = $request->get('page', 1);
         if ($page > 0) {
             $page = ($page - 1) * 5;
         }
-        // dd($address->meterGroup->meter);
-        //dd($electroplatings);
-        //$catigories = Category::all();
-        //dd($catigories);
-        // dd(ImageSlaid::all());
-        // dd($slideImages);
-        // dd(1);
+
         return view('admin.waterWithdrawals.index', [
-            'addresses' => $addresses ,
+            'reservoirs' => $reservoirs ,
             'page' => $page,
         ]);
     }
