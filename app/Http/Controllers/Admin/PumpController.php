@@ -124,7 +124,7 @@ class PumpController extends Controller
     {
         $pump::destroy($pump->id);
         return redirect()
-        ->route('admin.addresses.index')
+        ->route('admin.pumps.index')
         ->with('success', 'Cкважена с насосом успешно удалена');
     }
 }
