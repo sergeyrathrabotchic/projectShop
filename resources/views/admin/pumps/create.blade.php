@@ -43,8 +43,8 @@
             <div class="form-group">
               <label for="image">Выбирете номер емкости</label>
               <select  class="form-control" name="id_reservoir" id="city-select" condition>
-                <option  class="form-control" value="0" selected>Емкость №1</option>
-                <option  class="form-control" value="1">Емкость №2</option>
+                <option  class="form-control" value="1" selected>Емкость №1</option>
+                <option  class="form-control" value="2">Емкость №2</option>
               </select>
             </div>
             <div class="form-group">
