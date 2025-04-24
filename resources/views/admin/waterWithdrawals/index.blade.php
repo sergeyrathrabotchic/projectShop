@@ -39,7 +39,6 @@
              @endphp
              {{-- {{dd($reservoirs)}} --}}
             @forelse ($reservoirs as $reservoir)
-                  @if ($reservoir->id == 0)
                   @php
                       $i = $i +1;
                   @endphp
@@ -186,10 +185,10 @@
                     </td>
                  </tr>
                  @endif
-             {{-- @empty
+             @empty
                  <tr>
                     <td colspan="4">Таких записей нет</td>
-                 </tr> --}}
+                 </tr>
              @endforelse
             
           </tbody>
