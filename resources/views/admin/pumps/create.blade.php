@@ -52,10 +52,6 @@
               <input type="number" style="margin: 4px;width:98%;" class="form-control" name="pumping_volume" id="pumping_volume" required>
             </div>
             <div class="form-group">
-              <label for="image">Описание группы адрессов по площади</label>
-              <input type="test" style="margin: 4px;width:98%;" class="form-control" name="title" id="title" required>
-            </div>
-            <div class="form-group">
               <label for="image">Выбирете включен/выключен носос</label>
               <select  class="form-control" name="condition" id="city-select" required>
                 <option  class="form-control" value="1" selected>Да</option>
