@@ -17,7 +17,7 @@ class PumpController extends Controller
      */
     public function index(Request $request)
     {
-        $pumps =  Pump::with('pump')->paginate(2);
+        $pumps =  Pump::all()->paginate(5);
         $page = $request->get('page', 1);
         if ($page > 0) {
             $page = ($page - 1) * 5;
