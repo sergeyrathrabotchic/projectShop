@@ -243,15 +243,15 @@
             pump_1_i = pump_1[i];
             pump_1_i.addEventListener('click', function (){
               if (pump_1_i.innerHTML == "Остановить") {
-                pump_1[i].innerHTML = "Запустить" 
+                document.querySelectorAll(".pump_1")[i].innerHTML = "Запустить" 
                 pump_1_condition.push(0);
-                pump_1[i].classList.remove('costumeChange', 'btn-danger');
-                pump_1[i].classList.add('btn-success')
+                document.querySelectorAll(".pump_1")[i].classList.remove('costumeChange', 'btn-danger');
+                document.querySelectorAll(".pump_1")[i].classList.add('btn-success')
               } else {
-                pump_1[i].innerHTML = "Остановить" 
+                document.querySelectorAll(".pump_1")[i].innerHTML = "Остановить" 
                 pump_1_condition.push(1);
-                pump_1[i].classList.remove('costumeChange', 'btn-success');
-                pump_1[i].classList.add('btn-danger')
+                document.querySelectorAll(".pump_1")[i].classList.remove('costumeChange', 'btn-success');
+                document.querySelectorAll(".pump_1")[i].classList.add('btn-danger')
               }
             });
           }
@@ -296,7 +296,7 @@
           //   var pump_2_condition = 0;
           // }
           var pump_2_i;
-          for(i=0;i<pump_2.length;i++){
+          for(var i=0;i<pump_2.length;i++){
             pump_2_i = pump_2[i];
             pump_2_i.addEventListener('click', function (){
               if (pump_2_i.innerHTML == "Остановить") {
