@@ -40,7 +40,7 @@
             </div>
             <div class="form-group">
               <label for="image">Обьем закачки в секунду</label>
-              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="pumping_volume" id="pumping_volume" @if ($pump->pumping_volume) value="{{$pump->pumping_volume}}" required>
+              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="pumping_volume" id="pumping_volume" @if ($pump->pumping_volume) value="{{$pump->pumping_volume}}" @endif frequired>
             </div>
             <div class="form-group">
               <label for="image">Выбирете включен/выключен носос</label>
