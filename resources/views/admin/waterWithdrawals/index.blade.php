@@ -52,7 +52,7 @@
                       $k = 0;
                       @endphp
                      @forelse ($pumps as $pump)
-                         @if ($pump->id_reservoir == 0)
+                         @if ($pump->id_reservoir == 1)
                           @php
                               $k = $k +1;
                           @endphp
@@ -97,7 +97,7 @@
                       $j = 0;
                       @endphp
                       @forelse ($pumps as $pump)
-                        @if ($pump->id_reservoir == 1)
+                        @if ($pump->id_reservoir == 2)
                           @php
                               $j = $j +1;
                           @endphp
