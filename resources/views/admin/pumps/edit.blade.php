@@ -34,8 +34,8 @@
             <div class="form-group">
               <label for="image">Выбирете номер емкости</label>
               <select  class="form-control" name="id_reservoir" id="city-select" condition>
-                <option  class="form-control" value="1"  @if ($pump->id_reservoir && $pump->id_reservoir == 0) selected @endif>Емкость №1</option>
-                <option  class="form-control" value="2" @if ($pump->id_reservoir && $pump->id_reservoir == 1) selected @endif>Емкость №2</option>
+                <option  class="form-control" value="1"  @if ($pump->id_reservoir && $pump->id_reservoir == 1) selected{{}} @endif>Емкость №1</option>
+                <option  class="form-control" value="2" @if ($pump->id_reservoir && $pump->id_reservoir == 2) selected{{}} @endif>Емкость №2</option>
               </select>
             </div>
             <div class="form-group">
@@ -45,8 +45,8 @@
             <div class="form-group">
               <label for="image">Выбирете включен/выключен носос</label>
               <select  class="form-control" name="condition" id="city-select" required>
-                <option  class="form-control" value="1" @if ($pump->condition && $pump->condition == 1) selected @endif>Да</option>
-                <option  class="form-control" value="0" @if ($pump->condition && $pump->condition == 0) selected @endif>Нет</option>
+                <option  class="form-control" value="1" @if ($pump->condition && $pump->condition == 1) selected{{}} @endif>Да</option>
+                <option  class="form-control" value="0" @if ($pump->condition && $pump->condition == 0) selected{{}} @endif>Нет</option>
               </select>
               {{-- <label for="image">Площадь</label>
               <input type="number" step="0.01" style="margin: 4px;width:98%;" class="form-control" name="amount" id="amount" required> --}}
