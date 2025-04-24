@@ -33,32 +33,7 @@
             </tr>
           </thead>
           <tbody>
-             {{-- @forelse ($categories as $category)
-                 <tr>
-                   <td>{{$category->id}}</td>
-                   <td>{{$category->title}} ({{$category->news()->get()->first()->title ?? null}})</td>
-                   <td>
-                     @if ($category->updated_at)
-                      {{$category->updated_at->format('d-m-Y H:i')}}
-                     @else - @endif
-                    </td>
-                    <td>
-                      <a href="{{route('admin.slide.edit', ['slide' => $category->id ])}}">Ред.</a>&nbsp;|&nbsp;<a href="javascript:;" style="color: red">Уд.</a>
-                    </td>
-                 </tr>
-             @empty
-                 <tr>
-                    <td colspan="4">Таких записей нет</td>
-                 </tr>
-             @endforelse --}}
-             {{-- @for ($i = 0; $i < count($slideImages); $i++)
-              <td>1</td>
-              <td>
-                @if ($slideImages[$i]->updated_at)
-                 {{$slideImages[$i]->updated_at->format('d-m-Y H:i')}}
-                @else - @endif
-              </td>
-             @endfor --}}
+             
              @php
                  $i = $page;
              @endphp
@@ -211,10 +186,10 @@
                     </td>
                  </tr>
                  @endif
-             @empty
+             {{-- @empty
                  <tr>
                     <td colspan="4">Таких записей нет</td>
-                 </tr>
+                 </tr> --}}
              @endforelse
             
           </tbody>
