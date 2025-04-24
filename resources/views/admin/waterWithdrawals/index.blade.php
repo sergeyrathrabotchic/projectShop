@@ -219,7 +219,7 @@
         </table>
       </div>
       <div>
-        {{ $addresses->links()}}
+        {{ $reservoirs->links()}}
       </div>
       <script src="{{asset('js/chartjs/chart.js/dist/chart.umd.js')}}"></script>
       <script>
