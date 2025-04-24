@@ -99,7 +99,7 @@ class PumpController extends Controller
      */
     public function update(CreatePumpRequest $request, Pump $pump)
     {
-        $pump = Pump::update([
+        $pump = $pump->update([
             'id_reservoir' => $request->id_reservoir,
             'pumping_volume' => $request->pumping_volume,
             'condition' => $request->condition,
