@@ -84,8 +84,8 @@
                         <div style="display: flex;">
                           <label for="image">Насос №{{$j}} (емк. 2)</label>
                           <div style="display: flex;">
-                            <input value="{{$pump->pumping_volume}}" type="number" id="pump_1_value" style="margin: 4px;width:98%;"  class="form-control pump_1_value" name="title" id="title">
-                            <button name="_method" id="pump_1" type="hidden" value="DELETE"  @if ($pump->condition == 1) class="btn btn-danger pump_1" style="margin: 4px;">Остановить@else class="btn btn-success pump_1" style="margin: 4px;">Запустить @endif </button>
+                            <input value="{{$pump->pumping_volume}}" type="number" id="pump_2_value" style="margin: 4px;width:98%;"  class="form-control pump_2_value" name="title" id="title">
+                            <button name="_method" id="pump_2" type="hidden" value="DELETE"  @if ($pump->condition == 1) class="btn btn-danger pump_2" style="margin: 4px;">Остановить@else class="btn btn-success pump_1" style="margin: 4px;">Запустить @endif </button>
                           </div>
                         </div>
                         @endif
@@ -328,6 +328,7 @@
             } else {
               waterWithdrawals_2_value_get = waterWithdrawals_2_value.value;
             }
+
             let emk1 = parseInt(value_1) - parseInt(waterWithdrawals_1_value_get)
             let up_pump_emk1 = document.querySelector(".up_pump_1");
             let dovn_pump_emk1 = document.querySelector(".dovn_pump_1");
