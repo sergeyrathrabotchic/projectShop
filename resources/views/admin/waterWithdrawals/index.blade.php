@@ -102,8 +102,10 @@
                     <div style="width: 200px;height: 300px;">
                       <canvas id="popChart" width="200" height="300"></canvas>
                     </div>
-                    <div class="up_pump_1" style="display: none;">Время до полного заполнения первой емкости:<span class="up_pump_value_1"></span></div>
-                      <div class="dovn_pump_1" style="display: none;">Время до полного опусташения первой емкости:<span class="dovn_pump_value_1"></span></div>
+                    <div class="up_pump_1" style="display: none;">Время до полного заполнения первой емкости: <span class="up_pump_value_1"></span></div>
+                    <div class="dovn_pump_1" style="display: none;">Время до полного опусташения первой емкости: <span class="dovn_pump_value_1"></span></div>
+                    <div class="up_pump_2" style="display: none;">Время до полного заполнения второй емкости: <span class="up_pump_value_2"></span></div>
+                    <div class="dovn_pump_2" style="display: none;">Время до полного опусташения второй емкости: <span class="dovn_pump_value_2"></span></div>
                     {{-- <h6>{{$address->meterGroup->title}}</h6> --}}
                   </td>
                   {{-- <td>
@@ -347,6 +349,28 @@
               dovn_pump_value_1.innerHTML = i;
               up_pump_emk1.style = "display: none;";
               dovn_pump_emk1.style = "";
+            }
+            let emk2 = parseInt(value_2) - parseInt(waterWithdrawals_2_value_get)
+            let up_pump_emk2 = document.querySelector(".up_pump_2");
+            let dovn_pump_emk2 = document.querySelector(".dovn_pump_2");
+            let up_pump_value_2 = document.querySelector(".up_pump_value_2");
+            let dovn_pump_value_2 = document.querySelector(".dovn_pump_value_2");
+            if (emk2 > 0){
+              let sum_2 =0;
+              for(i = 1;sum_2 < 1000;i++){
+                sum_2 = parseInt(barChart.data.datasets[1].data[0]) + emk2 * i;
+              } 
+              up_pump_value_2.innerHTML = i;
+              up_pump_emk2.style = "";
+              dovn_pump_emk2.style = "display: none;";
+            } else {
+              let sum_2 = parseInt(barChart.data.datasets[1].data[0]);
+              for(i = 1;sum_2 > 0;i++){
+                sum_2 = parseInt(barChart.data.datasets[1].data[0]) + emk2 * i;
+              } 
+              dovn_pump_value_2.innerHTML = i;
+              up_pump_emk2.style = "display: none;";
+              dovn_pump_emk2.style = "";
             }
             // console.log(parseInt(waterWithdrawals_1_value));
             // console.log(parseInt(barChart.data.datasets[0].data[0]) - parseInt(waterWithdrawals_1_value) + parseInt(value_1));
