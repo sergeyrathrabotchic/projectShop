@@ -101,6 +101,8 @@
                   <td>
                     <div style="width: 200px;height: 300px;">
                       <canvas id="popChart" width="200" height="300"></canvas>
+                      <div class="up_pump_1" style="display: none;">Время до полного заполнения первой емкости:<span class="up_pump_value_1"></span></div>
+                      <div class="dovn_pump_1" style="display: none;">Время до полного опусташения скважены первой емкости:<span class="dovn_pump_value_1"></span></div>
                     </div>
                     {{-- <h6>{{$address->meterGroup->title}}</h6> --}}
                   </td>
@@ -146,7 +148,7 @@
               labels: ["1", "2"],
               datasets: [{
                 label: 'Population',
-                data: [1000, 500],
+                data: [500, 250],
                 backgroundColor: [
                   'rgba(54, 162, 235, 0.6)',
                   'rgba(54, 162, 235, 0.6)',
@@ -324,7 +326,28 @@
             } else {
               waterWithdrawals_2_value_get = waterWithdrawals_2_value.value;
             }
-            
+            let emk1 = parseInt(value_1) - parseInt(waterWithdrawals_1_value_get)
+            let up_pump_emk1 = document.querySelector(".up_pump_1");
+            let dovn_pump_emk1 = document.querySelector(".dovn_pump_1");
+            let up_pump_value_1 = document.querySelector(".up_pump_value_1");
+            let dovn_pump_value_1 = document.querySelector(".dovn_pump_value_1");
+            if (emk1 > 0){
+              let sum =0;
+              for(i = 1:sum < 1000;i++){
+                sum = parseInt(barChart.data.datasets[0].data[0]) + emk1 * i;
+              } 
+              up_pump_value_1.innerHTML = i;
+              up_pump_emk1.style = "";
+              dovn_pump_emk1.style = "display: none;";
+            } else {
+              let sum =0;
+              for(i = 1:sum > 0;i++){
+                sum = parseInt(barChart.data.datasets[0].data[0]) + emk1 * i;
+              } 
+              dovn_pump_value_1.innerHTML = i;
+              up_pump_emk1.style = "display: none;";
+              dovn_pump_emk1.style = "";
+            }
             // console.log(parseInt(waterWithdrawals_1_value));
             // console.log(parseInt(barChart.data.datasets[0].data[0]) - parseInt(waterWithdrawals_1_value) + parseInt(value_1));
             barChart.data.datasets[0].data = [ parseInt(barChart.data.datasets[0].data[0]) - parseInt(waterWithdrawals_1_value_get) + parseInt(value_1), parseInt(barChart.data.datasets[0].data[1]) - parseInt(waterWithdrawals_2_value_get) + parseInt(value_2)];
