@@ -341,7 +341,7 @@
               up_pump_value_1.innerHTML = i;
               up_pump_emk1.style = "";
               dovn_pump_emk1.style = "display: none;";
-            } else {
+            } else if (emk1 < 0) {
               let sum = parseInt(barChart.data.datasets[0].data[0]);
               for(i = 1;sum > 0;i++){
                 sum = parseInt(barChart.data.datasets[0].data[0]) + emk1 * i;
@@ -355,7 +355,7 @@
             let dovn_pump_emk2 = document.querySelector(".dovn_pump_2");
             let up_pump_value_2 = document.querySelector(".up_pump_value_2");
             let dovn_pump_value_2 = document.querySelector(".dovn_pump_value_2");
-            if (emk2 > 0){
+            if (emk2 > 0 ){
               let sum_2 =0;
               for(i = 1;sum_2 < 1000;i++){
                 sum_2 = parseInt(barChart.data.datasets[0].data[1]) + emk2 * i;
@@ -363,15 +363,12 @@
               up_pump_value_2.innerHTML = i;
               up_pump_emk2.style = "";
               dovn_pump_emk2.style = "display: none;";
-            } else {
+            } else if (emk2 < 0) {
               let sum_2 = parseInt(barChart.data.datasets[0].data[1]);
-              // for(i = 1;sum_2 > 0;i++){
-              //   if ( emk2 < 1000){
-              //     sum_2 = parseInt(barChart.data.datasets[0].data[1]) - emk2 * i;
-              //   }
-                
-              // } 
-              // dovn_pump_value_2.innerHTML = i;
+              for(i = 1;sum_2 > 0;i++){
+                  sum_2 = parseInt(barChart.data.datasets[0].data[1]) - emk2 * i;   
+              } 
+              dovn_pump_value_2.innerHTML = i;
               up_pump_emk2.style = "display: none;";
               dovn_pump_emk2.style = "";
             }
