@@ -366,7 +366,10 @@
             } else {
               let sum_2 = parseInt(barChart.data.datasets[0].data[1]);
               for(i = 1;sum_2 > 0;i++){
-                sum_2 = parseInt(barChart.data.datasets[0].data[1]) - emk2 * i;
+                if ( emk2 < 1000){
+                  sum_2 = parseInt(barChart.data.datasets[0].data[1]) - emk2 * i;
+                }
+                
               } 
               dovn_pump_value_2.innerHTML = i;
               up_pump_emk2.style = "display: none;";
