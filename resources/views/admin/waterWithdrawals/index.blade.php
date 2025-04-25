@@ -103,7 +103,7 @@
                       <canvas id="popChart" width="200" height="300"></canvas>
                     </div>
                     <div class="up_pump_1" style="display: none;">Время до полного заполнения первой емкости:<span class="up_pump_value_1"></span></div>
-                      <div class="dovn_pump_1" style="display: none;">Время до полного опусташения скважены первой емкости:<span class="dovn_pump_value_1"></span></div>
+                      <div class="dovn_pump_1" style="display: none;">Время до полного опусташения первой емкости:<span class="dovn_pump_value_1"></span></div>
                     {{-- <h6>{{$address->meterGroup->title}}</h6> --}}
                   </td>
                   {{-- <td>
