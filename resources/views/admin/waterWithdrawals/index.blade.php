@@ -416,11 +416,11 @@
               v2 = reservoir_2;
             }
             if (reservoir_1/10 >= v1) {
+                pump_1_condition = [];
                 for(i=0;i<pump_1.length;i++){
                   pump_1[i].innerHTML = "Запустить" 
                   pump_1[i].classList.remove('costumeChange', 'btn-danger');
                   pump_1[i].classList.add('btn-success');
-                  pump_1_condition = [];
                   if (pump_1[i].innerHTML == "Остановить") {
                     pump_1_condition.push(0);
                   } else { 
@@ -429,11 +429,11 @@
                 }
             }
             if (reservoir_2/10 >= v2) {
+                pump_2_condition = [];
                 for(i=0;i<pump_2.length;i++){
                   pump_2[i].innerHTML = "Запустить" 
                   pump_2[i].classList.remove('costumeChange', 'btn-danger');
                   pump_2[i].classList.add('btn-success');
-                  pump_2_condition = [];
                   if (pump_2[i].innerHTML == "Остановить") {
                     pump_2_condition.push(0);
                   } else { 
