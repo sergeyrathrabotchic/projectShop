@@ -415,6 +415,32 @@
             } else if (v2 >= reservoir_2){
               v2 = reservoir_2;
             }
+            if (reservoir_1/10 >= v1) {
+                for(i=0;i<pump_1.length;i++){
+                  pump_1[i].innerHTML = "Запустить" 
+                  pump_1[i].classList.remove('costumeChange', 'btn-danger');
+                  pump_1[i].classList.add('btn-success');
+                  pump_1_condition = [];
+                  if (pump_1[i].innerHTML == "Остановить") {
+                    pump_1_condition.push(1);
+                  } else { 
+                    pump_1_condition.push(0);
+                  }
+                }
+            }
+            if (reservoir_2/10 >= v2) {
+                for(i=0;i<pump_2.length;i++){
+                  pump_2[i].innerHTML = "Запустить" 
+                  pump_2[i].classList.remove('costumeChange', 'btn-danger');
+                  pump_2[i].classList.add('btn-success');
+                  pump_2_condition = [];
+                  if (pump_2[i].innerHTML == "Остановить") {
+                    pump_2_condition.push(1);
+                  } else { 
+                    pump_2_condition.push(0);
+                  }
+                }
+            }
             barChart.data.datasets[0].data = [ v1, v2];
             //barChart.data.datasets[0].data = [ barChart.data.datasets[0].data[0]-2, barChart.data.datasets[0].data[1] -1];
             barChart.update();
