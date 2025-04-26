@@ -185,12 +185,26 @@
             pump_1_i.addEventListener('click', function (){
               if (this.innerHTML == "Остановить") {
                 this.innerHTML = "Запустить" 
-                pump_1_condition.push(0);
+                pump_1_condition = [];
+                for(i=0;i<pump_1.length;i++){
+                  if (pump_1[i].innerHTML == "Остановить") {
+                    pump_1_condition.push(1);
+                  } else { 
+                    pump_1_condition.push(0);
+                  }
+                }
                 this.classList.remove('costumeChange', 'btn-danger');
                 this.classList.add('btn-success');
               } else {
                 this.innerHTML = "Остановить" 
-                pump_1_condition.push(1);
+                pump_1_condition = [];
+                for(i=0;i<pump_1.length;i++){
+                  if (pump_1[i].innerHTML == "Остановить") {
+                    pump_1_condition.push(1);
+                  } else { 
+                    pump_1_condition.push(0);
+                  }
+                }
                 this.classList.remove('costumeChange', 'btn-success');
                 this.classList.add('btn-danger')
               }
@@ -218,9 +232,6 @@
           // }
           // });
           var waterWithdrawals_2_value = document.querySelector('#waterWithdrawals_2_value');
-
-          // var pump_2 = document.getElementById("pump_2");
-          // var pump_2_value = document.getElementById("pump_2_value");
           var pump_2 = document.querySelectorAll(".pump_2");
           var pump_2_value = document.querySelectorAll(".pump_2_value");
           var pump_2_condition = [];
@@ -242,12 +253,26 @@
             pump_2_i.addEventListener('click', function (){
               if (this.innerHTML == "Остановить") {
                 this.innerHTML = "Запустить" 
-                pump_2_condition.push(0);
+                pump_2_condition = [];
+                for(i=0;i<pump_2.length;i++){
+                  if (pump_2[i].innerHTML == "Остановить") {
+                    pump_2_condition.push(1);
+                  } else { 
+                    pump_2_condition.push(0);
+                  }
+                }
                 this.classList.remove('costumeChange', 'btn-danger');
                 this.classList.add('btn-success')
               } else {
                 this.innerHTML = "Остановить" 
-                pump_2_condition.push(1);
+                pump_2_condition = [];
+                for(i=0;i<pump_2.length;i++){
+                  if (pump_2[i].innerHTML == "Остановить") {
+                    pump_2_condition.push(1);
+                  } else { 
+                    pump_2_condition.push(0);
+                  }
+                }
                 this.classList.remove('costumeChange', 'btn-success');
                 this.classList.add('btn-danger')
               }
@@ -267,7 +292,7 @@
           // }
           // });
           setInterval(() => {
-            // var pump_1_value_i;
+            
             value_1_arr = [];
             for (let i = 0; i < pump_1_value.length; i++) {
               if (pump_1_condition[i]) {
