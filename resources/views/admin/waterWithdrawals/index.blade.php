@@ -422,9 +422,9 @@
                   pump_1[i].classList.remove('costumeChange', 'btn-success');
                   pump_1[i].classList.add('btn-danger');
                   if (pump_1[i].innerHTML == "Остановить") {
-                    pump_1_condition.push(0);
-                  } else { 
                     pump_1_condition.push(1);
+                  } else { 
+                    pump_1_condition.push(0);
                   }
                 }
             }
@@ -435,9 +435,9 @@
                   pump_2[i].classList.remove('costumeChange', 'btn-success');
                   pump_2[i].classList.add('btn-danger');
                   if (pump_2[i].innerHTML == "Остановить") {
-                    pump_2_condition.push(0);
-                  } else { 
                     pump_2_condition.push(1);
+                  } else { 
+                    pump_2_condition.push(0);
                   }
                 }
             }
