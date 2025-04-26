@@ -146,7 +146,6 @@
 
           var reservoir_1 = {{ $reservoirs[0]->max_volume}};
           var reservoir_2 = {{ $reservoirs[1]->max_volume}};
-          console.log(reservoir1);
           var popCanvas = document.getElementById("popChart").getContext("2d");
           var barChart = new Chart(popCanvas, {
             type: 'bar',
