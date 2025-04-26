@@ -387,7 +387,7 @@
             }
             if (v2 <= 0){
               v2 = 0;
-            } else if (v1 >= reservoir_2){
+            } else if (v2 >= reservoir_2){
               v2 = reservoir_2;
             }
             barChart.data.datasets[0].data = [ v1, v2];
