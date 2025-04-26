@@ -144,17 +144,17 @@
       <script src="{{asset('js/chartjs/chart.js/dist/chart.umd.js')}}"></script>
       <script>
 
-          var reservoir1 = {{ $reservoirs[0]->max_volume}};
-          var reservoir2 = {{ $reservoirs[1]->max_volume}};
+          var reservoir_1 = {{ $reservoirs[0]->max_volume}};
+          var reservoir_2 = {{ $reservoirs[1]->max_volume}};
           console.log(reservoir1);
           var popCanvas = document.getElementById("popChart").getContext("2d");
           var barChart = new Chart(popCanvas, {
             type: 'bar',
             data: {
-              labels: ["1", "2"],
+              labels: ["Емкость №1", "Емкость 2"],
               datasets: [{
                 label: 'Population',
-                data: [500, 250],
+                data: [reservoir_1/2, reservoir_2/2],
                 backgroundColor: [
                   'rgba(54, 162, 235, 0.6)',
                   'rgba(54, 162, 235, 0.6)',
@@ -340,7 +340,7 @@
             let dovn_pump_value_1 = document.querySelector(".dovn_pump_value_1");
             if (emk1 > 0){
               let sum =0;
-              for(i = 1;sum < 1000;i++){
+              for(i = 1;sum < reservoir_1;i++){
                 sum = parseInt(barChart.data.datasets[0].data[0]) + emk1 * i;
               } 
               up_pump_value_1.innerHTML = i;
@@ -362,7 +362,7 @@
             let dovn_pump_value_2 = document.querySelector(".dovn_pump_value_2");
             if (emk2 > 0 ){
               let sum_2 =0;
-              for(i = 1;sum_2 < 1000;i++){
+              for(i = 1;sum_2 < reservoir_2;i++){
                 sum_2 = parseInt(barChart.data.datasets[0].data[1]) + emk2 * i;
               } 
               up_pump_value_2.innerHTML = i;
@@ -379,7 +379,19 @@
             }
             // console.log(parseInt(waterWithdrawals_1_value));
             // console.log(parseInt(barChart.data.datasets[0].data[0]) - parseInt(waterWithdrawals_1_value) + parseInt(value_1));
-            barChart.data.datasets[0].data = [ parseInt(barChart.data.datasets[0].data[0]) - parseInt(waterWithdrawals_1_value_get) + parseInt(value_1), parseInt(barChart.data.datasets[0].data[1]) - parseInt(waterWithdrawals_2_value_get) + parseInt(value_2)];
+            let v1 = parseInt(barChart.data.datasets[0].data[0]) - parseInt(waterWithdrawals_1_value_get) + parseInt(value_1);
+            let v2 = parseInt(barChart.data.datasets[0].data[1]) - parseInt(waterWithdrawals_2_value_get) + parseInt(value_2);
+            if (v1 <= 0){
+              v1 = 0;
+            } else if (v1 >= reservoir_1){
+              v1 = reservoir_1;
+            }
+            if (v2 <= 0){
+              v2 = 0;
+            } else if (v1 >= reservoir_2){
+              v2 = reservoir_2;
+            }
+            barChart.data.datasets[0].data = [ v1, v2];
             //barChart.data.datasets[0].data = [ barChart.data.datasets[0].data[0]-2, barChart.data.datasets[0].data[1] -1];
             barChart.update();
           },2000)
