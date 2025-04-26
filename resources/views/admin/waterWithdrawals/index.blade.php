@@ -418,9 +418,9 @@
             if (reservoir_1/10 >= v1) {
                 pump_1_condition = [];
                 for(i=0;i<pump_1.length;i++){
-                  pump_1[i].innerHTML = "Запустить" 
-                  pump_1[i].classList.remove('costumeChange', 'btn-danger');
-                  pump_1[i].classList.add('btn-success');
+                  pump_1[i].innerHTML = "Остановить" 
+                  pump_1[i].remove('costumeChange', 'btn-success');
+                  pump_1[i].classList.add('btn-danger');
                   if (pump_1[i].innerHTML == "Остановить") {
                     pump_1_condition.push(0);
                   } else { 
