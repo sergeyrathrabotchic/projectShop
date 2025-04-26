@@ -422,9 +422,9 @@
                   pump_1[i].classList.add('btn-success');
                   pump_1_condition = [];
                   if (pump_1[i].innerHTML == "Остановить") {
-                    pump_1_condition.push(1);
-                  } else { 
                     pump_1_condition.push(0);
+                  } else { 
+                    pump_1_condition.push(1);
                   }
                 }
             }
@@ -435,9 +435,9 @@
                   pump_2[i].classList.add('btn-success');
                   pump_2_condition = [];
                   if (pump_2[i].innerHTML == "Остановить") {
-                    pump_2_condition.push(1);
-                  } else { 
                     pump_2_condition.push(0);
+                  } else { 
+                    pump_2_condition.push(1);
                   }
                 }
             }
