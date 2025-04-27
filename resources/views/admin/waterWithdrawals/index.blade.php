@@ -152,7 +152,7 @@
             data: {
               labels: ["Емкость №1", "Емкость 2"],
               datasets: [{
-                label: 'Population',
+                label: 'Обьем воды',
                 data: [reservoir_1/2, reservoir_2/2],
                 backgroundColor: [
                   'rgba(54, 162, 235, 0.6)',

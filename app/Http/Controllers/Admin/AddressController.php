@@ -75,7 +75,7 @@ class AddressController extends Controller
             ->with('success', 'Адресс успешно добавлен');
         }
 
-        return back()->wiht('error', 'Адресс не добавлен');
+        return back()->wiht('error', 'Адрес не добавлен');
     }
 
     /**
@@ -133,11 +133,11 @@ class AddressController extends Controller
         if( $addressResult && $meterGroupResult && $meterResult) {
             return redirect()
             ->route('admin.addresses.index')
-            ->with('success', 'Адресс успешно обновлен')
+            ->with('success', 'Адрес успешно обновлен')
             /*->with('success', 'Категория успешно обновлена')*/;
         }
 
-        return back()->wiht('error', 'Адресс не обновилсяы');
+        return back()->wiht('error', 'Адрес не обновилсяы');
 
         
     }
@@ -160,6 +160,6 @@ class AddressController extends Controller
 
         return redirect()
         ->route('admin.addresses.index')
-        ->with('success', 'Адресс успешно удален');
+        ->with('success', 'Адрес успешно удален');
     }
 }
