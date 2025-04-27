@@ -20,7 +20,9 @@ class MainController extends Controller
         //     'slides' => $slides,
         //     'slideMobils' => $slideMobils,
         // ]);
-        return view('admin.index');
+        // return view('admin.index');
+        return redirect()
+            ->route('admin.index');
     }
     
 }
