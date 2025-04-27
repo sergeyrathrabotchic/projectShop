@@ -13,8 +13,8 @@ class MainController extends Controller
     public function index() 
     {
         //dd(DB::table('users')->find(1));
-        $slides = ImageSlaid::all();
-        $slideMobils = ImageMobilSlaid::all();
+        // $slides = ImageSlaid::all();
+        // $slideMobils = ImageMobilSlaid::all();
         //dd($_POST['width']);
         // return view('main.index', [
         //     'slides' => $slides,
