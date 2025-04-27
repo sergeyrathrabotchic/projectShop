@@ -16,10 +16,11 @@ class MainController extends Controller
         $slides = ImageSlaid::all();
         $slideMobils = ImageMobilSlaid::all();
         //dd($_POST['width']);
-        return view('main.index', [
-            'slides' => $slides,
-            'slideMobils' => $slideMobils,
-        ]);
+        // return view('main.index', [
+        //     'slides' => $slides,
+        //     'slideMobils' => $slideMobils,
+        // ]);
+        return view('admin.index');
     }
     
 }
