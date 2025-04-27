@@ -4,7 +4,7 @@
         <li class="nav-item">
           <a class="nav-link @if(request()->routeIs('admin.categories.*')) active @endif" aria-current="page" href="{{ route('admin.index')}}">
             <span data-feather="home"></span>
-            Админка
+            Административная панель
           </a>
         </li>
         {{-- <li class="nav-item">
