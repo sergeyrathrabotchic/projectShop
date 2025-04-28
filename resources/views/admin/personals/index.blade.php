@@ -5,7 +5,7 @@
     <h1 class="h2">Физических лица</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group me-2">
-        <a href="{{route('admin.personals.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новый скважену с насосами</a>
+        <a href="{{route('admin.personals.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новое физическое лицо</a>
       </div>
       {{-- <div class="btn-group me-2">
         <a href="{{route('admin.news.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новую</a>
