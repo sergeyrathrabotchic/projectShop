@@ -42,15 +42,15 @@
             <input type="hidden" class="form-control" name="type" id="type" value="cozyDecor">
             <div class="form-group">
               <label for="image">Фамилия имя отчество</label>
-              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="id_account" id="id_account" required>
+              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="FIO" id="FIO" required>
             </div>
             <div class="form-group">
               <label for="image">Личевой счет</label>
-              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="pumping_volume" id="pumping_volume" required>
+              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="sub_addr" id="sub_addr" required>
             </div>
             <div class="form-group">
               <label for="image">Выбирете адресс</label>
-              <select  class="form-control" name="condition" id="city-select" required>
+              <select  class="form-control" name="address_id" id="addres_id" required>
                 @php
                   $i = 0;
                 @endphp

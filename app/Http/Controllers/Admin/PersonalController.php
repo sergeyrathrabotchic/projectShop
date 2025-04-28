@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Personal;
 use App\Models\Address;
+use App\Models\Account;
+use App\Http\Requests\CreatePersonalRequest;
 
 class PersonalController extends Controller
 {
@@ -48,9 +50,25 @@ class PersonalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreatePersonalRequest $request)
     {
-        //
+        $account = Account::create([
+            'id_group' => $request->address_id,
+            'account' => $request->FIO ,
+        ]);
+        $personal = Personal::create([
+            'id_account' => $account->id,
+            'FIO' => $request->FIO,
+            'sub_addr' => $request->sub_addr,
+        ]);
+
+        if ($personal && $account) {
+            return redirect()
+            ->route('admin.personals.index')
+            ->with('success', 'Физическое лицо успешно добавлено');
+        }
+
+        return back()->wiht('error', 'Физическое лицо не добавлено');
     }
 
     /**
