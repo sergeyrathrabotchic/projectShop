@@ -26,7 +26,7 @@ class CreatePersonalRequest extends FormRequest
         return [
             'FIO' => ['required'],
             'sub_addr' => ['required','max:5'],
-            'addres_id' => ['required'],
+            'address_id' => ['required'],
         ];
     }
 }
