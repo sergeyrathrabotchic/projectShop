@@ -25,7 +25,7 @@
               <th scope="col">#</th>
               <th scope="col">Лицевой счет</th>
               <th scope="col">Адресс</th>
-              <th scope="col">Владелец</th>
+              <th scope="col">Фамилия Имя Отчество</th>
               {{-- <th scope="col">кв метров</th> --}}
               <!--<th scope="col">Автор</th>-->
               <th scope="col">Дота последнего обновления</th>

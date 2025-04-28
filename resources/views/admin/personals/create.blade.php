@@ -41,15 +41,8 @@
             
             <input type="hidden" class="form-control" name="type" id="type" value="cozyDecor">
             <div class="form-group">
-              <label for="image">Выбирете номер емкости</label>
-              <select  class="form-control" name="id_reservoir" id="city-select" condition>
-                <option  class="form-control" value="1" selected>Емкость №1</option>
-                <option  class="form-control" value="2">Емкость №2</option>
-              </select>
-            </div>
-            <div class="form-group">
               <label for="image">Фамилия имя отчество</label>
-              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="pumping_volume" id="pumping_volume" required>
+              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="id_account" id="id_account" required>
             </div>
             <div class="form-group">
               <label for="image">Личевой счет</label>
@@ -58,8 +51,18 @@
             <div class="form-group">
               <label for="image">Выбирете адресс</label>
               <select  class="form-control" name="condition" id="city-select" required>
+                @php
+                  $i = 0;
+                @endphp
                 @forelse ($addresses as $address)
-                  <option  class="form-control" value="{{$address->id}}" selected>{{$address->street}}, {{$address->house}}</option>
+                  @php
+                    $i = $i+1;
+                  @endphp
+                  @if ($i == 1)
+                    <option  class="form-control" value="{{$address->id}}" selected>{{$address->street}}, {{$address->house}}</option>
+                  @else
+                    <option  class="form-control" value="{{$address->id}}">{{$address->street}}, {{$address->house}}</option>
+                  @endif
                 @empty
                   <option  class="form-control" value="" selected>Добавти хотя бы один адресс</option>
                 @endforelse
