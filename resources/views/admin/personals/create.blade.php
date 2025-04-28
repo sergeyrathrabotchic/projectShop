@@ -42,7 +42,7 @@
             <input type="hidden" class="form-control" name="type" id="type" value="cozyDecor">
             <div class="form-group">
               <label for="image">Фамилия имя отчество</label>
-              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="FIO" id="FIO" required>
+              <input type="text" style="margin: 4px;width:98%;" class="form-control" name="FIO" id="FIO" required>
             </div>
             <div class="form-group">
               <label for="image">Личевой счет</label>
