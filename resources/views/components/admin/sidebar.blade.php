@@ -80,6 +80,12 @@
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link @if(request()->routeIs('admin.personals.*')) active @endif" href="{{route('admin.personals.index')}}">
+            <span data-feather="users"></span>
+            Физические лица 
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link @if(request()->routeIs('admin.pumps.*')) active @endif" href="{{route('admin.pumps.index')}}">
             <span data-feather="users"></span>
             Cкважены с насосом
