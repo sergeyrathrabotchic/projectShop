@@ -74,6 +74,7 @@
                   {{-- {{dd($ceramic)}} --}}
                   <td>
                     {{-- <img src="{{Storage::disk('image')->url($ceramic->productImage->where('type', 'cozyDecor')->values()->reverse()[0]->image)}}" alt="" style="width: 80%;padding: 10px;"></td> --}}
+                    {{dd($personal->account->address)}}
                     <h6>{{$personal->account->address[0]->street}}, {{$personal->account->address[0]->house}}</h6>
                   </td>
                   <td>
