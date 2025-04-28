@@ -5,7 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\Personal;
+use App\Models\Address;
 
 class Account extends Model
 {
@@ -18,8 +20,13 @@ class Account extends Model
         'account', 
     ];
 
-    public function pump(): HasMany
+    public function personal(): HasMany
     {
         return $this->hasMany(Personal::class, 'id_account', 'id');
+    }
+
+    public function address(): BelongsTo
+    {
+        return $this->belongsTo(Address::class, 'id_group', 'id');
     }
 }
