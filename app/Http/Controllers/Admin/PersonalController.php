@@ -93,12 +93,12 @@ class PersonalController extends Controller
         $account = Account::where('id', '=', $personal->id_account)->get();
         // dd($account);
         $addresId = Address::where('id', '=', $account[0]->id)->get();
-        $addreses = Address::all();
+        $addresses = Address::all();
         return view('admin.personals.edit', [
             'personal' => $personal,
             'account' => $account,
             'addresId' => $addresId,
-            'addreses' => $addreses,
+            'addresses' => $addresses,
         ]);
     }
 
