@@ -77,9 +77,9 @@ class PersonalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Personal $personal)
+    public function show(Personal $personal, Request $request)
     {
-        $personals =  Personal::with('account.address.meterGroup.meter')->paginate(5);
+        $personals =  $personal::with('account.address.meterGroup.meter')->paginate(5);
         $page = $request->get('page', 1);
         if ($page > 0) {
             $page = ($page - 1) * 5;
@@ -97,7 +97,7 @@ class PersonalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Personal $personal)
+    public function edit(Personal $personal, $request)
     {
         $account = Account::where('id', '=', $personal->id_account)->get();
         // dd($account);
