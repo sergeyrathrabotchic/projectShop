@@ -77,9 +77,18 @@ class PersonalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Personal $personal)
     {
-        //
+        $personals =  Personal::with('account.address.meterGroup.meter')->paginate(5);
+        $page = $request->get('page', 1);
+        if ($page > 0) {
+            $page = ($page - 1) * 5;
+        }
+
+        return view('admin.personals.index', [
+            'personals' => $personals,
+            'page' => $page,
+        ]);
     }
 
     /**
