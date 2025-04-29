@@ -159,8 +159,4 @@ class PersonalController extends Controller
         ->with('success', 'Физическое лицо успешно удалено');
     }
 
-    public function back()
-    {
-        return back();
-    }
 }

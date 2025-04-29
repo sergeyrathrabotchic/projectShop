@@ -5,7 +5,7 @@
     <h1 class="h2">{{$personals[0]->FIO}}</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group me-2">
-        <a href="{{route('admin.personals.back')}}" class="btn btn-sm btn-outline-secondary">Назад</a>
+        <a href="{{route('admin.personals.index')}}" class="btn btn-sm btn-outline-secondary">Назад</a>
       </div>
       {{-- <div class="btn-group me-2">
         <a href="{{route('admin.personals.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новое физическое лицо</a>
