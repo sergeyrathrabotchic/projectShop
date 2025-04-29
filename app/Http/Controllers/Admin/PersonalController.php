@@ -79,7 +79,7 @@ class PersonalController extends Controller
      */
     public function show(Personal $personal, Request $request)
     {
-        $personals =  $personal::with('account.address.meterGroup.meter')->paginate(5);
+        $personals =  $personal->with('account.address.meterGroup.meter')->paginate(5);
         $page = $request->get('page', 1);
         if ($page > 0) {
             $page = ($page - 1) * 5;
