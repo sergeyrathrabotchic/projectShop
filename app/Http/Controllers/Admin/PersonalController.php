@@ -144,7 +144,7 @@ class PersonalController extends Controller
     {
         $personal::destroy($personal->id);
         $account = Account::where('id', '=', $personal->id_account)->get();
-        Account::destroy($account->id);
+        Account::destroy($account[0]->id);
         return redirect()
         ->route('admin.personals.index')
         ->with('success', 'Физическое лицо успешно удалено');
