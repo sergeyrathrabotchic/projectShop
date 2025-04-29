@@ -61,7 +61,7 @@
                   @php
                     $i = $i+1;
                   @endphp
-                  @if ($i == $addresId->id)
+                  @if ($i == $addresId[0]->id)
                     <option  class="form-control" value="{{$address->id}}" selected>{{$address->street}}, {{$address->house}}</option>
                   @else
                     <option  class="form-control" value="{{$address->id}}">{{$address->street}}, {{$address->house}}</option>
