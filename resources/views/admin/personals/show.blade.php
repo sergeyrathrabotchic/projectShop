@@ -120,7 +120,7 @@
                         @csrf  
                         @method('put')
                         <button  type="submit" style="color: red">Уд.</button>
-                      </form> --}}
+                      </form>
                       
                       <form  action="{{ route('admin.personals.destroy' , ['personal' => $personal->id ])}}" method="POST">
                         {{ csrf_field() }}           
