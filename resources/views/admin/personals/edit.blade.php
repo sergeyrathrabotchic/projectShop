@@ -31,17 +31,7 @@
             {{-- <input type="hidden" class="form-control" name="count" id="count" value="{{$cozyDecor->productImage->count()}}"> --}}
             {{--  --}}
             <input type="hidden" class="form-control" name="type" id="type" value="cozyDecor">
-            <div class="form-group">
-              <label for="image">Выбирете номер емкости</label>
-              <select  class="form-control" name="id_reservoir" id="city-select" condition>
-                <option  class="form-control" value="1"  @if ($pump->id_reservoir && $pump->id_reservoir == 1) selected{{"selected"}} @endif>Емкость №1</option>
-                <option  class="form-control" value="2" @if ($pump->id_reservoir && $pump->id_reservoir == 2) selected{{"selected"}} @endif>Емкость №2</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="image">Обьем закачки в секунду</label>
-              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="pumping_volume" id="pumping_volume" @if ($pump->pumping_volume) value="{{$pump->pumping_volume}}" @endif frequired>
-            </div>
+
             <input type="hidden" class="form-control" name="type" id="type" value="cozyDecor">
             <div class="form-group">
               <label for="image">Фамилия имя отчество</label>
@@ -49,7 +39,7 @@
             </div>
             <div class="form-group">
               <label for="image">Личевой счет</label>
-              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="sub_addr" id="sub_addr" @if ($personal->sub_addr) value="{{$personal->sub_addr}}" required>
+              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="sub_addr" id="sub_addr" @if ($personal->sub_addr) value="{{$personal->sub_addr}}" @endif required>
             </div>
             <div class="form-group">
               <label for="image">Выбирете адресс</label>
