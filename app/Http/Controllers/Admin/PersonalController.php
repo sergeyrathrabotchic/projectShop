@@ -85,7 +85,7 @@ class PersonalController extends Controller
             $page = ($page - 1) * 5;
         }
 
-        return view('admin.personals.index', [
+        return view('admin.personals.show', [
             'personals' => $personals,
             'page' => $page,
         ]);
