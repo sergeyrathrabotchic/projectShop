@@ -26,6 +26,7 @@
               <th scope="col">Лицевой счет</th>
               <th scope="col">Адресс</th>
               <th scope="col">Фамилия Имя Отчество</th>
+              <th scope="col">Кв.</th>
               {{-- <th scope="col">кв метров</th> --}}
               <!--<th scope="col">Автор</th>-->
               <th scope="col">Дота последнего обновления</th>
@@ -77,14 +78,15 @@
                     <h6>{{$personal->account->address->street}}, {{$personal->account->address->house}}</h6>
                   </td>
                   <td>
-                    <h6>
                       {{-- @if ($pump->condition == 1)
                         Да
                       @else
                         Нет
                       @endif --}}
                       <h6>{{$personal->FIO}}</h6>
-                    </h6>
+                  </td>
+                  <td>
+                    <h6>{{$personal->account->address->meterGroup->meter[0]->amount}}</h6>
                   </td>
                   {{-- <td>
                     <h6>{{$address->meterGroup->meter[0]->amount}}</h6>

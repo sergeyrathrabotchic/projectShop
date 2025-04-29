@@ -18,7 +18,7 @@ class PersonalController extends Controller
      */
     public function index(Request $request)
     {
-        $personals =  Personal::with('account.address')->paginate(5);
+        $personals =  Personal::with('account.address.meterGroup.meter')->paginate(5);
         $page = $request->get('page', 1);
         if ($page > 0) {
             $page = ($page - 1) * 5;
@@ -88,9 +88,15 @@ class PersonalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Personal $personal)
     {
-        //
+        $account = Account::where('id', '=', $personal->id_account);
+        $addres = Address::where('id', '=', $account->id);
+        return view('admin.personals.edit', [
+            'personal' => $personal,
+            'account' => $account,
+            'addres' => $addres,
+        ]);
     }
 
     /**
