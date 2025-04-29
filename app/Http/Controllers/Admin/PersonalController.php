@@ -140,8 +140,14 @@ class PersonalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Personal $personal)
     {
-        //
+        $personal::destroy($personal->id);
+        $account = Account::where('id', '=', $personal->id_account)->get();
+        Account::destroy($account->id);
+        return redirect()
+        ->route('admin.personals.index')
+        ->with('success', 'Физическое лицо успешно удалено');
+    }
     }
 }
