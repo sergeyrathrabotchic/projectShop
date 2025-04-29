@@ -90,8 +90,8 @@ class PersonalController extends Controller
      */
     public function edit(Personal $personal)
     {
-        $account = Account::where('id', '=', $personal->id_account);
-        $addresId = Address::where('id', '=', $account->id);
+        $account = Account::where('id', '=', $personal->id_account)->get();
+        $addresId = Address::where('id', '=', $account->id)->get();
         $addreses = Address::all();
         return view('admin.personals.edit', [
             'personal' => $personal,
@@ -114,12 +114,15 @@ class PersonalController extends Controller
             'FIO' => $request->FIO,
             'sub_addr' => $request->sub_addr,
         ]);
-        $account = Account::where('id', '=', $personal->id_account);
-        $accountUpdate = Account::update([
+        $account = Account::where('id', '=', $personal->id_account)->update([
             'id_group' => $request->address_id,
             'account' => $request->FIO ,
         ]);
-        if( $personalUpdate && $accountUpdate) {
+        // $accountUpdate = Account::update([
+        //     'id_group' => $request->address_id,
+        //     'account' => $request->FIO ,
+        // ]);
+        if( $personalUpdate && $account) {
             return redirect()
             ->route('admin.personals.index')
             ->with('success', 'Физическое лицо успешно обновлено')
