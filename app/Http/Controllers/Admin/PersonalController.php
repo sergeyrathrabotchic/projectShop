@@ -157,6 +157,10 @@ class PersonalController extends Controller
         return redirect()
         ->route('admin.personals.index')
         ->with('success', 'Физическое лицо успешно удалено');
-    
+    }
+
+    public function back()
+    {
+        return back();
     }
 }
