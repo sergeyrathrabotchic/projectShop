@@ -12,8 +12,8 @@
   {{-- {{dd($slide)}} --}}
       <div class="table-responsive">
         @include('inc.message')
-        <form  method="post" action="{{route('admin.pumps.update', [
-            'pump' => $pump
+        <form  method="post" action="{{route('admin.personals.update', [
+            'personal' => $personal
         ])}}" >
           @csrf 
           @method('put')
@@ -41,6 +41,35 @@
             <div class="form-group">
               <label for="image">Обьем закачки в секунду</label>
               <input type="number" style="margin: 4px;width:98%;" class="form-control" name="pumping_volume" id="pumping_volume" @if ($pump->pumping_volume) value="{{$pump->pumping_volume}}" @endif frequired>
+            </div>
+            <input type="hidden" class="form-control" name="type" id="type" value="cozyDecor">
+            <div class="form-group">
+              <label for="image">Фамилия имя отчество</label>
+              <input type="text" style="margin: 4px;width:98%;" class="form-control" name="FIO" id="FIO" @if ($personal->FIO) value="{{$personal->FIO}}" @endif required>
+            </div>
+            <div class="form-group">
+              <label for="image">Личевой счет</label>
+              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="sub_addr" id="sub_addr" @if ($personal->sub_addr) value="{{$personal->sub_addr}}" required>
+            </div>
+            <div class="form-group">
+              <label for="image">Выбирете адресс</label>
+              <select  class="form-control" name="address_id" id="addres_id" required>
+                @php
+                  $i = 0;
+                @endphp
+                @forelse ($addresses as $address)
+                  @php
+                    $i = $i+1;
+                  @endphp
+                  @if ($i == $addresId->id)
+                    <option  class="form-control" value="{{$address->id}}" selected>{{$address->street}}, {{$address->house}}</option>
+                  @else
+                    <option  class="form-control" value="{{$address->id}}">{{$address->street}}, {{$address->house}}</option>
+                  @endif
+                @empty
+                  <option  class="form-control" value="" selected>Добавти хотя бы один адресс</option>
+                @endforelse
+              </select>
             </div>
             <div class="form-group">
               <label for="image">Выбирете включен/выключен носос</label>
