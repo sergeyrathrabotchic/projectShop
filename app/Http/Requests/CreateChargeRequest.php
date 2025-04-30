@@ -24,7 +24,7 @@ class CreateChargeRequest extends FormRequest
     public function rules() : array
     {
         return [
-            'id_account' => ['required'],
+            'accountId' => ['required'],
             'id_tarif' => ['required'],
             'c_date' => ['required'],
             'meter' => ['required'],

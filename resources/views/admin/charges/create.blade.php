@@ -39,7 +39,7 @@
             </div>
             <br> --}}
             
-            <input type="hidden" class="form-control" name="type" id="accountId" value="{{$accountId}}">
+            <input type="hidden" class="form-control" name="accountId" id="accountId" value="{{$accountId}}">
             <div class="form-group">
               <label for="image">Дата</label>
               <input type="date" style="margin: 4px;width:98%;" class="form-control" name="c_date" id="c_date" required>
