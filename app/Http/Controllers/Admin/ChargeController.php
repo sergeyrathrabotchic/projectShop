@@ -71,7 +71,7 @@ class ChargeController extends Controller
 
         if ($charge && $payment) {
             return redirect()
-            ->route('admin.personals.index')
+            ->route('admin.charges.index')
             ->with('success', 'Начисление успешно добавлено');
         }
 
