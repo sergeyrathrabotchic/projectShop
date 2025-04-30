@@ -29,6 +29,6 @@ class Charge extends Model
 
     public function tarif(): BelongsTo
     {
-        return $this->hasMany(Tarif::class, 'id_tarif', 'id');
+        return $this->BelongsTo(Tarif::class, 'id_tarif', 'id');
     }
 }
