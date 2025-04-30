@@ -64,7 +64,7 @@
              @php
                  $i = $page;
              @endphp
-            @forelse ($account[0]->charges->get() as $charge)
+            @forelse ($account[0]->charge as $charge)
                   @php
                       $i = $i +1;
                   @endphp
@@ -137,6 +137,6 @@
         </table>
       </div>
       <div>
-        {{ $account[0]->charges->links()}}
+        {{ $account[0]->charge->links()}}
       </div>
 @endsection
