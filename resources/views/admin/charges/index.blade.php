@@ -137,6 +137,6 @@
         </table>
       </div>
       <div>
-        {{ $account[0]->charge->links()}}
+        {{ $account->links()}}
       </div>
 @endsection
