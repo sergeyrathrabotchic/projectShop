@@ -16,7 +16,7 @@ class ChargeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Account $account, Request $request)
+    public function index(Personal $personal, Request $request)
     {
         $personals =  Account::with(['address.meterGroup.meter','personal',])->where("id", "=", $personal->id)->paginate(5);
         dd($personals);
