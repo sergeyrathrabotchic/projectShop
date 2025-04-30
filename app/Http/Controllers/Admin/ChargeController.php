@@ -16,10 +16,10 @@ class ChargeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($account, Request $request)
+    public function index(Account $account, Request $request)
     {
-        $personals =  Account::with(['address.meterGroup.meter','personal',])->where("id", "=", $account)->paginate(5);
-        dd($personals);
+        $accounts =  Account::with(['address.meterGroup.meter','personal',])->where("id", "=", $account->id)->paginate(5);
+        dd($accounts);
         $page = $request->get('page', 1);
         if ($page > 0) {
             $page = ($page - 1) * 5;
