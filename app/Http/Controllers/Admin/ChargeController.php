@@ -40,10 +40,10 @@ class ChargeController extends Controller
      */
     public function create(Request $request)
     {
-        $tarif =  Tarif::all();
+        $tarifs =  Tarif::all();
 
         return view('admin.charges.create',[
-            'tarif' => $tarif,
+            'tarifs' => $tarifs,
             'accountId' => $request->accountId,
         ]);
     }
