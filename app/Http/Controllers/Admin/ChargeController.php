@@ -24,7 +24,7 @@ class ChargeController extends Controller
             $page = ($page - 1) * 5;
         }
 
-        return view('admin.charges.show', [
+        return view('admin.charges.index', [
             'account' => $account,
             'page' => $page,
         ]);
