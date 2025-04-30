@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Personal;
+use App\Models\Address;
+use App\Models\Account;
+use App\Http\Requests\CreatePersonalRequest;
 
 class ChargeController extends Controller
 {
@@ -12,9 +16,19 @@ class ChargeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Account $account, Request $request)
     {
-        //
+        $personals =  Account::with(['address.meterGroup.meter','personal',])->where("id", "=", $personal->id)->paginate(5);
+        dd($personals);
+        $page = $request->get('page', 1);
+        if ($page > 0) {
+            $page = ($page - 1) * 5;
+        }
+
+        return view('admin.personals.show', [
+            'personals' => $personals,
+            'page' => $page,
+        ]);
     }
 
     /**

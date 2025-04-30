@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\Personal;
 use App\Models\Address;
+use App\Models\Charge;
 
 class Account extends Model
 {
@@ -28,5 +29,10 @@ class Account extends Model
     public function address(): BelongsTo
     {
         return $this->belongsTo(Address::class, 'id_group', 'id');
+    }
+
+    public function charge(): HasMany
+    {
+        return $this->hasMany(Charge::class, 'id_account', 'id');
     }
 }

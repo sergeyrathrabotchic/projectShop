@@ -7,6 +7,9 @@
       <div class="btn-group me-2">
         <a href="{{route('admin.personals.index')}}" class="btn btn-sm btn-outline-secondary">Назад</a>
       </div>
+      <div class="btn-group me-2">
+        <a href="{{route('admin.personals.index', ['account' => $personal->account->id ])}}" class="btn btn-sm btn-outline-secondary">Начисления</a>
+      </div>
       {{-- <div class="btn-group me-2">
         <a href="{{route('admin.personals.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новое физическое лицо</a>
       </div> --}}
