@@ -8,7 +8,7 @@
         <a href="{{route('admin.personals.index')}}" class="btn btn-sm btn-outline-secondary">Назад</a>
       </div>
       <div class="btn-group me-2">
-        {{dd($personals[0]->account->id)}}
+        {{-- {{dd($personals[0]->account->id)}} --}}
         <a href="{{route('admin.сharges.index', ['account' => $personals[0]->account->id ])}}" class="btn btn-sm btn-outline-secondary">Начисления</a>
       </div>
       {{-- <div class="btn-group me-2">
