@@ -71,7 +71,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::resource('/waterWithdrawals', AdminWaterWithdrawalController::class );
         Route::resource('/pumps', AdminPumpController::class );
         Route::resource('/personals', AdminPersonalControllerController::class );
-        Route::resource('/сharges', AdminChargeControllerController::class );
+        Route::resource('/charges', AdminChargeControllerController::class );
     });
 });
 // Route::resource('/news444444',AdminNewController::class );
