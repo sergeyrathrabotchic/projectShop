@@ -2,7 +2,7 @@
 @section('title') Начисление - @parent @stop
 @section('content')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-   {{dd($account[0]->personal)}} 
+   {{-- {{dd($account[0]->personal)}}  --}}
   <h1 class="h2">Начисление {{$account[0]->personal[0]->sub_addr}} {{$account[0]->personal[0]->FIO}}</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group me-2">
