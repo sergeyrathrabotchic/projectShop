@@ -4,8 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Account;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\Account;
+use App\Models\Tarif;
 
 class Charge extends Model
 {
@@ -23,5 +25,10 @@ class Charge extends Model
     public function account(): BelongsTo
     {
         return $this->belongsTo(Account::class, 'id_account', 'id');
+    }
+
+    public function tarif(): HasMany
+    {
+        return $this->hasMany(Tarif::class, 'id_tarif', 'id');
     }
 }

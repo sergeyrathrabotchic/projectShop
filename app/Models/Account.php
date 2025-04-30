@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\Personal;
 use App\Models\Address;
 use App\Models\Charge;
+use App\Models\Payment;
 
 class Account extends Model
 {
@@ -35,5 +36,10 @@ class Account extends Model
     public function charge(): HasMany
     {
         return $this->hasMany(Charge::class, 'id_account', 'id');
+    }
+
+    public function payment(): HasMany
+    {
+        return $this->hasMany(Payment::class, 'id_account', 'id');
     }
 }
