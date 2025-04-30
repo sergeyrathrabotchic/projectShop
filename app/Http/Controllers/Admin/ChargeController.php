@@ -19,7 +19,7 @@ class ChargeController extends Controller
     public function index(Account $account, Request $request)
     {
         // $accounts =  Account::with(['address.meterGroup.meter','personal', 'charge'])->where("id", "=", $account->id)->paginate(5);
-        $accounts =  Account::where("id", "=", $account->id);
+        $accounts =  Account::where("id", "=", $account->id)->get();
         dd($accounts);
         $page = $request->get('page', 1);
         if ($page > 0) {
