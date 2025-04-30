@@ -6,7 +6,7 @@
   <h1 class="h2">Начисление {{$account[0]->personal[0]->sub_addr}} {{$account[0]->personal[0]->FIO}}</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group me-2">
-        <a href="{{route('admin.personals.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новое физическое лицо</a>
+        <a href="{{route('admin.charges.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новое начисление</a>
       </div>
       {{-- <div class="btn-group me-2">
         <a href="{{route('admin.news.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новую</a>
@@ -94,8 +94,8 @@
                     <h6>{{$address->meterGroup->meter[0]->amount}}</h6>
                   </td> --}}
                   <td>
-                    @if ($personal->updated_at)
-                     {{$personal->updated_at->format('d-m-Y H:i')}}
+                    @if ($charge->updated_at)
+                     {{$charge->updated_at->format('d-m-Y H:i')}}
                     @else - @endif
                    </td> 
                    {{-- <td>{{$category->id}}</td>
