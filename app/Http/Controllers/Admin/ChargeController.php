@@ -21,7 +21,7 @@ class ChargeController extends Controller
         // $accounts =  Account::with(['address.meterGroup.meter','personal', 'charge'])->where("id", "=", $account->id)->paginate(5);
         // dd($request->account);
         // dd($account->id);
-        $accounts =  Account::where("id", "=", $request->account)->get();
+        $accounts =  Account::with(['address.meterGroup.meter','personal', 'charge'])->where("id", "=", $request->account)->get();
         dd($accounts);
         $page = $request->get('page', 1);
         if ($page > 0) {
