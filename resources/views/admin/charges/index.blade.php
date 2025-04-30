@@ -64,7 +64,7 @@
              @php
                  $i = $page;
              @endphp
-            @forelse ($account[0]->charges as $charge)
+            @forelse ($account[0]->charges->get() as $charge)
                   @php
                       $i = $i +1;
                   @endphp
