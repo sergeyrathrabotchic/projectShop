@@ -1,9 +1,9 @@
 @extends('layosts.admin')
-@section('title') Добавить новое физическое лицо - @parent @stop
+@section('title') Добавить новое начисление - @parent @stop
 @section('content')
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Добавить новое физическое лицо </h1>
+    <h1 class="h2">Добавить новое начисление </h1>
     <div class="btn-toolbar mb-2 mb-md-0">
     </div>
   </div>
@@ -27,7 +27,7 @@
   </div> --}}
       <div class="table-responsive">
         @include('inc.message')
-        <form  method="post" action="{{route('admin.personals.store')}}" enctype="multipart/form-data">
+        <form  method="post" action="{{route('admin.charges.store')}}" enctype="multipart/form-data">
           @csrf 
             {{-- <div class="form-group">
                 <label for="title">Наименование</label>
@@ -39,29 +39,29 @@
             </div>
             <br> --}}
             
-            <input type="hidden" class="form-control" name="type" id="type" value="cozyDecor">
+            <input type="hidden" class="form-control" name="type" id="accountId" value="{{$accountId}}">
             <div class="form-group">
-              <label for="image">Фамилия имя отчество</label>
-              <input type="text" style="margin: 4px;width:98%;" class="form-control" name="FIO" id="FIO" required>
+              <label for="image">Дата</label>
+              <input type="date" style="margin: 4px;width:98%;" class="form-control" name="c_date" id="c_date" required>
             </div>
             <div class="form-group">
-              <label for="image">Личевой счет</label>
-              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="sub_addr" id="sub_addr" required>
+              <label for="image">Показания</label>
+              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="meter" id="meter" required>
             </div>
             <div class="form-group">
-              <label for="image">Выбирете адресс</label>
-              <select  class="form-control" name="address_id" id="addres_id" required>
+              <label for="image">Выбирете тариф</label>
+              <select  class="form-control" name="id_tarif" id="id_tarif" required>
                 @php
                   $i = 0;
                 @endphp
-                @forelse ($addresses as $address)
+                @forelse ($tarifs as $tarif)
                   @php
                     $i = $i+1;
                   @endphp
                   @if ($i == 1)
-                    <option  class="form-control" value="{{$address->id}}" selected>{{$address->street}}, {{$address->house}}</option>
+                    <option  class="form-control" value="{{$tarif->id}}" selected>{{$tarif->in_date}}, {{$tarif->title}}, {{$tarif->price}}</option>
                   @else
-                    <option  class="form-control" value="{{$address->id}}">{{$address->street}}, {{$address->house}}</option>
+                    <option  class="form-control" value="{{$tarif->id}}">{{$tarif->in_date}}, {{$tarif->title}}, {{$tarif->price}}</option>
                   @endif
                 @empty
                   <option  class="form-control" value="" selected>Добавти хотя бы один адресс</option>

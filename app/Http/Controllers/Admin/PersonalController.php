@@ -37,7 +37,7 @@ class PersonalController extends Controller
      */
     public function create()
     {
-        $addresses =  address::all();
+        $addresses =  Address::all();
 
         return view('admin.personals.create',[
             'addresses' => $addresses,

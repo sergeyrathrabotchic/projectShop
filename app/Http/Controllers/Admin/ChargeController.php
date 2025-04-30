@@ -5,9 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Personal;
-use App\Models\Address;
+use App\Models\Charge;
 use App\Models\Account;
-use App\Http\Requests\CreatePersonalRequest;
+use App\Models\Tarif;
+use App\Http\Requests\CreateChargeRequest;
+use \Carbon\Carbon;
+use App\Models\Payment;
 
 class ChargeController extends Controller
 {
@@ -35,9 +38,14 @@ class ChargeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $tarif =  Tarif::all();
+
+        return view('admin.charges.create',[
+            'tarif' => $tarif,
+            'accountId' => $request->accountId,
+        ]);
     }
 
     /**
@@ -46,9 +54,28 @@ class ChargeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateChargeRequest $request)
     {
-        //
+        $charge = Charge::create([
+            'c_date' => Carbon::createFromFormat('Y-m-d', $request->c_date),
+            'id_tarif' => $request->id_tarif,
+            'id_account' => $request->accountId,
+            'meter' => $request->meter,
+        ]);
+        $payment = Payment::create([
+            'id_account' => $request->accountId,
+            'p_date' => Carbon::createFromFormat('Y-m-d', $request->c_date), 
+            'meter' => 0,
+            'amount' => 0,
+        ]);
+
+        if ($charge && $payment) {
+            return redirect()
+            ->route('admin.personals.index')
+            ->with('success', 'Начисление успешно добавлено');
+        }
+
+        return back()->wiht('error', 'Начисление не добавлено');
     }
 
     /**
@@ -57,7 +84,7 @@ class ChargeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         //
     }

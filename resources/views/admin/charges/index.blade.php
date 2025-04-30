@@ -6,7 +6,7 @@
   <h1 class="h2">Начисление {{$account[0]->personal[0]->sub_addr}} {{$account[0]->personal[0]->FIO}}</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group me-2">
-        <a href="{{route('admin.charges.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новое начисление</a>
+        <a href="{{route('admin.charges.create', ['accountId' => $account[0]->id ])}}" class="btn btn-sm btn-outline-secondary">Добавить новое начисление</a>
       </div>
       {{-- <div class="btn-group me-2">
         <a href="{{route('admin.news.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новую</a>
