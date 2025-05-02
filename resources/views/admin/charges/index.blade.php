@@ -85,10 +85,10 @@
                         Нет
                       @endif --}}
                       {{-- <h6>{{$account[0]->charges->charge[$i-1]}}</h6> --}}
-                      <h6>{{$charge->tarif}}</h6>
+                      <h6>{{$charge->tarif->title}}, стоимость {{$charge->tarif->price}}</h6>
                     </td>
                   <td>
-                    <h6>{{$account[0]->payment[$i-1]}}</h6>
+                    <h6>{{$account[0]->payment[$i-1]->meter}}</h6>
                   </td>
                   {{-- <td>
                     <h6>{{$address->meterGroup->meter[0]->amount}}</h6>

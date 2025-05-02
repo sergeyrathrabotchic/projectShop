@@ -64,7 +64,7 @@
                     <option  class="form-control" value="{{$tarif->id}}">{{$tarif->in_date}}, {{$tarif->title}}, {{$tarif->price}}</option>
                   @endif
                 @empty
-                  <option  class="form-control" value="" selected>Добавти хотя бы один адресс</option>
+                  <option  class="form-control" value="" selected>Добавти хотя бы один тариф</option>
                 @endforelse
               </select>
             </div>
