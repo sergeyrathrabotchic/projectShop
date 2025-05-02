@@ -7,7 +7,7 @@
             Административная панель
           </a>
         </li>
-        {{-- <li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link @if(request()->routeIs('admin.categories.*')) active @endif" href="{{route('admin.categories.index')}}">
             <span data-feather="shopping-cart"></span>
             Категории
@@ -66,8 +66,8 @@
             <span data-feather="users"></span>
             Уютный Декор 
           </a>
-        </li> --}}
-        <li class="nav-item">
+        </li>
+        {{-- <li class="nav-item">
           <a class="nav-link @if(request()->routeIs('admin.addresses.*')) active @endif" href="{{route('admin.addresses.index')}}">
             <span data-feather="users"></span>
             Адреса 
@@ -96,7 +96,7 @@
             <span data-feather="users"></span>
             Водозабор 
           </a>
-        </li>
+        </li> --}}
         {{-- <li class="nav-item">
           <a class="nav-link @if(request()->routeIs('admin.information.*')) active @endif" href="{{route('admin.informations.index')}}">
             <span data-feather="users"></span>
