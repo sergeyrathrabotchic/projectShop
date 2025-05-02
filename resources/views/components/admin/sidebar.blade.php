@@ -7,7 +7,7 @@
             Административная панель
           </a>
         </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
           <a class="nav-link @if(request()->routeIs('admin.categories.*')) active @endif" href="{{route('admin.categories.index')}}">
             <span data-feather="shopping-cart"></span>
             Категории
@@ -18,7 +18,7 @@
             <span data-feather="users"></span>
             Новости
           </a>
-        </li>
+        </li> --}}
         <li class="nav-item">
           <a class="nav-link @if(request()->routeIs('admin.slides.*')) active @endif" href="{{route('admin.slides.index')}}">
             <span data-feather="users"></span>
