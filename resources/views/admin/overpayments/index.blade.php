@@ -99,7 +99,7 @@
                   </td> --}}
                   <td>
                     @if ($account->payment->where('id_account','=',$account->id)[0]->updated_at)
-                     {{$account->payment->where('id_account','=',$account->id)[0]->format('d-m-Y H:i')}}
+                     {{$account->payment->where('id_account','=',$account->id)[0]->updated_at->format('d-m-Y H:i')}}
                     @else - @endif
                    </td> 
                    {{-- <td>{{$category->id}}</td>
