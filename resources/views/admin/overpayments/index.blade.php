@@ -72,7 +72,7 @@
                       $i = $i +1;
                       $condition = $arrDifference[$k] > 0;
                   @endphp
-                  @if ($arrDifference[$k] > 0)
+                  @if ($condition)
                  <tr>
                   <td>{{$i}}</td>
                   {{-- {{dd($account->personal->where('id_account','=',$account->id))}} --}}
