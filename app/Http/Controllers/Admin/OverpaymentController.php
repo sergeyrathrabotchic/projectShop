@@ -28,8 +28,8 @@ class OverpaymentController extends Controller
                 $meterSum = $meterSum+ $payment->meter;
                 $amounSum = $amounSum + $payment->amoun;
             }           
-            $account->payment->difference =  $amounSum - $meterSum ;
-            $account->payment->save();
+            $account->payment = $account->payment->difference =  $amounSum - $meterSum ;
+            // $account->payment = $result;
         };
         dd($accounts);
         if ($request->param){
