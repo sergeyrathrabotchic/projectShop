@@ -23,6 +23,7 @@ class OverpaymentController extends Controller
         // $pumps =  Pump::all();
         $arrDifference = [];
         $arrAmountSum = [];
+        $arrMeterSum = [];
         foreach ($accounts as $account) {
             $meterSum = 0;
             $amountSum = 0;
@@ -33,6 +34,7 @@ class OverpaymentController extends Controller
             // dd($amountSum);           
             $arrDifference[] =  $amountSum - $meterSum ;
             $arrAmountSum[] = $amountSum;
+            $arrMeterSum[] = $meterSum;
             // $account->payment = $result;
         };
         // dd($arrDifference);
@@ -63,6 +65,7 @@ class OverpaymentController extends Controller
             'arrDifference' => $arrDifference,
             'page' => $page,
             'arrAmountSum' => $arrAmountSum,
+            'arrMeterSum' => $arrMeterSum,
         ]);
     }
 }

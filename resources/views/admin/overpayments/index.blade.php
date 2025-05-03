@@ -80,7 +80,8 @@
                   {{-- {{dd($ceramic)}} --}}
                   <td>
                     {{-- <img src="{{Storage::disk('image')->url($ceramic->productImage->where('type', 'cozyDecor')->values()->reverse()[0]->image)}}" alt="" style="width: 80%;padding: 10px;"></td> --}}
-                    <h6>{{$account->payment->where('id_account','=',$account->id)[0]->meter}}</h6>
+                    {{-- <h6>{{$account->payment->where('id_account','=',$account->id)[0]->meter}}</h6> --}}
+                    <h6>{{$arrMeterSum[$k]}}</h6>
                   </td>
                   <td>
                       {{-- @if ($pump->condition == 1)
