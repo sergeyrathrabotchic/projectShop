@@ -104,7 +104,7 @@ class ChargeController extends Controller
         $account =  Account::where("id", "=", $charge->id_account)->get();
         // $tarif =  Account::where("id", "=", $request->account)->get();
         // $charge = Charge::where('id_account', '=', $request->account)->get();
-        $tarifId = Tarif::where('id', '=', $charge->id_tarif)->get()->id;
+        $tarifId = Tarif::where('id', '=', $charge->id_tarif)->get()[0]->id;
         $payment = Payment::where('id_account', '=', $account->id)->get();
         $tarifs =  Tarif::all();
 
