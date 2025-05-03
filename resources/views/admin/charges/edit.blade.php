@@ -46,7 +46,7 @@
                   $i = 0;
                 @endphp
                 @forelse ($tarifs as $tarif)
-                  @if ($tarifId == $tarif[0]->id)
+                  @if ($tarifId == $tarif->id)
                     <option  class="form-control" value="{{$tarif->id}}" selected>{{$tarif->in_date}}, {{$tarif->title}}, {{$tarif->price}}</option>
                   @else
                     <option  class="form-control" value="{{$tarif->id}}">{{$tarif->in_date}}, {{$tarif->title}}, {{$tarif->price}}</option>
