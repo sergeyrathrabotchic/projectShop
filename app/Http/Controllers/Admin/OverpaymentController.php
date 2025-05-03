@@ -37,7 +37,14 @@ class OverpaymentController extends Controller
             $arrMeterSum[] = $meterSum;
             // $account->payment = $result;
         };
-        $param = 2;
+        if(!$request->param){
+            $param = 0;
+        } else if ($request->param == 1){
+            $param = 1;
+        } else if ($request->param == 2){
+            $param = 2;
+        }
+        
         // dd($arrDifference);
         // if ($request->param){
         //     if ($request->param == 1){
