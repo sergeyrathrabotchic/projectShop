@@ -97,7 +97,7 @@ class PersonalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Personal $personal, $request)
+    public function edit(Personal $personal, Request $request)
     {
         $account = Account::where('id', '=', $personal->id_account)->get();
         // dd($account);

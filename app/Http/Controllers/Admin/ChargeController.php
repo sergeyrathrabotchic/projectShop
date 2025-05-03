@@ -62,11 +62,13 @@ class ChargeController extends Controller
             'id_account' => $request->accountId,
             'meter' => $request->meter,
         ]);
+        $tarif = Tarif::where('id', '=', $request->id_tarif)->get();
+        $meter = $request->meter * $tarif->price;
         $payment = Payment::create([
             'id_account' => $request->accountId,
             'p_date' => Carbon::createFromFormat('Y-m-d', $request->c_date), 
-            'meter' => 0,
-            'amount' => 0,
+            'meter' => $meter,
+            'amount' => $request->amount,
         ]);
 
         if ($charge && $payment) {
@@ -97,9 +99,22 @@ class ChargeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Charge $charge, Request $request)
     {
-        //
+        $account =  Account::where("id", "=", $charge->id_account)->get();
+        // $tarif =  Account::where("id", "=", $request->account)->get();
+        // $charge = Charge::where('id_account', '=', $request->account)->get();
+        $tarifId = Tarif::where('id', '=', $charge->id_tarif)->get()->id;
+        $payment = Payment::where('id_account', '=', $account->id)->get();
+        $tarifs =  Tarif::all();
+
+        return view('admin.charges.edit', [
+            'charge' => $charge,
+            'account' => $account,
+            'tarifs' => $tarifs,
+            'tarifId' => $tarifId,
+            'payment' => $payment,
+        ]);
     }
 
     /**
@@ -109,9 +124,32 @@ class ChargeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Charge $charge, CreateChargeRequest $request)
     {
-        //
+        // $account =  Account::with(['address.meterGroup.meter','personal', 'charge.tarif', 'payment'])->where("id", "=", $request->account)->paginate(5);
+        // $tarifs =  Tarif::all();
+        $account =  Account::where("id", "=", $charge->id_account)->get();
+        $tarif = Tarif::where('id', '=', $charge->id_tarif)->get();
+        $charge = Charge::where('id', '=', $charge->id)->update([ 
+            'meter' => $request->meter,
+            'c_date' => Carbon::createFromFormat('Y-m-d', $request->c_date),
+            'id_tarif' => $request->id_tarif,
+        ]);
+        $meter = $request->meter * $tarif->price;
+        $payment = Payment::where('id_account', '=', $account->id)->update([
+            'p_date' => Carbon::createFromFormat('Y-m-d', $request->c_date), 
+            'meter' => $meter,
+            'amount' => $request->amount,
+        ]);
+
+        if( $payment && $charge) {
+            return redirect()
+            ->route('admin.charges.index')
+            ->with('success', 'Начисление успешно обновлено')
+            /*->with('success', 'Категория Cкуспешно обновлена')*/;
+        }
+
+        return back()->wiht('error', 'Начисление не обновивлино');
     }
 
     /**
@@ -120,8 +158,16 @@ class ChargeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Charge $charge)
     {
-        //
+        $charge::destroy($charge->id);
+        $account = Account::where('id', '=', $charge->id_account)->get();
+        // Account::destroy($account[0]->id);
+        $account = Payment::where('id_account', '=', $account->id)->update([
+            'meter' => 0,
+        ]);
+        return redirect()
+        ->route('admin.charges.index')
+        ->with('success', 'Начисление удалено');
     }
 }

@@ -1,8 +1,8 @@
 @extends('layosts.admin')
-@section('title') Редактировать начисление - @parent @stop
+@section('title') Редактировать скважену с насосом - @parent @stop
 @section('content')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Редактировать начисление </h1>
+    <h1 class="h2">Редактировать скважену с насосом </h1>
     <div class="btn-toolbar mb-2 mb-md-0">
     </div>
   </div>
@@ -12,8 +12,8 @@
   {{-- {{dd($slide)}} --}}
       <div class="table-responsive">
         @include('inc.message')
-        <form  method="post" action="{{route('admin.charges.update', [
-            'charge' => $charge->id
+        <form  method="post" action="{{route('admin.personals.update', [
+            'personal' => $personal
         ])}}" >
           @csrf 
           @method('put')
@@ -30,35 +30,36 @@
             {{-- <input type="hidden" class="form-control" name="type" id="type" value="cozyDecor"> --}}
             {{-- <input type="hidden" class="form-control" name="count" id="count" value="{{$cozyDecor->productImage->count()}}"> --}}
             {{--  --}}
-            <input type="hidden" class="form-control" name="accountId" id="accountId" value="{{$account->id}}">
+            <input type="hidden" class="form-control" name="type" id="type" value="cozyDecor">
+
+            <input type="hidden" class="form-control" name="type" id="type" value="cozyDecor">
             <div class="form-group">
-              <label for="image">Дата</label>
-              <input type="text" style="margin: 4px;width:98%;" class="form-control" name="c_date" id="c_date" @if ($charge->c_date) value="{{$charge->c_date}}" @endif required>
+              <label for="image">Фамилия имя отчество</label>
+              <input type="text" style="margin: 4px;width:98%;" class="form-control" name="FIO" id="FIO" @if ($personal->FIO) value="{{$personal->FIO}}" @endif required>
             </div>
             <div class="form-group">
-              <label for="image">Показания</label>
-              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="meter" id="meter" @if ($charge->meter) value="{{$charge->meter}}" @endif required>
+              <label for="image">Личевой счет</label>
+              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="sub_addr" id="sub_addr" @if ($personal->sub_addr) value="{{$personal->sub_addr}}" @endif required>
             </div>
             <div class="form-group">
-              <label for="image">Выбирете тариф</label>
-              <select  class="form-control" name="id_tarif" id="id_tarif" required>
+              <label for="image">Выбирете адресс</label>
+              <select  class="form-control" name="address_id" id="addres_id" required>
                 @php
                   $i = 0;
                 @endphp
-                @forelse ($tarifs as $tarif)
-                  @if ($tarifId == $tarif->id)
-                    <option  class="form-control" value="{{$tarif->id}}" selected>{{$tarif->in_date}}, {{$tarif->title}}, {{$tarif->price}}</option>
+                @forelse ($addresses as $address)
+                  @php
+                    $i = $i+1;
+                  @endphp
+                  @if ($address->id == $addresId[0]->id)
+                    <option  class="form-control" value="{{$address->id}}" selected>{{$address->street}}, {{$address->house}}</option>
                   @else
-                    <option  class="form-control" value="{{$tarif->id}}">{{$tarif->in_date}}, {{$tarif->title}}, {{$tarif->price}}</option>
+                    <option  class="form-control" value="{{$address->id}}">{{$address->street}}, {{$address->house}}</option>
                   @endif
                 @empty
-                  <option  class="form-control" value="" selected>Добавти хотя бы один тариф</option>
+                  <option  class="form-control" value="" selected>Добавти хотя бы один адресс</option>
                 @endforelse
               </select>
-            </div>
-            <div class="form-group">
-              <label for="image">Сумма внесенная клиентом</label>
-              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="amount" id="amount" @if ($payment->amount) value="{{$payment->amount}}" @endif required>
             </div>
             
            

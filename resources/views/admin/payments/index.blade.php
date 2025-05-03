@@ -27,8 +27,7 @@
               <th scope="col">Дата</th>
               <th scope="col">Показания</th>
               <th scope="col">Тариф.</th>
-              <th scope="col">Сумма начисления</th>
-              <th scope="col">Сумма внесенная клиентом</th>
+              <th scope="col">Сумма</th>
               {{-- <th scope="col">кв метров</th> --}}
               <!--<th scope="col">Автор</th>-->
               <th scope="col">Дота последнего обновления</th>
@@ -90,9 +89,6 @@
                     </td>
                   <td>
                     <h6>{{$account[0]->payment[$i-1]->meter}}</h6>
-                  </td>
-                  <td>
-                    <h6>{{$account[0]->payment[$i-1]->amount}}</h6>
                   </td>
                   {{-- <td>
                     <h6>{{$address->meterGroup->meter[0]->amount}}</h6>

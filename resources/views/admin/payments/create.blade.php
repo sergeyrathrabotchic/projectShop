@@ -68,13 +68,10 @@
                 @endforelse
               </select>
             </div>
-            <div class="form-group">
-              <label for="image">Сумма внесенная клиентом</label>
-              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="amount" id="amount" required>
-            </div>
             <br>
             <button type="submit" class="btn btn-success">Сохранить</button>
         </form>
+
       </div>
       {{-- <button type="button" id="bottintest" class="btn btn-success">тест</button> --}}
 

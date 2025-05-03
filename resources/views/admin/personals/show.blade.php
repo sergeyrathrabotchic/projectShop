@@ -10,6 +10,7 @@
       <div class="btn-group me-2">
         {{-- {{dd($personals[0]->account->id)}} --}}
         <a href="{{route('admin.charges.index', ['account' => $personals[0]->account->id ])}}" class="btn btn-sm btn-outline-secondary">Начисления</a>
+        {{-- <a href="{{route('admin.charges.index', ['account' => $personals[0]->account->id ])}}" class="btn btn-sm btn-outline-secondary">Оплата</a> --}}
       </div>
       {{-- <div class="btn-group me-2">
         <a href="{{route('admin.personals.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новое физическое лицо</a>

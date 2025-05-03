@@ -28,6 +28,7 @@ class CreateChargeRequest extends FormRequest
             'id_tarif' => ['required'],
             'c_date' => ['required'],
             'meter' => ['required'],
+            'amount' => ['required'],
         ];
     }
 }
