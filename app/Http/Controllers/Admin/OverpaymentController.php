@@ -24,13 +24,13 @@ class OverpaymentController extends Controller
         $arrDifference = [];
         foreach ($accounts as $account) {
             $meterSum = 0;
-            $amounSum = 0;
+            $amountSum = 0;
             foreach ($account->payment as $payment){
                 $meterSum = $meterSum + $payment->meter;
-                $amounSum = $amounSum + $payment->amoun;
+                $amountSum = $amountSum + $payment->amount;
             }
-            dd($amounSum);           
-            $arrDifference[] =  $amounSum - $meterSum ;
+            // dd($amountSum);           
+            $arrDifference[] =  $amountSum - $meterSum ;
             // $account->payment = $result;
         };
         dd($arrDifference);
