@@ -12,6 +12,7 @@ class Tarif extends Model
     protected $table = 'tarifs';
 
     protected $fillable = [
+        'id',
         'in_date',
         'title', 
         'price', 
