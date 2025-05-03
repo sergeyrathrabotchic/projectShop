@@ -60,11 +60,12 @@
                 @else - @endif
               </td>
              @endfor --}}
-             @php
-                 $i = $page;
-             @endphp
-             @php
-               $k = 0;
+
+              @php
+                $k = 0;
+              @endphp
+              @php
+                $i = $page;
               @endphp
             @forelse ($accounts->payment as $payment)
                   @php
@@ -107,11 +108,11 @@
                       {{$category->updated_at->format('d-m-Y H:i')}}
                      @else - @endif
                     </td> --}}
-                    <td>
+                    {{-- <td>
                       @php
                           // $amulet = $ceramic;
                       @endphp
-                      <a href="{{route('admin.charges.edit', ['charge' => $charge->id ])}}" class="btn btn-primary">Ред.</a>
+                      <a href="{{route('admin.charges.edit', ['charge' => $charge->id ])}}" class="btn btn-primary">Ред.</a> --}}
                       {{-- <a href="{{route('admin.personals.show', ['personal' => $personal->id ])}}" class="btn btn-primary">Показ.</a> --}}
                       {{-- &nbsp;|&nbsp; --}}
                       {{-- <a href="{{route('admin.slides.destroy', ['slide' => $slide->id ])}}" style="color: red">Уд.</a> --}}
@@ -123,11 +124,11 @@
                         <button  type="submit" style="color: red">Уд.</button>
                       </form> --}}
                       
-                      <form  action="{{ route('admin.charges.destroy' , ['charge' => $charge->id ])}}" method="POST">
+                      {{-- <form  action="{{ route('admin.charges.destroy' , ['charge' => $charge->id ])}}" method="POST">
                         {{ csrf_field() }}           
                         <button name="_method" type="hidden" value="DELETE" class="btn btn-danger" style="margin-top: 5px;">Удалить</button>
                     </form>
-                    </td>
+                    </td> --}}
                  </tr>
                  @php
                   $k = $k +1;

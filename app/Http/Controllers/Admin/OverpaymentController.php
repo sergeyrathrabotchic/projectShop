@@ -58,7 +58,7 @@ class OverpaymentController extends Controller
         // dd($accounts);
         return view('admin.overpayments.index', [
             'accounts' => $accounts,
-            'accounts' => $arrDifference,
+            'arrDifference' => $arrDifference,
         ]);
     }
 }
