@@ -60,6 +60,7 @@ class OverpaymentController extends Controller
             'accounts' => $accounts,
             'arrDifference' => $arrDifference,
             'page' => $page,
+            'amountSum' => $amountSum,
         ]);
     }
 }
