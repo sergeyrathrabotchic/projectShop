@@ -13,7 +13,7 @@
       <div class="table-responsive">
         @include('inc.message')
         <form  method="post" action="{{route('admin.charges.update', [
-            'charge' => $charge->id
+            'charge' => $charge[0]->id
         ])}}" >
           @csrf 
           @method('put')
