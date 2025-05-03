@@ -65,7 +65,7 @@
              @php
                  $i = $page;
              @endphp
-            @forelse ($account[0]->charge->where('id_account','=',$account->id)[0] as $charge)
+            @forelse ($account[0]->charge->where('id_account','=',$account[0]->id)[0] as $charge)
                   @php
                       $i = $i +1;
                   @endphp
