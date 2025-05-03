@@ -144,7 +144,9 @@ class ChargeController extends Controller
 
         if( $payment && $charge) {
             return redirect()
-            ->route('admin.charges.index')
+            ->route('admin.charges.index', [
+                'account' => $account[0]->id, 
+            ])
             ->with('success', 'Начисление успешно обновлено')
             /*->with('success', 'Категория Cкуспешно обновлена')*/;
         }
@@ -167,7 +169,9 @@ class ChargeController extends Controller
             'meter' => 0,
         ]);
         return redirect()
-        ->route('admin.charges.index')
+        ->route('admin.charges.index', [
+            'account' => $account[0]->id, 
+        ])
         ->with('success', 'Начисление удалено');
     }
 }
