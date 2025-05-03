@@ -70,6 +70,7 @@
             @forelse ($accounts as $account)
                   @php
                       $i = $i +1;
+                      $condition = $arrDifference[$k] > 0;
                   @endphp
                   @if ($arrDifference[$k] > 0)
                  <tr>
