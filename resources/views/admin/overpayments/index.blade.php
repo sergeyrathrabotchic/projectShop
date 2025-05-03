@@ -71,6 +71,7 @@
                   @php
                       $i = $i +1;
                   @endphp
+                  @if ($arrDifference[$k] > 0)
                  <tr>
                   <td>{{$i}}</td>
                   {{-- {{dd($account->personal->where('id_account','=',$account->id))}} --}}
@@ -133,9 +134,11 @@
                     </form>
                     </td> --}}
                  </tr>
+                 @ifend
                  @php
                   $k = $k +1;
                 @endphp
+                
              @empty
                  <tr>
                     <td colspan="4">Таких записей нет</td>
