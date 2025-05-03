@@ -73,6 +73,7 @@
                   @endphp
                  <tr>
                   <td>{{$i}}</td>
+                  {{dd($account->personal->where('id_account','=',$account->id))}}
                   <td>
                     <h6>{{$account->personal->sub_addr}} {{$account->personal->FIO}}</h6>
                   </td>
