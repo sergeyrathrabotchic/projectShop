@@ -89,7 +89,7 @@
                         Нет
                       @endif --}}
                       {{-- <h6>{{$account[0]->charges->charge[$i-1]}}</h6> --}}
-                      <h6>{{$account->payment->where('id_account','=',$account->id)[0]->amount *(-1)}}</h6>
+                      <h6>{{$account->payment->where('id_account','=',$account->id)[0]->amount }}</h6>
                     </td>
                   <td>
                     <h6>{{$arrDifference[$k]}}</h6>

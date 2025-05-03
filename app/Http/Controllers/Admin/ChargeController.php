@@ -63,7 +63,7 @@ class ChargeController extends Controller
             'meter' => $request->meter,
         ]);
         $tarif = Tarif::where('id', '=', $request->id_tarif)->get();
-        $meter = $request->meter * $tarif->price;
+        $meter = $request->meter * $tarif[0]->price;
         $payment = Payment::create([
             'id_account' => $request->accountId,
             'p_date' => Carbon::createFromFormat('Y-m-d', $request->c_date), 
