@@ -19,7 +19,7 @@ class OverpaymentController extends Controller
     {
         // $addresses =  Address::with('meterGroup.meter')->paginate(5);
 
-        $accounts =  Account::with('personal','payment')->paginate(5);
+        $accounts =  Account::with('personal','payment')->payment->isNotEmpty()->paginate(5);
         // $pumps =  Pump::all();
         $arrDifference = [];
         $arrAmountSum = [];
