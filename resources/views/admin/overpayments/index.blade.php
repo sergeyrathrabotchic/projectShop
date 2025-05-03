@@ -73,14 +73,14 @@
                   @endphp
                  <tr>
                   <td>{{$i}}</td>
-                  {{dd($account->personal->where('id_account','=',$account->id))}}
+                  {{-- {{dd($account->personal->where('id_account','=',$account->id))}} --}}
                   <td>
-                    <h6>{{$account->personal->sub_addr}} {{$account->personal->FIO}}</h6>
+                    <h6>{{$account->personal->where('id_account','=',$account->id)[0]->sub_addr}} {{$account->personal->where('id_account','=',$account->id)[0]->FIO}}</h6>
                   </td>
                   {{-- {{dd($ceramic)}} --}}
                   <td>
                     {{-- <img src="{{Storage::disk('image')->url($ceramic->productImage->where('type', 'cozyDecor')->values()->reverse()[0]->image)}}" alt="" style="width: 80%;padding: 10px;"></td> --}}
-                    <h6>{{$account->payment->meter}}</h6>
+                    <h6>{{$account->payment->where('id_account','=',$account->id)[0]->meter}}</h6>
                   </td>
                   <td>
                       {{-- @if ($pump->condition == 1)
@@ -89,7 +89,7 @@
                         Нет
                       @endif --}}
                       {{-- <h6>{{$account[0]->charges->charge[$i-1]}}</h6> --}}
-                      <h6>{{$account->payment->amount}}</h6>
+                      <h6>{{$account->payment->where('id_account','=',$account->id)[0]->amount}}</h6>
                     </td>
                   <td>
                     <h6>{{$arrDifference[$k]}}</h6>
@@ -98,8 +98,8 @@
                     <h6>{{$address->meterGroup->meter[0]->amount}}</h6>
                   </td> --}}
                   <td>
-                    @if ($account->payment->updated_at)
-                     {{$account->payment->format('d-m-Y H:i')}}
+                    @if ($account->payment->where('id_account','=',$account->id)[0]->updated_at)
+                     {{$account->payment->where('id_account','=',$account->id)[0]->format('d-m-Y H:i')}}
                     @else - @endif
                    </td> 
                    {{-- <td>{{$category->id}}</td>
