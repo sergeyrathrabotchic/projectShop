@@ -86,6 +86,12 @@
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link @if(request()->routeIs('admin.overpayments.*')) active @endif" href="{{route('admin.overpayments.index')}}">
+            <span data-feather="users"></span>
+            Переплата 
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link @if(request()->routeIs('admin.pumps.*')) active @endif" href="{{route('admin.pumps.index')}}">
             <span data-feather="users"></span>
             Cкважены с насосом

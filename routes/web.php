@@ -20,6 +20,7 @@ use App\Http\Controllers\Admin\WaterWithdrawalController as AdminWaterWithdrawal
 use App\Http\Controllers\Admin\PumpController as AdminPumpController;
 use App\Http\Controllers\Admin\PersonalController as AdminPersonalControllerController;
 use App\Http\Controllers\Admin\ChargeController as AdminChargeControllerController;
+use App\Http\Controllers\Admin\OverpaymentController as AdminOverpaymentController;
 use App\Http\Controllers\СategoryController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\RegistretionController;
@@ -72,6 +73,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::resource('/pumps', AdminPumpController::class );
         Route::resource('/personals', AdminPersonalControllerController::class );
         Route::resource('/charges', AdminChargeControllerController::class );
+        Route::resource('/overpayments', AdminOverpaymentController::class );
     });
 });
 // Route::resource('/news444444',AdminNewController::class );
