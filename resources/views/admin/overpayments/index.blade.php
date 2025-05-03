@@ -1,11 +1,12 @@
 @extends('layosts.admin')
-@section('title') Список адресов - @parent @stop
+@section('title') Переплата - @parent @stop
 @section('content')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Адреса </h1>
+   {{-- {{dd($account[0]->personal)}}  --}}
+  <h1 class="h2">Переплата  </h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group me-2">
-        <a href="{{route('admin.addresses.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новый адресс</a>
+        {{-- <a href="{{route('admin.charges.create', ['accountId' => $account[0]->id ])}}" class="btn btn-sm btn-outline-secondary">Добавить новое начисление</a> --}}
       </div>
       {{-- <div class="btn-group me-2">
         <a href="{{route('admin.news.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новую</a>
@@ -16,17 +17,17 @@
     </div>
   </div>
 
-      <h2>Список адресов</h2>
+      <h2>Список начислений</h2>
       <div class="table-responsive">
         @include('inc.message')
         <table class="table table-striped table-sm">
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Улица</th>
-              <th scope="col">Дом</th>
-              <th scope="col">Описание</th>
-              <th scope="col">кв метров</th>
+              <th scope="col">Абонент</th>
+              <th scope="col">Начисления</th>
+              <th scope="col">Оплата</th>
+              <th scope="col">Долг</th>
               <!--<th scope="col">Автор</th>-->
               <th scope="col">Дота последнего обновления</th>
               <th scope="col">Действие</th>
@@ -62,30 +63,41 @@
              @php
                  $i = $page;
              @endphp
-            @forelse ($addresses as $address)
+             @php
+               $k = 0;
+              @endphp
+            @forelse ($accounts->payment as $payment)
                   @php
                       $i = $i +1;
                   @endphp
                  <tr>
                   <td>{{$i}}</td>
                   <td>
-                    <h6>{{$address->street}}</h6>
+                    <h6>{{$accounts[$k]->personal->sub_addr}} {{$accounts[$k]->personal->FIO}}</h6>
                   </td>
                   {{-- {{dd($ceramic)}} --}}
                   <td>
                     {{-- <img src="{{Storage::disk('image')->url($ceramic->productImage->where('type', 'cozyDecor')->values()->reverse()[0]->image)}}" alt="" style="width: 80%;padding: 10px;"></td> --}}
-                    <h6>{{$address->house}}</h6>
+                    <h6>{{$payment->meter}}</h6>
                   </td>
                   <td>
-                    <h6>{{$address->meterGroup->title}}</h6>
-                  </td>
+                      {{-- @if ($pump->condition == 1)
+                        Да
+                      @else
+                        Нет
+                      @endif --}}
+                      {{-- <h6>{{$account[0]->charges->charge[$i-1]}}</h6> --}}
+                      <h6>{{$payment->amount}}</h6>
+                    </td>
                   <td>
-                    {{-- {{dd($address->meterGroup->meter[0]->)}} --}}
+                    <h6>{{$arrDifference[$k]}}</h6>
+                  </td>
+                  {{-- <td>
                     <h6>{{$address->meterGroup->meter[0]->amount}}</h6>
-                  </td>
+                  </td> --}}
                   <td>
-                    @if ($address->updated_at)
-                     {{$address->updated_at->format('d-m-Y H:i')}}
+                    @if ($charge->updated_at)
+                     {{$charge->updated_at->format('d-m-Y H:i')}}
                     @else - @endif
                    </td> 
                    {{-- <td>{{$category->id}}</td>
@@ -99,7 +111,8 @@
                       @php
                           // $amulet = $ceramic;
                       @endphp
-                      <a href="{{route('admin.addresses.edit', ['address' => $address->id ])}}" class="btn btn-primary">Ред.</a>
+                      <a href="{{route('admin.charges.edit', ['charge' => $charge->id ])}}" class="btn btn-primary">Ред.</a>
+                      {{-- <a href="{{route('admin.personals.show', ['personal' => $personal->id ])}}" class="btn btn-primary">Показ.</a> --}}
                       {{-- &nbsp;|&nbsp; --}}
                       {{-- <a href="{{route('admin.slides.destroy', ['slide' => $slide->id ])}}" style="color: red">Уд.</a> --}}
           {{-- {{dd($slide->id)}} --}}
@@ -110,12 +123,15 @@
                         <button  type="submit" style="color: red">Уд.</button>
                       </form> --}}
                       
-                      <form  action="{{ route('admin.addresses.destroy' , ['address' => $address->id ])}}" method="POST">
+                      <form  action="{{ route('admin.charges.destroy' , ['charge' => $charge->id ])}}" method="POST">
                         {{ csrf_field() }}           
                         <button name="_method" type="hidden" value="DELETE" class="btn btn-danger" style="margin-top: 5px;">Удалить</button>
                     </form>
                     </td>
                  </tr>
+                 @php
+                  $k = $k +1;
+                @endphp
              @empty
                  <tr>
                     <td colspan="4">Таких записей нет</td>
@@ -126,6 +142,6 @@
         </table>
       </div>
       <div>
-        {{ $addresses->links()}}
+        {{ $account->links()}}
       </div>
 @endsection

@@ -33,22 +33,23 @@ class OverpaymentController extends Controller
             $arrDifference[] =  $amountSum - $meterSum ;
             // $account->payment = $result;
         };
-        dd($arrDifference);
-        if ($request->param){
-            if ($request->param == 1){
-                foreach ($account->payment->meter as $meter){
-                    if ($meter->difference < 0 ){
-                        $account->payment->forget($meter->id);
-                    };
-                };
-            } else if ($request->param == 1) {
-                foreach ($account->payment->meter as $meter){
-                    if ($meter->difference > 0 ){
-                        $account->payment->forget($meter->id);
-                    };
-                };
-            }
-        }
+        // dd($arrDifference);
+        // if ($request->param){
+        //     if ($request->param == 1){
+        //         $arrDifferenceC = $arrDifference;
+        //         for ($i = 0;$i < count($arrDifference);$i++){
+        //             if ($arrDifference[$i] < 0 ){
+        //                 $account->payment->forget($i);
+        //             };
+        //         };
+        //     } else if ($request->param == 1) {
+        //         foreach ($account->payment->meter as $meter){
+        //             if ($meter->difference > 0 ){
+        //                 $account->payment->forget($meter->id);
+        //             };
+        //         };
+        //     }
+        // }
 
         $page = $request->get('page', 1);
         if ($page > 0) {
@@ -57,6 +58,7 @@ class OverpaymentController extends Controller
         // dd($accounts);
         return view('admin.overpayments.index', [
             'accounts' => $accounts,
+            'accounts' => $arrDifference,
         ]);
     }
 }
