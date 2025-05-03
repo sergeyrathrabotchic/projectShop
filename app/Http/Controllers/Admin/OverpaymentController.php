@@ -32,9 +32,9 @@ class OverpaymentController extends Controller
                 $amountSum = $amountSum + $payment->amount;
             }
             // dd($amountSum);           
-            $arrDifference[] =  $amountSum - $meterSum ;
-            $arrAmountSum[] = -$amountSum;
-            $arrMeterSum[] = -$meterSum;
+            $arrDifference[] =  -$amountSum - $meterSum ;
+            $arrAmountSum[] = $amountSum;
+            $arrMeterSum[] = $meterSum;
             // $account->payment = $result;
         };
         // dd($arrDifference);
