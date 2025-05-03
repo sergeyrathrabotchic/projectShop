@@ -19,8 +19,8 @@ class CreatePaymentsTable extends Migration
             ->constrained('accounts','id')
             ->onDelete('cascade');
             $table->date('p_date');
-            $table->float('meter', 6, 2);
-            $table->float('amount', 6, 2);
+            $table->float('meter', 8, 2);
+            $table->float('amount', 8, 2);
             $table->timestamps();
         });
     }
