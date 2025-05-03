@@ -143,6 +143,6 @@
         </table>
       </div>
       <div>
-        {{ $account->links()}}
+        {{ $accounts->links()}}
       </div>
 @endsection
