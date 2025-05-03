@@ -134,7 +134,7 @@
                     </form>
                     </td> --}}
                  </tr>
-                 @ifend
+                 @endif
                  @php
                   $k = $k +1;
                 @endphp
