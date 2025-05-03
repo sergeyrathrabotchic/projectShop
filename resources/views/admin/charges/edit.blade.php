@@ -30,14 +30,14 @@
             {{-- <input type="hidden" class="form-control" name="type" id="type" value="cozyDecor"> --}}
             {{-- <input type="hidden" class="form-control" name="count" id="count" value="{{$cozyDecor->productImage->count()}}"> --}}
             {{--  --}}
-            <input type="hidden" class="form-control" name="accountId" id="accountId" value="{{$account->id}}">
+            <input type="hidden" class="form-control" name="accountId" id="accountId" value="{{$account[0]->id}}">
             <div class="form-group">
               <label for="image">Дата</label>
-              <input type="text" style="margin: 4px;width:98%;" class="form-control" name="c_date" id="c_date" @if ($charge->c_date) value="{{$charge->c_date}}" @endif required>
+              <input type="text" style="margin: 4px;width:98%;" class="form-control" name="c_date" id="c_date" @if ($charge[0]->c_date) value="{{$charge[0]->c_date}}" @endif required>
             </div>
             <div class="form-group">
               <label for="image">Показания</label>
-              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="meter" id="meter" @if ($charge->meter) value="{{$charge->meter}}" @endif required>
+              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="meter" id="meter" @if ($charge[0]->meter) value="{{$charge[0]->meter}}" @endif required>
             </div>
             <div class="form-group">
               <label for="image">Выбирете тариф</label>
@@ -46,7 +46,7 @@
                   $i = 0;
                 @endphp
                 @forelse ($tarifs as $tarif)
-                  @if ($tarifId == $tarif->id)
+                  @if ($tarifId == $tarif[0]->id)
                     <option  class="form-control" value="{{$tarif->id}}" selected>{{$tarif->in_date}}, {{$tarif->title}}, {{$tarif->price}}</option>
                   @else
                     <option  class="form-control" value="{{$tarif->id}}">{{$tarif->in_date}}, {{$tarif->title}}, {{$tarif->price}}</option>
@@ -58,7 +58,7 @@
             </div>
             <div class="form-group">
               <label for="image">Сумма внесенная клиентом</label>
-              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="amount" id="amount" @if ($payment->amount) value="{{$payment->amount}}" @endif required>
+              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="amount" id="amount" @if ($payment[0]->amount) value="{{$payment[0]->amount}}" @endif required>
             </div>
             
            

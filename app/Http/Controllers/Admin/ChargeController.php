@@ -105,7 +105,7 @@ class ChargeController extends Controller
         // $tarif =  Account::where("id", "=", $request->account)->get();
         // $charge = Charge::where('id_account', '=', $request->account)->get();
         $tarifId = Tarif::where('id', '=', $charge->id_tarif)->get()[0]->id;
-        $payment = Payment::where('id_account', '=', $account->id)->get();
+        $payment = Payment::where('id_account', '=', $account[0]->id)->get();
         $tarifs =  Tarif::all();
 
         return view('admin.charges.edit', [
@@ -135,8 +135,8 @@ class ChargeController extends Controller
             'c_date' => Carbon::createFromFormat('Y-m-d', $request->c_date),
             'id_tarif' => $request->id_tarif,
         ]);
-        $meter = $request->meter * $tarif->price;
-        $payment = Payment::where('id_account', '=', $account->id)->update([
+        $meter = $request->meter * $tarif[0]->price;
+        $payment = Payment::where('id_account', '=', $account[0]->id)->update([
             'p_date' => Carbon::createFromFormat('Y-m-d', $request->c_date), 
             'meter' => $meter,
             'amount' => $request->amount,
@@ -163,7 +163,7 @@ class ChargeController extends Controller
         $charge::destroy($charge->id);
         $account = Account::where('id', '=', $charge->id_account)->get();
         // Account::destroy($account[0]->id);
-        $account = Payment::where('id_account', '=', $account->id)->update([
+        $account = Payment::where('id_account', '=', $account[0]->id)->update([
             'meter' => 0,
         ]);
         return redirect()
