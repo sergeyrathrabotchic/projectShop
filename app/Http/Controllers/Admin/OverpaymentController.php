@@ -21,6 +21,7 @@ class OverpaymentController extends Controller
 
         $accounts =  Account::with('personal','payment')->paginate(2);
         // $pumps =  Pump::all();
+        $arrDifference = [];
         foreach ($accounts as $account) {
             $meterSum = 0;
             $amounSum = 0;
@@ -28,10 +29,10 @@ class OverpaymentController extends Controller
                 $meterSum = $meterSum+ $payment->meter;
                 $amounSum = $amounSum + $payment->amoun;
             }           
-            $account->payment = $account->payment->difference =  $amounSum - $meterSum ;
+            $arrDifference[] = $account->payment->difference =  $amounSum - $meterSum ;
             // $account->payment = $result;
         };
-        dd($accounts);
+        dd($arrDifference);
         if ($request->param){
             if ($request->param == 1){
                 foreach ($account->payment->meter as $meter){
