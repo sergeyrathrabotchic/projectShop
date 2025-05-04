@@ -20,28 +20,40 @@ class ReceiptsController extends Controller
     public function index(Request $request)
     {
         // $addresses =  Address::with('meterGroup.meter')->paginate(5);
-        $accounts =  Account::with('personal','payment','charge.tarif')->has('payment', '>', 0)->has('charge', '>', 0)->paginate(5);
+        $accounts =  Account::with('personal','payment','charge')->has('payment', '>', 0)->has('charge', '>', 0)->paginate(5);
         // $accounts =  Account::with(['personal','payment'=> function (Builder $query) {
         //     $query->where('p_date', '=',Carbon::now()->subDays(7));
         // },'charge.tarif'=> function (Builder $query) {
         //     $query->where('c_date', '=',Carbon::now()->subDays(7));
         // }])->has('payment', '>', 0)->has('charge', '>', 0)->paginate(5);
-        dd($accounts);
+        // dd($accounts);
         // $pumps =  Pump::all();
         $arrDifference = [];
         $arrAmountSum = [];
         $arrMeterSum = [];
+        $arrMeterSumCharge = [];
         foreach ($accounts as $account) {
             $meterSum = 0;
             $amountSum = 0;
+            $meterChargeSum = 0;
             foreach ($account->payment as $payment){
                 $meterSum = $meterSum + $payment->meter;
                 $amountSum = $amountSum + $payment->amount;
             }
             // dd($amountSum);           
-            $arrDifference[] =  -($amountSum - $meterSum) ;
-            $arrAmountSum[] = $amountSum;
-            $arrMeterSum[] = $meterSum;
+            // $arrDifference[] =  -($amountSum - $meterSum) ;
+            foreach ($account->payment as $payment){
+                $meterSum = $meterSum + $payment->meter;
+                $amountSum = $amountSum + $payment->amount;
+            }
+
+            foreach ($account->charge as $charge){
+                $meterChargeSum = $meterChargeSum+ $charge->meter;
+            }
+
+            $arrAmountSum[] = [$account->id => $amountSum];
+            $arrMeterSum[] = [$account->id => $meterSum];
+            $arrMeterSumCharge[] = [$account->id => $meterChargeSum];
             // $account->payment = $result;
         };
         if(!$request->param){
@@ -75,9 +87,9 @@ class ReceiptsController extends Controller
             $page = ($page - 1) * 5;
         }
         // dd($accounts);
-        return view('admin.overpayments.index', [
+        return view('admin.receipts.index', [
             'accounts' => $accounts,
-            'arrDifference' => $arrDifference,
+            'arrMeterSumCharge' => $arrMeterSumCharge,
             'page' => $page,
             'arrAmountSum' => $arrAmountSum,
             'arrMeterSum' => $arrMeterSum,
