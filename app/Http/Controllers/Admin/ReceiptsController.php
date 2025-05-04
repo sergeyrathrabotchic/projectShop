@@ -42,12 +42,12 @@ class ReceiptsController extends Controller
             // }
             // dd($amountSum);           
             // $arrDifference[] =  -($amountSum - $meterSum) ;
-            foreach ($account->payment->where('p_date', '=',Carbon::now()->subDays(7)) as $payment){
+            foreach ($account->payment->where('p_date', '>',Carbon::now()->subDays(7)) as $payment){
                 $meterSum = $meterSum + $payment->meter;
                 $amountSum = $amountSum + $payment->amount;
             }
 
-            foreach ($account->charge->where('c_date', '=',Carbon::now()->subDays(7)) as $charge){
+            foreach ($account->charge->where('c_date', '>',Carbon::now()->subDays(7)) as $charge){
                 $meterChargeSum = $meterChargeSum+ $charge->meter;
             }
 
