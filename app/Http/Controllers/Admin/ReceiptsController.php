@@ -127,7 +127,7 @@ class ReceiptsController extends Controller
             'page' => $page,
             'arrAmountSum' => $arrAmountSum,
             'arrMeterSum' => $arrMeterSum,
-            'param' => $param,
+           
         ]);
     }
 }
