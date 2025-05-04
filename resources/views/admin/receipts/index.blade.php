@@ -6,11 +6,11 @@
   <h1 class="h2">Переплата  </h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group me-2">
-        <a href="{{route('admin.overpayments.index')}}" class="btn btn-sm btn-outline-secondary">Все</a>
-        <a href="{{route('admin.overpayments.index', ['param' => 1 ])}}" class="btn btn-sm btn-outline-secondary">За неделю</a>
-        <a href="{{route('admin.overpayments.index', ['param' => 2 ])}}" class="btn btn-sm btn-outline-secondary">За месяц</a>
-        <a href="{{route('admin.overpayments.index', ['param' => 3 ])}}" class="btn btn-sm btn-outline-secondary">За квартал</a>
-        <a href="{{route('admin.overpayments.index', ['param' => 4 ])}}" class="btn btn-sm btn-outline-secondary">За год</a>
+        <a href="{{route('admin.receipts.index')}}" class="btn btn-sm btn-outline-secondary">Все</a>
+        <a href="{{route('admin.receipts.index', ['param' => 1 ])}}" class="btn btn-sm btn-outline-secondary">За неделю</a>
+        <a href="{{route('admin.receipts.index', ['param' => 2 ])}}" class="btn btn-sm btn-outline-secondary">За месяц</a>
+        <a href="{{route('admin.receipts.index', ['param' => 3 ])}}" class="btn btn-sm btn-outline-secondary">За квартал</a>
+        <a href="{{route('admin.receipts.index', ['param' => 4 ])}}" class="btn btn-sm btn-outline-secondary">За год</a>
       </div>
       {{-- <div class="btn-group me-2">
         <a href="{{route('admin.news.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новую</a>
