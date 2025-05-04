@@ -42,14 +42,48 @@ class ReceiptsController extends Controller
             // }
             // dd($amountSum);           
             // $arrDifference[] =  -($amountSum - $meterSum) ;
-            foreach ($account->payment->where('p_date', '>',Carbon::now()->subDays(7)) as $payment){
-                $meterSum = $meterSum + $payment->meter;
-                $amountSum = $amountSum + $payment->amount;
+            if(!$request->param) {
+                foreach ($account->payment as $payment){
+                    $meterSum = $meterSum + $payment->meter;
+                    $amountSum = $amountSum + $payment->amount;
+                }
+                foreach ($account->charge as $charge){
+                    $meterChargeSum = $meterChargeSum+ $charge->meter;
+                }
+            } else if ($request->param == 1 ) {
+                foreach ($account->payment->where('p_date', '>',Carbon::now()->subDays(7)) as $payment){
+                    $meterSum = $meterSum + $payment->meter;
+                    $amountSum = $amountSum + $payment->amount;
+                }
+                foreach ($account->charge->where('c_date', '>',Carbon::now()->subDays(7)) as $charge){
+                    $meterChargeSum = $meterChargeSum+ $charge->meter;
+                } 
+            } else if ($request->param == 2) {
+                foreach ($account->payment->where('p_date', '>',Carbon::now()->subDays(30)) as $payment){
+                    $meterSum = $meterSum + $payment->meter;
+                    $amountSum = $amountSum + $payment->amount;
+                }
+                foreach ($account->charge->where('c_date', '>',Carbon::now()->subDays(30)) as $charge){
+                    $meterChargeSum = $meterChargeSum+ $charge->meter;
+                } 
+            }  else if ($request->param == 3) {
+                foreach ($account->payment->where('p_date', '>',Carbon::now()->subDays(90)) as $payment){
+                    $meterSum = $meterSum + $payment->meter;
+                    $amountSum = $amountSum + $payment->amount;
+                }
+                foreach ($account->charge->where('c_date', '>',Carbon::now()->subDays(90)) as $charge){
+                    $meterChargeSum = $meterChargeSum+ $charge->meter;
+                } 
+            }  else if ($request->param == 4) {
+                foreach ($account->payment->where('p_date', '>',Carbon::now()->subDays(365)) as $payment){
+                    $meterSum = $meterSum + $payment->meter;
+                    $amountSum = $amountSum + $payment->amount;
+                }
+                foreach ($account->charge->where('c_date', '>',Carbon::now()->subDays(365)) as $charge){
+                    $meterChargeSum = $meterChargeSum+ $charge->meter;
+                } 
             }
-
-            foreach ($account->charge->where('c_date', '>',Carbon::now()->subDays(7)) as $charge){
-                $meterChargeSum = $meterChargeSum+ $charge->meter;
-            }
+           
 
             $arrAmountSum[] = [$account->id => $amountSum];
             $arrMeterSum[] = [$account->id => $meterSum];
