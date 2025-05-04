@@ -6,10 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 // use App\Models\Address;
 use App\Models\Account;
+use Illuminate\Contracts\Database\Eloquent\Builder;
+use \Carbon\Carbon;
 
 
-
-class OverpaymentController extends Controller
+class ReceiptsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +21,12 @@ class OverpaymentController extends Controller
     {
         // $addresses =  Address::with('meterGroup.meter')->paginate(5);
 
-        $accounts =  Account::with('personal','payment')->has('payment', '>', 0)->paginate(5);
+        $accounts =  Account::with(['personal','payment'=> function (Builder $query) {
+            $query->where('p_date', '=',Carbon::now()->subDays(7));
+        },'charge.tarif'=> function (Builder $query) {
+            $query->where('c_date', '=',Carbon::now()->subDays(7));
+        }])->has('payment', '>', 0)->has('charge', '>', 0)->paginate(5);
+        dd($accounts);
         // $pumps =  Pump::all();
         $arrDifference = [];
         $arrAmountSum = [];

@@ -86,6 +86,12 @@
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link @if(request()->routeIs('admin.receipts.*')) active @endif" href="{{route('admin.receipts.index')}}">
+            <span data-feather="users"></span>
+            Поступление
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link @if(request()->routeIs('admin.overpayments.*')) active @endif" href="{{route('admin.overpayments.index')}}">
             <span data-feather="users"></span>
             Переплата 
