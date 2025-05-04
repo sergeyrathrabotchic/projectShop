@@ -47,7 +47,7 @@
               @endphp
             @forelse ($accounts as $account)
                   @php
-                      // $i = $i +1;
+                      $i = $i +1;
                       // if($param == 0) {
                       //   $condition =true;
                       // } else if ($param == 1)
