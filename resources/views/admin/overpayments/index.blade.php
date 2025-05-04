@@ -6,7 +6,9 @@
   <h1 class="h2">Переплата  </h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group me-2">
-        {{-- <a href="{{route('admin.charges.create', ['accountId' => $account[0]->id ])}}" class="btn btn-sm btn-outline-secondary">Добавить новое начисление</a> --}}
+        <a href="{{route('admin.overpayments.index')}}" class="btn btn-sm btn-outline-secondary">Все</a>
+        <a href="{{route('admin.overpayments.index', ['param' => 1 ])}}" class="btn btn-sm btn-outline-secondary">Должники</a>
+        <a href="{{route('admin.overpayments.index', ['param' => 2 ])}}" class="btn btn-sm btn-outline-secondary">Переплата</a>
       </div>
       {{-- <div class="btn-group me-2">
         <a href="{{route('admin.news.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новую</a>
@@ -34,32 +36,7 @@
             </tr>
           </thead>
           <tbody>
-             {{-- @forelse ($categories as $category)
-                 <tr>
-                   <td>{{$category->id}}</td>
-                   <td>{{$category->title}} ({{$category->news()->get()->first()->title ?? null}})</td>
-                   <td>
-                     @if ($category->updated_at)
-                      {{$category->updated_at->format('d-m-Y H:i')}}
-                     @else - @endif
-                    </td>
-                    <td>
-                      <a href="{{route('admin.slide.edit', ['slide' => $category->id ])}}">Ред.</a>&nbsp;|&nbsp;<a href="javascript:;" style="color: red">Уд.</a>
-                    </td>
-                 </tr>
-             @empty
-                 <tr>
-                    <td colspan="4">Таких записей нет</td>
-                 </tr>
-             @endforelse --}}
-             {{-- @for ($i = 0; $i < count($slideImages); $i++)
-              <td>1</td>
-              <td>
-                @if ($slideImages[$i]->updated_at)
-                 {{$slideImages[$i]->updated_at->format('d-m-Y H:i')}}
-                @else - @endif
-              </td>
-             @endfor --}}
+
 
               @php
                 $k = 0;
