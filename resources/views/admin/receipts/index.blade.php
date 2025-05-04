@@ -84,8 +84,8 @@
                     <h6>{{$arrDifference[$k]}}</h6>
                   </td> --}}
                   <td>
-                    @if ($account->payment->where('id_account','=',$account->id)[0]->updated_at)
-                     {{$account->payment->where('id_account','=',$account->id)[0]->updated_at->format('d-m-Y H:i')}}
+                    @if ($account->payment->where('id_account','=',$account->id)->last()->updated_at)
+                     {{$account->payment->where('id_account','=',$account->id)->last()->updated_at->format('d-m-Y H:i')}}
                     @else - @endif
                    </td> 
   

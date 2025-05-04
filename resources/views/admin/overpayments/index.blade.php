@@ -85,8 +85,8 @@
                     <h6>{{$address->meterGroup->meter[0]->amount}}</h6>
                   </td> --}}
                   <td>
-                    @if ($account->payment->where('id_account','=',$account->id)[0]->updated_at)
-                     {{$account->payment->where('id_account','=',$account->id)[0]->updated_at->format('d-m-Y H:i')}}
+                    @if ($account->payment->where('id_account','=',$account->id)->last()->updated_at)
+                     {{$account->payment->where('id_account','=',$account->id)->last()->updated_at->format('d-m-Y H:i')}}
                     @else - @endif
                    </td> 
                    {{-- <td>{{$category->id}}</td>
