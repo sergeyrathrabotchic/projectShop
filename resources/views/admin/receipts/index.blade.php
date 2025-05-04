@@ -65,10 +65,10 @@
                     <h6>{{$account->personal->where('id_account','=',$account->id)[0]->sub_addr}} {{$account->personal->where('id_account','=',$account->id)[0]->FIO}}</h6>
                   </td>
                   <td>
-                    <h6>{{$arrMeterSumCharge[$k]}}</h6>
+                    <h6>{{$arrMeterSumCharge[$k][$account->id]}}</h6>
                   </td>
                   <td>
-                    <h6>{{$arrMeterSum[$k]}}</h6>
+                    <h6>{{$arrMeterSum[$k][$account->id]}}</h6>
                   </td>
                   <td>
                       {{-- @if ($pump->condition == 1)
@@ -78,7 +78,7 @@
                       @endif --}}
                       {{-- <h6>{{$account[0]->charges->charge[$i-1]}}</h6> --}}
                       {{-- <h6>{{$account->payment->where('id_account','=',$account->id)[0]->amount }}</h6> --}}
-                      <h6>{{$arrAmountSum[$k]}}</h6> 
+                      <h6>{{$arrAmountSum[$k][$account->id]}}</h6> 
                     </td>
                   {{-- <td>
                     <h6>{{$arrDifference[$k]}}</h6>
