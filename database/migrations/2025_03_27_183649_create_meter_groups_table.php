@@ -27,6 +27,6 @@ class CreateMeterGroupsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('meter_group');
+        Schema::dropIfExists('meter_groups');
     }
 }
