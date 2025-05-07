@@ -170,7 +170,7 @@ class ChargeController extends Controller
         ]);
         return redirect()
         ->route('admin.charges.index', [
-            'account' => $account[0]->id, 
+            'account' => $account, 
         ])
         ->with('success', 'Начисление удалено');
     }
