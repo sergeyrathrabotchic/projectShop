@@ -18,7 +18,7 @@ class CreateAccountsTable extends Migration
             $table->foreignId('id_group')
             ->constrained('addresses','id')
             ->onDelete('cascade');
-            $table->string('account', 20);
+            $table->string('account', 1000);
             $table->timestamps();
         });
     }

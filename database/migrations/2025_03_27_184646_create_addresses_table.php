@@ -18,8 +18,8 @@ class CreateAddressesTable extends Migration
             $table->foreignId('id_group')
             ->constrained('meter_groups','id')
             ->onDelete('cascade');
-            $table->string('street', 50);
-            $table->string('house', 7);
+            $table->string('street', 1000);
+            $table->string('house', 1000);
             $table->timestamps();
         });
     }

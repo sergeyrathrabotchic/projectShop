@@ -18,8 +18,8 @@ class CreatePersonalsTable extends Migration
             $table->foreignId('id_account')
             ->constrained('accounts','id')
             ->onDelete('cascade');
-            $table->string('FIO', 60);
-            $table->string('sub_addr', 5);
+            $table->string('FIO', 100);
+            $table->string('sub_addr', 100);
             $table->timestamps();
         });
     }

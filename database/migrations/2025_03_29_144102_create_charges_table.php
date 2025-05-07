@@ -22,7 +22,7 @@ class CreateChargesTable extends Migration
             ->constrained('tarifs','id')
             ->onDelete('cascade');
             $table->date('c_date');
-            $table->float('meter', 6, 2);
+            $table->float('meter', 1000, 2);
             $table->timestamps();
         });
     }

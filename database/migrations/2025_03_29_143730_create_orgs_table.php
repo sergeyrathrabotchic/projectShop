@@ -18,8 +18,8 @@ class CreateOrgsTable extends Migration
             $table->foreignId('id_account')
             ->constrained('accounts','id')
             ->onDelete('cascade');
-            $table->string('title', 120);
-            $table->string('office', 7);
+            $table->string('title', 1000);
+            $table->string('office', 1000);
             $table->timestamps();
         });
     }

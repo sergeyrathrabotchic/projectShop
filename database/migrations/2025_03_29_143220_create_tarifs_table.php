@@ -16,8 +16,8 @@ class CreateTarifsTable extends Migration
         Schema::create('tarifs', function (Blueprint $table) {
             $table->id();
             $table->date('in_date');
-            $table->string('title', 50);
-            $table->float('price', 6, 2);
+            $table->string('title', 1000);
+            $table->float('price', 1000, 2);
             $table->timestamps();
         });
     }

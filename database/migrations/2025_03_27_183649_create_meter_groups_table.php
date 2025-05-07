@@ -15,7 +15,7 @@ class CreateMeterGroupsTable extends Migration
     {
         Schema::create('meter_groups', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 5);
+            $table->string('title', 1000);
             $table->timestamps();
         });
     }
