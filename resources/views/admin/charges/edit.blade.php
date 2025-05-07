@@ -13,7 +13,7 @@
       <div class="table-responsive">
         @include('inc.message')
         <form  method="post" action="{{route('admin.charges.update', [
-            'charge' => $charge[0]->id
+            'charge' => $charge->id
         ])}}" >
           @csrf 
           @method('put')
@@ -33,11 +33,11 @@
             <input type="hidden" class="form-control" name="accountId" id="accountId" value="{{$account[0]->id}}">
             <div class="form-group">
               <label for="image">Дата</label>
-              <input type="text" style="margin: 4px;width:98%;" class="form-control" name="c_date" id="c_date" @if ($charge[0]->c_date) value="{{$charge[0]->c_date}}" @endif required>
+              <input type="text" style="margin: 4px;width:98%;" class="form-control" name="c_date" id="c_date" @if ($charge->c_date) value="{{$charge->c_date}}" @endif required>
             </div>
             <div class="form-group">
               <label for="image">Показания</label>
-              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="meter" id="meter" @if ($charge[0]->meter) value="{{$charge[0]->meter}}" @endif required>
+              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="meter" id="meter" @if ($charge->meter) value="{{$charge->meter}}" @endif required>
             </div>
             <div class="form-group">
               <label for="image">Выбирете тариф</label>
