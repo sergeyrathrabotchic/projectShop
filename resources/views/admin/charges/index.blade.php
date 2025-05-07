@@ -91,7 +91,7 @@
                       <h6>{{$charge->tarif->title}}, стоимость {{$charge->tarif->price}}</h6>
                     </td>
                   <td>
-                    {{dd($account[0]->charge)}}
+                    {{-- {{dd($account[0]->charge)}} --}}
                     {{-- {{dd($account[0]->payment)}} --}}
                     <h6>{{$account[0]->payment[$i-1]->meter}}</h6>
                   </td>
