@@ -22,7 +22,7 @@ class CreateChargesTable extends Migration
             ->constrained('tarifs','id')
             ->onDelete('cascade');
             $table->date('c_date');
-            $table->float('meter', 1000, 2);
+            $table->float('meter', 250, 2);
             $table->timestamps();
         });
     }
@@ -34,6 +34,6 @@ class CreateChargesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('charge');
+        Schema::dropIfExists('charges');
     }
 }

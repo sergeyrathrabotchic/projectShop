@@ -17,7 +17,7 @@ class CreateTarifsTable extends Migration
             $table->id();
             $table->date('in_date');
             $table->string('title', 1000);
-            $table->float('price', 1000, 2);
+            $table->float('price', 250, 2);
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateTarifsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tarif');
+        Schema::dropIfExists('tarifs');
     }
 }

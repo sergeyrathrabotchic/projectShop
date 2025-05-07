@@ -19,7 +19,7 @@ class CreateMetersTable extends Migration
             ->constrained('meter_groups','id')
             ->onDelete('cascade');
             $table->date('m_date');
-            $table->float('amount', 1000, 2);
+            $table->float('amount', 250, 2);
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateMetersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('meter');
+        Schema::dropIfExists('meters');
     }
 }

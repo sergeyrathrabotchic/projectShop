@@ -31,6 +31,6 @@ class CreateOrgsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('org');
+        Schema::dropIfExists('orgs');
     }
 }
