@@ -44,7 +44,7 @@ class OrgController extends Controller
     {
         $addresses =  Address::all();
 
-        return view('admin.personals.create',[
+        return view('admin.orgs.create',[
             'addresses' => $addresses,
         ]);
     }
