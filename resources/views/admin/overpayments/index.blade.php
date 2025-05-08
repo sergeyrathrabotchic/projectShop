@@ -60,8 +60,8 @@
                   <td>{{$i}}</td>
                   {{-- {{dd($account->personal->where('id_account','=',$account->id))}} --}}
                   <td>
-                    @if ($account->personal->where('id_account','=',$account->id)[0])
-                    {{dd($account->personal->where('id_account','=',$account->id))}}
+                    @if ($account->personal->where('id_account','=',$account->id)[0]->isNotEmpty())
+                    {{-- {{dd($account->personal->where('id_account','=',$account->id))}} --}}
                       <h6>{{$account->personal->where('id_account','=',$account->id)[0]->sub_addr}} {{$account->personal->where('id_account','=',$account->id)[0]->FIO}}</h6>
                     @else
                     {{-- {{dd($account->org->where('id_account','=',$account->id))}} --}}
