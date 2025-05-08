@@ -20,7 +20,7 @@ class ReceiptsController extends Controller
     public function index(Request $request)
     {
         // $addresses =  Address::with('meterGroup.meter')->paginate(5);
-        $accounts =  Account::with('personal','payment','charge')->has('payment', '>', 0)->has('charge', '>', 0)->paginate(5);
+        $accounts =  Account::with('personal','payment','charge','org')->has('payment', '>', 0)->has('charge', '>', 0)->paginate(5);
         // $accounts =  Account::with(['personal','payment'=> function (Builder $query) {
         //     $query->where('p_date', '=',Carbon::now()->subDays(7));
         // },'charge.tarif'=> function (Builder $query) {

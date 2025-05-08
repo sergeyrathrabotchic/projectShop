@@ -60,7 +60,11 @@
                   <td>{{$i}}</td>
                   {{-- {{dd($account->personal->where('id_account','=',$account->id))}} --}}
                   <td>
-                    <h6>{{$account->personal->where('id_account','=',$account->id)[0]->sub_addr}} {{$account->personal->where('id_account','=',$account->id)[0]->FIO}}</h6>
+                    @if ($account[0]->personal->isNotEmpty())
+                      <h6>{{$account->personal->where('id_account','=',$account->id)[0]->sub_addr}} {{$account->personal->where('id_account','=',$account->id)[0]->FIO}}</h6>
+                    @else
+                      <h6>{{$account->org->where('id_account','=',$account->id)[0]->title}} {{$account->org->where('id_account','=',$account->id)[0]->office}}</h6>
+                    @endif 
                   </td>
                   {{-- {{dd($ceramic)}} --}}
                   <td>
