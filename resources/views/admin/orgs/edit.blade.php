@@ -1,8 +1,8 @@
 @extends('layosts.admin')
-@section('title') Редактировать скважену с насосом - @parent @stop
+@section('title') Редактировать юридическое лицо - @parent @stop
 @section('content')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Редактировать скважену с насосом </h1>
+    <h1 class="h2">Редактировать юридическое лицо </h1>
     <div class="btn-toolbar mb-2 mb-md-0">
     </div>
   </div>
@@ -12,8 +12,8 @@
   {{-- {{dd($slide)}} --}}
       <div class="table-responsive">
         @include('inc.message')
-        <form  method="post" action="{{route('admin.personals.update', [
-            'personal' => $personal
+        <form  method="post" action="{{route('admin.orgs.update', [
+            'org' => $org
         ])}}" >
           @csrf 
           @method('put')
@@ -35,11 +35,11 @@
             <input type="hidden" class="form-control" name="type" id="type" value="cozyDecor">
             <div class="form-group">
               <label for="image">Фамилия имя отчество</label>
-              <input type="text" style="margin: 4px;width:98%;" class="form-control" name="FIO" id="FIO" @if ($personal->FIO) value="{{$personal->FIO}}" @endif required>
+              <input type="text" style="margin: 4px;width:98%;" class="form-control" name="office" id="office" @if ($org->office) value="{{$org->office}}" @endif required>
             </div>
             <div class="form-group">
               <label for="image">Личевой счет</label>
-              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="sub_addr" id="sub_addr" @if ($personal->sub_addr) value="{{$personal->sub_addr}}" @endif required>
+              <input type="number" style="margin: 4px;width:98%;" class="form-control" name="title" id="title" @if ($org->title) value="{{$org->title}}" @endif required>
             </div>
             <div class="form-group">
               <label for="image">Выбирете адресс</label>
