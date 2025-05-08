@@ -88,7 +88,7 @@
         <li class="nav-item">
           <a class="nav-link @if(request()->routeIs('admin.orgs.*')) active @endif" href="{{route('admin.orgs.index')}}">
             <span data-feather="users"></span>
-            Физические лица 
+            Юридические лица 
           </a>
         </li>
         <li class="nav-item">

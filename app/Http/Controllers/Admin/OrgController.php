@@ -8,7 +8,7 @@ use App\Models\Personal;
 use App\Models\Charge;
 use App\Models\Account;
 use App\Models\Tarif;
-use App\Http\Requests\CreateChargeRequest;
+use App\Http\Requests\CreateOrgRequest;
 use \Carbon\Carbon;
 use App\Models\Payment;
 use App\Models\Org;
@@ -41,7 +41,11 @@ class OrgController extends Controller
      */
     public function create()
     {
-        //
+        $addresses =  Address::all();
+
+        return view('admin.personals.create',[
+            'addresses' => $addresses,
+        ]);
     }
 
     /**
@@ -63,7 +67,7 @@ class OrgController extends Controller
      */
     public function show($id)
     {
-        //
+        // 
     }
 
     /**
@@ -72,9 +76,25 @@ class OrgController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(CreateOrgRequest $request)
     {
-        //
+        $account = Account::create([
+            'id_group' => $request->address_id,
+            'account' => $request->FIO ,
+        ]);
+        $org = Org::create([
+            'id_account' => $account->id,
+            'office' => $request->office,
+            'title' => $request->title,
+        ]);
+
+        if ($org && $account) {
+            return redirect()
+            ->route('admin.orgs.index')
+            ->with('success', 'Юридическое лицо успешно добавлено');
+        }
+
+        return back()->wiht('error', 'Юридическое лицо не добавлено');
     }
 
     /**
