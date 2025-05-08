@@ -71,7 +71,7 @@
              @php
                  $i = $page;
              @endphp
-            @forelse ($orgs as $personal)
+            @forelse ($orgs as $org)
                   @php
                       $i = $i +1;
                   @endphp
