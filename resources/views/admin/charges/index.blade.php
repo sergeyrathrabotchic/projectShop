@@ -35,7 +35,7 @@
               <th scope="col">Сумма внесенная клиентом</th>
               {{-- <th scope="col">кв метров</th> --}}
               <!--<th scope="col">Автор</th>-->
-              <th scope="col">Дота последнего обновления</th>
+              <th scope="col">Дата последнего обновления</th>
               <th scope="col">Действие</th>
             </tr>
           </thead>
