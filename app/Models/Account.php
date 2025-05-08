@@ -10,6 +10,7 @@ use App\Models\Personal;
 use App\Models\Address;
 use App\Models\Charge;
 use App\Models\Payment;
+use App\Models\Org;
 
 class Account extends Model
 {
@@ -41,5 +42,10 @@ class Account extends Model
     public function payment(): HasMany
     {
         return $this->hasMany(Payment::class, 'id_account', 'id');
+    }
+
+    public function org(): HasMany
+    {
+        return $this->hasMany(Org::class, 'id_account', 'id');
     }
 }

@@ -22,6 +22,7 @@ use App\Http\Controllers\Admin\PersonalController as AdminPersonalControllerCont
 use App\Http\Controllers\Admin\ChargeController as AdminChargeControllerController;
 use App\Http\Controllers\Admin\OverpaymentController as AdminOverpaymentController;
 use App\Http\Controllers\Admin\ReceiptsController as AdminReceiptsController;
+use App\Http\Controllers\Admin\OrgController as AdminOrgController;
 use App\Http\Controllers\СategoryController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\RegistretionController;
@@ -76,6 +77,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::resource('/charges', AdminChargeControllerController::class );
         Route::resource('/overpayments', AdminOverpaymentController::class );
         Route::resource('/receipts', AdminReceiptsController::class );
+        Route::resource('/orgs',  AdminOrgController::class );
     });
 });
 // Route::resource('/news444444',AdminNewController::class );

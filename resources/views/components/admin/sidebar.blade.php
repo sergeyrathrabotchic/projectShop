@@ -86,6 +86,12 @@
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link @if(request()->routeIs('admin.orgs.*')) active @endif" href="{{route('admin.orgs.index')}}">
+            <span data-feather="users"></span>
+            Физические лица 
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link @if(request()->routeIs('admin.receipts.*')) active @endif" href="{{route('admin.receipts.index')}}">
             <span data-feather="users"></span>
             Поступление
