@@ -82,9 +82,18 @@ class OrgController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Org $org, Request $request)
     {
-        // 
+        $orgs =  Org::with('account.address.meterGroup.meter')->where("id", "=", $org->id)->paginate(5);
+        $page = $request->get('page', 1);
+        if ($page > 0) {
+            $page = ($page - 1) * 5;
+        }
+
+        return view('admin.orgs.show', [
+            'orgs' => $orgs,
+            'page' => $page,
+        ]);
     }
 
     /**
@@ -131,7 +140,7 @@ class OrgController extends Controller
         // ]);
         if( $orgUpdate && $account) {
             return redirect()
-            ->route('admin.personals.index')
+            ->route('admin.orgs.index')
             ->with('success', 'Юридическое лицо успешно обновлено')
             /*->with('success', 'Категория Cкуспешно обновлена')*/;
         }
@@ -145,8 +154,13 @@ class OrgController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Org $org)
     {
-        //
+        $org::destroy($org->id);
+        $account = Account::where('id', '=', $org->id_account)->get();
+        Account::destroy($account[0]->id);
+        return redirect()
+        ->route('admin.orgs.index')
+        ->with('success', 'Юридическое лицо успешно удалено');
     }
 }
