@@ -57,7 +57,23 @@ class OrgController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $account = Account::create([
+            'id_group' => $request->address_id,
+            'account' => $request->FIO ,
+        ]);
+        $org = Org::create([
+            'id_account' => $account->id,
+            'office' => $request->office,
+            'title' => $request->title,
+        ]);
+
+        if ($org && $account) {
+            return redirect()
+            ->route('admin.orgs.index')
+            ->with('success', 'Юридическое лицо успешно добавлено');
+        }
+
+        return back()->wiht('error', 'Юридическое лицо не добавлено');
     }
 
     /**
@@ -79,23 +95,7 @@ class OrgController extends Controller
      */
     public function edit(CreateOrgRequest $request)
     {
-        $account = Account::create([
-            'id_group' => $request->address_id,
-            'account' => $request->FIO ,
-        ]);
-        $org = Org::create([
-            'id_account' => $account->id,
-            'office' => $request->office,
-            'title' => $request->title,
-        ]);
-
-        if ($org && $account) {
-            return redirect()
-            ->route('admin.orgs.index')
-            ->with('success', 'Юридическое лицо успешно добавлено');
-        }
-
-        return back()->wiht('error', 'Юридическое лицо не добавлено');
+        
     }
 
     /**
