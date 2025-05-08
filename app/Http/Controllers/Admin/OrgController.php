@@ -55,7 +55,7 @@ class OrgController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateOrgRequest $request)
     {
         $account = Account::create([
             'id_group' => $request->address_id,
@@ -93,9 +93,19 @@ class OrgController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(CreateOrgRequest $request)
+    public function edit(Org $org, Request $request)
     {
-        
+        $account = Account::where('id', '=', $org->id_account)->get();
+        // dd($account);
+        $addresId = Address::where('id', '=', $account[0]->id_group)->get();
+        // dd($addresId);
+        $addresses = Address::all();
+        return view('admin.orgs.edit', [
+            'org' => $org,
+            'account' => $account,
+            'addresId' => $addresId,
+            'addresses' => $addresses,
+        ]);
     }
 
     /**
@@ -105,9 +115,28 @@ class OrgController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateOrgRequest $request, Org $org)
     {
-        //
+        $orgUpdate = $org->update([
+            'office' => $request->office,
+            'title' => $request->title,
+        ]);
+        $account = Account::where('id', '=', $org->id_account)->update([
+            'id_group' => $request->address_id,
+            'account' => $request->office ,
+        ]);
+        // $accountUpdate = Account::update([
+        //     'id_group' => $request->address_id,
+        //     'account' => $request->FIO ,
+        // ]);
+        if( $orgUpdate && $account) {
+            return redirect()
+            ->route('admin.personals.index')
+            ->with('success', 'Юридическое лицо успешно обновлено')
+            /*->with('success', 'Категория Cкуспешно обновлена')*/;
+        }
+
+        return back()->wiht('error', 'Юридическое лицо не обновивлино');
     }
 
     /**
