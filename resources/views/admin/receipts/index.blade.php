@@ -34,7 +34,7 @@
               <th scope="col">Оплата</th>
               {{-- <th scope="col">Долг</th> --}}
               <!--<th scope="col">Автор</th>-->
-              <th scope="col">Дота последнего обновления</th>
+              <th scope="col">Дата последнего обновления</th>
               {{-- <th scope="col">Действие</th> --}}
             </tr>
           </thead>
