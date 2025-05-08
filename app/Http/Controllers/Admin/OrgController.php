@@ -12,6 +12,7 @@ use App\Http\Requests\CreateOrgRequest;
 use \Carbon\Carbon;
 use App\Models\Payment;
 use App\Models\Org;
+use App\Models\Address;
 
 class OrgController extends Controller
 {
