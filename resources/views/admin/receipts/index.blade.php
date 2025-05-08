@@ -64,7 +64,7 @@
                   <td>{{$i}}</td>
                   {{-- {{dd($account->personal->where('id_account','=',$account->id))}} --}}
                   <td>
-                    @if ($account[0]->personal ?? false)
+                    @if ($account->personal->where('id_account','=',$account->id)->isNotEmpty())
                       <h6>{{$account->personal->where('id_account','=',$account->id)[0]->sub_addr}} {{$account->personal->where('id_account','=',$account->id)[0]->FIO}}</h6>
                     @else
                       <h6>{{$account->org->where('id_account','=',$account->id)[0]->title}} {{$account->org->where('id_account','=',$account->id)[0]->office}}</h6>
