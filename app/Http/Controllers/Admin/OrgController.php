@@ -59,7 +59,7 @@ class OrgController extends Controller
     {
         $account = Account::create([
             'id_group' => $request->address_id,
-            'account' => $request->FIO ,
+            'account' => $request->office ,
         ]);
         $org = Org::create([
             'id_account' => $account->id,
