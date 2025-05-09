@@ -39,14 +39,14 @@ class WaterWithdrawalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reservoir $reservoir)
+    public function edit(Reservoir $reservoir, Request $request)
     {
        // $address = $address::with('meterGroup.meter');
     //    $pump = Pump::where('id', '=', $pump->id)->get();
-
-       return view('admin.reservoirs.edit', [
-           'reservoir' => $reservoir,
-       ]);
+        $reservoir = Reservoir::where('id','=',$request->reservoir->id)->get()[0];
+        return view('admin.reservoirs.edit', [
+            'reservoir' => $reservoir,
+        ]);
     }
 
     /**
