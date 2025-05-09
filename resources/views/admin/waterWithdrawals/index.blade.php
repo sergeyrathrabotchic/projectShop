@@ -500,7 +500,12 @@
                   }
                 }
             }
-            barChart.data.datasets[0].data = [ v1, v2];
+            //____отключил
+            // barChart.data.datasets[0].data = [ v1, v2];
+            // barChart.update();
+            //____отключил
+
+
             //barChart.data.datasets[0].data = [ barChart.data.datasets[0].data[0]-2, barChart.data.datasets[0].data[1] -1];
             // barChart.update();
           },2000)
