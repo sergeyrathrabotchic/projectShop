@@ -33,4 +33,42 @@ class WaterWithdrawalController extends Controller
             'page' => $page,
         ]);
     }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Reservoir $reservoir)
+    {
+       // $address = $address::with('meterGroup.meter');
+    //    $pump = Pump::where('id', '=', $pump->id)->get();
+
+       return view('admin.reservoirs.edit', [
+           'reservoir' => $reservoir,
+       ]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Reservoir $reservoir)
+    {
+        $reservoir = $reservoir->update([
+            'max_volume' => $request->max_volume,
+            'current_volume' => $request->current_volume,
+        ]);
+        if( $reservoir) {
+            return redirect()
+            ->route('admin.reservoirs.index')
+            ->with('reservoirs', 'Резервуар успешно обновлена')
+            /*->with('success', 'Категория успешно обновлена')*/;
+        }
+
+        return back()->wiht('error', 'Резервуар не обновилсась');
+    }
 }

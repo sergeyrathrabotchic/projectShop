@@ -4,9 +4,16 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Водозабор</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
-      {{-- <div class="btn-group me-2">
-        <a href="{{route('admin.addresses.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новый адрес</a>
-      </div> --}}
+      <div class="btn-group me-2">
+        <a href="{{route('admin.reservoirs.create,[
+          'reservoir' => $reservoir[0]->id
+        ]')}}" class="btn btn-sm btn-outline-secondary">Изменить первый резервуар</a>
+      </div>
+       <div class="btn-group me-2">
+        <a href="{{route('admin.reservoirs.create,[
+          'reservoir' => $reservoir[1]->id
+        ]')}}" class="btn btn-sm btn-outline-secondary">Изменить второй резервуар</a>
+      </div>
       {{-- <div class="btn-group me-2">
         <a href="{{route('admin.news.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новую</a>
       </div>
@@ -490,7 +497,7 @@
             }
             barChart.data.datasets[0].data = [ v1, v2];
             //barChart.data.datasets[0].data = [ barChart.data.datasets[0].data[0]-2, barChart.data.datasets[0].data[1] -1];
-            barChart.update();
+            // barChart.update();
           },2000)
       </script>
 @endsection
