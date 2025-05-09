@@ -371,7 +371,11 @@
                 if (reservoir_1 < sum) {
                     min = Math.round(60 * (reservoir_1 - (sum - emk1))/60);
                 }
-              } 
+              }
+              sum = parseInt(barChart.data.datasets[0].data[0]) + emk1 * 1; 
+              if (sum < reservoir_1) {
+                i = 0;
+              }
               up_pump_value_1.innerHTML = i;
               up_pump_value_1_min.innerHTML = min;
               up_pump_emk1.style = "";
