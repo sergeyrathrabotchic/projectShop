@@ -436,7 +436,7 @@
               for(i = 1;sum_2 > 0;i++){
                 sum_2 = parseInt(barChart.data.datasets[0].data[1]) + emk2 * i;
                 hour_2 = i;
-                if ( 0 > sum) {
+                if ( 0 > sum_2) {
                   min_2 = Math.round(60 * (sum_2 - emk2)/(-emk2));
                 }
                 if ( barChart.data.datasets[0].data[1] + emk2 < 0){
