@@ -391,13 +391,15 @@
                 sum = parseInt(barChart.data.datasets[0].data[0]) + emk1 * i;
                 hour = i;
                 if ( 0 > sum) {
-                  min = Math.round(60 * (sum - emk1)/60);
+                  min = Math.round(60 * (sum - emk1)/(-emk1));
                 }
-                if ( barChart.data.datasets[0].data[0] + emk1 * 1 > reservoir_1){
+                if ( barChart.data.datasets[0].data[0] + emk1 < 0){
                   hour = 0;
                 }
               } 
-              dovn_pump_value_1.innerHTML = i;
+              // dovn_pump_value_1.innerHTML = i;
+              dovn_pump_value_1.innerHTML = hour;
+              dovn_pump_value_1_min.innerHTML = min;
               up_pump_emk1.style = "display: none;";
               dovn_pump_emk1.style = "";
             }
