@@ -7,12 +7,12 @@
       <div class="btn-group me-2">
         <a href="{{route('admin.reservoirs.create',[
           'reservoir' => $reservoirs[0]->id
-        ]')}}" class="btn btn-sm btn-outline-secondary">Изменить первый резервуар</a>
+        ])}}" class="btn btn-sm btn-outline-secondary">Изменить первый резервуар</a>
       </div>
        <div class="btn-group me-2">
         <a href="{{route('admin.reservoirs.create',[
           'reservoir' => $reservoirs[1]->id
-        ]')}}" class="btn btn-sm btn-outline-secondary">Изменить второй резервуар</a>
+        ])}}" class="btn btn-sm btn-outline-secondary">Изменить второй резервуар</a>
       </div>
       {{-- <div class="btn-group me-2">
         <a href="{{route('admin.news.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новую</a>
