@@ -12,7 +12,7 @@
   {{-- {{dd($slide)}} --}}
       <div class="table-responsive">
         @include('inc.message')
-        <form  method="post" action="{{route('admin.reservoirs.update', [
+        <form  method="post" action="{{route('admin.waterWithdrawals.update', [
             'reservoir' => $reservoir
         ])}}" >
           @csrf 

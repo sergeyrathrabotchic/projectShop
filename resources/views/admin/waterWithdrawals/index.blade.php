@@ -5,12 +5,12 @@
     <h1 class="h2">Водозабор</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group me-2">
-        <a href="{{route('admin.reservoirs.create',[
+        <a href="{{route('admin.waterWithdrawals.create',[
           'reservoir' => $reservoirs[0]->id
         ])}}" class="btn btn-sm btn-outline-secondary">Изменить первый резервуар</a>
       </div>
        <div class="btn-group me-2">
-        <a href="{{route('admin.reservoirs.create',[
+        <a href="{{route('admin.waterWithdrawals.create',[
           'reservoir' => $reservoirs[1]->id
         ])}}" class="btn btn-sm btn-outline-secondary">Изменить второй резервуар</a>
       </div>
