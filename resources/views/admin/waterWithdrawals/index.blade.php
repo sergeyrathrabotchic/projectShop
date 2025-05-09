@@ -162,7 +162,8 @@
               labels: ["Резервуар №1", "Резервуар №2"],
               datasets: [{
                 label: 'Обьем воды м3',
-                data: [reservoir_1/2, reservoir_2/2],
+                // data: [reservoir_1/2, reservoir_2/2],
+                data: [reservoir_1, reservoir_2],
                 backgroundColor: [
                   'rgba(54, 162, 235, 0.6)',
                   'rgba(54, 162, 235, 0.6)',
