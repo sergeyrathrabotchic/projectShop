@@ -369,7 +369,7 @@
               for(i = 1;sum < reservoir_1;i++){
                 sum = parseInt(barChart.data.datasets[0].data[0]) + emk1 * i;
                 if (reservoir_1 < sum) {
-                    min = Math.round((reservoir_1 - (sum - emk1))/60);
+                    min = Math.round(60 * (reservoir_1 - (sum - emk1))/60);
                 }
               } 
               up_pump_value_1.innerHTML = i;
