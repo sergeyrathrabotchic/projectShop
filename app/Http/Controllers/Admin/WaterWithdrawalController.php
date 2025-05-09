@@ -58,13 +58,13 @@ class WaterWithdrawalController extends Controller
      */
     public function update(Request $request, Reservoir $reservoir)
     {
-        $reservoir = $reservoir->update([
+        $reservoir = Reservoir::where('id','=',$request->reservoir)->update([
             'max_volume' => $request->max_volume,
             'current_volume' => $request->current_volume,
         ]);
         if( $reservoir) {
             return redirect()
-            ->route('admin.reservoirs.index')
+            ->route('admin.waterWithdrawals.index')
             ->with('reservoirs', 'Резервуар успешно обновлена')
             /*->with('success', 'Категория успешно обновлена')*/;
         }
