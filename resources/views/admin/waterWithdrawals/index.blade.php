@@ -369,9 +369,12 @@
               let hour = 0;
               for(i = 1;sum < reservoir_1;i++){
                 sum = parseInt(barChart.data.datasets[0].data[0]) + emk1 * i;
+                hour = i;
                 if (reservoir_1 < sum) {
-                    hour = i;
                     min = Math.round(60 * (reservoir_1 - (sum - emk1))/60);
+                }
+                if ( barChart.data.datasets[0].data[0] + emk1 * 1 > reservoir_1){
+                  hour = 0;
                 }
               }
               up_pump_value_1.innerHTML = hour;
