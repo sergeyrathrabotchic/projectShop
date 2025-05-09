@@ -391,7 +391,7 @@
                 sum = parseInt(barChart.data.datasets[0].data[0]) + emk1 * i;
                 hour = i;
                 if ( 0 > sum) {
-                  min = Math.round(60 * (sum - emk1))/60);
+                  min = Math.round(60 * (sum - emk1)/60);
                 }
                 if ( barChart.data.datasets[0].data[0] + emk1 * 1 > reservoir_1){
                   hour = 0;
