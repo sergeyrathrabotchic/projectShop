@@ -155,6 +155,8 @@
 
           var reservoir_1 = {{ $reservoirs[0]->max_volume}};
           var reservoir_2 = {{ $reservoirs[1]->max_volume}};
+          var reservoir_1_current_volume = {{ $reservoirs[0]->current_volume}};
+          var reservoir_2_current_volume = {{ $reservoirs[1]->current_volume}};
           var popCanvas = document.getElementById("popChart").getContext("2d");
           var barChart = new Chart(popCanvas, {
             type: 'bar',
@@ -163,7 +165,7 @@
               datasets: [{
                 label: 'Обьем воды м3',
                 // data: [reservoir_1/2, reservoir_2/2],
-                data: [$reservoirs[0]->current_volume, $reservoirs[1]->current_volume],
+                data: [reservoir_1_current_volume, reservoir_2_current_volume],
                 backgroundColor: [
                   'rgba(54, 162, 235, 0.6)',
                   'rgba(54, 162, 235, 0.6)',
