@@ -360,10 +360,11 @@
             let emk1 = parseInt(value_1) - parseInt(waterWithdrawals_1_value_get)
             let up_pump_emk1 = document.querySelector(".up_pump_1");
             let dovn_pump_emk1 = document.querySelector(".dovn_pump_1");
-            let dovn_pump_1_min = document.querySelector(".dovn_pump_1_min");
+            let dovn_pump_value_1 = document.querySelector(".dovn_pump_value_1");
             let up_pump_value_1 = document.querySelector(".up_pump_value_1");
             let up_pump_value_1_min = document.querySelector(".up_pump_value_1_min");
-            let dovn_pump_value_1 = document.querySelector(".dovn_pump_value_1");
+            let dovn_pump_value_1_min = document.querySelector(".dovn_pump_value_1_min");
+            // dovn_pump_value_1
             if (emk1 > 0){
               let sum =0;
               let min =0;
