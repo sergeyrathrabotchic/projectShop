@@ -32,7 +32,7 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">Лицевой счет</th>
-              <th scope="col">Адресс</th>
+              <th scope="col">Адрес</th>
               <th scope="col">Название</th>
               <th scope="col">Кв.</th>
               {{-- <th scope="col">кв метров</th> --}}

@@ -49,7 +49,7 @@
               <input type="number" style="margin: 4px;width:98%;" class="form-control" name="title" id="title" required>
             </div>
             <div class="form-group">
-              <label for="image">Выбирете адресс</label>
+              <label for="image">Выбирете адрес</label>
               <select  class="form-control" name="address_id" id="addres_id" required>
                 @php
                   $i = 0;
@@ -64,7 +64,7 @@
                     <option  class="form-control" value="{{$address->id}}">{{$address->street}}, {{$address->house}}</option>
                   @endif
                 @empty
-                  <option  class="form-control" value="" selected>Добавти хотя бы один адресс</option>
+                  <option  class="form-control" value="" selected>Добавти хотя бы один адрес</option>
                 @endforelse
               </select>
             </div>

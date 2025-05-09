@@ -58,7 +58,7 @@ class TarifController extends Controller
             ->with('success', 'Тариф успешно добавлен');
         }
 
-        return back()->wiht('error', 'Адресс не добавлен');
+        return back()->wiht('error', 'Адрес не добавлен');
     }
 
     /**
@@ -125,6 +125,6 @@ class TarifController extends Controller
 
         return redirect()
         ->route('admin.tarifs.index')
-        ->with('success', 'Адресс успешно тариф');
+        ->with('success', 'Адрес успешно тариф');
     }
 }

@@ -1,8 +1,8 @@
 @extends('layosts.admin')
-@section('title') Редактировать адресс - @parent @stop
+@section('title') Редактировать адрес - @parent @stop
 @section('content')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Редактировать адресс </h1>
+    <h1 class="h2">Редактировать адрес </h1>
     <div class="btn-toolbar mb-2 mb-md-0">
     </div>
   </div>
@@ -38,7 +38,7 @@
               <input type="test" style="margin: 4px;width:98%;" class="form-control" name="house" id="house" @if ($address->house) value="{{$address->house}}" @endif>
             </div>
             <div class="form-group">
-              <label for="image">Описание группы адрессов по площади</label>
+              <label for="image">Описание группы Адресов по площади</label>
               <input type="test" style="margin: 4px;width:98%;" class="form-control" name="title" id="title" @if ($meterGroup[0]->title) value="{{$meterGroup[0]->title}}" @endif>
             </div>
             <div class="form-group">

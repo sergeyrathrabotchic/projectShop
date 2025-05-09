@@ -5,7 +5,7 @@
     <h1 class="h2">Водозабор</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       {{-- <div class="btn-group me-2">
-        <a href="{{route('admin.addresses.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новый адресс</a>
+        <a href="{{route('admin.addresses.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новый адрес</a>
       </div> --}}
       {{-- <div class="btn-group me-2">
         <a href="{{route('admin.news.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новую</a>

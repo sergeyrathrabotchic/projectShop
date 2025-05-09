@@ -72,7 +72,7 @@ class AddressController extends Controller
         if ($meterGroup && $Meter && $address) {
             return redirect()
             ->route('admin.addresses.index')
-            ->with('success', 'Адресс успешно добавлен');
+            ->with('success', 'Адрес успешно добавлен');
         }
 
         return back()->wiht('error', 'Адрес не добавлен');
