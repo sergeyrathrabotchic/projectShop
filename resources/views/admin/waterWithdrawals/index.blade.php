@@ -373,7 +373,7 @@
                 }
               } 
               up_pump_value_1.innerHTML = i;
-              up_pump_value_1_min = min;
+              up_pump_value_1_min.innerHTML = min;
               up_pump_emk1.style = "";
               dovn_pump_emk1.style = "display: none;";
             } else if (emk1 < 0) {
