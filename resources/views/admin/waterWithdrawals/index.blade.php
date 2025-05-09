@@ -103,9 +103,9 @@
                       <canvas id="popChart" width="200" height="300"></canvas>
                     </div>
                     <div class="up_pump_1" style="display: none;">Время до полного заполнения первого резервуара: <span class="up_pump_value_1"></span> ч. <span class="up_pump_value_1_min"></span> min.</div>
-                    <div class="dovn_pump_1" style="display: none;">Время до полного опусташения первого резервуара: <span class="dovn_pump_value_1"> ч</span></div>
-                    <div class="up_pump_2" style="display: none;">Время до полного заполнения второго резервуара: <span class="up_pump_value_2"> ч</span></div>
-                    <div class="dovn_pump_2" style="display: none;">Время до полного опусташения второго резервуара: <span class="dovn_pump_value_2"> ч</span></div>
+                    <div class="dovn_pump_1" style="display: none;">Время до полного опусташения первого резервуара: <span class="dovn_pump_value_1"></span> ч. <span class="dovn_pump_value_1_min"></span></div>
+                    <div class="up_pump_2" style="display: none;">Время до полного заполнения второго резервуара: <span class="up_pump_value_2"></span></span> ч. <span class="up_pump_value_2_min"></div>
+                    <div class="dovn_pump_2" style="display: none;">Время до полного опусташения второго резервуара: <span class="dovn_pump_value_2"></span></span> ч. <span class="dovn_pump_value_2_min"></div>
                     {{-- <h6>{{$address->meterGroup->title}}</h6> --}}
                   </td>
                   {{-- <td>
@@ -360,6 +360,7 @@
             let emk1 = parseInt(value_1) - parseInt(waterWithdrawals_1_value_get)
             let up_pump_emk1 = document.querySelector(".up_pump_1");
             let dovn_pump_emk1 = document.querySelector(".dovn_pump_1");
+            let dovn_pump_1_min = document.querySelector(".dovn_pump_1_min");
             let up_pump_value_1 = document.querySelector(".up_pump_value_1");
             let up_pump_value_1_min = document.querySelector(".up_pump_value_1_min");
             let dovn_pump_value_1 = document.querySelector(".dovn_pump_value_1");
@@ -371,7 +372,7 @@
                 sum = parseInt(barChart.data.datasets[0].data[0]) + emk1 * i;
                 hour = i;
                 if (reservoir_1 < sum) {
-                  min = Math.round(60 * (reservoir_1 - (sum - emk1))/60);
+                  min = Math.round(60 * (reservoir_1 - (sum - emk1))/emk1);
                 }
                 if ( barChart.data.datasets[0].data[0] + emk1 * 1 > reservoir_1){
                   hour = 0;
@@ -382,9 +383,19 @@
               up_pump_emk1.style = "";
               dovn_pump_emk1.style = "display: none;";
             } else if (emk1 < 0) {
+              // dovn_pump_1_min
               let sum = parseInt(barChart.data.datasets[0].data[0]);
+              let min =0;
+              let hour = 0;
               for(i = 1;sum > 0;i++){
                 sum = parseInt(barChart.data.datasets[0].data[0]) + emk1 * i;
+                hour = i;
+                if ( 0 > sum) {
+                  min = Math.round(60 * (sum - emk1))/60);
+                }
+                if ( barChart.data.datasets[0].data[0] + emk1 * 1 > reservoir_1){
+                  hour = 0;
+                }
               } 
               dovn_pump_value_1.innerHTML = i;
               up_pump_emk1.style = "display: none;";
