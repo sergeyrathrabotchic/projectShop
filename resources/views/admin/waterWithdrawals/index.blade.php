@@ -102,10 +102,10 @@
                     <div style="width: 200px;height: 300px;">
                       <canvas id="popChart" width="200" height="300"></canvas>
                     </div>
-                    <div class="up_pump_1" style="display: none;">Время до полного заполнения первого резервуара: <span class="up_pump_value_1"></span> ч. <span class="up_pump_value_1_min"></span> min.</div>
-                    <div class="dovn_pump_1" style="display: none;">Время до полного опусташения первого резервуара: <span class="dovn_pump_value_1"></span> ч. <span class="dovn_pump_value_1_min"></span></div>
-                    <div class="up_pump_2" style="display: none;">Время до полного заполнения второго резервуара: <span class="up_pump_value_2"></span></span> ч. <span class="up_pump_value_2_min"></div>
-                    <div class="dovn_pump_2" style="display: none;">Время до полного опусташения второго резервуара: <span class="dovn_pump_value_2"></span></span> ч. <span class="dovn_pump_value_2_min"></div>
+                    <div class="up_pump_1" style="display: none;">Время до полного заполнения первого резервуара: <span class="up_pump_value_1"></span> ч. <span class="up_pump_value_1_min"></span> минут</div>
+                    <div class="dovn_pump_1" style="display: none;">Время до полного опусташения первого резервуара: <span class="dovn_pump_value_1"></span> ч. <span class="dovn_pump_value_1_min"></span> минут</div>
+                    <div class="up_pump_2" style="display: none;">Время до полного заполнения второго резервуара: <span class="up_pump_value_2"></span></span> ч. <span class="up_pump_value_2_min"> минут</div>
+                    <div class="dovn_pump_2" style="display: none;">Время до полного опусташения второго резервуара: <span class="dovn_pump_value_2"></span></span> ч. <span class="dovn_pump_value_2_min"> минут</div>
                     {{-- <h6>{{$address->meterGroup->title}}</h6> --}}
                   </td>
                   {{-- <td>
@@ -409,20 +409,42 @@
             let dovn_pump_emk2 = document.querySelector(".dovn_pump_2");
             let up_pump_value_2 = document.querySelector(".up_pump_value_2");
             let dovn_pump_value_2 = document.querySelector(".dovn_pump_value_2");
+            let up_pump_value_2_min = document.querySelector(".up_pump_value_2_min");
+            let dovn_pump_value_2_min = document.querySelector(".dovn_pump_value_2_min");
             if (emk2 > 0 ){
               let sum_2 =0;
+              let min_2 =0;
+              let hour_2 = 0;
               for(i = 1;sum_2 < reservoir_2;i++){
                 sum_2 = parseInt(barChart.data.datasets[0].data[1]) + emk2 * i;
+                hour_2 = i;
+                if (reservoir_2 < sum_2) {
+                  min_2 = Math.round(60 * (reservoir_2 - (sum_2 - emk2))/emk2);
+                }
+                if ( barChart.data.datasets[0].data[1] + emk2 * 1 > reservoir_2){
+                  hour_2 = 0;
+                }
               } 
-              up_pump_value_2.innerHTML = i;
+              up_pump_value_2.innerHTML = hour_2;
+              up_pump_value_2_min.innerHTML = min_2;
               up_pump_emk2.style = "";
               dovn_pump_emk2.style = "display: none;";
             } else if (emk2 < 0) {
               let sum_2 = parseInt(barChart.data.datasets[0].data[1]);
+              let min_2 =0;
+              let hour_2 = 0;
               for(i = 1;sum_2 > 0;i++){
                 sum_2 = parseInt(barChart.data.datasets[0].data[1]) + emk2 * i;
+                hour_2 = i;
+                if ( 0 > sum) {
+                  min_2 = Math.round(60 * (sum_2 - emk2)/(-emk2));
+                }
+                if ( barChart.data.datasets[0].data[1] + emk2 < 0){
+                  hour_2 = 0;
+                }
               } 
-              dovn_pump_value_2.innerHTML = i;
+              dovn_pump_value_2.innerHTML = hour_2;
+              dovn_pump_value_2_min.innerHTML = min_2;
               up_pump_emk2.style = "display: none;";
               dovn_pump_emk2.style = "";
             }
