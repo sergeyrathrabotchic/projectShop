@@ -32,14 +32,14 @@
             {{--  --}}
             <input type="hidden" class="form-control" name="type" id="type" value="cozyDecor">
             <div class="form-group">
-              <label for="image">Выбирете номер емкости</label>
+              <label for="image">Выбирете номер резервуара</label>
               <select  class="form-control" name="id_reservoir" id="city-select" condition>
-                <option  class="form-control" value="1"  @if ($pump->id_reservoir && $pump->id_reservoir == 1) selected{{"selected"}} @endif>Емкость №1</option>
-                <option  class="form-control" value="2" @if ($pump->id_reservoir && $pump->id_reservoir == 2) selected{{"selected"}} @endif>Емкость №2</option>
+                <option  class="form-control" value="1"  @if ($pump->id_reservoir && $pump->id_reservoir == 1) selected{{"selected"}} @endif>Резервуар №1</option>
+                <option  class="form-control" value="2" @if ($pump->id_reservoir && $pump->id_reservoir == 2) selected{{"selected"}} @endif>Резервуар №2</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="image">Обьем закачки в секунду</label>
+              <label for="image">Обьем закачки в м3/час</label>
               <input type="number" style="margin: 4px;width:98%;" class="form-control" name="pumping_volume" id="pumping_volume" @if ($pump->pumping_volume) value="{{$pump->pumping_volume}}" @endif frequired>
             </div>
             <div class="form-group">

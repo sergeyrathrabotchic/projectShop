@@ -23,8 +23,8 @@
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Номер емкости</th>
-              <th scope="col">Обьем закачки в секунду</th>
+              <th scope="col">Номер резервуара</th>
+              <th scope="col">Обьем закачки в м3/час</th>
               <th scope="col">Вкдючен/выключен</th>
               {{-- <th scope="col">кв метров</th> --}}
               <!--<th scope="col">Автор</th>-->

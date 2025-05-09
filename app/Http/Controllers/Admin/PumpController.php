@@ -57,10 +57,10 @@ class PumpController extends Controller
         if ($pump) {
             return redirect()
             ->route('admin.pumps.index')
-            ->with('success', 'Cкважена с насосом успешно добавлена');
+            ->with('success', 'Cкважина с насосом успешно добавлена');
         }
 
-        return back()->wiht('error', 'Cкважена с насосом не добавлена');
+        return back()->wiht('error', 'Cкважина с насосом не добавлена');
     }
 
     /**
@@ -107,11 +107,11 @@ class PumpController extends Controller
         if( $pump) {
             return redirect()
             ->route('admin.pumps.index')
-            ->with('pumps', 'Cкважена с насосом успешно обновлена')
+            ->with('pumps', 'Cкважина с насосом успешно обновлена')
             /*->with('success', 'Категория успешно обновлена')*/;
         }
 
-        return back()->wiht('error', 'Cкважена с насосом не обновилсась');
+        return back()->wiht('error', 'Cкважина с насосом не обновилсась');
     }
 
     /**
@@ -125,6 +125,6 @@ class PumpController extends Controller
         $pump::destroy($pump->id);
         return redirect()
         ->route('admin.pumps.index')
-        ->with('success', 'Cкважена с насосом успешно удалена');
+        ->with('success', 'Cкважина с насосом успешно удалена');
     }
 }

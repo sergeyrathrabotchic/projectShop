@@ -41,10 +41,10 @@
             
             <input type="hidden" class="form-control" name="type" id="type" value="cozyDecor">
             <div class="form-group">
-              <label for="image">Выбирете номер емкости</label>
+              <label for="image">Выбирете номер резервуара</label>
               <select  class="form-control" name="id_reservoir" id="city-select" condition>
-                <option  class="form-control" value="1" selected>Емкость №1</option>
-                <option  class="form-control" value="2">Емкость №2</option>
+                <option  class="form-control" value="1" selected>Резервуар №1</option>
+                <option  class="form-control" value="2">Резервуар №2</option>
               </select>
             </div>
             <div class="form-group">
