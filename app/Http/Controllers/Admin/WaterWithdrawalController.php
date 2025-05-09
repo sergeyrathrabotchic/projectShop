@@ -43,7 +43,7 @@ class WaterWithdrawalController extends Controller
     {
        // $address = $address::with('meterGroup.meter');
     //    $pump = Pump::where('id', '=', $pump->id)->get();
-        $reservoir = Reservoir::where('id','=',$request->id)->get()[0];
+        $reservoir = Reservoir::where('id','=',$request->reservoir)->get()[0];
         return view('admin.reservoirs.edit', [
             'reservoir' => $reservoir,
         ]);
