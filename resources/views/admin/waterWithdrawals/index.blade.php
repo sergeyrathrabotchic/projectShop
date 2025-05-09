@@ -374,7 +374,7 @@
                     min = Math.round(60 * (reservoir_1 - (sum - emk1))/60);
                 }
               }
-              up_pump_value_1.innerHTML = hour;
+              up_pump_value_1.innerHTML = hour - 1;
               up_pump_value_1_min.innerHTML = min;
               up_pump_emk1.style = "";
               dovn_pump_emk1.style = "display: none;";
