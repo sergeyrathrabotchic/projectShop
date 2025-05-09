@@ -13,7 +13,7 @@
       <div class="table-responsive">
         @include('inc.message')
         <form  method="post" action="{{route('admin.waterWithdrawals.update', [
-            'waterWithdrawal' => $reservoirs[0]->id,
+            'waterWithdrawal' => $reservoir->id,
             'reservoir' => $reservoir->id
         ])}}" >
           @csrf 
