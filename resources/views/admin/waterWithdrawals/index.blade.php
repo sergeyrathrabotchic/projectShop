@@ -150,7 +150,7 @@
           var barChart = new Chart(popCanvas, {
             type: 'bar',
             data: {
-              labels: ["Резервуар №1", "Резервуар 2"],
+              labels: ["Резервуар №1", "Резервуар №2"],
               datasets: [{
                 label: 'Обьем воды м3',
                 data: [reservoir_1/2, reservoir_2/2],
