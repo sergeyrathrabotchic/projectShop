@@ -163,7 +163,7 @@
               datasets: [{
                 label: 'Обьем воды м3',
                 // data: [reservoir_1/2, reservoir_2/2],
-                data: [reservoir_1, reservoir_2],
+                data: [$reservoirs[0]->current_volume, $reservoirs[1]->current_volume],
                 backgroundColor: [
                   'rgba(54, 162, 235, 0.6)',
                   'rgba(54, 162, 235, 0.6)',
