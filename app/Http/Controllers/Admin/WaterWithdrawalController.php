@@ -65,7 +65,7 @@ class WaterWithdrawalController extends Controller
         if( $reservoir) {
             return redirect()
             ->route('admin.waterWithdrawals.index')
-            ->with('reservoirs', 'Резервуар успешно обновлена')
+            ->with('waterWithdrawals', 'Резервуар успешно обновлена')
             /*->with('success', 'Категория успешно обновлена')*/;
         }
 

@@ -383,7 +383,7 @@
               let hour = 0;
               for(i = 1;sum < reservoir_1;i++){
                 sum = parseInt(barChart.data.datasets[0].data[0]) + emk1 * i;
-                hour = i;
+                hour = i - 1;
                 if (reservoir_1 < sum) {
                   min = Math.round(60 * (reservoir_1 - (sum - emk1))/emk1);
                 }
@@ -402,7 +402,7 @@
               let hour = 0;
               for(i = 1;sum > 0;i++){
                 sum = parseInt(barChart.data.datasets[0].data[0]) + emk1 * i;
-                hour = i;
+                hour = i -1;
                 if ( 0 > sum) {
                   min = Math.round(60 * (sum - emk1)/(-emk1));
                 }
@@ -429,7 +429,7 @@
               let hour_2 = 0;
               for(i = 1;sum_2 < reservoir_2;i++){
                 sum_2 = parseInt(barChart.data.datasets[0].data[1]) + emk2 * i;
-                hour_2 = i;
+                hour_2 = i -1;
                 if (reservoir_2 < sum_2) {
                   min_2 = Math.round(60 * (reservoir_2 - (sum_2 - emk2))/emk2);
                 }
@@ -447,7 +447,7 @@
               let hour_2 = 0;
               for(i = 1;sum_2 > 0;i++){
                 sum_2 = parseInt(barChart.data.datasets[0].data[1]) + emk2 * i;
-                hour_2 = i;
+                hour_2 = i - 1;
                 if ( 0 > sum_2) {
                   min_2 = Math.round(60 * (sum_2 - emk2)/(-emk2));
                 }
