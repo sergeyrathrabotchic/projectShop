@@ -116,6 +116,7 @@
                     <div class="up_pump_2" style="display: none;">Время до полного заполнения второго резервуара: <span class="up_pump_value_2"></span></span> ч. <span class="up_pump_value_2_min"></span> минут</div>
                     <div class="dovn_pump_2" style="display: none;">Время до полного опустошения второго резервуара: <span class="dovn_pump_value_2"></span></span> ч. <span class="dovn_pump_value_2_min"></span> минут</div>
                     {{-- <h6>{{$address->meterGroup->title}}</h6> --}}
+                    <button name="_method" id="imitation" type="hidden"  class="btn btn-success imitation" style="margin: 4px;">Имитировать</button>
                   </td>
                   {{-- <td>
                     <h6>{{$address->meterGroup->meter[0]->amount}}</h6>
@@ -246,6 +247,8 @@
           var waterWithdrawals_2_value = document.querySelector('#waterWithdrawals_2_value');
           var pump_2 = document.querySelectorAll(".pump_2");
           var pump_2_value = document.querySelectorAll(".pump_2_value");
+          var imitation = document.querySelector("#imitation");
+          var imitationСondition = 0;
           var pump_2_condition = [];
           for(i=0;i<pump_2.length;i++){
             if (pump_2[i].innerHTML == "Остановить") {
@@ -254,6 +257,19 @@
               pump_2_condition.push(0);
             }
           }
+          imitation.addEventListener('click', function (){
+              if (this.innerHTML == "Имитировать"){
+                imitationСondition = 1;
+                this.innerHTML = "Остановить";
+                this.classList.remove('costumeChange', 'btn-success');
+                this.classList.add('btn-danger');
+              } else if (this.innerHTML == "Остановить") {
+                imitationСondition = 0;
+                this.innerHTML = "Имитировать";
+                this.classList.remove('costumeChange', 'btn-danger');
+                this.classList.add('btn-success');
+              }
+          });
           // if (pump_2.innerHTML == "Остановить") {
           //   var pump_2_condition = 1;
           // } else { 
@@ -504,6 +520,10 @@
             // barChart.data.datasets[0].data = [ v1, v2];
             // barChart.update();
             //____отключил
+            if (imitationСondition == 1){
+              barChart.data.datasets[0].data = [ v1, v2];
+              barChart.update();
+            }
 
 
             //barChart.data.datasets[0].data = [ barChart.data.datasets[0].data[0]-2, barChart.data.datasets[0].data[1] -1];
