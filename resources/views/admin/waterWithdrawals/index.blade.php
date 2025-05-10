@@ -66,7 +66,7 @@
                               $k = $k +1;
                           @endphp
                         <div style="display: flex;">
-                          <label for="image">Насос №{{$k}} (емк. 1)</label>
+                          <label for="image">Насос №{{$k}} (резервуар 1)</label>
                           <div style="display: flex;">
                             <input value="{{$pump->pumping_volume}}" type="number" id="pump_1_value" style="margin: 4px;width:98%;" class="form-control pump_1_value" name="title" id="title">
                             <button name="_method" id="pump_1" type="hidden" value="DELETE" @if ($pump->condition == 1) class="btn btn-danger pump_1" style="margin: 4px;">Остановить@else class="btn btn-success pump_1" style="margin: 4px;">Запустить@endif</button>
