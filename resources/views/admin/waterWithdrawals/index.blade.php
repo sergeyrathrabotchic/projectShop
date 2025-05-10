@@ -112,9 +112,9 @@
                       <canvas id="popChart" width="200" height="300"></canvas>
                     </div>
                     <div class="up_pump_1" style="display: none;">Время до полного заполнения первого резервуара: <span class="up_pump_value_1"></span> ч. <span class="up_pump_value_1_min"></span> минут</div>
-                    <div class="dovn_pump_1" style="display: none;">Время до полного опусташения первого резервуара: <span class="dovn_pump_value_1"></span> ч. <span class="dovn_pump_value_1_min"></span> минут</div>
+                    <div class="dovn_pump_1" style="display: none;">Время до полного опустошения первого резервуара: <span class="dovn_pump_value_1"></span> ч. <span class="dovn_pump_value_1_min"></span> минут</div>
                     <div class="up_pump_2" style="display: none;">Время до полного заполнения второго резервуара: <span class="up_pump_value_2"></span></span> ч. <span class="up_pump_value_2_min"></span> минут</div>
-                    <div class="dovn_pump_2" style="display: none;">Время до полного опусташения второго резервуара: <span class="dovn_pump_value_2"></span></span> ч. <span class="dovn_pump_value_2_min"></span> минут</div>
+                    <div class="dovn_pump_2" style="display: none;">Время до полного опустошения второго резервуара: <span class="dovn_pump_value_2"></span></span> ч. <span class="dovn_pump_value_2_min"></span> минут</div>
                     {{-- <h6>{{$address->meterGroup->title}}</h6> --}}
                   </td>
                   {{-- <td>
