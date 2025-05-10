@@ -91,7 +91,7 @@
                               $j = $j +1;
                           @endphp
                         <div style="display: flex;">
-                          <label for="image">Насос №{{$j}} (емк. 2)</label>
+                          <label for="image">Насос №{{$j}} (резервуар. 2)</label>
                           <div style="display: flex;">
                             <input value="{{$pump->pumping_volume}}" type="number" id="pump_2_value" style="margin: 4px;width:98%;"  class="form-control pump_2_value" name="title" id="title">
                             <button name="_method" id="pump_2" type="hidden" value="DELETE"  @if ($pump->condition == 1) class="btn btn-danger pump_2" style="margin: 4px;">Остановить@else class="btn btn-success pump_1" style="margin: 4px;">Запустить@endif</button>
@@ -101,7 +101,7 @@
                       @empty
                       @endforelse
                       <div style="display: flex;">
-                        <label for="image">Водозабор (емк. 2)</label>
+                        <label for="image">Водозабор (резервуар. 2)</label>
                         <input type="number" id="waterWithdrawals_2_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
                       </div>
                     </div>  
