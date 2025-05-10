@@ -77,7 +77,7 @@
                       @endforelse
                      
                       <div style="display: flex;">
-                        <label for="image">Водозабор (резервуар 1)</label>
+                        <label for="image">Водозабор (резервуар  1)</label>
                         <input type="number" id="waterWithdrawals_1_value" style="margin: 4px;width:98%;margin-left: 0px;" class="form-control" name="title" id="title">
                       </div>
                     </div>
@@ -101,7 +101,7 @@
                       @empty
                       @endforelse
                       <div style="display: flex;">
-                        <label for="image">Водозабор (резервуар. 2)</label>
+                        <label for="image">Водозабор (резервуар  2)</label>
                         <input type="number" id="waterWithdrawals_2_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
                       </div>
                     </div>  
