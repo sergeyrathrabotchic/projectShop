@@ -5,7 +5,7 @@
     <h1 class="h2">Скважины с насосами</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group me-2">
-        <a href="{{route('admin.pumps.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новый скважену с насосами</a>
+        <a href="{{route('admin.pumps.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новый скважину с насосами</a>
       </div>
       {{-- <div class="btn-group me-2">
         <a href="{{route('admin.news.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новую</a>
@@ -16,7 +16,7 @@
     </div>
   </div>
 
-      <h2>Скважины с насосами</h2>
+      {{-- <h2>Скважины с насосами</h2> --}}
       <div class="table-responsive">
         @include('inc.message')
         <table class="table table-striped table-sm">
