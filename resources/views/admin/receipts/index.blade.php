@@ -1,5 +1,5 @@
 @extends('layosts.admin')
-@section('title') Переплата - @parent @stop
+@section('title') Поступление - @parent @stop
 @section('content')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
    {{-- {{dd($account[0]->personal)}}  --}}
