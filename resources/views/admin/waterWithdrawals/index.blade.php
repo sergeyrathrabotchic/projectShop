@@ -66,8 +66,8 @@
                               $k = $k +1;
                           @endphp
                         <div style="display: flex;">
-                          <label for="image">Насос №{{$k}} (резервуар 1)</label>
-                          <div style="display: flex;">
+                          <label for="image">Насос №{{$k}} м3/час (резервуар 1) </label>
+                          <div style="display: flex;width: 96%;">
                             <input value="{{$pump->pumping_volume}}" type="number" id="pump_1_value" style="margin: 4px;width:98%;margin-left: 0px;" class="form-control pump_1_value" name="title" id="title">
                             <button name="_method" id="pump_1" type="hidden" value="DELETE" @if ($pump->condition == 1) class="btn btn-danger pump_1" style="margin: 4px;">Остановить@else class="btn btn-success pump_1" style="margin: 4px;">Запустить@endif</button>
                           </div>
@@ -77,7 +77,7 @@
                       @endforelse
                      
                       <div style="display: flex;">
-                        <label for="image">Водозабор (резервуар  1)</label>
+                        <label for="image">Водозабор м3/час (резервуар 1)</label>
                         <input type="number" id="waterWithdrawals_1_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
                       </div>
                     </div>
@@ -91,8 +91,8 @@
                               $j = $j +1;
                           @endphp
                         <div style="display: flex;">
-                          <label for="image">Насос №{{$j}} (резервуар 2)</label>
-                          <div style="display: flex;">
+                          <label for="image">Насос №{{$j}} м3/час (резервуар 2) </label>
+                          <div style="display: flex;width: 96%;">
                             <input value="{{$pump->pumping_volume}}" type="number" id="pump_2_value" style="margin: 4px;width:98%;margin-left: 0px;"  class="form-control pump_2_value" name="title" id="title">
                             <button name="_method" id="pump_2" type="hidden" value="DELETE"  @if ($pump->condition == 1) class="btn btn-danger pump_2" style="margin: 4px;">Остановить@else class="btn btn-success pump_1" style="margin: 4px;">Запустить@endif</button>
                           </div>
@@ -101,7 +101,7 @@
                       @empty
                       @endforelse
                       <div style="display: flex;">
-                        <label for="image">Водозабор (резервуар  2)</label>
+                        <label for="image">Водозабор м3/час (резервуар 2) </label>
                         <input type="number" id="waterWithdrawals_2_value" style="margin: 4px;width:98%;" class="form-control" name="title" id="title">
                       </div>
                     </div>  
@@ -115,6 +115,7 @@
                     <div class="dovn_pump_1" style="display: none;">Время до полного опустошения первого резервуара: <span class="dovn_pump_value_1"></span> ч. <span class="dovn_pump_value_1_min"></span> минут</div>
                     <div class="up_pump_2" style="display: none;">Время до полного заполнения второго резервуара: <span class="up_pump_value_2"></span></span> ч. <span class="up_pump_value_2_min"></span> минут</div>
                     <div class="dovn_pump_2" style="display: none;">Время до полного опустошения второго резервуара: <span class="dovn_pump_value_2"></span></span> ч. <span class="dovn_pump_value_2_min"></span> минут</div>
+                    <div class="past_time" style="display: none;">Прошедшее время : <span class="value_past_time">0</span> ч. <span class="up_pump_value_1_min"></span></div>
                     {{-- <h6>{{$address->meterGroup->title}}</h6> --}}
                     <button name="_method" id="imitation" type="hidden"  class="btn btn-success imitation" style="margin: 4px;">Имитировать</button>
                   </td>
@@ -250,6 +251,7 @@
           var imitation = document.querySelector("#imitation");
           var imitationСondition = 0;
           var pump_2_condition = [];
+          var count = 0;
           for(i=0;i<pump_2.length;i++){
             if (pump_2[i].innerHTML == "Остановить") {
               pump_2_condition.push(1);
@@ -389,6 +391,8 @@
             let up_pump_emk1 = document.querySelector(".up_pump_1");
             let dovn_pump_emk1 = document.querySelector(".dovn_pump_1");
             let dovn_pump_value_1 = document.querySelector(".dovn_pump_value_1");
+            let value_past_time = document.querySelector(".value_past_time");
+            let past_time = document.querySelector(".past_time")
             let up_pump_value_1 = document.querySelector(".up_pump_value_1");
             let up_pump_value_1_min = document.querySelector(".up_pump_value_1_min");
             let dovn_pump_value_1_min = document.querySelector(".dovn_pump_value_1_min");
@@ -409,6 +413,11 @@
               }
               up_pump_value_1.innerHTML = hour;
               up_pump_value_1_min.innerHTML = min;
+              if (imitationСondition) {
+                count = count + 1;
+                value_past_time.innerHTML = count;
+              }
+              past_time.style = "";
               up_pump_emk1.style = "";
               dovn_pump_emk1.style = "display: none;";
             } else if (emk1 < 0) {
