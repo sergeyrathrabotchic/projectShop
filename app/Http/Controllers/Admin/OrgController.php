@@ -29,14 +29,14 @@ class OrgController extends Controller
             if ($page > 0) {
                 $page = ($page - 1) * 5;
             } 
-            dd(1);
+            // dd(1);
         } else if ($request->title){
             $orgs =  Org::where('title','=',$request->title)->with('account.address.meterGroup.meter')->paginate(5);
             $page = $request->get('page', 1);
             if ($page > 0) {
                 $page = ($page - 1) * 5;
             } 
-            dd(1);
+            // dd(1);
         } else if ($request->street){
             
             $orgs =  Org::with('account.address.meterGroup.meter')->paginate(5);
