@@ -23,11 +23,44 @@ class OrgController extends Controller
      */
     public function index(Account $account, Request $request)
     {
-        $orgs =  Org::with('account.address.meterGroup.meter')->paginate(5);
-        $page = $request->get('page', 1);
-        if ($page > 0) {
-            $page = ($page - 1) * 5;
+        if ($request->office) {
+            $orgs =  Org::where('office','=',$request->office)->with('account.address.meterGroup.meter')->paginate(5);
+            $page = $request->get('page', 1);
+            if ($page > 0) {
+                $page = ($page - 1) * 5;
+            } 
+            dd(1);
+        } else if ($request->title){
+            $orgs =  Org::where('title','=',$request->title)->with('account.address.meterGroup.meter')->paginate(5);
+            $page = $request->get('page', 1);
+            if ($page > 0) {
+                $page = ($page - 1) * 5;
+            } 
+            dd(1);
+        } else if ($request->street){
+            
+            $orgs =  Org::with('account.address.meterGroup.meter')->paginate(5);
+            // dd($orgs->count());
+            for ($i = 0; $i < $orgs->count(); $i++) {
+                if ($orgs[$i]->account->address->street != $request->street) {
+                    // dd(1);
+                    $orgs->forget($i);
+                }
+            }
+
+            $page = $request->get('page', 1);
+            if ($page > 0) {
+                $page = ($page - 1) * 5;
+            }
+
+        }else {
+           $orgs =  Org::with('account.address.meterGroup.meter')->paginate(5);
+            $page = $request->get('page', 1);
+            if ($page > 0) {
+                $page = ($page - 1) * 5;
+            } 
         }
+        
 
         return view('admin.orgs.index', [
             'orgs' => $orgs,

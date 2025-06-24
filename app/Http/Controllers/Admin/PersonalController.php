@@ -18,16 +18,47 @@ class PersonalController extends Controller
      */
     public function index(Request $request)
     {
-        $personals =  Personal::with('account.address.meterGroup.meter')->paginate(5);
-        $page = $request->get('page', 1);
-        if ($page > 0) {
-            $page = ($page - 1) * 5;
+        if ($request->FIO){
+            $personals =  Personal::where('FIO','=',$request->FIO)->with('account.address.meterGroup.meter')->paginate(5);
+            $page = $request->get('page', 1);
+            if ($page > 0) {
+                $page = ($page - 1) * 5;
+            }
+        } else if ($request->sub_addr){
+            $personals =  Personal::where('sub_addr','=',$request->sub_addr)->with('account.address.meterGroup.meter')->paginate(5);
+            $page = $request->get('page', 1);
+            if ($page > 0) {
+                $page = ($page - 1) * 5;
+            }
+        } else if($request->street) {
+            $personals =  Personal::with('account.address.meterGroup.meter')->paginate(5);
+            // $personals = $personals->account->address->where('street', $request->street);
+            // dd($personals);
+
+            // dd($personals[0]);
+            // dd($personals->count());
+            for ($i = 0; $i < $personals->count(); $i++) {
+                if ($personals[$i]->account->address->street != $request->street) {
+                    // dd(1);
+                    $personals->forget($i);
+                }
+            }
+            $page = $request->get('page', 1);
+            if ($page > 0) {
+                $page = ($page - 1) * 5;
+            }
+        } else {
+            $personals =  Personal::with('account.address.meterGroup.meter')->paginate(5);
+            $page = $request->get('page', 1);
+            if ($page > 0) {
+                $page = ($page - 1) * 5;
+            }
         }
 
         return view('admin.personals.index', [
-            'personals' => $personals,
-            'page' => $page,
-        ]);
+                'personals' => $personals,
+                'page' => $page,
+            ]);  
     }
 
     /**

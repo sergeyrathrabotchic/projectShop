@@ -18,6 +18,33 @@
 
       <h2>Список юридических лиц</h2>
       <div class="table-responsive">
+                <form  method="get" action="{{route('admin.orgs.index')}}" enctype="multipart/form-data">
+          <div style="display: flex;gap: 10px;margin-top: 3px;">
+            <label style="min-width: 166px;display: flex;align-items: center;" for="office">Посик по названию</label>
+            <div class="form-group">  
+                <input style="min-width: 100px;" type="text" class="form-control" name="office" id="office">
+            </div>
+            <button type="submit" class="btn btn-primary">Найти</button>
+          </div>
+        </form>
+        <form  method="get" action="{{route('admin.orgs.index')}}" enctype="multipart/form-data">
+          <div style="display: flex;gap: 10px;margin-top: 3px;">
+            <label style="min-width: 166px;display: flex;align-items: center;" for="title">Посик по лицевому счету</label>
+            <div class="form-group">  
+                <input style="min-width: 100px;" type="text" class="form-control" name="title" id="title">
+            </div>
+            <button type="submit" class="btn btn-primary">Найти</button>
+          </div>
+        </form>
+        <form  method="get" action="{{route('admin.orgs.index')}}" enctype="multipart/form-data">
+          <div style="display: flex;gap: 10px;margin-top: 3px;">
+            <label style="min-width: 166px;display: flex;align-items: center;" for="street">Посик по улице</label>
+            <div class="form-group">  
+                <input style="min-width: 100px;" type="text" class="form-control" name="street" id="street">
+            </div>
+            <button type="submit" class="btn btn-primary">Найти</button>
+          </div>
+        </form>
         @include('inc.message')
         <table class="table table-striped table-sm">
           <thead>
