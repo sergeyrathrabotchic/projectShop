@@ -321,7 +321,7 @@
           //   pump_2.classList.add('btn-danger')
           // }
           // });
-          setInterval(() => {
+          setInterval(() => {  
             
             value_1_arr = [];
             for (let i = 0; i < pump_1_value.length; i++) {
@@ -391,8 +391,8 @@
             let up_pump_emk1 = document.querySelector(".up_pump_1");
             let dovn_pump_emk1 = document.querySelector(".dovn_pump_1");
             let dovn_pump_value_1 = document.querySelector(".dovn_pump_value_1");
-            let value_past_time = document.querySelector(".value_past_time");
-            let past_time = document.querySelector(".past_time")
+            // let value_past_time = document.querySelector(".value_past_time");
+            // let past_time = document.querySelector(".past_time")
             let up_pump_value_1 = document.querySelector(".up_pump_value_1");
             let up_pump_value_1_min = document.querySelector(".up_pump_value_1_min");
             let dovn_pump_value_1_min = document.querySelector(".dovn_pump_value_1_min");
@@ -413,11 +413,11 @@
               }
               up_pump_value_1.innerHTML = hour;
               up_pump_value_1_min.innerHTML = min;
-              if (imitationСondition) {
-                count = count + 1;
-                value_past_time.innerHTML = count;
-              }
-              past_time.style = "";
+              // if (imitationСondition) {
+              //   count = count + 1;
+              //   value_past_time.innerHTML = count;
+              // }
+              // past_time.style = "";
               up_pump_emk1.style = "";
               dovn_pump_emk1.style = "display: none;";
             } else if (emk1 < 0) {
@@ -525,6 +525,14 @@
                   }
                 }
             }
+            let value_past_time = document.querySelector(".value_past_time");
+            let past_time = document.querySelector(".past_time")
+
+             if (imitationСondition) {
+                count = count + 1;
+                value_past_time.innerHTML = count;
+              }
+              past_time.style = "";
             //____отключил
             // barChart.data.datasets[0].data = [ v1, v2];
             // barChart.update();

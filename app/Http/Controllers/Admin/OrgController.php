@@ -61,7 +61,6 @@ class OrgController extends Controller
             } 
         }
         
-
         return view('admin.orgs.index', [
             'orgs' => $orgs,
             'page' => $page,
