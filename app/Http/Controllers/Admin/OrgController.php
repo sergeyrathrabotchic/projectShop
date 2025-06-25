@@ -41,11 +41,16 @@ class OrgController extends Controller
             
             $orgs =  Org::with('account.address.meterGroup.meter')->paginate(5);
             // dd($orgs->count());
+            $forget = [];
             for ($i = 0; $i < $orgs->count(); $i++) {
                 if ($orgs[$i]->account->address->street != $request->street) {
                     // dd(1);
-                    $orgs->forget($i);
-                }
+                    $forget[]= $i;
+                    // $orgs->forget($i);
+                }  
+            }
+            foreach ($forget as $i) {
+                $orgs->forget($i);
             }
 
             $page = $request->get('page', 1);
@@ -54,7 +59,7 @@ class OrgController extends Controller
             }
 
         }else {
-           $orgs =  Org::with('account.address.meterGroup.meter')->paginate(5);
+            $orgs =  Org::with('account.address.meterGroup.meter')->paginate(5);
             $page = $request->get('page', 1);
             if ($page > 0) {
                 $page = ($page - 1) * 5;

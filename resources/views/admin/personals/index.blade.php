@@ -20,7 +20,7 @@
       <div class="table-responsive">
         <form  method="get" action="{{route('admin.personals.index')}}" enctype="multipart/form-data">
           <div style="display: flex;gap: 10px;margin-top: 3px;">
-            <label style="min-width: 166px;display: flex;align-items: center;" for="FIO">Посик по ФИО</label>
+            <label style="min-width: 166px;display: flex;align-items: center;" for="FIO">Поиск по ФИО</label>
             <div class="form-group">  
                 <input style="min-width: 100px;" type="text" class="form-control" name="FIO" id="FIO">
             </div>
@@ -29,7 +29,7 @@
         </form>
         <form  method="get" action="{{route('admin.personals.index')}}" enctype="multipart/form-data">
           <div style="display: flex;gap: 10px;margin-top: 3px;">
-            <label style="min-width: 166px;display: flex;align-items: center;" for="sub_addr">Посик по лицевому счету</label>
+            <label style="min-width: 166px;display: flex;align-items: center;" for="sub_addr">Поиск по лицевому счету</label>
             <div class="form-group">  
                 <input style="min-width: 100px;" type="text" class="form-control" name="sub_addr" id="sub_addr">
             </div>
@@ -38,7 +38,7 @@
         </form>
         <form  method="get" action="{{route('admin.personals.index')}}" enctype="multipart/form-data">
           <div style="display: flex;gap: 10px;margin-top: 3px;">
-            <label style="min-width: 166px;display: flex;align-items: center;" for="street">Посик по улице</label>
+            <label style="min-width: 166px;display: flex;align-items: center;" for="street">Поиск по улице</label>
             <div class="form-group">  
                 <input style="min-width: 100px;" type="text" class="form-control" name="street" id="street">
             </div>
