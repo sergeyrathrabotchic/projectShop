@@ -24,14 +24,18 @@ class OrgController extends Controller
     public function index(Account $account, Request $request)
     {
         if ($request->office) {
-            $orgs =  Org::where('office','=',$request->office)->with('account.address.meterGroup.meter')->paginate(5);
+            $orgs =  Org::where('office','=',$request->office)->with('account.address.meterGroup.meter')->get();
+            $orgs =  Org::whereIN('id', $orgs->pluck('id')->toArray())->with('account.address.meterGroup.meter')
+                ->paginate(5)->appends(['office' => $request->office]);
             $page = $request->get('page', 1);
             if ($page > 0) {
                 $page = ($page - 1) * 5;
             } 
             // dd(1);
         } else if ($request->title){
-            $orgs =  Org::where('title','=',$request->title)->with('account.address.meterGroup.meter')->paginate(5);
+            $orgs =  Org::where('title','=',$request->title)->with('account.address.meterGroup.meter')->get();
+            $orgs =  Org::whereIN('id', $orgs->pluck('id')->toArray())->with('account.address.meterGroup.meter')
+                ->paginate(5)->appends(['title' => $request->title]);
             $page = $request->get('page', 1);
             if ($page > 0) {
                 $page = ($page - 1) * 5;
@@ -39,7 +43,7 @@ class OrgController extends Controller
             // dd(1);
         } else if ($request->street){
             
-            $orgs =  Org::with('account.address.meterGroup.meter')->paginate(5);
+            $orgs =  Org::with('account.address.meterGroup.meter')->get();
             // dd($orgs->count());
             $forget = [];
             for ($i = 0; $i < $orgs->count(); $i++) {
@@ -52,6 +56,8 @@ class OrgController extends Controller
             foreach ($forget as $i) {
                 $orgs->forget($i);
             }
+            $orgs =  Org::whereIN('id', $orgs->pluck('id')->toArray())->with('account.address.meterGroup.meter')
+                ->paginate(5)->appends(['street' => $request->street]);
 
             $page = $request->get('page', 1);
             if ($page > 0) {

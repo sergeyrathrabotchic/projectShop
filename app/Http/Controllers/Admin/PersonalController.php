@@ -19,19 +19,24 @@ class PersonalController extends Controller
     public function index(Request $request)
     {
         if ($request->FIO){
-            $personals =  Personal::where('FIO','=',$request->FIO)->with('account.address.meterGroup.meter')->paginate(5);
+            $personals =  Personal::where('FIO','=',$request->FIO)->with('account.address.meterGroup.meter')->get();
+            $personals =  Personal::whereIN('id', $personals->pluck('id')->toArray())->with('account.address.meterGroup.meter')
+                ->paginate(5)->appends(['FIO' => $request->FIO]);
             $page = $request->get('page', 1);
             if ($page > 0) {
                 $page = ($page - 1) * 5;
             }
         } else if ($request->sub_addr){
-            $personals =  Personal::where('sub_addr','=',$request->sub_addr)->with('account.address.meterGroup.meter')->paginate(5);
+            $personals =  Personal::where('sub_addr','=',$request->sub_addr)->with('account.address.meterGroup.meter')->get(5);
+            $personals =  Personal::whereIN('id', $personals->pluck('id')->toArray())->with('account.address.meterGroup.meter')
+                ->paginate(5)->appends(['sub_addr' => $request->sub_addr]);
             $page = $request->get('page', 1);
             if ($page > 0) {
                 $page = ($page - 1) * 5;
             }
         } else if($request->street) {
-            $personals =  Personal::with('account.address.meterGroup.meter')->paginate(5);
+            // $personals =  Personal::with('account.address.meterGroup.meter')->paginate(5);
+            $personals =  Personal::with('account.address.meterGroup.meter')->get();
             $forget = [];
             for ($i = 0; $i < $personals->count(); $i++) {
                 if ($personals[$i]->account->address->street != $request->street) {
@@ -41,6 +46,8 @@ class PersonalController extends Controller
             foreach ($forget as $i) {
                 $personals->forget($i);
             }
+            $personals =  Personal::whereIN('id', $personals->pluck('id')->toArray())->with('account.address.meterGroup.meter')
+                ->paginate(5)->appends(['street' => $request->street]);
             $page = $request->get('page', 1);
             if ($page > 0) {
                 $page = ($page - 1) * 5;
