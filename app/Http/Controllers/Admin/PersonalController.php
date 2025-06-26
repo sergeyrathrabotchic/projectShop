@@ -27,7 +27,7 @@ class PersonalController extends Controller
                 $page = ($page - 1) * 5;
             }
         } else if ($request->sub_addr){
-            $personals =  Personal::where('sub_addr','=',$request->sub_addr)->with('account.address.meterGroup.meter')->get(5);
+            $personals =  Personal::where('sub_addr','=',$request->sub_addr)->with('account.address.meterGroup.meter')->get();
             $personals =  Personal::whereIN('id', $personals->pluck('id')->toArray())->with('account.address.meterGroup.meter')
                 ->paginate(5)->appends(['sub_addr' => $request->sub_addr]);
             $page = $request->get('page', 1);
