@@ -53,7 +53,7 @@
               <th scope="col">Лицевой счет</th>
               <th scope="col">Адрес</th>
               <th scope="col">Фамилия Имя Отчество</th>
-              <th scope="col">Кв.</th>
+              <th scope="col">М<span style="text-transform: uppercase">2</span></th>
               {{-- <th scope="col">кв метров</th> --}}
               <!--<th scope="col">Автор</th>-->
               <th scope="col">Дата последнего обновления</th>
