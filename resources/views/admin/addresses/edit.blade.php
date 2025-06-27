@@ -38,7 +38,7 @@
               <input type="test" style="margin: 4px;width:98%;" class="form-control" name="house" id="house" @if ($address->house) value="{{$address->house}}" @endif>
             </div>
             <div class="form-group">
-              <label for="image">Описание группы Адресов по площади</label>
+              <label for="image">Описание группы Адресов</label>
               <input type="test" style="margin: 4px;width:98%;" class="form-control" name="title" id="title" @if ($meterGroup[0]->title) value="{{$meterGroup[0]->title}}" @endif>
             </div>
             <div class="form-group">

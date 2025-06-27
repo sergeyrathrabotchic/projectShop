@@ -49,7 +49,7 @@
               <input type="test" style="margin: 4px;width:98%;" class="form-control" name="house" id="house" required>
             </div>
             <div class="form-group">
-              <label for="image">Описание группы Адресов по площади</label>
+              <label for="image">Описание группы Адресов</label>
               <input type="test" style="margin: 4px;width:98%;" class="form-control" name="title" id="title" required>
             </div>
             <div class="form-group">

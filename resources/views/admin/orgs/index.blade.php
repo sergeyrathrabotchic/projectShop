@@ -5,7 +5,7 @@
     <h1 class="h2">Юридические лица</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group me-2">
-        <a href="{{route('admin.orgs.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новое физическое лицо</a>
+        <a href="{{route('admin.orgs.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новое юридичесое лицо</a>
       </div>
       {{-- <div class="btn-group me-2">
         <a href="{{route('admin.news.create')}}" class="btn btn-sm btn-outline-secondary">Добавить новую</a>
@@ -53,7 +53,7 @@
               <th scope="col">Лицевой счет</th>
               <th scope="col">Адрес</th>
               <th scope="col">Название</th>
-              <th scope="col">Кв.</th>
+              <th scope="col">М<span style="text-transform: uppercase">2</span></th>
               {{-- <th scope="col">кв метров</th> --}}
               <!--<th scope="col">Автор</th>-->
               <th scope="col">Дата последнего обновления</th>

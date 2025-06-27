@@ -45,7 +45,7 @@
               <input type="text" style="margin: 4px;width:98%;" class="form-control" name="office" id="office" required>
             </div>
             <div class="form-group">
-              <label for="image">Личевой счет</label>
+              <label for="image">Лицевой счет</label>
               <input type="number" style="margin: 4px;width:98%;" class="form-control" name="title" id="title" required>
             </div>
             <div class="form-group">

@@ -34,11 +34,11 @@
 
             <input type="hidden" class="form-control" name="type" id="type" value="cozyDecor">
             <div class="form-group">
-              <label for="image">Фамилия имя отчество</label>
+              <label for="image">Название</label>
               <input type="text" style="margin: 4px;width:98%;" class="form-control" name="office" id="office" @if ($org->office) value="{{$org->office}}" @endif required>
             </div>
             <div class="form-group">
-              <label for="image">Личевой счет</label>
+              <label for="image">Лицевой счет</label>
               <input type="number" style="margin: 4px;width:98%;" class="form-control" name="title" id="title" @if ($org->title) value="{{$org->title}}" @endif required>
             </div>
             <div class="form-group">
