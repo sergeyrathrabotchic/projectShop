@@ -26,7 +26,7 @@
               <th scope="col">Улица</th>
               <th scope="col">Дом</th>
               <th scope="col">Описание</th>
-              <th scope="col">кв метров</th>
+              <th scope="col">М<span style="text-transform: uppercase">2</span></th>
               <!--<th scope="col">Автор</th>-->
               <th scope="col">Дата последнего обновления</th>
               <th scope="col">Действие</th>
