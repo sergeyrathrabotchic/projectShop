@@ -116,6 +116,11 @@
                     <div class="up_pump_2" style="display: none;">Время до полного заполнения второго резервуара: <span class="up_pump_value_2"></span></span> ч. <span class="up_pump_value_2_min"></span> минут</div>
                     <div class="dovn_pump_2" style="display: none;">Время до полного опустошения второго резервуара: <span class="dovn_pump_value_2"></span></span> ч. <span class="dovn_pump_value_2_min"></span> минут</div>
                     <div class="past_time" style="display: none;">Прошедшее время : <span class="value_past_time">0</span> ч. <span class="up_pump_value_1_min"></span></div>
+                    <div class="formula" style="display: none;">
+                      t<sub>зап</sub> = V<sub>МАХ</sub> - V<sub>1,2</sub>(t<sub>тм</sub>) / (П<sub>пост</sub>-П<sub>убыв</sub>)
+                      <br>
+                      t<sub>опуст</sub> = (V<sub>1,2</sub>(t<sub>тм</sub>) - V<sub>МИН</sub>) / (П<sub>убыв</sub>-П<sub>пост</sub>)
+                    </div>
                     {{-- <h6>{{$address->meterGroup->title}}</h6> --}}
                     <button name="_method" id="imitation" type="hidden"  class="btn btn-success imitation" style="margin: 4px;">Имитировать</button>
                   </td>
@@ -527,12 +532,14 @@
             }
             let value_past_time = document.querySelector(".value_past_time");
             let past_time = document.querySelector(".past_time")
+            let formula = document.querySelector(".formula")
 
              if (imitationСondition) {
                 count = count + 1;
                 value_past_time.innerHTML = count;
               }
               past_time.style = "";
+              formula.style = "";
             //____отключил
             // barChart.data.datasets[0].data = [ v1, v2];
             // barChart.update();
