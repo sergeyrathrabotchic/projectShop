@@ -16,7 +16,7 @@
     </div>
   </div>
 
-      <h2>Список адресов</h2>
+      <h2>Список тарифов</h2>
       <div class="table-responsive">
         @include('inc.message')
         <table class="table table-striped table-sm">
