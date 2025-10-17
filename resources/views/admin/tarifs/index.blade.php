@@ -1,3 +1,4 @@
+34a3O6cwQBYW9C5VdDWiGA1MS9Re21yxm3fXcOt5
 @extends('layosts.admin')
 @section('title') Список тарифов - @parent @stop
 @section('content')
