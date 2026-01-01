@@ -45,7 +45,7 @@ use App\Http\Controllers\Account\IndexController as AccountController;
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/account', AccountController::class)->name('account');
 
-    Route::group(['prefix' => 'admin456123', 'as' => 'admin.'], function(){
+    Route::group(['prefix' => 'admin456123', 'as' => 'admin.', 'middleware' => 'admin'], function(){
         Route::get('/', AdminController::class)->name('index');
         Route::resource('/categories', AdminCategoryController::class);
         Route::resource('/news',AdminNewController::class );
